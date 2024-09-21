@@ -4,10 +4,10 @@ import Nav from "./Components/Nav/Nav";
 
 const App = () => {
   return (
-    <div>
+    <main className="pt-[1px]">
       <Nav />
       <Home />
-    </div>
+    </main>
   );
 };
 
