@@ -1,4 +1,5 @@
 import React from "react";
+import { IoPlay } from "react-icons/io5";
 
 const Expander = () => {
   return (
@@ -47,6 +48,22 @@ const Expander = () => {
         </div>
         {/* 3rd Column */}
         <div className="shrink-0 h-full w-[40%] relative">
+          {/* Text */}
+          <div
+            style={{
+              lineHeight: "0.9",
+            }}
+            className="w-fit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[25%] text-8xl text-white uppercase text-center"
+          >
+            <p>Live Your</p>
+            <p className="text-nowrap">
+              own <span className="italic text-red-700">UNIQUE</span>
+            </p>
+            <p>Adventure</p>
+            <div className="mx-auto mt-8 h-[72px] w-[72px] border-2 border-white rounded-full flex justify-center items-center">
+              <IoPlay className="text-white h-5 " />
+            </div>
+          </div>
           <video
             className="object-cover h-full w-full"
             autoPlay
