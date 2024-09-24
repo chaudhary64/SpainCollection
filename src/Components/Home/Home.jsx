@@ -13,13 +13,13 @@ const Home = () => {
     },
     {
       id: 2,
-      src: "/public/images/Home/caratula_pedro.webp",
+      src: "/images/Home/caratula_pedro.webp",
       name: "Pedro Subijana",
       text: "3 Michelin Stars Chef",
     },
     {
       id: 3,
-      src: "/public/images/Home/caratula_german.webp",
+      src: "/images/Home/caratula_german.webp",
       name: "Germán Jiménez",
       text: "Journalist specialized in Fashion & Lifestyle",
     },
