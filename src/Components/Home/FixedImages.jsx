@@ -1,7 +1,6 @@
 import React from "react";
 
 const FixedImages = ({ src, number, text }) => {
-  console.log(src);
   return (
     <div className="w-72 text-lg">
       <div
@@ -10,7 +9,6 @@ const FixedImages = ({ src, number, text }) => {
           backgroundImage: `url(${src})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          // backgroundAttachment: "fixed",
         }}
       ></div>
       <p>{number}</p>
