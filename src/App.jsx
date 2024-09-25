@@ -5,7 +5,14 @@ import Nav from "./Components/Nav/Nav";
 
 const App = () => {
   return (
-    <ReactLenis root>
+    <ReactLenis
+      root
+      options={{
+        // Making the scroll smoother
+        wheelMultiplier: 0.4,
+        touchMultiplier: 0.4,
+      }}
+    >
       <main className="pt-[1px]">
         <Nav />
         <Home />
