@@ -2,6 +2,7 @@ import React from "react";
 import { IoPlay } from "react-icons/io5";
 import Expander from "./Expander";
 import Ambassadords from "./Ambassadors";
+import FixedImages from "./FixedImages";
 
 const Home = () => {
   const AmbassadorsData = [
@@ -22,6 +23,26 @@ const Home = () => {
       src: "/images/Home/caratula_german.webp",
       name: "Germán Jiménez",
       text: "Journalist specialized in Fashion & Lifestyle",
+    },
+  ];
+  const fixedImages = [
+    {
+      id: 1,
+      src: "/images/Home/modulo_Why_11.webp",
+      number: "01/",
+      text: "Because our passion is people, travel and our country, it’s what makes us get out of bed in the morning.",
+    },
+    {
+      id: 2,
+      src: "/images/Home/Capa-1.webp",
+      number: "02/",
+      text: "Because nothing is more fulfilling than creating something from scratch and seeing it come to life.",
+    },
+    {
+      id: 3,
+      src: "/images/Home/Capa-3.webp",
+      number: "03/",
+      text: "Because of that blissful moment, after months of planning, when your clients thank you for giving them have the time of their lives.",
     },
   ];
   return (
@@ -53,8 +74,35 @@ const Home = () => {
         </p>
         <div className="mt-20 border-4 flex justify-evenly">
           {AmbassadorsData.map((item) => (
-            <Ambassadords {...item} />
+            <Ambassadords key={item.id} {...item} />
           ))}
+        </div>
+      </div>
+      {/* Why Choose Us */}
+      <div className="border-2 border-black pt-[100vh] relative">
+        <div
+          style={{
+            lineHeight: "0.9",
+          }}
+          className="absolute top-40 text-center text-[170px] border-2 w-full"
+        >
+          <p className="text-red-600 italic">Why</p>
+          <p>CHOOSE</p>
+          <p>SPAIN</p>
+          <p>COLLEC-</p>
+          <p>TION?</p>
+        </div>
+        {/* ImagesHolder */}
+        <div className="flex justify-evenly">
+          <div>
+            <FixedImages key={fixedImages[0].id} {...fixedImages[0]} />
+          </div>
+          <div>
+            <FixedImages key={fixedImages[1].id} {...fixedImages[1]} />
+          </div>
+          <div>
+            <FixedImages key={fixedImages[2].id} {...fixedImages[2]} />
+          </div>
         </div>
       </div>
     </section>
