@@ -1,20 +1,49 @@
-import React from "react";
+import React, { useRef } from "react";
 import { IoPlay } from "react-icons/io5";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 
 const Expander = () => {
+  const ColumnsHolder = useRef(null);
+  const thirdColumn = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ColumnsHolder,
+    offset: [`start`, "end"],
+  });
+  const width = useTransform(scrollYProgress, [0.3, 1], ["40%", "100%"]);
+  const textThirdColumn = useTransform(
+    scrollYProgress,
+    [0, 0.8, 1],
+    ["115%", "115%", "50%"]
+  );
+  const top = useTransform(scrollYProgress, [0, 0.3], ["25%", "0%"]);
+  const textTop = useTransform(scrollYProgress, [0, 0.3], ["0", "-110%"]);
+  useMotionValueEvent(scrollYProgress, "change", (l) => console.log(l));
   return (
-    <section className="h-[300vh] border-4 border-blue-500 relative">
-      {/* Text */}
-      <div className="w-full border-2 border-amber-100 text-4xl font-light flex flex-col items-center absolute top-24 z-[1]">
-        <div className="text-center">
-          <p>Spain Collection is your expert partner for deluxe</p>
-          <p>bespoke travel experiences in</p>
-        </div>
-        <p className="mt-28 text-8xl italic">
-          Spain & <br /> Portugal
-        </p>
-      </div>
-      <div className="h-screen mt-24 flex justify-center items-center flex-nowrap gap-5 sticky top-0 overflow-clip">
+    <section
+      ref={ColumnsHolder}
+      className="h-[300vh] border-4 border-blue-500 relative mt-20"
+    >
+      <motion.div className="h-screen flex justify-center items-center flex-nowrap gap-10 sticky top-0 overflow-clip border-4 border-black">
+        {/* Text */}
+        <motion.div
+          style={{
+            y: textTop,
+          }}
+          className="w-full text-4xl font-light flex flex-col items-center absolute top-0 z-[1]"
+        >
+          <div className="text-center">
+            <p>Spain Collection is your expert partner for deluxe</p>
+            <p>bespoke travel experiences in</p>
+          </div>
+          <p className="mt-28 text-8xl italic">
+            Spain & <br /> Portugal
+          </p>
+        </motion.div>
         {/*  1st Column */}
         <div className="shrink-0 h-[50%] w-[14%]">
           <video
@@ -26,7 +55,7 @@ const Expander = () => {
           ></video>
         </div>
         {/* 2nd Column */}
-        <div className="shrink-0 h-[71.5%] w-[20%] flex flex-col justify-between">
+        <div className="shrink-0 w-[21%] flex flex-col justify-center gap-10">
           <div className="w-full">
             <video
               className="object-cover h-full"
@@ -47,13 +76,20 @@ const Expander = () => {
           </div>
         </div>
         {/* 3rd Column */}
-        <div className="shrink-0 h-full w-[40%] relative">
+        <motion.div
+          ref={thirdColumn}
+          style={{ width, willChange: "width", y: top }}
+          className="shrink-0 h-full relative"
+        >
           {/* Text */}
-          <div
+          <motion.div
             style={{
               lineHeight: "0.9",
+              top: textThirdColumn,
+              left: "50%",
+              transform: "translateX(-50%) translateY(-25%)",
             }}
-            className="w-fit absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[25%] text-8xl text-white uppercase text-center"
+            className="w-fit absolute text-8xl text-white uppercase text-center"
           >
             <p>Live Your</p>
             <p className="text-nowrap">
@@ -63,7 +99,7 @@ const Expander = () => {
             <div className="mx-auto mt-8 h-[72px] w-[72px] border-2 border-white rounded-full flex justify-center items-center">
               <IoPlay className="text-white h-5 " />
             </div>
-          </div>
+          </motion.div>
           <video
             className="object-cover h-full w-full"
             autoPlay
@@ -71,9 +107,9 @@ const Expander = () => {
             loop
             src="/videoes/Home/Bg_Home.mp4"
           ></video>
-        </div>
+        </motion.div>
         {/* 4th Column */}
-        <div className="shrink-0 h-[71.5%] w-[20%] flex flex-col justify-between">
+        <div className="shrink-0 w-[21%] flex flex-col justify-center gap-10">
           <div className="w-full">
             <video
               className="object-cover h-full"
@@ -103,7 +139,7 @@ const Expander = () => {
             src="/videoes/Home/Secuencia-01_7-1.mp4"
           ></video>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
