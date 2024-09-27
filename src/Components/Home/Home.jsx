@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import { IoPlay } from "react-icons/io5";
 import Expander from "./Expander";
 import Ambassadords from "./Ambassadors";
 import FixedImages from "./FixedImages";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 
 const Home = () => {
   const AmbassadorsData = [
@@ -45,14 +46,41 @@ const Home = () => {
       text: "Because of that blissful moment, after months of planning, when your clients thank you for giving them have the time of their lives.",
     },
   ];
+  const AmbassadorsRef = useRef(null);
+  const ExpanderRef = useRef(null);
+  const [theme, setTheme] = useState("white");
+  const { scrollYProgress: scrollYProgressAmbassador } = useScroll({
+    target: AmbassadorsRef,
+    offset: ["start 10%", "end start"],
+  });
+  const { scrollYProgress: scrollYProgressExpander } = useScroll({
+    target: ExpanderRef,
+    offset: ["start", "end"],
+  });
+  useMotionValueEvent(scrollYProgressAmbassador, "change", (l) =>
+    l >= 0.1 ? setTheme("white") : setTheme("black")
+  );
+  useMotionValueEvent(scrollYProgressExpander, "change", (l) =>
+    l >= 0.9 ? setTheme("black") : setTheme("white")
+  );
   return (
     <section>
+      {/* This below div will act as a background */}
+      <div
+        style={{
+          backgroundColor: theme,
+          transition: "background-color 0.6s cubic-bezier(0.11, 0, 0.5, 0)",
+        }}
+        className="fixed inset-0 z-[-99]"
+      ></div>
       {/* Expander */}
-      <Expander />
+      <motion.div ref={ExpanderRef}>
+        <Expander />
+      </motion.div>
       {/* About US */}
-      <div className="mt-64 border-2">
+      <div className="pt-64 pb-28">
         <p className="text-[#BD1826] text-center text-lg">ABOUT US</p>
-        <div className="relative w-[50%] mx-auto mt-20 border-4">
+        <div className="w-[50%] mx-auto mt-20 relative">
           <img
             className="object-cover opacity-40"
             src="/images/Home/caratula_video_abene_new.webp"
@@ -62,29 +90,34 @@ const Home = () => {
             <IoPlay className="text-white h-5 " />
           </div>
         </div>
-        <div className="mt-4">
+        <div className="mt-10 text-white">
           <p className="text-center text-xl">Abene Mendizabal</p>
           <p className="text-center">Founder & CEO Spain Collection</p>
         </div>
       </div>
       {/* Ambassadors */}
-      <div className="mt-40 border-2">
+      <motion.div ref={AmbassadorsRef} className="pb-44">
         <p className="text-[#BD1826] text-center text-lg uppercase">
           Ambassadors
         </p>
-        <div className="mt-20 border-4 flex justify-evenly">
+        <div
+          style={{
+            transition: "color 0.6s linear",
+          }}
+          className="mt-20 flex justify-evenly"
+        >
           {AmbassadorsData.map((item) => (
             <Ambassadords key={item.id} {...item} />
           ))}
         </div>
-      </div>
+      </motion.div>
       {/* Why Choose Us */}
-      <div className="border-2 border-black pt-[100vh] relative">
+      <div className="border-4 border-black pt-[68vh] relative">
         <div
           style={{
             lineHeight: "0.9",
           }}
-          className="absolute top-40 text-center text-[170px] border-2 w-full"
+          className="absolute top-0 text-center text-[170px] border-2 w-full"
         >
           <p className="text-red-600 italic">Why</p>
           <p>CHOOSE</p>
@@ -93,7 +126,7 @@ const Home = () => {
           <p>TION?</p>
         </div>
         {/* ImagesHolder */}
-        <div className="flex justify-evenly">
+        <div className="flex justify-evenly border-4 border-red-800">
           <div>
             <FixedImages key={fixedImages[0].id} {...fixedImages[0]} />
           </div>

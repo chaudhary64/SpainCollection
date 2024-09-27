@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { IoPlay } from "react-icons/io5";
 import {
   motion,
@@ -10,7 +10,6 @@ import {
 const Expander = () => {
   const ColumnsHolder = useRef(null);
   const thirdColumn = useRef(null);
-  const [bgColor, setBgColor] = useState("white");
   const { scrollYProgress } = useScroll({
     target: ColumnsHolder,
     offset: [`start`, "end"],
@@ -23,16 +22,10 @@ const Expander = () => {
   );
   const top = useTransform(scrollYProgress, [0, 0.3], ["25%", "0%"]);
   const textTop = useTransform(scrollYProgress, [0, 0.3], ["0", "-110%"]);
-  useMotionValueEvent(scrollYProgress, "change", (l) =>
-    l >= 0.94 ? setBgColor("black") : setBgColor("white")
-  );
+  useMotionValueEvent(scrollYProgress, "change", (l) => console.log(l));
   return (
     <section
       ref={ColumnsHolder}
-      style={{
-        backgroundColor: bgColor,
-        transition: "background-color 0.6s cubic-bezier(0.11, 0, 0.5, 0)",
-      }}
       className="h-[300vh] border-4 border-blue-500 relative mt-20"
     >
       <motion.div className="h-screen flex justify-center items-center flex-nowrap gap-10 sticky top-0 overflow-clip border-4 border-black">
