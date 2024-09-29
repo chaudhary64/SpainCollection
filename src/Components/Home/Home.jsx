@@ -3,7 +3,12 @@ import { IoPlay } from "react-icons/io5";
 import Expander from "./Expander";
 import Ambassadords from "./Ambassadors";
 import FixedImages from "./FixedImages";
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 
 const Home = () => {
   const AmbassadorsData = [
@@ -63,6 +68,16 @@ const Home = () => {
   useMotionValueEvent(scrollYProgressExpander, "change", (l) =>
     l >= 0.9 ? setTheme("black") : setTheme("white")
   );
+  // For Image Holder
+  const imageHolder = useRef(null);
+
+  const { scrollYProgress: imageHolderScrolled } = useScroll({
+    target: imageHolder,
+    offset: ["start end", "end start"],
+  });
+
+  const LeftAndRightImgY = useTransform(imageHolderScrolled, [0, 1], [0, -100]);
+  const MidImgY = useTransform(imageHolderScrolled, [0, 1], [0, 150]);
   return (
     <section>
       {/* This below div will act as a background */}
@@ -113,11 +128,12 @@ const Home = () => {
       </motion.div>
       {/* Why Choose Us */}
       <div className="border-4 border-black pt-[68vh] relative">
+        {/* Text */}
         <div
           style={{
             lineHeight: "0.9",
           }}
-          className="absolute top-0 text-center text-[170px] border-2 w-full"
+          className="text-center text-[170px] border-2 w-full absolute top-0 z-[2]"
         >
           <p className="text-red-600 italic">Why</p>
           <p>CHOOSE</p>
@@ -126,16 +142,31 @@ const Home = () => {
           <p>TION?</p>
         </div>
         {/* ImagesHolder */}
-        <div className="flex justify-evenly border-4 border-red-800">
-          <div>
+        <div
+          ref={imageHolder}
+          className="flex justify-evenly border-4 border-red-600"
+        >
+          <motion.div
+            style={{
+              y: LeftAndRightImgY,
+            }}
+          >
             <FixedImages key={fixedImages[0].id} {...fixedImages[0]} />
-          </div>
-          <div>
+          </motion.div>
+          <motion.div
+            style={{
+              y: MidImgY,
+            }}
+          >
             <FixedImages key={fixedImages[1].id} {...fixedImages[1]} />
-          </div>
-          <div>
+          </motion.div>
+          <motion.div
+            style={{
+              y: LeftAndRightImgY,
+            }}
+          >
             <FixedImages key={fixedImages[2].id} {...fixedImages[2]} />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

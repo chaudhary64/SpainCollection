@@ -11,8 +11,10 @@ const FixedImages = ({ src, number, text }) => {
           backgroundPosition: "center",
         }}
       ></div>
-      <p>{number}</p>
-      <p>{text}</p>
+      <div className="mt-5">
+        <p className="text-lg">{number}</p>
+        <p className="text-base">{text}</p>
+      </div>
     </div>
   );
 };
