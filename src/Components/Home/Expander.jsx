@@ -24,11 +24,8 @@ const Expander = () => {
   const textTop = useTransform(scrollYProgress, [0, 0.3], ["0", "-110%"]);
   useMotionValueEvent(scrollYProgress, "change", (l) => console.log(l));
   return (
-    <section
-      ref={ColumnsHolder}
-      className="h-[300vh] border-4 border-blue-500 relative mt-20"
-    >
-      <motion.div className="h-screen flex justify-center items-center flex-nowrap gap-10 sticky top-0 overflow-clip border-4 border-black">
+    <section ref={ColumnsHolder} className="h-[300vh] relative mt-20">
+      <motion.div className="h-screen flex justify-center items-center flex-nowrap gap-10 sticky top-0 overflow-clip">
         {/* Text */}
         <motion.div
           style={{
