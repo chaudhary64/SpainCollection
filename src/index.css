@@ -8,6 +8,31 @@ html,
 body {
     height: 100%;
     width: 100%;
+    font-family: 'Inter', 'serif';
+}
+
+/* Inter Font */
+@font-face {
+    font-family: 'Inter';
+    src: url(/Fonts/Inter.ttf) format('truetype');
+}
+
+/* Inter_Italic Font */
+@font-face {
+    font-family: 'Inter_Italic';
+    src: url(/Fonts/Inter_Italic.ttf) format('truetype');
+}
+
+/* IbarraRealNova Font */
+@font-face {
+    font-family: 'IbarraRealNova';
+    src: url(/Fonts/IbarraRealNova.ttf) format('truetype');
+}
+
+/* IbarraRealNova_Italic Font */
+@font-face {
+    font-family: 'IbarraRealNova_Italic';
+    src: url(/Fonts/IbarraRealNova_Italic.ttf) format('truetype');
 }
 
 @tailwind base;
