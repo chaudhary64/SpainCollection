@@ -2,9 +2,14 @@ import React from "react";
 
 const Nav = () => {
   return (
-    <nav className="h-fit w-[70%] mx-auto mt-10 flex justify-between items-center">
+    <nav
+      style={{
+        fontWeight: "300",
+      }}
+      className="h-fit w-[70%] mx-auto mt-14 flex justify-between items-center tracking-widest"
+    >
       {/* Left Part */}
-      <div className="flex gap-5">
+      <div className="flex gap-12">
         <a href="#">Home</a>
         <a href="#">Collections</a>
       </div>
@@ -164,7 +169,7 @@ const Nav = () => {
         </g>
       </svg>
       {/* Right Part */}
-      <div className="flex gap-5">
+      <div className="flex gap-12">
         <a href="#">Curators</a>
         <a href="#">Journal</a>
       </div>
