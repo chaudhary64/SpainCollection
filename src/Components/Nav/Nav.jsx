@@ -2,7 +2,7 @@ import React from "react";
 
 const Nav = () => {
   return (
-    <nav className="h-fit w-[70%] mx-auto mt-10 border-2 flex justify-between items-center">
+    <nav className="h-fit w-[70%] mx-auto mt-10 flex justify-between items-center">
       {/* Left Part */}
       <div className="flex gap-5">
         <a href="#">Home</a>
