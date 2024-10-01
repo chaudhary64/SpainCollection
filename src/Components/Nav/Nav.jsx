@@ -2,12 +2,7 @@ import React from "react";
 
 const Nav = () => {
   return (
-    <nav
-      style={{
-        fontWeight: "300",
-      }}
-      className="h-fit w-[70%] mx-auto mt-14 flex justify-between items-center tracking-widest"
-    >
+    <nav className="h-fit w-[70%] mx-auto mt-14 flex justify-between items-center text-lg tracking-widest">
       {/* Left Part */}
       <div className="flex gap-12">
         <a href="#">Home</a>
