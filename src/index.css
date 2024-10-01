@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +12,7 @@ html,
 body {
     height: 100%;
     width: 100%;
-    font-family: 'Inter', 'serif';
+    font-family: 'SaolDisplay-Regular', 'serif';
 }
 
 /* Inter Font */
@@ -35,6 +39,20 @@ body {
     src: url(/Fonts/IbarraRealNova_Italic.ttf) format('truetype');
 }
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* SaolDisplay-Light Font */
+@font-face {
+    font-family: 'SaolDisplay-Light';
+    src: url(/Fonts/SaolDisplay-Light.woff2) format('woff2');
+}
+
+/* SaolDisplay-LightItalic Font */
+@font-face {
+    font-family: 'SaolDisplay-Italic';
+    src: url(/Fonts/SaolDisplay-LightItalic.woff2) format('woff2');
+}
+
+/* SaolDisplay-Regular Font */
+@font-face {
+    font-family: 'SaolDisplay-Regular';
+    src: url(/Fonts/SaolDisplay-Regular.woff2) format('woff2');
+}
