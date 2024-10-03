@@ -1,5 +1,4 @@
-import React from "react";
-import { motion, MotionConfig, transform } from "framer-motion";
+import { motion, MotionConfig } from "framer-motion";
 
 const Marquee = ({ data, reverse = false }) => {
   return reverse ? (

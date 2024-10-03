@@ -1,5 +1,3 @@
-import React from "react";
-
 const Nav = () => {
   return (
     <nav className="h-fit w-[70%] mx-auto mt-14 flex justify-between items-center text-lg tracking-widest">

@@ -1,5 +1,3 @@
-import React from "react";
-
 const Ambassadors = ({ src, name, text }) => {
   return (
     <div className="w-[22%]">

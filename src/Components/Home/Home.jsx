@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import { IoPlay } from "react-icons/io5";
 import Expander from "./Expander";
 import Ambassadords from "./Ambassadors";
