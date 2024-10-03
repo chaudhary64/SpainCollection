@@ -3,6 +3,7 @@ import { IoPlay } from "react-icons/io5";
 import Expander from "./Expander";
 import Ambassadords from "./Ambassadors";
 import FixedImages from "./FixedImages";
+import Marquee from "./Marquee";
 import {
   motion,
   useMotionValueEvent,
@@ -50,6 +51,60 @@ const Home = () => {
       number: "03/",
       text: "Because of that blissful moment, after months of planning, when your clients thank you for giving them have the time of their lives.",
     },
+  ];
+  const marquees = [
+    [
+      {
+        id: 1,
+        text: "Madrid",
+      },
+      {
+        id: 2,
+        text: "Barcelona",
+      },
+      {
+        id: 3,
+        text: "Lisbon",
+      },
+      {
+        id: 4,
+        text: "Porto",
+      },
+      {
+        id: 5,
+        text: "Valencia",
+      },
+      {
+        id: 6,
+        text: "Algarve",
+      },
+    ],
+    [
+      {
+        id: 7,
+        text: "Culture",
+      },
+      {
+        id: 8,
+        text: "Food&Wine",
+      },
+      {
+        id: 9,
+        text: "Shopping",
+      },
+      {
+        id: 10,
+        text: "Fashion",
+      },
+      {
+        id: 11,
+        text: "Sports",
+      },
+      {
+        id: 12,
+        text: "Traditions",
+      },
+    ],
   ];
   const AmbassadorsRef = useRef(null);
   const ExpanderRef = useRef(null);
@@ -169,6 +224,12 @@ const Home = () => {
           </motion.div>
         </div>
       </div>
+      {/* Marquees */}
+      <div className="mt-80 flex flex-col overflow-hidden">
+        <Marquee key={"forwardMarquee"} data={marquees[0]} />
+        <Marquee key={"ReverseMarquee"} data={marquees[1]} reverse={true} />
+      </div>
+      <div className="h-screen w-full border-2 border-black"></div>
     </section>
   );
 };
