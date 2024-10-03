@@ -1,8 +1,7 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { IoPlay } from "react-icons/io5";
 import {
   motion,
-  useMotionValueEvent,
   useScroll,
   useTransform,
 } from "framer-motion";
@@ -22,7 +21,6 @@ const Expander = () => {
   );
   const top = useTransform(scrollYProgress, [0, 0.3], ["25%", "0%"]);
   const textTop = useTransform(scrollYProgress, [0, 0.3], ["0", "-110%"]);
-  useMotionValueEvent(scrollYProgress, "change", (l) => console.log(l));
   return (
     <section ref={ColumnsHolder} className="h-[300vh] relative mt-20">
       <motion.div className="h-screen flex justify-center items-center flex-nowrap gap-10 sticky top-0 overflow-clip">
