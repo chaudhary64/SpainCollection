@@ -1,10 +1,6 @@
 import { useRef } from "react";
 import { IoPlay } from "react-icons/io5";
-import {
-  motion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const Expander = () => {
   const ColumnsHolder = useRef(null);
@@ -13,7 +9,7 @@ const Expander = () => {
     target: ColumnsHolder,
     offset: [`start`, "end"],
   });
-  const width = useTransform(scrollYProgress, [0.3, 1], ["40%", "100%"]);
+  const width = useTransform(scrollYProgress, [0.3, 1], ["30%", "100%"]);
   const textThirdColumn = useTransform(
     scrollYProgress,
     [0, 0.8, 1],
@@ -31,13 +27,20 @@ const Expander = () => {
           }}
           className="w-full text-4xl font-light flex flex-col items-center absolute top-0 z-[1]"
         >
-          <div className="text-center">
+          <div className="text-center text-black/75">
             <p>Spain Collection is your expert partner for deluxe</p>
             <p>bespoke travel experiences in</p>
           </div>
-          <p className="mt-28 text-8xl italic">
-            Spain & <br /> Portugal
-          </p>
+          <div
+            style={{
+              fontFamily: "SaolDisplay-Italic",
+              lineHeight: "1",
+            }}
+            className="mt-8 text-[110px] text-center uppercase"
+          >
+            <p>Spain &</p>
+            <p>Portugal</p>
+          </div>
         </motion.div>
         {/*  1st Column */}
         <div className="shrink-0 h-[50%] w-[14%]">
