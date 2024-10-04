@@ -182,13 +182,13 @@ const Home = () => {
         </div>
       </motion.div>
       {/* Why Choose Us */}
-      <div className="border-4 border-black pt-[68vh] relative">
+      <div className="pt-[68vh] relative">
         {/* Text */}
         <div
           style={{
             lineHeight: "0.9",
           }}
-          className="text-center text-[170px] border-2 w-full absolute top-0 z-[2]"
+          className="text-center text-[170px] w-full absolute top-0 z-[2]"
         >
           <p className="text-red-600 italic">Why</p>
           <p>CHOOSE</p>
@@ -197,10 +197,7 @@ const Home = () => {
           <p>TION?</p>
         </div>
         {/* ImagesHolder */}
-        <div
-          ref={imageHolder}
-          className="flex justify-evenly border-4 border-red-600"
-        >
+        <div ref={imageHolder} className="flex justify-evenly">
           <motion.div
             style={{
               y: LeftAndRightImgY,
