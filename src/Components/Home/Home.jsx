@@ -226,7 +226,23 @@ const Home = () => {
         <Marquee key={"forwardMarquee"} data={marquees[0]} />
         <Marquee key={"ReverseMarquee"} data={marquees[1]} reverse={true} />
       </div>
-      <div className="h-screen w-full border-2 border-black"></div>
+      {/* Discover the Luxury */}
+      <div className="h-[120vh] w-full px-[10%] py-40 mx-auto bg-black text-white text-5xl">
+        <p>Discover the</p>
+        <p>
+          <span
+            style={{
+              fontFamily: "SaolDisplay-Italic",
+            }}
+            className="text-red-700"
+          >
+            luxury
+          </span>{" "}
+          of
+        </p>
+        <p>traveling with</p>
+        <p>us</p>
+      </div>
     </section>
   );
 };
