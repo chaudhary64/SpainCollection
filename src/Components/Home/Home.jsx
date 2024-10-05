@@ -10,6 +10,7 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
+import Cards from "./Cards";
 
 const Home = () => {
   const AmbassadorsData = [
@@ -199,6 +200,10 @@ const Home = () => {
 
   const LeftAndRightImgY = useTransform(imageHolderScrolled, [0, 1], [0, -100]);
   const MidImgY = useTransform(imageHolderScrolled, [0, 1], [0, 150]);
+
+  // For Dragging Cards
+  const DragConstraintRef = useRef(null);
+  const [isDragging, setDragging] = useState(true);
   return (
     <section>
       {/* This below div will act as a background */}
@@ -293,7 +298,10 @@ const Home = () => {
         <Marquee key={"ReverseMarquee"} data={marquees[1]} reverse={true} />
       </div>
       {/* Discover the Luxury */}
-      <div className="h-[120vh] w-full px-[10%] py-40 mx-auto bg-black text-white text-5xl">
+      <div
+        ref={DragConstraintRef}
+        className="h-[120vh] w-full px-[10%] py-40 mx-auto bg-black text-white text-5xl relative overflow-x-clip border-4"
+      >
         <p>Discover the</p>
         <p>
           <span
@@ -308,7 +316,26 @@ const Home = () => {
         </p>
         <p>traveling with</p>
         <p>us</p>
+        <motion.div
+          drag="x"
+          dragConstraints={DragConstraintRef}
+          dragMomentum={false}
+          dragTransition={{ bounceStiffness: 150, bounceDamping: 10 }}
+          onDragStart={() => setDragging(true)}
+          onDragEnd={() => setDragging(false)}
+          style={{
+            top: "50%",
+            left: 0,
+          }}
+          className="h-[75vh] flex flex-nowrap gap-7 pl-52 pr-36 absolute"
+        >
+          {cardsData.map((item) => (
+            <Cards key={item.id} {...item} isDragging={isDragging} />
+          ))}
+        </motion.div>
       </div>
+      <div className="h-screen w-full"></div>
+      <div className="h-screen w-full"></div>
     </section>
   );
 };
