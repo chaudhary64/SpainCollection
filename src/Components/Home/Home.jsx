@@ -203,7 +203,14 @@ const Home = () => {
 
   // For Dragging Cards
   const DragConstraintRef = useRef(null);
+  const cardsRef = useRef(null);
   const [isDragging, setDragging] = useState(true);
+  const { scrollYProgress: cardsRefX } = useScroll({
+    target: cardsRef,
+    offset: ["start end", "end start"],
+  });
+  const cardsRefXValue = useTransform(cardsRefX, [0, 1], [0, -200]);
+  useMotionValueEvent(cardsRefX, "change", (l) => console.log(l));
   return (
     <section>
       {/* This below div will act as a background */}
@@ -323,9 +330,10 @@ const Home = () => {
           dragTransition={{ bounceStiffness: 150, bounceDamping: 10 }}
           onDragStart={() => setDragging(true)}
           onDragEnd={() => setDragging(false)}
+          ref={cardsRef}
           style={{
             top: "50%",
-            left: 0,
+            left: cardsRefXValue,
           }}
           className="h-[75vh] flex flex-nowrap gap-7 pl-52 pr-36 absolute"
         >
