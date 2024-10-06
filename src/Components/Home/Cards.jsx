@@ -8,7 +8,6 @@ const Cards = ({
   src,
   isDragging,
 }) => {
-  console.log(isDragging);
   return (
     <div
       className="shrink-0 h-full w-96"

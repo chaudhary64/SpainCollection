@@ -210,7 +210,6 @@ const Home = () => {
     offset: ["start end", "end start"],
   });
   const cardsRefXValue = useTransform(cardsRefX, [0, 1], [0, -200]);
-  useMotionValueEvent(cardsRefX, "change", (l) => console.log(l));
   return (
     <section>
       {/* This below div will act as a background */}
