@@ -114,7 +114,7 @@ const Home = () => {
       weakHeading: "IN Barcelona",
       title: "Michelin Stars Galore",
       text: "Catalonia has some of the best restaurants in the world. Here is where the whole concept of cuisine was transformed, where the first laboratory of modern cuisine was created.",
-      src: "/public/images/Home/01-278.webp",
+      src: "/images/Home/01-278.webp",
     },
     {
       id: 2,
@@ -122,7 +122,7 @@ const Home = () => {
       weakHeading: "IN Andalusia",
       title: "Flamenco Fashion",
       text: "The world of Flamenco is so rich that it not only encompasses dancing, music and art, but it also has a huge influence on Spanish fashion. Experience for yourself how a flamenco dress is not simply something you 'wear', it is about posture, the way you move and the way you feel.",
-      src: "/public/images/Home/01-91.webp",
+      src: "/images/Home/01-91.webp",
     },
     {
       id: 3,
@@ -130,7 +130,7 @@ const Home = () => {
       weakHeading: "IN Barcelona",
       title: "Gaudi: Walking in The Footsteps of a Genius",
       text: "Gaudi, the genius of Modernist architecture, was a revolutionary Catalan artist who incorporated nature's geometry into wondrous shapes and buildings known and admired today across the world.",
-      src: "/public/images/Home/01-303.webp",
+      src: "/images/Home/01-303.webp",
     },
     {
       id: 4,
@@ -138,7 +138,7 @@ const Home = () => {
       weakHeading: "IN Portugal",
       title: "Snorkeling with Seahorses",
       text: "The waterways and lagoons of the Ria Formosa Natural Park are a delight in themselves but let's also discover the underwater world of the Algarve, and the area's fascinating seahorse population.",
-      src: "/public/images/Home/01-466.webp",
+      src: "/images/Home/01-466.webp",
     },
     {
       id: 5,
@@ -146,7 +146,7 @@ const Home = () => {
       weakHeading: "IN Madrid",
       title: "Cervantes, A Timeless Literary Journey",
       text: "Cervantes and his Don Quixote are arguably as universal as characters can get. No other fictional character has been so notorious and influential as the man from La Mancha.",
-      src: "/public/images/Home/01-182.webp",
+      src: "/images/Home/01-182.webp",
     },
     {
       id: 6,
@@ -154,7 +154,7 @@ const Home = () => {
       weakHeading: "IN Madrid",
       title: "Ceramics Of Talavera",
       text: "Talavera is home to communities of artisans who make ceramics for decorative and architectural use. The most significant aspect of their work, however, is that most of their manufacturing, decoration and glazing processes have remained unchanged since the 16th century.",
-      src: "/public/images/Home/009-scaled.webp",
+      src: "/images/Home/009-scaled.webp",
     },
     {
       id: 7,
@@ -162,7 +162,7 @@ const Home = () => {
       weakHeading: "IN Madrid",
       title: "A Real Madrid Experience",
       text: "Football is an obsession for the Spanish and seeing Real Madrid in action tops the must-see list for any sports aficionado visiting the capital of Spain.",
-      src: "/public/images/Home/01-213.webp",
+      src: "/images/Home/01-213.webp",
     },
     {
       id: 8,
@@ -170,7 +170,7 @@ const Home = () => {
       weakHeading: "IN Andalusia",
       title: "Flamenco Catwalk",
       text: "The catwalk is where fashion comes alive. Be a model for a day and lose yourself in the backstage world of nerves and frenetic preparations before stepping out into the spotlights and onto the catwalk.",
-      src: "/public/images/Home/01-96.webp",
+      src: "/images/Home/01-96.webp",
     },
   ];
   const AmbassadorsRef = useRef(null);
