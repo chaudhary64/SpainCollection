@@ -4,6 +4,7 @@ import Expander from "./Expander";
 import Ambassadords from "./Ambassadors";
 import FixedImages from "./FixedImages";
 import Marquee from "./Marquee";
+import Footer from "../Footer/Footer";
 import {
   motion,
   useMotionValueEvent,
@@ -341,8 +342,7 @@ const Home = () => {
           ))}
         </motion.div>
       </div>
-      <div className="h-screen w-full"></div>
-      <div className="h-screen w-full"></div>
+      <Footer />
     </section>
   );
 };
