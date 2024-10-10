@@ -16,10 +16,10 @@ const Cards = ({
         backgroundSize: "cover",
         backgroundPosition: "center",
         transform: `${isDragging ? "scale(0.95)" : "scale(1)"}`,
-        transition: "all .8s cubic-bezier(0.050,0.760,0.380,1.015)"
+        transition: "all .8s cubic-bezier(0.050,0.760,0.380,1.015)",
       }}
     >
-      <div className="h-full w-full bg-black opacity-60 relative">
+      <div className="h-full w-full bg-[#0000008c] relative">
         <div className="p-8 w-full absolute bottom-0">
           <p
             style={{
