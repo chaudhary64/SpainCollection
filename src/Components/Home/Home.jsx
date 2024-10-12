@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { IoPlay } from "react-icons/io5";
 import Expander from "./Expander";
 import Ambassadords from "./Ambassadors";
@@ -185,6 +185,9 @@ const Home = () => {
     target: ExpanderRef,
     offset: ["start", "end"],
   });
+  useEffect(() => {
+    if (scrollYProgressAmbassador.get() >= 0.1) setTheme("white");
+  }, []);
   useMotionValueEvent(scrollYProgressAmbassador, "change", (l) =>
     l >= 0.1 ? setTheme("white") : setTheme("black")
   );
