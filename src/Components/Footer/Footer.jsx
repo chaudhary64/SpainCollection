@@ -51,9 +51,9 @@ const Footer = () => {
         <div className="h-0.5 w-full bg-[#DEDEDE]"></div>
       </div>
       <div className="h-16 mt-5 mix-blend-difference flex justify-center gap-10">
-        <img src="/public/images/Home/gobierno_vasco__white.webp" alt="" />
-        <img src="/public/images/Home/luxury_spain_white.webp" alt="" />
-        <img src="/public/images/Home/Captura-de-pantalla.webp" alt="" />
+        <img src="/images/Home/gobierno_vasco__white.webp" alt="" />
+        <img src="/images/Home/luxury_spain_white.webp" alt="" />
+        <img src="/images/Home/Captura-de-pantalla.webp" alt="" />
       </div>
       <div className="w-fit mt-16 mx-auto text-sm font-['Inter'] text-[#292929] underline tracking-wide flex items-center gap-3.5">
         <span>Privacy Policy</span>
