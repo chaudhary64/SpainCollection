@@ -36,7 +36,7 @@ const Expander = () => {
               fontFamily: "SaolDisplay-Italic",
               lineHeight: "1",
             }}
-            className="mt-8 text-[110px] text-center uppercase"
+            className="mt-8 text-[110px] text-center text-black/90 uppercase"
           >
             <p>Spain &</p>
             <p>Portugal</p>
