@@ -6,9 +6,10 @@ const Marquee = ({ data, reverse = false }) => {
     <section
       style={{
         fontFamily: "IbarraRealNova_Italic",
+        lineHeight: "1",
       }}
       key="reverse"
-      className="w-fit flex text-[100px] text-[#242422]"
+      className="w-fit flex text-[85px] text-[#242422f3]"
     >
       <MotionConfig
         animate={{
@@ -69,9 +70,10 @@ const Marquee = ({ data, reverse = false }) => {
     <section
       style={{
         fontFamily: "IbarraRealNova_Italic",
+        lineHeight: "1",
       }}
       key="forward"
-      className="w-fit flex text-[100px] text-[#242422]"
+      className="w-fit flex text-[85px] text-[#242422f3]"
     >
       <MotionConfig
         animate={{

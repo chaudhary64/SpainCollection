@@ -303,14 +303,14 @@ const Home = () => {
         </div>
       </div>
       {/* Marquees */}
-      <div className="mt-80 flex flex-col overflow-hidden">
+      <div className="mt-[360px]  flex flex-col gap-10 overflow-x-clip">
         <Marquee key={"forwardMarquee"} data={marquees[0]} />
         <Marquee key={"ReverseMarquee"} data={marquees[1]} reverse={true} />
       </div>
       {/* Discover the Luxury */}
       <div
         ref={DragConstraintRef}
-        className="h-[120vh] w-full px-[10%] py-40 mx-auto bg-black text-white text-5xl relative overflow-x-clip"
+        className="h-[120vh] w-full px-[10%] py-40 mt-16 mx-auto bg-black text-white text-5xl relative overflow-x-clip"
       >
         <p>Discover the</p>
         <p>
