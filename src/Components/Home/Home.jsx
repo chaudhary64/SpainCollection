@@ -230,7 +230,9 @@ const Home = () => {
       </motion.div>
       {/* About US */}
       <div className="pt-64 pb-28">
-        <p className="text-[#BD1826] text-center text-lg">ABOUT US</p>
+        <p className="text-[#BF1826] text-center text-base font-[400] font-['Inter'] tracking-widest">
+          ABOUT US
+        </p>
         <div className="w-[50%] mx-auto mt-20 relative">
           <img
             className="object-cover opacity-40"
@@ -248,7 +250,7 @@ const Home = () => {
       </div>
       {/* Ambassadors */}
       <motion.div ref={AmbassadorsRef} className="pb-44">
-        <p className="text-[#BD1826] text-center text-lg uppercase">
+        <p className="text-[#BF1826] text-center text-base font-[400] font-['Inter'] tracking-widest uppercase">
           Ambassadors
         </p>
         <div
