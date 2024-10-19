@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
@@ -12,13 +13,41 @@ const Footer = () => {
         {/* Left Line */}
         <div className="h-[1px] w-20 bg-[#D24B4B]"></div>
         <div>
-          <p>
-            Contact{" "}
-            <span className="text-[#D24B4B] font-['SaolDisplay-Italic']">
-              With
-            </span>
-          </p>
-          <p>Spain Collection</p>
+          {/* Upper Para */}
+          <div className="overflow-clip">
+            <motion.p
+              initial={{
+                transform: "translateY(100%)",
+              }}
+              whileInView={{
+                transform: "translateY(0%)",
+              }}
+              transition={{
+                duration: 0.4,
+              }}
+            >
+              Contact{" "}
+              <span className="text-[#D24B4B] font-['SaolDisplay-Italic']">
+                With
+              </span>
+            </motion.p>
+          </div>
+          {/* Lower Para */}
+          <div className="overflow-clip">
+            <motion.p
+              initial={{
+                transform: "translateY(100%)",
+              }}
+              whileInView={{
+                transform: "translateY(0%)",
+              }}
+              transition={{
+                duration: 0.4,
+              }}
+            >
+              Spain Collection
+            </motion.p>
+          </div>
         </div>
         {/* Right Line */}
         <div className="h-[1px] w-20 bg-[#D24B4B]"></div>
