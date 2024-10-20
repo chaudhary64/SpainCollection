@@ -202,7 +202,7 @@ const Home = () => {
     offset: ["start end", "end start"],
   });
 
-  const LeftAndRightImgY = useTransform(imageHolderScrolled, [0, 1], [0, -100]);
+  const LeftAndRightImgY = useTransform(imageHolderScrolled, [0, 1], [0, -75]);
   const MidImgY = useTransform(imageHolderScrolled, [0, 1], [0, 150]);
 
   // For Dragging Cards
