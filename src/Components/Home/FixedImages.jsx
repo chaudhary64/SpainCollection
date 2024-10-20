@@ -7,11 +7,21 @@ const FixedImages = ({ src, number, text }) => {
     target: imageRef,
     offset: ["start end", "end start"],
   });
-  const positionY = useTransform(scrollYProgress, [0, 1], [0, -80]);
+  const positionY = useTransform(scrollYProgress, [0, 1], ["50%", "0%"]);
+  const positionYBottom = useTransform(scrollYProgress, [0, 1], ["50%", "0%"]);
   return (
     <div ref={imageRef} className="w-[310px] text-lg">
-      <div className="h-[70vh] w-full overflow-clip">
-        <motion.img style={{ y: positionY }} src={src} alt="" />
+      <div className="h-[510px] w-full overflow-clip relative bg-red-500">
+        <motion.img
+          style={{
+            position: "absolute",
+            bottom: positionYBottom,
+            y: positionY,
+          }}
+          className="absolute"
+          src={src}
+          alt=""
+        />
       </div>
       <div className="mt-5">
         <p className="text-2xl text-[#0E0E0D]/95">{number}</p>
