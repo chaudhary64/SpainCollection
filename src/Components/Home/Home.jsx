@@ -239,7 +239,7 @@ const Home = () => {
             src="/images/Home/caratula_video_abene_new.webp"
             alt=""
           />
-          <div className="h-[72px] w-[72px] border-2 border-white rounded-full absolute top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center">
+          <div className="h-[72px] w-[72px] border-2 border-[#D6D6D6] rounded-full absolute top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center">
             <IoPlay className="text-white h-5 " />
           </div>
         </div>
