@@ -1,10 +1,29 @@
+import { NavLink } from "react-router-dom";
 const Nav = () => {
   return (
     <nav className="h-fit w-[70%] mx-auto mt-14 flex justify-between items-center text-lg tracking-widest">
       {/* Left Part */}
       <div className="flex gap-12">
-        <a href="#">Home</a>
-        <a href="#">Collections</a>
+        <NavLink
+          style={(e) => {
+            return {
+              color: e.isActive ? "#C42A37" : "#000039",
+            };
+          }}
+          to="/"
+        >
+          Home
+        </NavLink>
+        <NavLink
+          style={(e) => {
+            return {
+              color: e.isActive ? "#C42A37" : "#000039",
+            };
+          }}
+          to="/collections"
+        >
+          Collections
+        </NavLink>
       </div>
       <svg
         version="1.1"
@@ -163,8 +182,26 @@ const Nav = () => {
       </svg>
       {/* Right Part */}
       <div className="flex gap-12">
-        <a href="#">Curators</a>
-        <a href="#">Journal</a>
+        <NavLink
+          style={(e) => {
+            return {
+              color: e.isActive ? "#C42A37" : "#000039",
+            };
+          }}
+          to="/journal"
+        >
+          Journal
+        </NavLink>
+        <NavLink
+          style={(e) => {
+            return {
+              color: e.isActive ? "#C42A37" : "#000039",
+            };
+          }}
+          to="/curators"
+        >
+          Curators
+        </NavLink>
       </div>
     </nav>
   );
