@@ -1,7 +1,8 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 
 const Footer = () => {
+  const controls = useAnimation();
   return (
     <footer className="mt-96 pb-20">
       <div
@@ -52,9 +53,23 @@ const Footer = () => {
         {/* Right Line */}
         <div className="h-[1px] w-20 bg-[#D24B4B]"></div>
       </div>
-      <p className="mt-16 text-center text-[#BF1826] text-3xl tracking-wider">
-        travel@spaincollection.com
-      </p>
+      <div
+        onMouseEnter={() =>
+          controls.start({ width: "100%", transition: { duration: 0.8 } })
+        }
+        onMouseLeave={() =>
+          controls.start({ width: "0%", transition: { duration: 0.8 } })
+        }
+        className="mt-16 py-1.5 w-fit mx-auto relative cursor-pointer"
+      >
+        <p className="text-center text-[#BF1826] text-3xl tracking-wider">
+          travel@spaincollection.com
+        </p>
+        <motion.div
+          animate={controls}
+          className="absolute top-full h-[1.5px] bg-[#BF1826]"
+        ></motion.div>
+      </div>
       <div className="w-fit mt-3.5 mx-auto text-sm text-[#292929] underline tracking-wider flex items-center gap-3.5 font-['Inter']">
         <span>Instagram</span>
         <div className="h-0.5 w-0.5 rounded-full bg-black"></div>
