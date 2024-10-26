@@ -55,10 +55,18 @@ const Footer = () => {
       </div>
       <div
         onMouseEnter={() =>
-          controls.start({ width: "100%", transition: { duration: 0.8 } })
+          controls.start({
+            scaleX: 1,
+            transformOrigin: "left",
+            transition: { duration: 0.8 },
+          })
         }
         onMouseLeave={() =>
-          controls.start({ width: "0%", transition: { duration: 0.8 } })
+          controls.start({
+            scaleX: 0,
+            transformOrigin: "right",
+            transition: { duration: 0.8 },
+          })
         }
         className="mt-16 py-1.5 w-fit mx-auto relative cursor-pointer"
       >
@@ -67,7 +75,10 @@ const Footer = () => {
         </p>
         <motion.div
           animate={controls}
-          className="absolute top-full h-[1.5px] bg-[#BF1826]"
+          initial={{
+            scaleX: 0,
+          }}
+          className="absolute top-full h-[1.5px] w-full bg-[#BF1826]"
         ></motion.div>
       </div>
       <div className="w-fit mt-3.5 mx-auto text-sm text-[#292929] underline tracking-wider flex items-center gap-3.5 font-['Inter']">
@@ -87,7 +98,7 @@ const Footer = () => {
         Txorrokopunta Ibilbidea 2, Bj F. 48360 Mundaka (Vizcaya) Phone: +34
         944.424.689
       </p>
-      <div className="w-[80%] mt-8 mx-auto flex items-center gap-10">
+      <div className="mt-8 mx-auto flex items-center gap-10">
         <div className="h-0.5 w-full bg-[#DEDEDE]"></div>
         <span className="whitespace-nowrap text-base font-['Inter'] font-[400] tracking-widest uppercase text-[#BF1826]">
           Proud member of
