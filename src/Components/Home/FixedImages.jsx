@@ -8,10 +8,11 @@ const FixedImages = ({
   imageHolderScrolled: scrollYProgress,
   width,
   height,
+  theme = "black",
 }) => {
   const imageRef = useRef(null);
-  const positionY = useTransform(scrollYProgress, [0, 1], ["50%", "100%"]);
-  const positionYBottom = useTransform(scrollYProgress, [0, 1], ["50%", "100%"]);
+  const positionY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const positionYBottom = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   return (
     <div
       ref={imageRef}
@@ -38,10 +39,19 @@ const FixedImages = ({
         />
       </div>
       <div className="mt-5">
-        <p className="text-2xl text-[#0E0E0D]/95">{number}</p>
-        <p className="mt-0.5 text-xl text-[#0E0E0D]/90 tracking-wider">
-          {text}
-        </p>
+        {theme == "black" ? (
+          <>
+            <p className="text-2xl text-[#0E0E0D]/95">{number}</p>
+            <p className="mt-0.5 text-xl text-[#0E0E0D]/90 tracking-wider">
+              {text}
+            </p>
+          </>
+        ) : (
+          <>
+            <p className="text-5xl text-white/95">{number}</p>
+            <p className="mt-3 text-lg text-white/90 tracking-wider">{text}</p>
+          </>
+        )}
       </div>
     </div>
   );
