@@ -202,8 +202,6 @@ const Home = () => {
     offset: ["start end", "end start"],
   });
 
-  useMotionValueEvent(imageHolderScrolled, "change", (l) => console.log(l));
-
   const LeftAndRightImgY = useTransform(imageHolderScrolled, [0, 1], [0, -75]);
   const MidImgY = useTransform(imageHolderScrolled, [0, 1], [0, 150]);
 
