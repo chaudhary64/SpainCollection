@@ -1,17 +1,31 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-const FixedImages = ({ src, number, text }) => {
+const FixedImages = ({
+  src,
+  number,
+  text,
+  imageHolderScrolled: scrollYProgress,
+  width,
+  height,
+}) => {
   const imageRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: imageRef,
-    offset: ["start end", "end start"],
-  });
-  const positionY = useTransform(scrollYProgress, [0, 1], ["50%", "0%"]);
-  const positionYBottom = useTransform(scrollYProgress, [0, 1], ["50%", "0%"]);
+  const positionY = useTransform(scrollYProgress, [0, 1], ["50%", "100%"]);
+  const positionYBottom = useTransform(scrollYProgress, [0, 1], ["50%", "100%"]);
   return (
-    <div ref={imageRef} className="w-[310px] text-lg">
-      <div className="h-[510px] w-full overflow-clip relative bg-red-500">
+    <div
+      ref={imageRef}
+      style={{
+        width: width + "px",
+      }}
+      className="text-lg"
+    >
+      <div
+        style={{
+          height: height + "px",
+        }}
+        className="w-full overflow-clip relative bg-red-500"
+      >
         <motion.img
           style={{
             position: "absolute",

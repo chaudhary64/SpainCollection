@@ -202,6 +202,8 @@ const Home = () => {
     offset: ["start end", "end start"],
   });
 
+  useMotionValueEvent(imageHolderScrolled, "change", (l) => console.log(l));
+
   const LeftAndRightImgY = useTransform(imageHolderScrolled, [0, 1], [0, -75]);
   const MidImgY = useTransform(imageHolderScrolled, [0, 1], [0, 150]);
 
@@ -286,21 +288,39 @@ const Home = () => {
               y: LeftAndRightImgY,
             }}
           >
-            <FixedImages key={fixedImages[0].id} {...fixedImages[0]} />
+            <FixedImages
+              key={fixedImages[0].id}
+              {...fixedImages[0]}
+              imageHolderScrolled={imageHolderScrolled}
+              height={510}
+              width={310}
+            />
           </motion.div>
           <motion.div
             style={{
               y: MidImgY,
             }}
           >
-            <FixedImages key={fixedImages[1].id} {...fixedImages[1]} />
+            <FixedImages
+              key={fixedImages[1].id}
+              {...fixedImages[1]}
+              imageHolderScrolled={imageHolderScrolled}
+              height={510}
+              width={310}
+            />
           </motion.div>
           <motion.div
             style={{
               y: LeftAndRightImgY,
             }}
           >
-            <FixedImages key={fixedImages[2].id} {...fixedImages[2]} />
+            <FixedImages
+              key={fixedImages[2].id}
+              {...fixedImages[2]}
+              imageHolderScrolled={imageHolderScrolled}
+              height={510}
+              width={310}
+            />
           </motion.div>
         </div>
       </div>
