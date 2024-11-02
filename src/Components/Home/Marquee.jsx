@@ -1,9 +1,9 @@
 import { motion, MotionConfig } from "framer-motion";
 
 const Marquee = ({ data, reverse = false }) => {
-  return reverse ? (
+  return (
     // For reverse = true prop
-    <section
+    <motion.section
       style={{
         fontFamily: "IbarraRealNova_Italic",
         lineHeight: "1",
@@ -11,106 +11,99 @@ const Marquee = ({ data, reverse = false }) => {
       key="reverse"
       className="w-fit flex text-[85px] text-[#242422f3]"
     >
-      <MotionConfig
-        animate={{
-          transform: "translateX(0%)",
-          transition: {
-            duration: 30,
-            repeat: Infinity,
-            ease: "linear",
-          },
-        }}
-      >
-        <motion.div
-          initial={{
+      {reverse ? (
+        <MotionConfig
+          animate={{
             transform: "translateX(-100%)",
+            transition: {
+              duration: 30,
+              repeat: Infinity,
+              ease: "linear",
+            },
           }}
-          className="w-fit flex justify-around"
-          key={Math.random()}
         >
-          {data.map((item, index) => (
-            <div key={index} className="flex justify-center items-center">
-              <span className="shrink-0">{item.text}</span>
-              <div className="shrink-0 h-0.5 w-14 mx-5 bg-black"></div>
-            </div>
-          ))}
-        </motion.div>
-        <motion.div
-          initial={{
-            transform: "translateX(-100%)",
+          <motion.div
+            initial={{
+              transform: "translateX(-200%)",
+            }}
+            className="w-fit flex justify-around"
+            key={Math.random()}
+          >
+            {data.map((item, index) => (
+              <div key={index} className="flex justify-center items-center">
+                <span className="shrink-0">{item.text}</span>
+                <div className="shrink-0 h-0.5 w-14 mx-5 bg-black"></div>
+              </div>
+            ))}
+          </motion.div>
+          <motion.div
+            initial={{
+              transform: "translateX(-200%)",
+            }}
+            className="w-fit flex justify-around"
+            key={Math.random()}
+          >
+            {data.map((item, index) => (
+              <div key={index} className="flex justify-center items-center">
+                <span className="shrink-0">{item.text}</span>
+                <div className="shrink-0 h-0.5 w-14 mx-5 bg-black"></div>
+              </div>
+            ))}
+          </motion.div>
+          <motion.div
+            initial={{
+              transform: "translateX(-200%)",
+            }}
+            className="w-fit flex justify-around"
+            key={Math.random()}
+          >
+            {data.map((item, index) => (
+              <div key={index} className="flex justify-center items-center">
+                <span className="shrink-0">{item.text}</span>
+                <div className="shrink-0 h-0.5 w-14 mx-5 bg-black"></div>
+              </div>
+            ))}
+          </motion.div>
+        </MotionConfig>
+      ) : (
+        // For reverse = false prop
+        <MotionConfig
+          animate={{
+            x: "-100%",
+            transition: {
+              duration: 30,
+              repeat: Infinity,
+              ease: "linear",
+            },
           }}
-          className="w-fit flex justify-around"
-          key={Math.random()}
         >
-          {data.map((item, index) => (
-            <div key={index} className="flex justify-center items-center">
-              <span className="shrink-0">{item.text}</span>
-              <div className="shrink-0 h-0.5 w-14 mx-5 bg-black"></div>
-            </div>
-          ))}
-        </motion.div>
-        <motion.div
-          initial={{
-            transform: "translateX(-100%)",
-          }}
-          className="w-fit flex justify-around"
-          key={Math.random()}
-        >
-          {data.map((item, index) => (
-            <div key={index} className="flex justify-center items-center">
-              <span className="shrink-0">{item.text}</span>
-              <div className="shrink-0 h-0.5 w-14 mx-5 bg-black"></div>
-            </div>
-          ))}
-        </motion.div>
-      </MotionConfig>
-    </section>
-  ) : (
-    // For reverse = false prop
-    <section
-      style={{
-        fontFamily: "IbarraRealNova_Italic",
-        lineHeight: "1",
-      }}
-      key="forward"
-      className="w-fit flex text-[85px] text-[#242422f3]"
-    >
-      <MotionConfig
-        animate={{
-          x: "-100%",
-          transition: {
-            duration: 30,
-            repeat: Infinity,
-            ease: "linear",
-          },
-        }}
-      >
-        <motion.div className="w-fit flex justify-around">
-          {data.map((item, index) => (
-            <div key={index} className="flex justify-center items-center">
-              <span className="shrink-0">{item.text}</span>
-              <div className="shrink-0 h-0.5 w-14 mx-5 bg-black"></div>
-            </div>
-          ))}
-        </motion.div>
-        <motion.div className="w-fit flex justify-around">
-          {data.map((item, index) => (
-            <div key={index} className="flex justify-center items-center">
-              <span className="shrink-0">{item.text}</span>
-              <div className="shrink-0 h-0.5 w-14 mx-5 bg-black"></div>
-            </div>
-          ))}
-        </motion.div>
-        <motion.div className="w-fit flex justify-around">
-          {data.map((item, index) => (
-            <div key={index} className="flex justify-center items-center">
-              <span className="shrink-0">{item.text}</span>
-              <div className="shrink-0 h-0.5 w-14 mx-5 bg-black"></div>
-            </div>
-          ))}
-        </motion.div>
-      </MotionConfig>
-    </section>
+          <motion.div className="w-fit flex justify-around">
+            {data.map((item, index) => (
+              <div key={index} className="flex justify-center items-center">
+                <span className="shrink-0">{item.text}</span>
+                <div className="shrink-0 h-0.5 w-14 mx-5 bg-black"></div>
+              </div>
+            ))}
+          </motion.div>
+          <motion.div className="w-fit flex justify-around">
+            {data.map((item, index) => (
+              <div key={index} className="flex justify-center items-center">
+                <span className="shrink-0">{item.text}</span>
+                <div className="shrink-0 h-0.5 w-14 mx-5 bg-black"></div>
+              </div>
+            ))}
+          </motion.div>
+          <motion.div className="w-fit flex justify-around">
+            {data.map((item, index) => (
+              <div key={index} className="flex justify-center items-center">
+                <span className="shrink-0">{item.text}</span>
+                <div className="shrink-0 h-0.5 w-14 mx-5 bg-black"></div>
+              </div>
+            ))}
+          </motion.div>
+        </MotionConfig>
+      )}
+    </motion.section>
   );
 };
 

@@ -214,6 +214,16 @@ const Home = () => {
     offset: ["start end", "end start"],
   });
   const cardsRefXValue = useTransform(cardsRefX, [0, 1], [0, -200]);
+
+  // For Moving Marquee with scroll
+  const MarqueeContainer = useRef(null);
+  const { scrollYProgress: scrollMarquee } = useScroll({
+    target: MarqueeContainer,
+    offset: ["start end", "end start"],
+  });
+  const forwardMarqueeX = useTransform(scrollMarquee, [0, 1], ["0%", "-40%"]);
+  const reverseMarqueeX = useTransform(scrollMarquee, [0, 1], ["0%", "40%"]);
+
   return (
     <section>
       {/* This below div will act as a background */}
@@ -323,9 +333,24 @@ const Home = () => {
         </div>
       </div>
       {/* Marquees */}
-      <div className="mt-[360px]  flex flex-col gap-10 overflow-x-clip">
-        <Marquee key={"forwardMarquee"} data={marquees[0]} />
-        <Marquee key={"ReverseMarquee"} data={marquees[1]} reverse={true} />
+      <div
+        ref={MarqueeContainer}
+        className="mt-[360px] flex flex-col gap-10 overflow-x-clip"
+      >
+        <motion.div
+          style={{
+            x: forwardMarqueeX,
+          }}
+        >
+          <Marquee key={"forwardMarquee"} data={marquees[0]} />
+        </motion.div>
+        <motion.div
+          style={{
+            x: reverseMarqueeX,
+          }}
+        >
+          <Marquee key={"ReverseMarquee"} data={marquees[1]} reverse={true} />
+        </motion.div>
       </div>
       {/* Discover the Luxury */}
       <div
