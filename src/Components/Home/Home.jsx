@@ -208,7 +208,7 @@ const Home = () => {
   // For Dragging Cards
   const DragConstraintRef = useRef(null);
   const cardsRef = useRef(null);
-  const [isDragging, setDragging] = useState(true);
+  const [isDragging, setDragging] = useState(false);
   const { scrollYProgress: cardsRefX } = useScroll({
     target: cardsRef,
     offset: ["start end", "end start"],
@@ -383,7 +383,7 @@ const Home = () => {
             top: "50%",
             left: cardsRefXValue,
           }}
-          className="h-[75vh] flex flex-nowrap gap-7 pl-52 pr-36 absolute"
+          className="h-[550px] flex flex-nowrap gap-7 pl-52 pr-36 absolute"
         >
           {cardsData.map((item) => (
             <Cards key={item.id} {...item} isDragging={isDragging} />
