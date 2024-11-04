@@ -9,7 +9,7 @@ const Footer = () => {
         style={{
           lineHeight: "0.95",
         }}
-        className="w-[80%] mx-auto text-center uppercase text-[107px] flex items-center gap-5"
+        className="w-fit mx-auto text-center uppercase text-[107px] flex items-center gap-5"
       >
         {/* Left Line */}
         <div className="h-[1px] w-20 bg-[#D24B4B]"></div>
