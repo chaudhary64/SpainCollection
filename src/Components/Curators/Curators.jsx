@@ -105,6 +105,21 @@ const Curators = () => {
           />
         </motion.div>
       </div>
+      {/* Our outstanding team */}
+      <div
+        style={{
+          lineHeight: "1",
+        }}
+        className="mt-32 pb-48 flex flex-col justify-center items-center text-[107px] text-white uppercase relative bordeer-4 border-red-500"
+      >
+        <span>Our</span>
+        <span className="text-[#BF1826] font-[SaolDisplay-Italic]">
+          Outstanding
+        </span>
+        <span>Team</span>
+        <div className="mt-10 h-40 w-[1px] bg-[#7A121A] relative z-10"></div>
+        <img src="/images/Curators/gurus_abene.webp" className="w-96 absolute top-full -translate-y-1/2" alt="" />
+      </div>
     </div>
   );
 };
