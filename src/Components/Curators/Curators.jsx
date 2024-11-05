@@ -51,9 +51,11 @@ const Curators = () => {
         <p>experience</p>
       </div>
       {/* ImagesHolder */}
+      {/* // The pb-60 class is applied to ensure that the extra space created by the downward shift of MidImgY is effectively covered.
+       */}
       <div
         ref={imageHolder}
-        className="mt-20 pt-32 flex justify-evenly relative"
+        className="mt-20 pt-32 pb-60 flex justify-evenly relative"
       >
         {/* Vertical Line */}
         <div className="h-36 w-[1px] bg-white absolute top-0 left-1/2 -translate-x-1/2"></div>
