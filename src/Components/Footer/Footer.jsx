@@ -26,6 +26,7 @@ const Footer = () => {
               transition={{
                 duration: 0.4,
               }}
+              viewport={{ once: true }}
             >
               Contact{" "}
               <span className="text-[#D24B4B] font-['SaolDisplay-Italic']">
@@ -45,6 +46,7 @@ const Footer = () => {
               transition={{
                 duration: 0.4,
               }}
+              viewport={{ once: true }}
             >
               Spain Collection
             </motion.p>
