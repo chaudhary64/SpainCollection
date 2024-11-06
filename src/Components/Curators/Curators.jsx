@@ -112,11 +112,60 @@ const Curators = () => {
         }}
         className="mt-32 pb-48 flex flex-col justify-center items-center text-[107px] text-white uppercase relative bordeer-4 border-red-500"
       >
-        <span>Our</span>
-        <span className="text-[#BF1826] font-[SaolDisplay-Italic]">
-          Outstanding
-        </span>
-        <span>Team</span>
+        <div className="overflow-clip">
+          <motion.p
+            initial={{
+              transform: "translateY(100%)",
+            }}
+            whileInView={{
+              transform: "translateY(0%)",
+            }}
+            transition={{
+              duration: 0.75,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            viewport={{ once: true }}
+          >
+            Our
+          </motion.p>
+        </div>
+        <div className="overflow-clip">
+          <motion.p
+            initial={{
+              transform: "translateY(100%)",
+            }}
+            whileInView={{
+              transform: "translateY(0%)",
+            }}
+            transition={{
+              duration: 0.75,
+              delay: 0.15,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            viewport={{ once: true }}
+            className="text-[#BF1826] font-[SaolDisplay-Italic]"
+          >
+            Outstanding
+          </motion.p>
+        </div>
+        <div className="overflow-clip">
+          <motion.p
+            initial={{
+              transform: "translateY(100%)",
+            }}
+            whileInView={{
+              transform: "translateY(0%)",
+            }}
+            transition={{
+              duration: 0.75,
+              delay: 0.3,
+              ease: [0.16, 1, 0.3, 1],
+            }}
+            viewport={{ once: true }}
+          >
+            Team
+          </motion.p>
+        </div>
         <div className="mt-10 h-40 w-[1px] bg-[#7A121A] relative z-10"></div>
         <img
           src="/images/Curators/gurus_abene.webp"
