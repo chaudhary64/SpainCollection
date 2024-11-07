@@ -1,6 +1,11 @@
 import React from "react";
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import FixedImages from "../Home/FixedImages";
 
 const Curators = () => {
@@ -34,6 +39,15 @@ const Curators = () => {
 
   const LeftAndRightImgY = useTransform(imageHolderScrolled, [0, 1], [0, -75]);
   const MidImgY = useTransform(imageHolderScrolled, [0, 1], [130, 250]);
+
+  // For Image inside Our Outstanding Team
+  const imageRef = useRef(null);
+  const { scrollYProgress: ImgYScroll } = useScroll({
+    target: imageRef,
+    offset: ["start end", "end start"],
+  });
+  const ImgY = useTransform(ImgYScroll, [0, 1], [0, 50]);
+  useMotionValueEvent(ImgYScroll, "change", (l) => console.log(l));
   return (
     <div className="bg-black">
       <div
@@ -110,7 +124,8 @@ const Curators = () => {
         style={{
           lineHeight: "1",
         }}
-        className="mt-32 pb-48 flex flex-col justify-center items-center text-[107px] text-white uppercase relative bordeer-4 border-red-500"
+        // The pb-14 class is applied to ensure that the extra space created by the downward shift of ImgY is effectively covered.
+        className="mt-32 pb-14 flex flex-col justify-center items-center text-[107px] text-white uppercase"
       >
         <div className="overflow-clip">
           <motion.p
@@ -167,9 +182,14 @@ const Curators = () => {
           </motion.p>
         </div>
         <div className="mt-10 h-40 w-[1px] bg-[#7A121A] relative z-10"></div>
-        <img
+        <motion.img
+          ref={imageRef}
+          style={{
+            y: ImgY,
+          }}
           src="/images/Curators/gurus_abene.webp"
-          className="w-96 absolute top-full -translate-y-1/2"
+          // The -mt-20 is applied so that the center of the line is aligned with the center of the image
+          className="w-96 -mt-20"
           alt=""
         />
       </div>
