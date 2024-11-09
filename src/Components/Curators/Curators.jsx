@@ -193,6 +193,31 @@ const Curators = () => {
           alt=""
         />
       </div>
+      {/* Info */}
+      {/* The -mt-60 margin is applied to ensure that, as the image scrolls downward, it partially overlaps the red background div. This approach creates a layered effect, adding depth and visual cohesion to the design */}
+      <div className="-mt-60 pt-72 pb-16 bg-[#BF1826] text-white text-4xl text-center font-[300] tracking-wider">
+        <div>
+          <p>One of the things I learned about being leader is that some</p>
+          <p>people are only motivated by money, or they are only</p>
+          <p>motivated by power or some kind of incentive. But people</p>
+          <p>also get inspired by stories. Here I share just a few thoughts</p>
+          <p>from my team about Spain & Portugal Collection…</p>
+        </div>
+        <p className="mt-10">
+          We really appreciate your considering us as partners!
+        </p>
+        <div className="mt-16 flex flex-col font-[Inter]">
+          <span className="text-xl font-[400]">Abene Mendizabal</span>
+          <span className="text-sm tracking-wider">
+            Founder and CEO Spain Collection
+          </span>
+        </div>
+        <img
+          src="/images/Curators/gurus_sign.webp"
+          className="mx-auto mt-16 w-72"
+          alt=""
+        />
+      </div>
     </div>
   );
 };
