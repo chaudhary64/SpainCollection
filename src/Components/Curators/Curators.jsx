@@ -7,6 +7,7 @@ import {
   useTransform,
 } from "framer-motion";
 import FixedImages from "../Home/FixedImages";
+import OverlapingCards from "./OverlapingCards";
 
 const Curators = () => {
   const fixedImages = [
@@ -27,6 +28,24 @@ const Curators = () => {
       src: "/images/Curators/values.webp",
       number: "Values",
       text: "As a company we believe in a life-affirming, sense of purpose. We look for engagement, innovation, diversity and inclusion. We are mindful of others and sensitive to the environment. Communication is real, open and transparent, and our working relationships are mutually beneficial and respectful It is not what we do but the way we do it",
+    },
+  ];
+  const overlappingCardsData = [
+    {
+      id: 1,
+      name: "Juan Carlos Tejeda",
+      text: "Collection Curator - Spain and Portugal",
+      mainImg: "/images/Curators/jc.webp",
+      maskImg: "/images/Curators/02-99.webp",
+      left: true,
+    },
+    {
+      id: 2,
+      name: "Sonia Pájaro",
+      text: "Collection Curator - Spain and Portugal",
+      mainImg: "/images/Curators/sonia.webp",
+      maskImg: "/images/Curators/01-381.webp",
+      left: false,
     },
   ];
   // For Image Holder
@@ -217,6 +236,17 @@ const Curators = () => {
           className="mx-auto mt-16 w-72"
           alt=""
         />
+      </div>
+      {/* Team */}
+      <div className="bg-white p-28">
+        <p className="text-center font-[Inter] uppercase tracking-widest text-[#C42C39]">
+          Team
+        </p>
+        <div className="w-[90%] mx-auto mt-20 flex gap-40">
+          {overlappingCardsData.map((data) => (
+            <OverlapingCards key={data.id} {...data} />
+          ))}
+        </div>
       </div>
     </div>
   );
