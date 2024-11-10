@@ -66,7 +66,6 @@ const Curators = () => {
     offset: ["start end", "end start"],
   });
   const ImgY = useTransform(ImgYScroll, [0, 1], [0, 50]);
-  useMotionValueEvent(ImgYScroll, "change", (l) => console.log(l));
   return (
     <div className="bg-black">
       <div
