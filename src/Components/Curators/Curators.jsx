@@ -1,13 +1,8 @@
-import React from "react";
-import { useRef } from "react";
-import {
-  motion,
-  useMotionValueEvent,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import React, { useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import FixedImages from "../Home/FixedImages";
 import OverlapingCards from "./OverlapingCards";
+import InfoCards from "./InfoCards";
 
 const Curators = () => {
   const fixedImages = [
@@ -48,6 +43,32 @@ const Curators = () => {
       left: false,
     },
   ];
+  const cardsData = [
+    {
+      id: 1,
+      name: "Eneko Atxa",
+      text: "3 Michelin Stars",
+      src: "/images/Home/caratula_eneko.webp",
+    },
+    {
+      id: 2,
+      name: "Pedro Subijana",
+      text: "3 Michelin Stars",
+      src: "/images/Home/caratula_pedro.webp",
+    },
+    {
+      id: 3,
+      name: "Ned Capeleris",
+      text: "General Manager at Hotel Maria Cristina",
+      src: "/images/Curators/caratula_ned_new.webp",
+    },
+    {
+      id: 4,
+      name: "Germán Jiménez",
+      text: "Journalist specialized in Fashion & Lifestyle",
+      src: "/images/Curators/caratula_german.webp",
+    },
+  ];
   // For Image Holder
   const imageHolder = useRef(null);
 
@@ -66,6 +87,16 @@ const Curators = () => {
     offset: ["start end", "end start"],
   });
   const ImgY = useTransform(ImgYScroll, [0, 1], [0, 50]);
+
+  // For Dragging Cards
+  const DragConstraintRef = useRef(null);
+  const cardsRef = useRef(null);
+  const [isDragging, setDragging] = useState(false);
+  const { scrollYProgress: cardsRefX } = useScroll({
+    target: cardsRef,
+    offset: ["start end", "end start"],
+  });
+  const cardsRefXValue = useTransform(cardsRefX, [0, 1], [0, -200]);
   return (
     <div className="bg-black">
       <div
@@ -246,6 +277,32 @@ const Curators = () => {
             <OverlapingCards key={data.id} {...data} />
           ))}
         </div>
+      </div>
+      {/* Discover the Luxury */}
+      <div
+        ref={DragConstraintRef}
+        className="w-full px-[10%] py-28 mx-auto bg-black text-white text-xl overflow-x-clip"
+      >
+        <p className="text-center text-[#BF1826] tracking-widest">
+          Ambassadors
+        </p>
+        <motion.div
+          drag="x"
+          dragConstraints={DragConstraintRef}
+          dragMomentum={false}
+          dragTransition={{ bounceStiffness: 150, bounceDamping: 10 }}
+          onDragStart={() => setDragging(true)}
+          onDragEnd={() => setDragging(false)}
+          ref={cardsRef}
+          style={{
+            left: cardsRefXValue,
+          }}
+          className="mt-16 pl-52 pr-36 flex flex-nowrap gap-28 relative"
+        >
+          {cardsData.map((item) => (
+            <InfoCards key={item.id} {...item} isDragging={isDragging} />
+          ))}
+        </motion.div>
       </div>
     </div>
   );
