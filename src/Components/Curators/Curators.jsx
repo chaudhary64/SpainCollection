@@ -297,7 +297,7 @@ const Curators = () => {
           style={{
             left: cardsRefXValue,
           }}
-          className="mt-16 pl-52 pr-36 flex flex-nowrap gap-28 relative"
+          className="w-fit mt-16 pl-52 pr-44 flex flex-nowrap gap-32 relative"
         >
           {cardsData.map((item) => (
             <InfoCards key={item.id} {...item} isDragging={isDragging} />
