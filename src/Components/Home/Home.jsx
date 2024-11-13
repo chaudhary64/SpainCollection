@@ -355,7 +355,7 @@ const Home = () => {
       {/* Discover the Luxury */}
       <div
         ref={DragConstraintRef}
-        className="h-[120vh] w-full px-[10%] py-40 mt-16 mx-auto bg-black text-white text-5xl relative overflow-x-clip"
+        className="h-[120vh] w-full px-[10%] py-40 mt-16 mb-96 mx-auto bg-black text-white text-5xl relative overflow-x-clip"
       >
         <p>Discover the</p>
         <p>

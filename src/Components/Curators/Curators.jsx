@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import FixedImages from "../Home/FixedImages";
 import OverlapingCards from "./OverlapingCards";
 import InfoCards from "./InfoCards";
+import Footer from "../Footer/Footer";
 
 const Curators = () => {
   const fixedImages = [
@@ -281,7 +282,7 @@ const Curators = () => {
       {/* Ambassadors */}
       <div
         ref={DragConstraintRef}
-        className="w-full px-[10%] py-28 mx-auto bg-black text-white text-xl overflow-x-clip"
+        className="w-full px-[10%] py-28 mx-auto mb-40 bg-black text-white text-xl overflow-x-clip"
       >
         <p className="text-center text-[#BF1826] tracking-widest">
           Ambassadors
@@ -304,6 +305,8 @@ const Curators = () => {
           ))}
         </motion.div>
       </div>
+      {/* Footer */}
+      <Footer dark="true" />
     </div>
   );
 };
