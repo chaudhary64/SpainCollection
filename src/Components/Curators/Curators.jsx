@@ -278,7 +278,7 @@ const Curators = () => {
           ))}
         </div>
       </div>
-      {/* Discover the Luxury */}
+      {/* Ambassadors */}
       <div
         ref={DragConstraintRef}
         className="w-full px-[10%] py-28 mx-auto bg-black text-white text-xl overflow-x-clip"
