@@ -9,10 +9,13 @@ const Journal = () => {
         <p>to turn your luxury trip into an unforgettable memory</p>
       </div>
       {/* Grid Layout */}
-      <div className="h-20 w-full mt-24 grid grid-cols-3">
-        <div className="h-full w-full bg-red-400"></div>
-        <div className="h-full w-full bg-red-500"></div>
-        <div className="h-full w-full bg-red-700"></div>
+      <div className="h-20 w-[95%] mx-auto mt-24 grid grid-cols-[35%_25%_35%] justify-between border-4 border-black">
+        {/* Left Strip */}
+        <div className="h-full bg-red-400"></div>
+        {/* Middle Strip */}
+        <div className="h-full bg-red-500"></div>
+        {/* Right Strip */}
+        <div className="h-full bg-red-700"></div>
       </div>
     </div>
   );
