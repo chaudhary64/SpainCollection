@@ -1,4 +1,6 @@
 import React from "react";
+import DescriptionCard from "./DescriptionCard";
+import DateCard from "./DateCard";
 
 const Journal = () => {
   const leftStripData = [
@@ -145,13 +147,25 @@ const Journal = () => {
         <p>to turn your luxury trip into an unforgettable memory</p>
       </div>
       {/* Grid Layout */}
-      <div className="h-20 w-[95%] mx-auto mt-24 grid grid-cols-[35%_25%_35%] justify-between border-4 border-black">
+      <div className="w-[92%] mx-auto mt-24 grid grid-cols-[35%_25%_35%] justify-between">
         {/* Left Strip */}
-        <div className="h-full bg-red-400"></div>
+        <div className="h-full flex flex-col gap-8">
+          {leftStripData.map((item) => (
+            <DateCard key={item.id} {...item} />
+          ))}
+        </div>
         {/* Middle Strip */}
-        <div className="h-full bg-red-500"></div>
+        <div className="h-full flex flex-col gap-8">
+          {middleStripData.map((item) => (
+            <DescriptionCard key={item.id} {...item} />
+          ))}
+        </div>
         {/* Right Strip */}
-        <div className="h-full bg-red-700"></div>
+        <div className="h-full flex flex-col gap-8">
+          {rightStripData.map((item) => (
+            <DateCard key={item.id} {...item} />
+          ))}
+        </div>
       </div>
     </div>
   );
