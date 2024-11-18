@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import DescriptionCard from "./DescriptionCard";
 import DateCard from "./DateCard";
+import Footer from "../Footer/Footer";
 import {
   motion,
   useMotionValueEvent,
@@ -175,7 +176,7 @@ const Journal = () => {
       </div>
       {/* Grid Layout */}
       {/* A padding of 200px has been applied to ensure that as the strips move downward, any whitespace is fully covered, maintaining a seamless visual flow */}
-      <div className="w-[92%] mx-auto mt-24 pb-[200px] grid grid-cols-[35%_25%_35%] justify-between">
+      <div className="w-[92%] mx-auto mt-24 mb-40 pb-[200px] grid grid-cols-[35%_25%_35%] justify-between">
         {/* Left Strip */}
         <motion.div
           ref={leftStrip}
@@ -213,7 +214,7 @@ const Journal = () => {
           ))}
         </motion.div>
       </div>
-      <div className="h-screen w-full bg-blue-400"></div>
+      <Footer />
     </div>
   );
 };
