@@ -4,13 +4,13 @@ import { motion, useAnimation } from "framer-motion";
 const Footer = ({ dark = false }) => {
   const controls = useAnimation();
   return (
-    <footer className="pb-20">
+    <footer className={`pb-20 ${!dark && "bg-white"} w-[82%] mx-auto`}>
       {/* Contact with */}
       <div
         style={{
           lineHeight: "0.95",
         }}
-        className="w-fit mx-auto text-center uppercase text-[107px] flex items-center gap-5"
+        className="w-full mx-auto text-center uppercase text-[107px] flex justify-between items-center"
       >
         {/* Left Line */}
         <div className="h-[1px] w-20 bg-[#D24B4B]"></div>
