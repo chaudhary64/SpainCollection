@@ -44,6 +44,38 @@ const Collections = () => {
       text: "Nature",
     },
   ];
+  const yourDestinationData = [
+    {
+      id: 1,
+      src: "/images/Collections/collections_tax-2.webp",
+      text: "Barcelona",
+    },
+    {
+      id: 2,
+      src: "/images/Collections/Portadas_madrid_17.webp",
+      text: "Madrid",
+    },
+    {
+      id: 3,
+      src: "/images/Collections/Portada_Andalucia_01.webp",
+      text: "Andalusia",
+    },
+    {
+      id: 4,
+      src: "/images/Collections/Portadas_portugal_14.webp",
+      text: "Portugal",
+    },
+    {
+      id: 5,
+      src: "/images/Collections/Portadas_north_18.webp",
+      text: "Euskadi & Northern Spain",
+    },
+    {
+      id: 6,
+      src: "/images/Collections/Portada_baleares_11.webp",
+      text: "Balearic & Canary Islands",
+    },
+  ];
   return (
     <div className="inset-0 fixed -z-[1]">
       {/* Default Background Image */}
@@ -75,6 +107,20 @@ const Collections = () => {
         {/* Hover Cover */}
         <div className="w-[60%] mx-auto mt-4 flex flex-wrap justify-center items-center gap-[5px_30px] text-white">
           {yourExperienceData.map((item) => (
+            <HoverCover key={item.id} {...item} />
+          ))}
+        </div>
+      </div>
+      {/* Choose Your Destination */}
+      <div>
+        <div className="w-fit mx-auto mt-10">
+          <span className="font-[Inter] font-[300] uppercase text-[#BF1826] tracking-widest">
+            Choose your destination
+          </span>
+        </div>
+        {/* Hover Cover */}
+        <div className="w-[70%] mx-auto mt-4 flex flex-wrap justify-center items-center gap-[5px_30px] text-white">
+          {yourDestinationData.map((item) => (
             <HoverCover key={item.id} {...item} />
           ))}
         </div>
