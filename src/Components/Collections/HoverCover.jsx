@@ -7,14 +7,14 @@ const HoverCover = ({ src, text }) => {
     controls.start({
       opacity: 1,
       scale: 1,
-      transition: { duration: 1.5, ease: [0.05, 0.76, 0.38, 1.015] },
+      transition: { duration: 2, ease: [0.05, 0.76, 0.38, 1.015] },
     });
   };
   const AnimationEnd = () => {
     controls.start({
       opacity: 0,
       scale: 1.2,
-      transition: { duration: 1, ease: [0.05, 0.76, 0.38, 1.015] },
+      transition: { duration: 0.9, ease: [0.05, 0.76, 0.38, 1.015] },
     });
   };
   return (
