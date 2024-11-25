@@ -1,5 +1,19 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+
 const Nav = () => {
+  const loc = useLocation();
+  const [defaultColor, setDefaultColor] = useState("#000039"); // Initial color
+
+  useEffect(() => {
+    if (loc.pathname === "/") {
+    }
+    if (loc.pathname === "/curators" || loc.pathname === "/collections") {
+      setDefaultColor("#EBECEC");
+    } else {
+      setDefaultColor("#000039");
+    }
+  }, [loc]);
   return (
     <nav className="h-fit w-[70%] mx-auto mt-14 flex justify-between items-center text-lg tracking-widest">
       {/* Left Part */}
@@ -7,7 +21,7 @@ const Nav = () => {
         <NavLink
           style={(e) => {
             return {
-              color: e.isActive ? "#C42A37" : "#000039",
+              color: e.isActive ? "#C42A37" : defaultColor,
             };
           }}
           to="/"
@@ -17,7 +31,7 @@ const Nav = () => {
         <NavLink
           style={(e) => {
             return {
-              color: e.isActive ? "#C42A37" : "#000039",
+              color: e.isActive ? "#C42A37" : defaultColor,
             };
           }}
           to="/collections"
@@ -185,7 +199,7 @@ const Nav = () => {
         <NavLink
           style={(e) => {
             return {
-              color: e.isActive ? "#C42A37" : "#000039",
+              color: e.isActive ? "#C42A37" : defaultColor,
             };
           }}
           to="/journal"
@@ -195,7 +209,7 @@ const Nav = () => {
         <NavLink
           style={(e) => {
             return {
-              color: e.isActive ? "#C42A37" : "#000039",
+              color: e.isActive ? "#C42A37" : defaultColor,
             };
           }}
           to="/curators"
