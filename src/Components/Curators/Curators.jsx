@@ -104,7 +104,7 @@ const Curators = () => {
         style={{
           lineHeight: "0.95",
         }}
-        className='mt-14 text-center uppercase text-white text-[107px] font-["SaolDisplay-Regular"] font-[300]'
+        className='pt-14 text-center uppercase text-white text-[107px] font-["SaolDisplay-Regular"] font-[300]'
       >
         <p>We work</p>
         <p>tirelessly to</p>
