@@ -16,7 +16,7 @@ const App = () => {
         touchMultiplier: 0.4,
       }}
     >
-      <main className="pt-[1px]">
+      <main>
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />
