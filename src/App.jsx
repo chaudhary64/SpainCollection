@@ -12,8 +12,8 @@ const App = () => {
       root
       options={{
         // Making the scroll smoother
-        wheelMultiplier: 0.4,
-        touchMultiplier: 0.4,
+        wheelMultiplier: 0.15,
+        touchMultiplier: 0.15,
       }}
     >
       <main>
