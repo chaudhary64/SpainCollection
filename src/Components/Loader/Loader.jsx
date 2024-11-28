@@ -13,7 +13,7 @@ const Loader = ({ children }) => {
         exit={{
           display: "none",
           opacity: 0,
-          transition: { delay: 1.75, duration: 0 },
+          transition: { delay: 1.25, duration: 0 },
         }}
       >
         {children} {/* Displaying the Component which is wrapped in it */}
@@ -31,7 +31,7 @@ const Loader = ({ children }) => {
         initial={{ y: "-100%" }}
         exit={{
           y: ["-100%", "0%", "0%", "100%"],
-          transition: { duration: 3.5, times: [0, 0.45, 0.55, 1] },
+          transition: { duration: 2.75, times: [0, 0.45, 0.55, 1] },
         }}
         className="fixed inset-0 z-[99999999999] bg-[#C01827]"
       ></motion.span>
