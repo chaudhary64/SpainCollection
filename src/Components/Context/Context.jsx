@@ -8,13 +8,13 @@ const Context = (props) => {
   });
   return (
     <>
-      <NavInfo.Provider value={{ state, setState }}>
+      <Info.Provider value={{ state, setState }}>
         {props.children}
-      </NavInfo.Provider>
+      </Info.Provider>
     </>
   );
 };
 
 // Export the context
-export const NavInfo = createContext();
+export const Info = createContext();
 export default Context;

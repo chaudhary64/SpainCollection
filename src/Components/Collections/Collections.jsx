@@ -1,7 +1,7 @@
 import React from "react";
 import HoverCover from "./HoverCover";
 import { useContext } from "react";
-import { NavInfo } from "../Context/Context";
+import { Info } from "../Context/Context";
 
 const Collections = () => {
   const yourExperienceData = [
@@ -78,7 +78,7 @@ const Collections = () => {
       text: "Balearic & Canary Islands",
     },
   ];
-  const { state } = useContext(NavInfo); // Using the context
+  const { state } = useContext(Info); // Using the context
   return (
     <div
       style={{

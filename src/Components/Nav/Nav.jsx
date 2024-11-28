@@ -1,6 +1,6 @@
 import { NavLink, useLocation } from "react-router-dom";
 import { useContext, useEffect, useRef, useState } from "react";
-import { NavInfo } from "../Context/Context";
+import { Info } from "../Context/Context";
 
 const Nav = () => {
   const loc = useLocation();
@@ -9,7 +9,7 @@ const Nav = () => {
     fill: "#000039",
   }); // Initial asthetics
 
-  const { setState } = useContext(NavInfo); // Using the context
+  const { setState } = useContext(Info); // Using the context
 
   const ref = useRef(null); // Ref for the nav
 

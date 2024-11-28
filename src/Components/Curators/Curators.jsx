@@ -5,7 +5,7 @@ import OverlapingCards from "./OverlapingCards";
 import InfoCards from "./InfoCards";
 import Footer from "../Footer/Footer";
 import { useContext } from "react";
-import { NavInfo } from "../Context/Context";
+import { Info } from "../Context/Context";
 
 const Curators = () => {
   const fixedImages = [
@@ -100,7 +100,7 @@ const Curators = () => {
     offset: ["start end", "end start"],
   });
   const cardsRefXValue = useTransform(cardsRefX, [0, 1], [0, -200]);
-  const { state } = useContext(NavInfo); // Using the context
+  const { state } = useContext(Info); // Using the context
   return (
     <div
       style={{
