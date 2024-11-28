@@ -84,7 +84,7 @@ const Collections = () => {
       style={{
         marginTop: `-${state.height}px`,
       }}
-      className="h-screen w-full relative -z-[1] py-0.5"
+      className="h-screen w-full relative py-[1px]"
     >
       {/* Default Background Image */}
       <div className="inset-0 absolute -z-50">
