@@ -37,10 +37,7 @@ const Nav = () => {
     }
   }, [loc]);
   return (
-    <nav
-      ref={ref}
-      className="pt-14"
-    >
+    <nav ref={ref} className="pt-14 relative z-[100]">
       <div className="h-fit w-[70%] mx-auto flex justify-between items-center text-lg tracking-widest">
         {/* Left Part */}
         <div className="flex gap-12">
