@@ -79,8 +79,6 @@ const Collections = () => {
     },
   ];
   const { state } = useContext(NavInfo); // Using the context
-  // Example usage of state
-  console.log(state.height);
   return (
     <div
       style={{
