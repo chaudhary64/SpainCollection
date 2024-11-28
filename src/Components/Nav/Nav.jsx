@@ -1,40 +1,45 @@
 import { NavLink, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { NavInfo } from "../Context/Context";
 
 const Nav = () => {
   const loc = useLocation();
   const [defaultAsthetics, setDefaultAsthetics] = useState({
     color: "#000039",
-    bgColor: "transparent",
     fill: "#000039",
   }); // Initial asthetics
+
+  const { setState } = useContext(NavInfo); // Using the context
+
+  const ref = useRef(null); // Ref for the nav
+
+  useEffect(() => {
+    let height = ref.current.clientHeight; // Getting the height of the nav
+    setState({ height }); // Setting the height in the context
+    console.log("Nav Height: ", height); // Logging the height
+  }, [window.innerHeight]);
 
   useEffect(() => {
     if (loc.pathname === "/curators") {
       setDefaultAsthetics({
         color: "#EBECEC",
-        bgColor: "#000000",
         fill: "#FDFDFD",
       });
     } else if (loc.pathname === "/collections") {
       setDefaultAsthetics({
         color: "#EBECEC",
-        bgColor: "transparent",
         fill: "#FDFDFD",
       });
     } else {
       setDefaultAsthetics({
         color: "#000039",
-        bgColor: "transparent",
         fill: "#000039",
       });
     }
   }, [loc]);
   return (
     <nav
-      style={{
-        backgroundColor: defaultAsthetics.bgColor,
-      }}
+      ref={ref}
       className="pt-14"
     >
       <div className="h-fit w-[70%] mx-auto flex justify-between items-center text-lg tracking-widest">

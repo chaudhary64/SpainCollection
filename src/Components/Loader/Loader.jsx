@@ -1,31 +1,39 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useLenis } from "lenis/react";
 
 const Loader = ({ children }) => {
   // Accepting the component that is passed to it from children prop
-
+  const lenis = useLenis();
   return (
     <>
       {/* Removing The Previous Component from DOM */}
       <motion.div
         // Animations
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1, transition: { duration: 2, delay: 1.5 } }}
-        exit={{ display: "none", transition: { duration: 1.5 } }}
+        exit={{
+          display: "none",
+          opacity: 0,
+          transition: { delay: 1.75, duration: 0 },
+        }}
       >
         {children} {/* Displaying the Component which is wrapped in it */}
       </motion.div>
 
       {/* Loader Component */}
       <motion.span
+        // Stopping the scrolling of the page when the loader is displayed
         onAnimationStart={() => {
-          document.body.style.overflow = "hidden";
+          lenis.stop();
         }}
-        onAnimationComplete={() => (document.body.style.overflow = "auto")}
+        // Starting the scrolling of the page when the loader is removed
+        onAnimationComplete={() => lenis.start()}
         // Animations
         initial={{ y: "-100%" }}
-        exit={{ y: ["-100%", "0%", "100%"], transition: { duration: 3 } }}
-        className="fixed inset-0 z-[99999999999] bg-[#C01827] text-[250px] text-white     flex justify-center items-center pointer-events-none"
+        exit={{
+          y: ["-100%", "0%", "0%", "100%"],
+          transition: { duration: 3.5, times: [0, 0.45, 0.55, 1] },
+        }}
+        className="fixed inset-0 z-[99999999999] bg-[#C01827]"
       ></motion.span>
     </>
   );

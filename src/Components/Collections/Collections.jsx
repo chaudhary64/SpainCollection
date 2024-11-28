@@ -1,5 +1,7 @@
 import React from "react";
 import HoverCover from "./HoverCover";
+import { useContext } from "react";
+import { NavInfo } from "../Context/Context";
 
 const Collections = () => {
   const yourExperienceData = [
@@ -76,8 +78,16 @@ const Collections = () => {
       text: "Balearic & Canary Islands",
     },
   ];
+  const { state } = useContext(NavInfo); // Using the context
+  // Example usage of state
+  console.log(state.height);
   return (
-    <div className="inset-0 fixed -z-[1]">
+    <div
+      style={{
+        marginTop: `-${state.height}px`,
+      }}
+      className="h-screen w-full relative -z-[1] py-0.5"
+    >
       {/* Default Background Image */}
       <div className="inset-0 absolute -z-50">
         <img
