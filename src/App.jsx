@@ -1,10 +1,6 @@
 import { ReactLenis } from "lenis/react";
-import Home from "./Components/Home/Home";
 import Nav from "./Components/Nav/Nav";
-import Journal from "./Components/Journal/Journal";
-import Collections from "./Components/Collections/Collections";
-import Curators from "./Components/Curators/Curators";
-import { Route, Routes } from "react-router-dom";
+import RoutesForNav from "./Components/Routes/RoutesForNav";
 
 const App = () => {
   return (
@@ -18,12 +14,7 @@ const App = () => {
     >
       <main>
         <Nav />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/journal" element={<Journal />} />
-          <Route path="/collections" element={<Collections />} />
-          <Route path="/curators" element={<Curators />} />
-        </Routes>
+        <RoutesForNav />
       </main>
     </ReactLenis>
   );
