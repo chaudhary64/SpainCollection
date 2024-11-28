@@ -16,7 +16,6 @@ const Nav = () => {
   useEffect(() => {
     let height = ref.current.clientHeight; // Getting the height of the nav
     setState({ height }); // Setting the height in the context
-    console.log("Nav Height: ", height); // Logging the height
   }, [window.innerHeight]);
 
   useEffect(() => {
