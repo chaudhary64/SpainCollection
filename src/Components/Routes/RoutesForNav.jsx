@@ -1,18 +1,52 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "../Home/Home";
 import Journal from "../Journal/Journal";
 import Collections from "../Collections/Collections";
 import Curators from "../Curators/Curators";
+import { AnimatePresence } from "framer-motion";
+
+import Loader from "../Loader/Loader";
 
 const RoutesForNav = () => {
+  const location = useLocation();
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/journal" element={<Journal />} />
-      <Route path="/collections" element={<Collections />} />
-      <Route path="/curators" element={<Curators />} />
-    </Routes>
+    <AnimatePresence mode="sync">
+      <Routes location={location} key={location.pathname}>
+        <Route
+          path="/"
+          element={
+            <Loader>
+              <Home />
+            </Loader>
+          }
+        />
+        <Route
+          path="/journal"
+          element={
+            <Loader>
+              <Journal />
+            </Loader>
+          }
+        />
+        <Route
+          path="/collections"
+          element={
+            <Loader>
+              <Collections />
+            </Loader>
+          }
+        />
+        <Route
+          path="/curators"
+          element={
+            <Loader>
+              <Curators />
+            </Loader>
+          }
+        />
+      </Routes>
+    </AnimatePresence>
   );
 };
 
