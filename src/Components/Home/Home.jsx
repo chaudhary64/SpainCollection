@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, useContext } from "react";
 import { IoPlay } from "react-icons/io5";
 import Expander from "./Expander";
 import Ambassadords from "./Ambassadors";
@@ -12,168 +12,12 @@ import {
   useTransform,
 } from "framer-motion";
 import Cards from "./Cards";
+import { Info } from "../Context/Context";
 
 const Home = () => {
-  const AmbassadorsData = [
-    {
-      id: 1,
-      src: "/images/Home/caratula_eneko.webp",
-      name: "Eneko Atxa",
-      text: "3 Michelin Stars Chef",
-    },
-    {
-      id: 2,
-      src: "/images/Home/caratula_pedro.webp",
-      name: "Pedro Subijana",
-      text: "3 Michelin Stars Chef",
-    },
-    {
-      id: 3,
-      src: "/images/Home/caratula_german.webp",
-      name: "Germán Jiménez",
-      text: "Journalist specialized in Fashion & Lifestyle",
-    },
-  ];
-  const fixedImages = [
-    {
-      id: 1,
-      src: "/images/Home/modulo_Why_11.webp",
-      number: "01/",
-      text: "Because our passion is people, travel and our country, it’s what makes us get out of bed in the morning.",
-    },
-    {
-      id: 2,
-      src: "/images/Home/Capa-1.webp",
-      number: "02/",
-      text: "Because nothing is more fulfilling than creating something from scratch and seeing it come to life.",
-    },
-    {
-      id: 3,
-      src: "/images/Home/Capa-3.webp",
-      number: "03/",
-      text: "Because of that blissful moment, after months of planning, when your clients thank you for giving them have the time of their lives.",
-    },
-  ];
-  const marquees = [
-    [
-      {
-        id: 1,
-        text: "Madrid",
-      },
-      {
-        id: 2,
-        text: "Barcelona",
-      },
-      {
-        id: 3,
-        text: "Lisbon",
-      },
-      {
-        id: 4,
-        text: "Porto",
-      },
-      {
-        id: 5,
-        text: "Valencia",
-      },
-      {
-        id: 6,
-        text: "Algarve",
-      },
-    ],
-    [
-      {
-        id: 7,
-        text: "Culture",
-      },
-      {
-        id: 8,
-        text: "Food&Wine",
-      },
-      {
-        id: 9,
-        text: "Shopping",
-      },
-      {
-        id: 10,
-        text: "Fashion",
-      },
-      {
-        id: 11,
-        text: "Sports",
-      },
-      {
-        id: 12,
-        text: "Traditions",
-      },
-    ],
-  ];
-  const cardsData = [
-    {
-      id: 1,
-      strongHeading: "Food & Wine",
-      weakHeading: "IN Barcelona",
-      title: "Michelin Stars Galore",
-      text: "Catalonia has some of the best restaurants in the world. Here is where the whole concept of cuisine was transformed, where the first laboratory of modern cuisine was created.",
-      src: "/images/Home/01-278.webp",
-    },
-    {
-      id: 2,
-      strongHeading: "Fashion & Shopping",
-      weakHeading: "IN Andalusia",
-      title: "Flamenco Fashion",
-      text: "The world of Flamenco is so rich that it not only encompasses dancing, music and art, but it also has a huge influence on Spanish fashion. Experience for yourself how a flamenco dress is not simply something you 'wear', it is about posture, the way you move and the way you feel.",
-      src: "/images/Home/01-91.webp",
-    },
-    {
-      id: 3,
-      strongHeading: "Culture",
-      weakHeading: "IN Barcelona",
-      title: "Gaudi: Walking in The Footsteps of a Genius",
-      text: "Gaudi, the genius of Modernist architecture, was a revolutionary Catalan artist who incorporated nature's geometry into wondrous shapes and buildings known and admired today across the world.",
-      src: "/images/Home/01-303.webp",
-    },
-    {
-      id: 4,
-      strongHeading: "Sports",
-      weakHeading: "IN Portugal",
-      title: "Snorkeling with Seahorses",
-      text: "The waterways and lagoons of the Ria Formosa Natural Park are a delight in themselves but let's also discover the underwater world of the Algarve, and the area's fascinating seahorse population.",
-      src: "/images/Home/01-466.webp",
-    },
-    {
-      id: 5,
-      strongHeading: "Culture",
-      weakHeading: "IN Madrid",
-      title: "Cervantes, A Timeless Literary Journey",
-      text: "Cervantes and his Don Quixote are arguably as universal as characters can get. No other fictional character has been so notorious and influential as the man from La Mancha.",
-      src: "/images/Home/01-182.webp",
-    },
-    {
-      id: 6,
-      strongHeading: "Traditions",
-      weakHeading: "IN Madrid",
-      title: "Ceramics Of Talavera",
-      text: "Talavera is home to communities of artisans who make ceramics for decorative and architectural use. The most significant aspect of their work, however, is that most of their manufacturing, decoration and glazing processes have remained unchanged since the 16th century.",
-      src: "/images/Home/009-scaled.webp",
-    },
-    {
-      id: 7,
-      strongHeading: "Sports",
-      weakHeading: "IN Madrid",
-      title: "A Real Madrid Experience",
-      text: "Football is an obsession for the Spanish and seeing Real Madrid in action tops the must-see list for any sports aficionado visiting the capital of Spain.",
-      src: "/images/Home/01-213.webp",
-    },
-    {
-      id: 8,
-      strongHeading: "Fashion & Shopping",
-      weakHeading: "IN Andalusia",
-      title: "Flamenco Catwalk",
-      text: "The catwalk is where fashion comes alive. Be a model for a day and lose yourself in the backstage world of nerves and frenetic preparations before stepping out into the spotlights and onto the catwalk.",
-      src: "/images/Home/01-96.webp",
-    },
-  ];
+  const { AmbassadorsData, fixedImages, marqueesData, cardsData } =
+    useContext(Info);
+
   const AmbassadorsRef = useRef(null);
   const ExpanderRef = useRef(null);
   const [theme, setTheme] = useState("white");
@@ -332,7 +176,7 @@ const Home = () => {
           </motion.div>
         </div>
       </div>
-      {/* Marquees */}
+      {/* Marquee Animation */}
       <div
         ref={MarqueeContainer}
         className="mt-[360px] flex flex-col gap-10 overflow-x-clip"
@@ -342,14 +186,18 @@ const Home = () => {
             x: forwardMarqueeX,
           }}
         >
-          <Marquee key={"forwardMarquee"} data={marquees[0]} />
+          <Marquee key={"forwardMarquee"} data={marqueesData[0]} />
         </motion.div>
         <motion.div
           style={{
             x: reverseMarqueeX,
           }}
         >
-          <Marquee key={"ReverseMarquee"} data={marquees[1]} reverse={true} />
+          <Marquee
+            key={"ReverseMarquee"}
+            data={marqueesData[1]}
+            reverse={true}
+          />
         </motion.div>
       </div>
       {/* Discover the Luxury */}

@@ -8,71 +8,9 @@ import { useContext } from "react";
 import { Info } from "../Context/Context";
 
 const Curators = () => {
-  const fixedImages = [
-    {
-      id: 1,
-      src: "/images/Curators/Mission.webp",
-      number: "Mission",
-      text: "Deliver outstanding travel experiences in Spain and Portugal that are authentic, supportive of local businesses and a source of inspiration to our own staff.",
-    },
-    {
-      id: 2,
-      src: "/images/Curators/vision.webp",
-      number: "Vision",
-      text: "To become the global ambassador for Spain and Portugal for discerning travelers who journey to connect and engage with cultures, traditions, and destinations in a sustainable, inclusive and mindful way with a touch of luxury.",
-    },
-    {
-      id: 3,
-      src: "/images/Curators/values.webp",
-      number: "Values",
-      text: "As a company we believe in a life-affirming, sense of purpose. We look for engagement, innovation, diversity and inclusion. We are mindful of others and sensitive to the environment. Communication is real, open and transparent, and our working relationships are mutually beneficial and respectful It is not what we do but the way we do it",
-    },
-  ];
-  const overlappingCardsData = [
-    {
-      id: 1,
-      name: "Juan Carlos Tejeda",
-      text: "Collection Curator - Spain and Portugal",
-      mainImg: "/images/Curators/jc.webp",
-      maskImg: "/images/Curators/02-99.webp",
-      left: true,
-    },
-    {
-      id: 2,
-      name: "Sonia Pájaro",
-      text: "Collection Curator - Spain and Portugal",
-      mainImg: "/images/Curators/sonia.webp",
-      maskImg: "/images/Curators/01-381.webp",
-      left: false,
-    },
-  ];
-  const cardsData = [
-    {
-      id: 1,
-      name: "Eneko Atxa",
-      text: "3 Michelin Stars",
-      src: "/images/Home/caratula_eneko.webp",
-    },
-    {
-      id: 2,
-      name: "Pedro Subijana",
-      text: "3 Michelin Stars",
-      src: "/images/Home/caratula_pedro.webp",
-    },
-    {
-      id: 3,
-      name: "Ned Capeleris",
-      text: "General Manager at Hotel Maria Cristina",
-      src: "/images/Curators/caratula_ned_new.webp",
-    },
-    {
-      id: 4,
-      name: "Germán Jiménez",
-      text: "Journalist specialized in Fashion & Lifestyle",
-      src: "/images/Curators/caratula_german.webp",
-    },
-  ];
-  // For Image Holder
+  const { fixedImagesDataCurators, overlappingCardsData, cardsDataCurators } =
+    useContext(Info);
+
   const imageHolder = useRef(null);
 
   const { scrollYProgress: imageHolderScrolled } = useScroll({
@@ -138,8 +76,8 @@ const Curators = () => {
           }}
         >
           <FixedImages
-            key={fixedImages[0].id}
-            {...fixedImages[0]}
+            key={fixedImagesDataCurators[0].id}
+            {...fixedImagesDataCurators[0]}
             imageHolderScrolled={imageHolderScrolled}
             height={450}
             width={360}
@@ -153,8 +91,8 @@ const Curators = () => {
           }}
         >
           <FixedImages
-            key={fixedImages[1].id}
-            {...fixedImages[1]}
+            key={fixedImagesDataCurators[1].id}
+            {...fixedImagesDataCurators[1]}
             imageHolderScrolled={imageHolderScrolled}
             height={610}
             width={300}
@@ -168,8 +106,8 @@ const Curators = () => {
           }}
         >
           <FixedImages
-            key={fixedImages[2].id}
-            {...fixedImages[2]}
+            key={fixedImagesDataCurators[2].id}
+            {...fixedImagesDataCurators[2]}
             imageHolderScrolled={imageHolderScrolled}
             height={367}
             width={365}
@@ -309,7 +247,7 @@ const Curators = () => {
           }}
           className="w-fit mt-16 pl-52 pr-44 flex flex-nowrap gap-32 relative"
         >
-          {cardsData.map((item) => (
+          {cardsDataCurators.map((item) => (
             <InfoCards key={item.id} {...item} isDragging={isDragging} />
           ))}
         </motion.div>

@@ -4,81 +4,8 @@ import { useContext } from "react";
 import { Info } from "../Context/Context";
 
 const Collections = () => {
-  const yourExperienceData = [
-    {
-      id: 1,
-      src: "/images/Collections/05-6.webp",
-      text: "Food & Wine",
-    },
-    {
-      id: 2,
-      src: "/images/Collections/culture.webp",
-      text: "Culture",
-    },
-    {
-      id: 3,
-      src: "/images/Collections/01-25.webp",
-      text: "Traditions",
-    },
-    {
-      id: 4,
-      src: "/images/Collections/traditions_10.webp",
-      text: "Religious Heritage",
-    },
-    {
-      id: 5,
-      src: "/images/Collections/01-91.webp",
-      text: "Fashion & Shopping",
-    },
-    {
-      id: 6,
-      src: "/images/Collections/01-70.webp",
-      text: "Sports",
-    },
-    {
-      id: 7,
-      src: "/images/Collections/02-68.webp",
-      text: "Body & Soul",
-    },
-    {
-      id: 8,
-      src: "/images/Collections/01-80.webp",
-      text: "Nature",
-    },
-  ];
-  const yourDestinationData = [
-    {
-      id: 1,
-      src: "/images/Collections/collections_tax-2.webp",
-      text: "Barcelona",
-    },
-    {
-      id: 2,
-      src: "/images/Collections/Portadas_madrid_17.webp",
-      text: "Madrid",
-    },
-    {
-      id: 3,
-      src: "/images/Collections/Portada_Andalucia_01.webp",
-      text: "Andalusia",
-    },
-    {
-      id: 4,
-      src: "/images/Collections/Portadas_portugal_14.webp",
-      text: "Portugal",
-    },
-    {
-      id: 5,
-      src: "/images/Collections/Portadas_north_18.webp",
-      text: "Euskadi & Northern Spain",
-    },
-    {
-      id: 6,
-      src: "/images/Collections/Portada_baleares_11.webp",
-      text: "Balearic & Canary Islands",
-    },
-  ];
-  const { state } = useContext(Info); // Using the context
+  const { state, yourDestinationData, yourExperienceData } = useContext(Info); 
+
   return (
     <div
       style={{
