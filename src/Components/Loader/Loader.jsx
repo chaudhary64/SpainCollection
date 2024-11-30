@@ -33,7 +33,17 @@ const Loader = ({ children }) => {
           y: ["-100%", "0%", "0%", "100%"],
           transition: { duration: 2.75, times: [0, 0.45, 0.55, 1] },
         }}
-        className="fixed inset-0 z-[99999999999] bg-[#C01827]"
+        className="fixed inset-0 z-[99999999999] bg-[#C01827] cursor-wait"
+      ></motion.span>
+      {/* This will act as a blocker which will block the user to interact with the navbar until one page transition animation is over */}
+      <motion.span
+        // Animations
+        initial={{ y: "-200%" }}
+        exit={{
+          y: ["-200%", "0%"],
+          transition: { duration: 1.5125 },
+        }}
+        className="fixed inset-0 z-[99999999999] cursor-wait"
       ></motion.span>
     </>
   );
