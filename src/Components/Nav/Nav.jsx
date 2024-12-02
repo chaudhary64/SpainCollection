@@ -1,6 +1,7 @@
 import { NavLink, useLocation } from "react-router-dom";
 import { useContext, useEffect, useRef, useState } from "react";
 import { Info } from "../Context/Context";
+import NavigatorLink from "./NavigatorLink";
 
 const Nav = () => {
   const loc = useLocation();
@@ -41,26 +42,16 @@ const Nav = () => {
       <div className="h-fit w-[70%] mx-auto flex justify-between items-center text-lg tracking-widest">
         {/* Left Part */}
         <div className="flex gap-12">
-          <NavLink
-            style={(e) => {
-              return {
-                color: e.isActive ? "#C42A37" : defaultAsthetics.color,
-              };
-            }}
+          <NavigatorLink
             to="/"
-          >
-            Home
-          </NavLink>
-          <NavLink
-            style={(e) => {
-              return {
-                color: e.isActive ? "#C42A37" : defaultAsthetics.color,
-              };
-            }}
+            defaultAsthetics={defaultAsthetics}
+            routeName="Home"
+          />
+          <NavigatorLink
             to="/collections"
-          >
-            Collections
-          </NavLink>
+            defaultAsthetics={defaultAsthetics}
+            routeName="Collections"
+          />
         </div>
         <svg
           version="1.1"
@@ -223,26 +214,16 @@ const Nav = () => {
         </svg>
         {/* Right Part */}
         <div className="flex gap-12">
-          <NavLink
-            style={(e) => {
-              return {
-                color: e.isActive ? "#C42A37" : defaultAsthetics.color,
-              };
-            }}
+          <NavigatorLink
             to="/journal"
-          >
-            Journal
-          </NavLink>
-          <NavLink
-            style={(e) => {
-              return {
-                color: e.isActive ? "#C42A37" : defaultAsthetics.color,
-              };
-            }}
+            defaultAsthetics={defaultAsthetics}
+            routeName="Journal"
+          />
+          <NavigatorLink
             to="/curators"
-          >
-            Curators
-          </NavLink>
+            defaultAsthetics={defaultAsthetics}
+            routeName="Curators"
+          />
         </div>
       </div>
     </nav>
