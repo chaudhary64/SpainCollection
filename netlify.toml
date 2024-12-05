@@ -1,5 +1,16 @@
 [[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
 
-from = "/*"
-to = "/index.html"
-status = 200 
+[[headers]]
+  # Cache all static assets (images, CSS, JS, fonts, etc.) for 1 hour
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600" # 3600 seconds = 1 hour
+
+[[headers]]
+  # Cache index.html for 1 hour
+  for = "/index.html"
+  [headers.values]
+    Cache-Control = "no-cache, max-age=3600"
