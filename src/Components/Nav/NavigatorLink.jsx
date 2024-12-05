@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useAnimation } from "framer-motion";
@@ -6,6 +6,19 @@ import { useAnimation } from "framer-motion";
 const NavigatorLink = ({ to, defaultAsthetics, routeName }) => {
   const controls = useAnimation();
   const location = window.location.pathname;
+  useEffect(() => {
+    if (to === location) {
+      controls.start({
+        scaleX: 1,
+        transformOrigin: "left",
+      });
+    } else {
+      controls.start({
+        scaleX: 0,
+        transformOrigin: "right",
+      });
+    }
+  }, [location]);
   return (
     <div
       onMouseEnter={() =>
@@ -39,7 +52,7 @@ const NavigatorLink = ({ to, defaultAsthetics, routeName }) => {
       <motion.div
         animate={controls}
         initial={{
-          scaleX: to === location ? 1 : 0,
+          scaleX: 0,
         }}
         className="absolute top-full h-[1.5px] w-full bg-[#BF1826]"
       ></motion.div>
