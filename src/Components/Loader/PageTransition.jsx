@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useLenis } from "lenis/react";
 
-const Loader = ({ children }) => {
+const PageTransition = ({ children }) => {
   // Accepting the component that is passed to it from children prop
   const lenis = useLenis();
   return (
@@ -19,13 +19,13 @@ const Loader = ({ children }) => {
         {children} {/* Displaying the Component which is wrapped in it */}
       </motion.div>
 
-      {/* Loader Component */}
+      {/* PageTransition Component */}
       <motion.span
-        // Stopping the scrolling of the page when the loader is displayed
+        // Stopping the scrolling of the page when the PageTransition is displayed
         onAnimationStart={() => {
           lenis.stop();
         }}
-        // Starting the scrolling of the page when the loader is removed
+        // Starting the scrolling of the page when the PageTransition is removed
         onAnimationComplete={() => lenis.start()}
         // Animations
         initial={{ y: "-100%" }}
@@ -49,4 +49,4 @@ const Loader = ({ children }) => {
   );
 };
 
-export default Loader;
+export default PageTransition;

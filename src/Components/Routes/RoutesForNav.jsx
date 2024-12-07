@@ -5,8 +5,7 @@ import Journal from "../Journal/Journal";
 import Collections from "../Collections/Collections";
 import Curators from "../Curators/Curators";
 import { AnimatePresence } from "framer-motion";
-
-import Loader from "../Loader/Loader";
+import PageTransition from "../Loader/pageTransition";
 
 const RoutesForNav = () => {
   const location = useLocation();
@@ -16,33 +15,33 @@ const RoutesForNav = () => {
         <Route
           path="/"
           element={
-            <Loader>
+            <PageTransition>
               <Home />
-            </Loader>
+            </PageTransition>
           }
         />
         <Route
           path="/journal"
           element={
-            <Loader>
+            <PageTransition>
               <Journal />
-            </Loader>
+            </PageTransition>
           }
         />
         <Route
           path="/collections"
           element={
-            <Loader>
+            <PageTransition>
               <Collections />
-            </Loader>
+            </PageTransition>
           }
         />
         <Route
           path="/curators"
           element={
-            <Loader>
+            <PageTransition>
               <Curators />
-            </Loader>
+            </PageTransition>
           }
         />
       </Routes>
