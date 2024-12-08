@@ -74,7 +74,7 @@ const AssetLoader = ({ assets, children }) => {
             key="Assetsloader"
             exit={{
               y: "100%",
-              transition: { duration: 0.85, ease: "easeInOut", delay: 1 },
+              transition: { duration: 0.85, ease: "easeInOut", delay: 1.2 },
             }}
             className="fixed inset-0 flex flex-col items-center justify-center bg-black z-[9999]"
           >
