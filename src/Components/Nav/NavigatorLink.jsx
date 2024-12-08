@@ -7,18 +7,11 @@ const NavigatorLink = ({ to, defaultAsthetics, routeName }) => {
   const controls = useAnimation();
   const location = window.location.pathname;
   useEffect(() => {
-    if (to === location) {
-      controls.start({
-        scaleX: 1,
-        transformOrigin: "left",
-      });
-    } else {
-      controls.start({
-        scaleX: 0,
-        transformOrigin: "right",
-      });
-    }
-  }, [location]);
+    controls.set({ transformOrigin: to === location ? "left" : "right" });
+    controls.start({
+      scaleX: to === location ? 1 : 0,
+    });
+  }, [location, to, controls]);
   return (
     <div
       onMouseEnter={() =>
