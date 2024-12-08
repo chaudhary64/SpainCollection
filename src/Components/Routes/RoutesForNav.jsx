@@ -5,7 +5,7 @@ import Journal from "../Journal/Journal";
 import Collections from "../Collections/Collections";
 import Curators from "../Curators/Curators";
 import { AnimatePresence } from "framer-motion";
-import PageTransition from "../Loader/pageTransition";
+import PageTransition from "../Loader/PageTransition";
 
 const RoutesForNav = () => {
   const location = useLocation();
