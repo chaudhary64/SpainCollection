@@ -48,7 +48,7 @@ const Nav = () => {
   }, [loc]);
   return (
     <nav ref={ref} className="pt-5 md:pt-10 lg:pt-14 relative z-[100]">
-      <div className="h-fit w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] mx-auto px-1 flex justify-between items-center text-base lg:text-lg xl:text-xl 2xl:text-3xl tracking-widest overflow-clip">
+      <div className="h-fit w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] mx-auto px-1 flex justify-between items-center text-base lg:text-lg xl:text-xl 2xl:text-2xl tracking-widest overflow-clip">
         {/* Left Part */}
         <div className="hidden md:flex gap-12 xl:gap-16 2xl:gap-24">
           <NavigatorLink
@@ -119,7 +119,7 @@ const Nav = () => {
                 enableBackground: "new 0 0 177 128",
                 fill: defaultAsthetics.fill,
               }}
-              className="h-20 lg:h-24 2xl:h-36"
+              className="h-20 lg:h-24 2xl:h-32"
             >
               <g>
                 <path
