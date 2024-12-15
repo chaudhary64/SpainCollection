@@ -2,6 +2,7 @@ import { ReactLenis } from "lenis/react";
 import Nav from "./Components/Nav/Nav";
 import RoutesForNav from "./Components/Routes/RoutesForNav";
 import AssetLoader from "./Components/Loader/AssetLoader";
+import AppearingNavigation from "./Components/Nav/AppearingNavigation";
 
 const App = () => {
   const assets = [
@@ -188,6 +189,7 @@ const App = () => {
       <AssetLoader assets={assets}>
         <main>
           <Nav />
+          <AppearingNavigation />
           <RoutesForNav />
         </main>
       </AssetLoader>
