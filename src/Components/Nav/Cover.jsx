@@ -116,17 +116,16 @@ const Cover = () => {
             to="/curators"
             onMouseEnter={() => {
               setAsthetics([
-                { home: location.pathname === "/" ? "#C42A37" : "black" },
+                { home: location.pathname === "/" ? "white" : "black" },
                 {
                   collections:
-                    location.pathname === "/collections" ? "#C42A37" : "black",
+                    location.pathname === "/collections" ? "white" : "black",
                 },
                 {
                   curators: "white",
                 },
                 {
-                  journal:
-                    location.pathname === "/journal" ? "#C42A37" : "black",
+                  journal: location.pathname === "/journal" ? "white" : "black",
                 },
                 { defaultTheme: "white" },
                 { bgColor: "#C42A37" },
