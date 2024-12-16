@@ -1,8 +1,35 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Cover = () => {
+  const location = useLocation();
+  const [asthetics, setAsthetics] = useState([
+    { home: "#C42A37" },
+    { collections: "black" },
+    { curators: "black" },
+    { journal: "black" },
+    { defaultTheme: "black" },
+    { bgColor: "white" },
+  ]);
+
+  const mouseLeaveColorAdjuster = () => {
+    setAsthetics([
+      { home: location.pathname === "/" ? "#C42A37" : "black" },
+      {
+        collections: location.pathname === "/collections" ? "#C42A37" : "black",
+      },
+      {
+        curators: location.pathname === "/curators" ? "#C42A37" : "black",
+      },
+      {
+        journal: location.pathname === "/journal" ? "#C42A37" : "black",
+      },
+      { defaultTheme: "black" },
+      { bgColor: "white" },
+    ]);
+  };
+
   return (
     <motion.div
       initial={{
@@ -16,7 +43,11 @@ const Cover = () => {
         top: "100%",
         transition: { duration: 1, ease: [0.83, 0, 0.17, 1] },
       }}
-      className="fixed h-screen w-full pt-[12%] z-[998] bg-white"
+      style={{
+        backgroundColor: asthetics[5].bgColor,
+        transition: "background-color 0.4s ease-out",
+      }}
+      className="fixed h-screen w-full pt-[12%] z-[998]"
     >
       <div className="flex flex-col items-center">
         {/* Navigation Links */}
@@ -28,40 +59,109 @@ const Cover = () => {
         >
           <NavLink
             to="/"
-            style={(e) => {
-              return {
-                color: e.isActive ? "#C42A37" : "black",
-              };
+            onMouseEnter={() => {
+              setAsthetics([
+                { home: "#C42A37" },
+                {
+                  collections:
+                    location.pathname === "/collections" ? "#C42A37" : "black",
+                },
+                {
+                  curators:
+                    location.pathname === "/curators" ? "#C42A37" : "black",
+                },
+                {
+                  journal:
+                    location.pathname === "/journal" ? "#C42A37" : "black",
+                },
+                { defaultTheme: "black" },
+                { bgColor: "white" },
+              ]);
+            }}
+            onMouseLeave={mouseLeaveColorAdjuster}
+            style={{
+              color: asthetics[0].home,
             }}
           >
             Home
           </NavLink>
           <NavLink
             to="/collections"
-            style={(e) => {
-              return {
-                color: e.isActive ? "#C42A37" : "black",
-              };
+            onMouseEnter={() => {
+              setAsthetics([
+                { home: location.pathname === "/" ? "#C42A37" : "white" },
+                {
+                  collections: "#C42A37",
+                },
+                {
+                  curators:
+                    location.pathname === "/curators" ? "#C42A37" : "white",
+                },
+                {
+                  journal:
+                    location.pathname === "/journal" ? "#C42A37" : "white",
+                },
+                { defaultTheme: "white" },
+                { bgColor: "black" },
+              ]);
+            }}
+            onMouseLeave={mouseLeaveColorAdjuster}
+            style={{
+              color: asthetics[1].collections,
             }}
           >
             Collections
           </NavLink>
           <NavLink
             to="/curators"
-            style={(e) => {
-              return {
-                color: e.isActive ? "#C42A37" : "black",
-              };
+            onMouseEnter={() => {
+              setAsthetics([
+                { home: location.pathname === "/" ? "#C42A37" : "black" },
+                {
+                  collections:
+                    location.pathname === "/collections" ? "#C42A37" : "black",
+                },
+                {
+                  curators: "white",
+                },
+                {
+                  journal:
+                    location.pathname === "/journal" ? "#C42A37" : "black",
+                },
+                { defaultTheme: "white" },
+                { bgColor: "#C42A37" },
+              ]);
+            }}
+            onMouseLeave={mouseLeaveColorAdjuster}
+            style={{
+              color: asthetics[2].curators,
             }}
           >
             Curators
           </NavLink>
           <NavLink
             to="/journal"
-            style={(e) => {
-              return {
-                color: e.isActive ? "#C42A37" : "black",
-              };
+            onMouseEnter={() => {
+              setAsthetics([
+                { home: location.pathname === "/" ? "#C42A37" : "black" },
+                {
+                  collections:
+                    location.pathname === "/collections" ? "#C42A37" : "black",
+                },
+                {
+                  curators:
+                    location.pathname === "/curators" ? "#C42A37" : "black",
+                },
+                {
+                  journal: "#C42A37",
+                },
+                { defaultTheme: "black" },
+                { bgColor: "white" },
+              ]);
+            }}
+            onMouseLeave={mouseLeaveColorAdjuster}
+            style={{
+              color: asthetics[3].journal,
             }}
           >
             Journal
@@ -69,16 +169,33 @@ const Cover = () => {
         </div>
         {/* Social Media Handles */}
         <div className="w-full absolute bottom-20 flex justify-center text-sm font-thin font-[Inter]">
-          <div className="flex gap-5 underline decoration-1 underline-offset-2">
+          <div
+            style={{
+              color: asthetics[4].defaultTheme,
+            }}
+            className="flex gap-5 underline decoration-1 underline-offset-2"
+          >
             <div>Instagram</div>
             <div className="flex items-center gap-2">
-              <div className="h-1 w-1 rounded-full bg-black"></div> Facebook
+              <div
+                style={{ backgroundColor: asthetics[4].defaultTheme }}
+                className="h-1 w-1 rounded-full"
+              ></div>{" "}
+              Facebook
             </div>
             <div className="flex items-center gap-2">
-              <div className="h-1 w-1 rounded-full bg-black"></div> Youtube
+              <div
+                style={{ backgroundColor: asthetics[4].defaultTheme }}
+                className="h-1 w-1 rounded-full"
+              ></div>{" "}
+              Youtube
             </div>
             <div className="flex items-center gap-2">
-              <div className="h-1 w-1 rounded-full bg-black"></div> Linkedin
+              <div
+                style={{ backgroundColor: asthetics[4].defaultTheme }}
+                className="h-1 w-1 rounded-full"
+              ></div>{" "}
+              Linkedin
             </div>
           </div>
         </div>
