@@ -45,7 +45,7 @@ const Cover = () => {
       }}
       style={{
         backgroundColor: asthetics[5].bgColor,
-        transition: "background-color 0.4s ease-out",
+        transition: "background-color 0.6s ease-out",
       }}
       className="fixed h-screen w-full pt-[12%] z-[998]"
     >
