@@ -13,6 +13,7 @@ const AppearingNavigation = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isAppearing, setIsAppearing] = useState(false);
   const controls = useAnimation();
+  const gradientController = useAnimation();
   const { scrollY } = useScroll();
   const lenis = useLenis();
 
@@ -47,7 +48,19 @@ const AppearingNavigation = () => {
   }, [isVisible, controls]);
 
   useEffect(() => {
-    isAppearing ? lenis.stop() : lenis.start();
+    if (isAppearing) {
+      lenis.stop();
+      gradientController.start({
+        background: `conic-gradient(from 0deg at 50% 50%, black 0% 100%, white 100% 100%)`,
+        transition: { duration: 0.7, ease: "easeInOut" },
+      });
+    } else {
+      lenis.start();
+      gradientController.start({
+        background: `conic-gradient(from 0deg at 50% 50%, black 0% 0%, white 0% 100%)`,
+        transition: { duration: 0.7, ease: "easeInOut" },
+      });
+    }
   }, [isAppearing]);
 
   return (
@@ -62,14 +75,25 @@ const AppearingNavigation = () => {
           left: "50%",
           visibility: "hidden",
         }}
-        style={{
-          transition: "gap 0.35s ease-in-out",
-        }}
         onClick={() => setIsAppearing((prev) => !prev)}
-        className="h-20 w-20 fixed z-[999] bg-[#FAFAFA] rounded-full flex flex-col justify-center items-center gap-5 hover:gap-2 cursor-pointer"
+        className="h-20 w-20 fixed z-[999] bg-[#FAFAFA] rounded-full cursor-pointer"
       >
-        <div className="w-1/2 border border-black"></div>
-        <div className="w-1/2 border border-black"></div>
+        <motion.div
+          initial={{
+            background: `conic-gradient(from 0deg at 50% 50%, black 0% 50%, white 0% 100%)`,
+          }}
+          animate={gradientController}
+          className="absolute inset-0 rounded-full z-[0]"
+        ></motion.div>
+        <div
+          style={{
+            transition: "gap 0.35s ease-in-out",
+          }}
+          className="h-[97%] w-[97%] rounded-full flex flex-col justify-center items-center gap-5 hover:gap-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white"
+        >
+          <div className="w-1/2 border border-black"></div>
+          <div className="w-1/2 border border-black"></div>
+        </div>
       </motion.div>
       <AnimatePresence>{isAppearing && <Cover />}</AnimatePresence>
     </>
