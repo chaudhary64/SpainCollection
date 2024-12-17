@@ -1,9 +1,16 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
 import { NavLink, useLocation } from "react-router-dom";
 
-const Cover = () => {
+const Cover = ({
+  isAppearing,
+  clicked,
+  setClicked,
+  setIsVisible,
+  setIsAppearing,
+}) => {
   const location = useLocation();
+  const coverControls = useAnimation();
   const [asthetics, setAsthetics] = useState([
     { home: "#C42A37" },
     { collections: "black" },
@@ -30,19 +37,44 @@ const Cover = () => {
     ]);
   };
 
+  const onClickAnimationHandler = () => {
+    setClicked(true);
+    setIsVisible(false);
+    setIsAppearing(false);
+  };
+
+  useEffect(() => {
+    if (isAppearing) {
+      coverControls.start({
+        top: ["-100%", "0%"],
+        display: "block",
+        visibility: "visible",
+        transition: { duration: 1, ease: [0.83, 0, 0.17, 1] },
+      });
+    } else if (clicked) {
+      coverControls.start({
+        top: "100%",
+        display: "none",
+        visibility: "hidden",
+        transition: { delay: 1.25, ease: "easeInOut" },
+      });
+      setClicked(false);
+    } else {
+      coverControls.start({
+        top: "100%",
+        display: "none",
+        visibility: "hidden",
+        transition: { duration: 1, ease: [0.83, 0, 0.17, 1] },
+      });
+    }
+  }, [isAppearing]);
+
   return (
     <motion.div
       initial={{
         top: "-100%",
       }}
-      animate={{
-        top: ["-100%", "0%"],
-        transition: { duration: 1, ease: [0.83, 0, 0.17, 1] },
-      }}
-      exit={{
-        top: "100%",
-        transition: { duration: 1, ease: [0.83, 0, 0.17, 1] },
-      }}
+      animate={coverControls}
       style={{
         backgroundColor: asthetics[5].bgColor,
         transition: "background-color 0.6s ease-out",
@@ -79,6 +111,7 @@ const Cover = () => {
               ]);
             }}
             onMouseLeave={mouseLeaveColorAdjuster}
+            onClick={onClickAnimationHandler}
             style={{
               color: asthetics[0].home,
             }}
@@ -106,6 +139,7 @@ const Cover = () => {
               ]);
             }}
             onMouseLeave={mouseLeaveColorAdjuster}
+            onClick={onClickAnimationHandler}
             style={{
               color: asthetics[1].collections,
             }}
@@ -132,6 +166,7 @@ const Cover = () => {
               ]);
             }}
             onMouseLeave={mouseLeaveColorAdjuster}
+            onClick={onClickAnimationHandler}
             style={{
               color: asthetics[2].curators,
             }}
@@ -159,6 +194,7 @@ const Cover = () => {
               ]);
             }}
             onMouseLeave={mouseLeaveColorAdjuster}
+            onClick={onClickAnimationHandler}
             style={{
               color: asthetics[3].journal,
             }}

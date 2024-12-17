@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import {
-  AnimatePresence,
   motion,
   useAnimation,
   useMotionValueEvent,
@@ -12,6 +11,7 @@ import Cover from "./Cover";
 const AppearingNavigation = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [isAppearing, setIsAppearing] = useState(false);
+  const [clicked, setClicked] = useState(false);
   const controls = useAnimation();
   const gradientController = useAnimation();
   const { scrollY } = useScroll();
@@ -22,7 +22,7 @@ const AppearingNavigation = () => {
     const prev = scrollY.getPrevious();
     if (latest < prev && latest > 300) {
       setIsVisible(true);
-    } else {
+    } else if (!isAppearing) {
       setIsVisible(false);
     }
   });
@@ -35,6 +35,14 @@ const AppearingNavigation = () => {
         top: "10%",
         visibility: "visible",
         transition: { duration: 0.5, ease: "easeInOut" },
+      });
+    } else if (clicked) {
+      controls.start({
+        opacity: 0,
+        scale: 0.5,
+        top: "0%",
+        visibility: "hidden",
+        transition: { delay: 1.25, ease: "easeInOut" },
       });
     } else {
       controls.start({
@@ -95,7 +103,13 @@ const AppearingNavigation = () => {
           <div className="w-1/2 border border-black"></div>
         </div>
       </motion.div>
-      <AnimatePresence>{isAppearing && <Cover />}</AnimatePresence>
+      <Cover
+        isAppearing={isAppearing}
+        clicked={clicked}
+        setClicked={setClicked}
+        setIsAppearing={setIsAppearing}
+        setIsVisible={setIsVisible}
+      />
     </>
   );
 };
