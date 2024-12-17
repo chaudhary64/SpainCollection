@@ -83,7 +83,7 @@ const Cover = ({
         backgroundColor: asthetics[5].bgColor,
         transition: "background-color 0.6s ease-out",
       }}
-      className="fixed h-screen w-full pt-[12%] z-[998]"
+      className="fixed h-screen w-full z-[998]"
     >
       <div className="flex flex-col items-center">
         {/* Navigation Links */}
@@ -91,7 +91,7 @@ const Cover = ({
           style={{
             lineHeight: 1,
           }}
-          className="flex flex-col gap-6 items-center text-[55px] font-[SaolDisplay-Light]"
+          className="flex flex-col gap-6 items-center text-[55px] font-[SaolDisplay-Light] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         >
           <NavLink
             to="/"
