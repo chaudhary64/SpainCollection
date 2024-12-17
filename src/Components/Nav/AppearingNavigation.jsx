@@ -84,7 +84,7 @@ const AppearingNavigation = () => {
           visibility: "hidden",
         }}
         onClick={() => setIsAppearing((prev) => !prev)}
-        className="h-[70px] w-[70px] fixed z-[999] bg-[#FAFAFA] rounded-full cursor-pointer"
+        className="h-14 md:h-16 xl:h-[70px] 2xl:h-20 w-14 md:w-16 xl:w-[70px] 2xl:w-20 fixed z-[999] bg-[#FAFAFA] rounded-full cursor-pointer"
       >
         <motion.div
           initial={{
@@ -97,7 +97,7 @@ const AppearingNavigation = () => {
           style={{
             transition: "gap 0.35s ease-in-out",
           }}
-          className="h-[97%] w-[97%] rounded-full flex flex-col justify-center items-center gap-5 hover:gap-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white"
+          className="h-[97%] w-[97%] rounded-full flex flex-col justify-center items-center gap-3 xl:gap-5 hover:gap-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white"
         >
           <div className="w-1/2 border border-black"></div>
           <div className="w-1/2 border border-black"></div>
