@@ -84,7 +84,7 @@ const AppearingNavigation = () => {
           visibility: "hidden",
         }}
         onClick={() => setIsAppearing((prev) => !prev)}
-        className="h-20 w-20 fixed z-[999] bg-[#FAFAFA] rounded-full cursor-pointer"
+        className="h-[70px] w-[70px] fixed z-[999] bg-[#FAFAFA] rounded-full cursor-pointer"
       >
         <motion.div
           initial={{
