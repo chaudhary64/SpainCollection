@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { NavLink, useLocation } from "react-router-dom";
+import { useLenis } from "lenis/react";
 
 const Cover = ({
   isAppearing,
@@ -11,6 +12,7 @@ const Cover = ({
 }) => {
   const location = useLocation();
   const coverControls = useAnimation();
+  const lenis = useLenis();
   const [asthetics, setAsthetics] = useState([
     { home: "#C42A37" },
     { collections: "black" },
@@ -52,13 +54,15 @@ const Cover = ({
         transition: { duration: 1, ease: [0.83, 0, 0.17, 1] },
       });
     } else if (clicked) {
-      coverControls.start({
-        top: "100%",
-        display: "none",
-        visibility: "hidden",
-        transition: { delay: 1.25, ease: "easeInOut" },
-      });
-      setClicked(false);
+      coverControls
+        .start({
+          top: "100%",
+          display: "none",
+          visibility: "hidden",
+          transition: { delay: 1.25, ease: "easeInOut" },
+        })
+        .then(() => setClicked(false))
+        .then(() => lenis.scrollTo(0, 0));
     } else {
       coverControls.start({
         top: "100%",
