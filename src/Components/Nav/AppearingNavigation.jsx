@@ -42,7 +42,7 @@ const AppearingNavigation = () => {
         scale: 0.5,
         top: "0%",
         visibility: "hidden",
-        transition: { delay: 1.25, ease: "easeInOut" },
+        transition: { delay: 1.155, ease: "easeInOut" },
       });
     } else {
       controls.start({

@@ -12,9 +12,11 @@ const PageTransition = ({ children }) => {
         // Animations
         exit={{
           display: "none",
+          visibility: "hidden",
           opacity: 0,
-          transition: { delay: 1.25, duration: 0 },
+          transition: { delay: 1.15, duration: 0 },
         }}
+        animate={{ visibility: "visible" }}
       >
         {children} {/* Displaying the Component which is wrapped in it */}
       </motion.div>
@@ -31,7 +33,7 @@ const PageTransition = ({ children }) => {
         initial={{ y: "-100%" }}
         exit={{
           y: ["-100%", "0%", "0%", "100%"],
-          transition: { duration: 2.75, times: [0, 0.45, 0.55, 1] },
+          transition: { duration: 2.5, times: [0, 0.46, 0.55, 1] },
         }}
         className="fixed inset-0 z-[99999999999] bg-[#C01827] cursor-wait"
       ></motion.span>
@@ -41,7 +43,7 @@ const PageTransition = ({ children }) => {
         initial={{ y: "-200%" }}
         exit={{
           y: ["-200%", "0%"],
-          transition: { duration: 1.5125 },
+          transition: { duration: 1.225 },
         }}
         className="fixed inset-0 z-[99999999999] cursor-wait"
       ></motion.span>

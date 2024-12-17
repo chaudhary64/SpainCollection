@@ -59,14 +59,10 @@ const Cover = ({
           top: "100%",
           display: "none",
           visibility: "hidden",
-          transition: { delay: 1.25, ease: "easeInOut" },
+          transition: { delay: 1.15, duration: 0 },
         })
         .then(() => setClicked(false))
-        .then(() =>
-          lenis.scrollTo("top", {
-            immediate: true,
-          })
-        );
+        .then(() => lenis.scrollTo("top"));
     } else {
       coverControls.start({
         top: "100%",
