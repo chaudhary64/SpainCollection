@@ -61,8 +61,12 @@ const Cover = ({
           visibility: "hidden",
           transition: { delay: 1.15, duration: 0 },
         })
-        .then(() => setClicked(false))
-        .then(() => lenis.scrollTo("top"));
+        .then(() =>
+          lenis.scrollTo("top", {
+            immediate: true,
+          })
+        )
+        .then(() => setClicked(false));
     } else {
       coverControls.start({
         top: "100%",
