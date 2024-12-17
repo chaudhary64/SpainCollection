@@ -43,7 +43,7 @@ const PageTransition = ({ children }) => {
         initial={{ y: "-200%" }}
         exit={{
           y: ["-200%", "0%"],
-          transition: { duration: 1.225 },
+          transition: { duration: 1.375 },
         }}
         className="fixed inset-0 z-[99999999999] cursor-wait"
       ></motion.span>
