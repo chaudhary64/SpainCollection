@@ -447,6 +447,11 @@ const Context = (props) => {
       src: "/images/Curators/caratula_german.webp",
     },
   ];
+
+  // Nav Bar Info
+  const [isVisible, setIsVisible] = useState(false);
+  const [isAppearing, setIsAppearing] = useState(false);
+  const [clicked, setClicked] = useState(false);
   return (
     <>
       <Info.Provider
@@ -465,6 +470,12 @@ const Context = (props) => {
           fixedImagesDataCurators,
           overlappingCardsData,
           cardsDataCurators,
+          isVisible,
+          setIsVisible,
+          isAppearing,
+          setIsAppearing,
+          clicked,
+          setClicked,
         }}
       >
         {props.children}

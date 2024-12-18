@@ -1,18 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { NavLink, useLocation } from "react-router-dom";
 import { useLenis } from "lenis/react";
+import { Info } from "../Context/Context";
 
-const Cover = ({
-  isAppearing,
-  clicked,
-  setClicked,
-  setIsVisible,
-  setIsAppearing,
-}) => {
+const Cover = () => {
   const location = useLocation();
   const coverControls = useAnimation();
   const lenis = useLenis();
+  const { isAppearing, clicked, setClicked, setIsVisible, setIsAppearing } =
+    useContext(Info);
   const [asthetics, setAsthetics] = useState([
     { home: "#C42A37" },
     { collections: "black" },
