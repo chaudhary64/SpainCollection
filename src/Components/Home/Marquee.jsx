@@ -14,7 +14,7 @@ const Marquee = ({ data, reverse = false }) => {
       {reverse ? (
         <MotionConfig
           animate={{
-            transform: "translateX(-100%)",
+            x: "-100%",
             transition: {
               duration: 30,
               repeat: Infinity,
@@ -24,10 +24,9 @@ const Marquee = ({ data, reverse = false }) => {
         >
           <motion.div
             initial={{
-              transform: "translateX(-200%)",
+              x: "-200%",
             }}
             className="w-fit flex justify-around"
-            key={Math.random()}
           >
             {data.map((item, index) => (
               <div key={index} className="flex justify-center items-center">
@@ -38,10 +37,9 @@ const Marquee = ({ data, reverse = false }) => {
           </motion.div>
           <motion.div
             initial={{
-              transform: "translateX(-200%)",
+              x: "-200%",
             }}
             className="w-fit flex justify-around"
-            key={Math.random()}
           >
             {data.map((item, index) => (
               <div key={index} className="flex justify-center items-center">
@@ -52,10 +50,9 @@ const Marquee = ({ data, reverse = false }) => {
           </motion.div>
           <motion.div
             initial={{
-              transform: "translateX(-200%)",
+              x: "-200%",
             }}
             className="w-fit flex justify-around"
-            key={Math.random()}
           >
             {data.map((item, index) => (
               <div key={index} className="flex justify-center items-center">
