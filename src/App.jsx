@@ -187,7 +187,7 @@ const App = () => {
       }}
     >
       <AssetLoader assets={assets}>
-        <main>
+        <main className="overflow-x-clip">
           <Nav />
           <AppearingNavigation />
           <RoutesForNav />
