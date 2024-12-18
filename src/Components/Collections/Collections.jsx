@@ -4,14 +4,14 @@ import { useContext } from "react";
 import { Info } from "../Context/Context";
 
 const Collections = () => {
-  const { state, yourDestinationData, yourExperienceData } = useContext(Info); 
+  const { state, yourDestinationData, yourExperienceData } = useContext(Info);
 
   return (
     <div
       style={{
         marginTop: `-${state.height}px`,
       }}
-      className="h-screen w-full relative py-[1px]"
+      className="h-screen w-full py-[1px] relative -z-[10]"
     >
       {/* Default Background Image */}
       <div className="inset-0 absolute -z-50">
