@@ -95,7 +95,7 @@ const Cover = ({
           style={{
             lineHeight: 1,
           }}
-          className="flex flex-col gap-6 items-center text-[55px] font-[SaolDisplay-Light] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          className="flex flex-col gap-6 items-center text-4xl md:text-5xl xl:text-6xl 3xl:text-7xl font-[SaolDisplay-Light] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         >
           <NavLink
             to="/"
@@ -211,12 +211,12 @@ const Cover = ({
           </NavLink>
         </div>
         {/* Social Media Handles */}
-        <div className="w-full absolute bottom-20 flex justify-center text-sm font-thin font-[Inter]">
+        <div className="w-full absolute bottom-20 flex justify-center text-xs lg:text-sm 2xl:text-lg 3xl:text-2xl font-thin font-[Inter]">
           <div
             style={{
               color: asthetics[4].defaultTheme,
             }}
-            className="flex gap-5 underline decoration-1 underline-offset-2"
+            className="flex gap-5 md:gap-6 xl:gap-7 3xl:gap-8 underline decoration-1 underline-offset-2"
           >
             <div>Instagram</div>
             <div className="flex items-center gap-2">
