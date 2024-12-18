@@ -18,15 +18,22 @@ const Circle = () => {
   const { isVisible, setIsVisible, isAppearing, setIsAppearing, clicked } =
     useContext(Info);
 
-  useMotionValueEvent(scrollY, "change", () => {
-    const latest = scrollY.get();
-    const prev = scrollY.getPrevious();
-    if (latest < prev && latest > 300) {
-      setIsVisible(true);
-    } else if (!isAppearing) {
-      setIsVisible(false);
-    }
-  });
+  // Scroll event handling
+  useEffect(() => {
+    const handleScroll = () => {
+      const latest = window.scrollY;
+      if (latest > 300) {
+        setIsVisible(true);
+      } else if (!isAppearing) {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [isAppearing]);
 
   useEffect(() => {
     if (isVisible) {
