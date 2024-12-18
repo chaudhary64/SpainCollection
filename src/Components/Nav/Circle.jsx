@@ -11,7 +11,6 @@ import { Info } from "../Context/Context";
 const Circle = () => {
   const controls = useAnimation();
   const gradientController = useAnimation();
-  const gapController = useAnimation();
   const rotateControllerUp = useAnimation();
   const rotateControllerDown = useAnimation();
   const { scrollY } = useScroll();
@@ -64,16 +63,18 @@ const Circle = () => {
         background: `conic-gradient(from 0deg at 50% 50%, black 0% 100%, white 100% 100%)`,
         transition: { duration: 0.7, ease: "easeInOut" },
       });
-      gapController.start({
-        gap: 0,
-        transition: { duration: 0.1, ease: "easeInOut" },
-      });
       rotateControllerUp.start({
         rotate: 45,
+        x: "-50%",
+        y: "-50%",
+        top: "50%",
         transition: { delay: 0.1, ease: "easeInOut" },
       });
       rotateControllerDown.start({
         rotate: -45,
+        x: "-50%",
+        y: "-50%",
+        top: "50%",
         transition: { delay: 0.1, ease: "easeInOut" },
       });
     } else {
@@ -82,20 +83,23 @@ const Circle = () => {
         background: `conic-gradient(from 0deg at 50% 50%, black 0% 0%, white 0% 100%)`,
         transition: { duration: 0.7, ease: "easeInOut" },
       });
-      gapController.start({
-        gap: window.innerWidth < 1024 ? "12px" : "20px",
-        transition: { duration: 0.1, ease: "easeInOut" },
-      });
       rotateControllerUp.start({
         rotate: 0,
+        x: "-50%",
+        y: "-50%",
+        top: "35%",
         transition: { delay: 0.1, ease: "easeInOut" },
       });
       rotateControllerDown.start({
         rotate: 0,
+        x: "-50%",
+        y: "-50%",
+        top: "65%",
         transition: { delay: 0.1, ease: "easeInOut" },
       });
     }
   }, [isAppearing]);
+
   return (
     <motion.div
       animate={controls}
@@ -121,22 +125,27 @@ const Circle = () => {
         style={{
           transition: "gap 0.35s ease-in-out",
         }}
-        animate={gapController}
-        className="h-[97%] w-[97%] rounded-full flex flex-col justify-center items-center gap-3 xl:gap-5 hover:gap-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white"
+        className="h-[97%] w-[97%] rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 bg-white"
       >
         <motion.div
           animate={rotateControllerUp}
           initial={{
             rotate: 0,
+            x: "-50%",
+            y: "-50%",
+            top: "35%",
           }}
-          className="w-1/2 border border-black"
+          className="w-1/2 border border-black absolute left-1/2"
         ></motion.div>
         <motion.div
           animate={rotateControllerDown}
           initial={{
             rotate: 0,
+            x: "-50%",
+            y: "-50%",
+            top: "65%",
           }}
-          className="w-1/2 border border-black"
+          className="w-1/2 border border-black absolute left-1/2"
         ></motion.div>
       </motion.div>
     </motion.div>

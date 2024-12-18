@@ -4,7 +4,6 @@ import { motion, useAnimation } from "framer-motion";
 import { Info } from "../Context/Context";
 
 const SideCircle = () => {
-  const gapController = useAnimation();
   const rotateControllerUp = useAnimation();
   const rotateControllerDown = useAnimation();
   const lenis = useLenis();
@@ -13,34 +12,39 @@ const SideCircle = () => {
   useEffect(() => {
     if (isAppearing) {
       lenis.stop();
-      gapController.start({
-        gap: 0,
-        transition: { duration: 0.1, ease: "easeInOut" },
-      });
       rotateControllerUp.start({
         rotate: 45,
+        x: "-50%",
+        y: "-50%",
+        top: "50%",
         transition: { delay: 0.1, ease: "easeInOut" },
       });
       rotateControllerDown.start({
         rotate: -45,
+        x: "-50%",
+        y: "-50%",
+        top: "50%",
         transition: { delay: 0.1, ease: "easeInOut" },
       });
     } else {
       lenis.start();
-      gapController.start({
-        gap: window.innerWidth < 1024 ? "12px" : "20px",
-        transition: { duration: 0.1, ease: "easeInOut" },
-      });
       rotateControllerUp.start({
         rotate: 0,
+        x: "-50%",
+        y: "-50%",
+        top: "35%",
         transition: { delay: 0.1, ease: "easeInOut" },
       });
       rotateControllerDown.start({
         rotate: 0,
+        x: "-50%",
+        y: "-50%",
+        top: "65%",
         transition: { delay: 0.1, ease: "easeInOut" },
       });
     }
   }, [isAppearing]);
+
   return (
     <motion.div
       id="This is the side circle"
@@ -48,23 +52,28 @@ const SideCircle = () => {
       style={{
         transition: "gap 0.35s ease-in-out",
       }}
-      animate={gapController}
-      className="h-12 w-12 rounded-full cursor-pointer flex flex-col justify-center items-center gap-3 xl:gap-5 hover:gap-2 relative"
+      className="h-12 w-12 rounded-full cursor-pointer relative"
     >
       {/* Lines */}
       <motion.div
         animate={rotateControllerUp}
         initial={{
           rotate: 0,
+          x: "-50%",
+          y: "-50%",
+          top: "35%",
         }}
-        className="w-1/2 border border-white"
+        className="w-1/2 border border-white absolute left-1/2"
       ></motion.div>
       <motion.div
         animate={rotateControllerDown}
         initial={{
           rotate: 0,
+          x: "-50%",
+          y: "-50%",
+          top: "65%",
         }}
-        className="w-1/2 border border-white"
+        className="w-1/2 border border-white absolute left-1/2"
       ></motion.div>
     </motion.div>
   );
