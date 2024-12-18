@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import { useContext, useEffect, useRef, useState } from "react";
 import { Info } from "../Context/Context";
 import NavigatorLink from "./NavigatorLink";
+import SideCircle from "./SideCircle";
 
 const Nav = () => {
   const loc = useLocation();
@@ -47,7 +48,7 @@ const Nav = () => {
     }
   }, [loc]);
   return (
-    <nav ref={ref} className="pt-5 md:pt-10 lg:pt-14 relative z-[100]">
+    <nav ref={ref} className="pt-5 md:pt-10 lg:pt-14 relative">
       <div className="h-fit w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] mx-auto px-1 flex justify-between items-center text-base lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl tracking-widest overflow-clip">
         {/* Left Part */}
         <div className="hidden md:flex gap-12 xl:gap-16 2xl:gap-24">
@@ -65,7 +66,7 @@ const Nav = () => {
         {/* Logo */}
         <div>
           {/* Logo for smaller screen */}
-          <div className="md:hidden border-2 rounded-full">
+          <div className="md:hidden border border-white rounded-full mix-blend-difference">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -74,7 +75,7 @@ const Nav = () => {
               x="0px"
               y="0px"
               viewBox="0 0 512 512"
-              className="h-14 sm:h-16"
+              className="h-12 w-12"
               xmlSpace="preserve"
             >
               <g>
@@ -282,9 +283,8 @@ const Nav = () => {
           />
         </div>
         {/* Lines for smaller screen */}
-        <div className="h-12 w-10 sm:w-12 flex flex-col justify-around items-center md:hidden">
-          <div className="h-[0.5px] w-full border border-black"></div>
-          <div className="h-[0.5px] w-full border border-black"></div>
+        <div className="md:hidden border border-white mix-blend-difference rounded-full relative z-[999]">
+          <SideCircle />
         </div>
       </div>
     </nav>
