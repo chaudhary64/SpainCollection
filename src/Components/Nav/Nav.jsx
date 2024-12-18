@@ -3,18 +3,23 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { Info } from "../Context/Context";
 import NavigatorLink from "./NavigatorLink";
 import SideCircle from "./SideCircle";
+import { useAnimation } from "framer-motion";
+import { motion } from "framer-motion";
 
 const Nav = () => {
   const loc = useLocation();
+  const navControls = useAnimation();
   const [defaultAsthetics, setDefaultAsthetics] = useState({
     color: "#000039",
     fill: "#000039",
+    bgColor: "#FFFFFF",
   }); // Initial asthetics
 
   const { setState } = useContext(Info); // Using the context
 
   const ref = useRef(null); // Ref for the nav
 
+  // Updating the height of the nav in the context
   useEffect(() => {
     const updateHeight = () => {
       let height = ref.current.getBoundingClientRect().height; // Getting the height of the nav
@@ -34,21 +39,36 @@ const Nav = () => {
       setDefaultAsthetics({
         color: "#EBECEC",
         fill: "#FDFDFD",
+        bgColor: "#000000",
       });
     } else if (loc.pathname === "/collections") {
       setDefaultAsthetics({
         color: "#EBECEC",
         fill: "#FDFDFD",
+        bgColor: "#00000000", // Transparent color
       });
     } else {
       setDefaultAsthetics({
         color: "#000039",
         fill: "#000039",
+        bgColor: "#FFFFFF",
       });
     }
   }, [loc]);
+
+  useEffect(() => {
+    navControls.start({
+      backgroundColor: defaultAsthetics.bgColor,
+      transition: { delay: 1.15, duration: 0 },
+    });
+  }, [defaultAsthetics]);
+
   return (
-    <nav ref={ref} className="pt-5 md:pt-10 lg:pt-14 relative">
+    <motion.nav
+      ref={ref}
+      animate={navControls}
+      className="pt-5 md:pt-10 lg:pt-14 relative"
+    >
       <div className="h-fit w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] mx-auto px-1 flex justify-between items-center text-base lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl tracking-widest overflow-clip">
         {/* Left Part */}
         <div className="hidden md:flex gap-12 xl:gap-16 2xl:gap-24">
@@ -287,7 +307,7 @@ const Nav = () => {
           <SideCircle />
         </div>
       </div>
-    </nav>
+    </motion.nav>
   );
 };
 
