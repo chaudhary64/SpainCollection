@@ -3,9 +3,6 @@ import { useState } from "react";
 import { createContext } from "react";
 
 const Context = (props) => {
-  const [state, setState] = useState({
-    height: 0,
-  });
   // For Home Page
   const AmbassadorsData = [
     {
@@ -452,6 +449,10 @@ const Context = (props) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isAppearing, setIsAppearing] = useState(false);
   const [clicked, setClicked] = useState(false);
+  const [state, setState] = useState({
+    height: 0,
+  });
+  
   return (
     <>
       <Info.Provider
