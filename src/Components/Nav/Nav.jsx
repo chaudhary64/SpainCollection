@@ -36,7 +36,13 @@ const Nav = () => {
   }, []);
 
   useEffect(() => {
-    if (loc.pathname === "/curators") {
+    if (loc.pathname === "/") {
+      setDefaultAsthetics({
+        color: "#000039",
+        fill: "#000039",
+        bgColor: "#00000000", // Transparent color
+      });
+    } else if (loc.pathname === "/curators") {
       setDefaultAsthetics({
         color: "#EBECEC",
         fill: "#FDFDFD",
