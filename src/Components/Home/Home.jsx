@@ -72,7 +72,7 @@ const Home = () => {
   const reverseMarqueeX = useTransform(scrollMarquee, [0, 1], ["0%", "40%"]);
 
   return (
-    <section>
+    <section id="HomePage">
       {/* This below div will act as a background */}
       <div
         id="mask"
@@ -83,11 +83,11 @@ const Home = () => {
         className="fixed h-dvh w-full top-0 left-0 z-[-99]"
       ></div>
       {/* Expander */}
-      <motion.div ref={ExpanderRef}>
+      <motion.div id="Expander" ref={ExpanderRef}>
         <Expander />
       </motion.div>
       {/* About US */}
-      <div className="pt-14 xl:pt-52 pb-14 xl:pb-32">
+      <div id="AboutUs" className="pt-14 xl:pt-52 pb-14 xl:pb-32">
         <p className="text-[#BF1826] text-center text-xs sm:text-sm xl:text-lg 3xl:text-2xl font-[400] font-['Inter'] tracking-widest">
           ABOUT US
         </p>
@@ -111,7 +111,7 @@ const Home = () => {
         </div>
       </div>
       {/* Ambassadors */}
-      <motion.div ref={AmbassadorsRef} className="pb-44">
+      <motion.div id="Ambassadors" ref={AmbassadorsRef} className="pb-44">
         <p className="text-[#BF1826] text-center text-base font-[400] font-['Inter'] tracking-widest uppercase">
           Ambassadors
         </p>
@@ -127,7 +127,7 @@ const Home = () => {
         </div>
       </motion.div>
       {/* Why Choose Us */}
-      <div className="pt-[68vh] relative">
+      <div id="whyChooseUs" className="pt-[68vh] relative">
         {/* Text */}
         <div
           style={{
@@ -186,6 +186,7 @@ const Home = () => {
       </div>
       {/* Marquee Animation */}
       <div
+        id="MarqueeContainer"
         ref={MarqueeContainer}
         className="mt-[360px] flex flex-col gap-10 overflow-x-clip"
       >
@@ -210,6 +211,7 @@ const Home = () => {
       </div>
       {/* Discover the Luxury */}
       <div
+        id="DiscoverTheLuxury"
         ref={DragConstraintRef}
         className="h-[120vh] w-full px-[10%] py-40 mt-16 mb-96 mx-auto bg-black text-white text-5xl relative overflow-x-clip"
       >
