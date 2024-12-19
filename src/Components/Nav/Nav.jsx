@@ -15,22 +15,23 @@ const Nav = () => {
     bgColor: "#FFFFFF",
   }); // Initial asthetics
 
-  const { setState } = useContext(Info); // Using the context
+  const { setState, setScreenWidth } = useContext(Info); // Using the context
 
   const ref = useRef(null); // Ref for the nav
 
   // Updating the height of the nav in the context
   useEffect(() => {
-    const updateHeight = () => {
+    const handleResize = () => {
       let height = ref.current.getBoundingClientRect().height; // Getting the height of the nav
       setState({ height }); // Setting the height in the context
+      setScreenWidth(window.innerWidth);
     };
 
-    updateHeight(); // Initial call to set the height
+    handleResize(); // Initial call to set the height
 
-    window.addEventListener("resize", updateHeight);
+    window.addEventListener("resize", handleResize);
     return () => {
-      window.removeEventListener("resize", updateHeight);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 

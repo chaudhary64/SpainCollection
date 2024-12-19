@@ -15,19 +15,8 @@ import Cards from "./Cards";
 import { Info } from "../Context/Context";
 
 const Home = () => {
-  const { AmbassadorsData, fixedImages, marqueesData, cardsData } =
+  const { AmbassadorsData, fixedImages, marqueesData, cardsData, screenWidth } =
     useContext(Info);
-
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const AmbassadorsRef = useRef(null);
   const ExpanderRef = useRef(null);

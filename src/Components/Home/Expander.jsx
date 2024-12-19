@@ -1,29 +1,20 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useRef } from "react";
 import { IoPlay } from "react-icons/io5";
 import {
   motion,
-  useMotionValueEvent,
   useScroll,
   useTransform,
 } from "framer-motion";
+import { Info } from "../Context/Context";
 
 const Expander = () => {
-  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const { screenWidth } = useContext(Info);
   const ColumnsHolder = useRef(null);
   const thirdColumn = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ColumnsHolder,
     offset: screenWidth < 768 ? [`start 30%`, "start"] : [`start`, "end"],
   });
-
-  useEffect(() => {
-    const handleResize = () => {
-      setScreenWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const getTransforms = () => {
     // For Mobile

@@ -452,7 +452,10 @@ const Context = (props) => {
   const [state, setState] = useState({
     height: 0,
   });
-  
+
+  // Screen Width for responsive animations
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
   return (
     <>
       <Info.Provider
@@ -477,6 +480,8 @@ const Context = (props) => {
           setIsAppearing,
           clicked,
           setClicked,
+          screenWidth,
+          setScreenWidth,
         }}
       >
         {props.children}
