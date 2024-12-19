@@ -18,6 +18,17 @@ const Home = () => {
   const { AmbassadorsData, fixedImages, marqueesData, cardsData } =
     useContext(Info);
 
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const AmbassadorsRef = useRef(null);
   const ExpanderRef = useRef(null);
   const [theme, setTheme] = useState("white");
@@ -27,17 +38,20 @@ const Home = () => {
   });
   const { scrollYProgress: scrollYProgressExpander } = useScroll({
     target: ExpanderRef,
-    offset: ["start", "end"],
+    offset: screenWidth < 768 ? [`start 30%`, "start"] : [`start`, "end"],
   });
+
   useEffect(() => {
     if (scrollYProgressAmbassador.get() >= 0.1) setTheme("white");
   }, []);
-  useMotionValueEvent(scrollYProgressAmbassador, "change", (l) =>
-    l >= 0.1 ? setTheme("white") : setTheme("black")
-  );
-  useMotionValueEvent(scrollYProgressExpander, "change", (l) =>
-    l >= 0.9 ? setTheme("black") : setTheme("white")
-  );
+
+  useMotionValueEvent(scrollYProgressAmbassador, "change", (l) => {
+    setTheme(l >= 0.1 ? "white" : "black");
+  });
+  useMotionValueEvent(scrollYProgressExpander, "change", (l) => {
+    setTheme(l >= 0.9 ? "black" : "white");
+  });
+
   // For Image Holder
   const imageHolder = useRef(null);
 
