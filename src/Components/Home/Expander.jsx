@@ -16,32 +16,11 @@ const Expander = () => {
     ["115%", "115%", "50%"]
   );
   const top = useTransform(scrollYProgress, [0, 0.3], ["25%", "0%"]);
-  const textTop = useTransform(scrollYProgress, [0, 0.3], ["0", "-110%"]);
+  const textTop = useTransform(scrollYProgress, [0, 0.3], ["-50%", "-110%"]);
+
   return (
     <section ref={ColumnsHolder} className="h-[300vh] relative mt-20">
       <motion.div className="h-screen flex justify-center items-center flex-nowrap gap-10 sticky top-0 overflow-clip">
-        {/* Text */}
-        <motion.div
-          style={{
-            y: textTop,
-          }}
-          className="w-full text-4xl font-light flex flex-col items-center absolute top-0 z-[1]"
-        >
-          <div className="text-center text-black/75">
-            <p>Spain Collection is your expert partner for deluxe</p>
-            <p>bespoke travel experiences in</p>
-          </div>
-          <div
-            style={{
-              fontFamily: "SaolDisplay-Italic",
-              lineHeight: "1",
-            }}
-            className="mt-8 text-[110px] text-center text-black/90 uppercase"
-          >
-            <p>Spain &</p>
-            <p>Portugal</p>
-          </div>
-        </motion.div>
         {/*  1st Column */}
         <div className="shrink-0 h-[50%] w-[14%]">
           <video
@@ -79,7 +58,30 @@ const Expander = () => {
           style={{ width, willChange: "width", y: top }}
           className="shrink-0 h-full relative"
         >
-          {/* Text */}
+          {/* Text to disappear */}
+          <motion.div
+            style={{
+              y: textTop,
+              x: "-50%",
+            }}
+            className="w-screen text-4xl font-light flex flex-col items-center absolute top-0 left-1/2 z-[1]"
+          >
+            <div className="text-center text-black/75">
+              <p>Spain Collection is your expert partner for deluxe</p>
+              <p>bespoke travel experiences in</p>
+            </div>
+            <div
+              style={{
+                fontFamily: "SaolDisplay-Italic",
+                lineHeight: "1",
+              }}
+              className="mt-8 text-[110px] text-center text-black/90 uppercase"
+            >
+              <p>Spain &</p>
+              <p>Portugal</p>
+            </div>
+          </motion.div>
+          {/* Text to appear */}
           <motion.div
             style={{
               lineHeight: "0.9",
