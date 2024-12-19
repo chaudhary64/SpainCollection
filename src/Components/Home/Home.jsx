@@ -75,11 +75,12 @@ const Home = () => {
     <section>
       {/* This below div will act as a background */}
       <div
+        id="mask"
         style={{
           backgroundColor: theme,
           transition: "background-color 0.6s cubic-bezier(0.11, 0, 0.5, 0)",
         }}
-        className="fixed inset-0 z-[-99]"
+        className="fixed h-dvh w-full top-0 left-0 z-[-99]"
       ></div>
       {/* Expander */}
       <motion.div ref={ExpanderRef}>
