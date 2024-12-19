@@ -1,10 +1,6 @@
 import { useContext, useRef } from "react";
 import { IoPlay } from "react-icons/io5";
-import {
-  motion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Info } from "../Context/Context";
 
 const Expander = () => {
@@ -120,7 +116,7 @@ const Expander = () => {
               y: textTop,
               x: "-50%",
             }}
-            className="w-screen text-sm xs:text-lg sm:text-xl md:text-2xl xl:text-4xl 2xl:text-5xl 3xl:text-7xl font-light flex flex-col items-center absolute top-0 left-1/2 z-[1]"
+            className="w-screen text-sm xxs:text-base xs:text-lg sm:text-xl md:text-2xl xl:text-4xl 2xl:text-5xl 3xl:text-7xl font-light flex flex-col items-center absolute top-0 left-1/2 z-[1]"
           >
             <div className="text-center text-black/75">
               <p>Spain Collection is your expert partner for deluxe</p>
@@ -131,7 +127,7 @@ const Expander = () => {
                 fontFamily: "SaolDisplay-Italic",
                 lineHeight: "1",
               }}
-              className="mt-1 md:mt-8 text-5xl xs:text-6xl sm:text-7xl md:text-8xl xl:text-9xl 2xl:text-[160px] 3xl:text-[200px] text-center text-black/90 uppercase"
+              className="mt-1 md:mt-8 text-5xl xxs:text-6xl sm:text-7xl md:text-8xl xl:text-9xl 2xl:text-[160px] 3xl:text-[200px] text-center text-black/90 uppercase"
             >
               <p>Spain &</p>
               <p>Portugal</p>
