@@ -79,7 +79,7 @@ const AssetLoader = ({ assets, children }) => {
             className="fixed inset-0 flex flex-col items-center justify-center bg-black z-[9999]"
           >
             <div>
-              <div className="h-20 w-20 relative rounded-full">
+              <div className="h-16 sm:h-[70px] md:h-20 3xl:h-28 w-16 sm:w-[70px] md:w-20 3xl:w-28 relative rounded-full">
                 <motion.div
                   animate={gradientController}
                   className="absolute inset-0 z-[1] rounded-full"
@@ -93,7 +93,7 @@ const AssetLoader = ({ assets, children }) => {
                   x="0px"
                   y="0px"
                   viewBox="0 0 512 512"
-                  className="h-16 absolute z-[3] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                  className="h-14 sm:h-[60px] md:h-16 3xl:h-24 absolute z-[3] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
                   xmlSpace="preserve"
                 >
                   <g>
