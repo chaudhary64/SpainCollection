@@ -87,23 +87,27 @@ const Home = () => {
         <Expander />
       </motion.div>
       {/* About US */}
-      <div className="pt-64 pb-28">
-        <p className="text-[#BF1826] text-center text-base font-[400] font-['Inter'] tracking-widest">
+      <div className="pt-14 xl:pt-52 pb-14 xl:pb-32">
+        <p className="text-[#BF1826] text-center text-xs sm:text-sm xl:text-lg 3xl:text-2xl font-[400] font-['Inter'] tracking-widest">
           ABOUT US
         </p>
-        <div className="w-[50%] mx-auto mt-20 relative">
+        <div className="w-[75%] sm:w-[65%] md:w-[60%] lg:w-[55%] xl:w-[50%] mx-auto mt-10 xl:mt-20 relative bg-black">
           <img
             className="object-cover opacity-40"
             src="/images/Home/caratula_video_abene_new.webp"
             alt=""
           />
-          <div className="h-[72px] w-[72px] border-2 border-[#D6D6D6] rounded-full absolute top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center">
-            <IoPlay className="text-white h-5 " />
+          <div className="h-[72px] w-[72px] border-2 border-[#D6D6D6] rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center">
+            <IoPlay className="h-5 text-white" />
           </div>
         </div>
-        <div className="mt-10 text-white">
-          <p className="text-center text-xl">Abene Mendizabal</p>
-          <p className="text-center">Founder & CEO Spain Collection</p>
+        <div className="mt-8 xl:mt-10 3xl:mt-14 text-white mix-blend-difference">
+          <p className="text-center text-sm xs:text-base xl:text-2xl 3xl:text-4xl">
+            Abene Mendizabal
+          </p>
+          <p className="text-center text-xs xs:text-sm xl:text-lg 3xl:text-2xl">
+            Founder & CEO Spain Collection
+          </p>
         </div>
       </div>
       {/* Ambassadors */}
