@@ -84,7 +84,7 @@ const Cover = () => {
         backgroundColor: asthetics[5].bgColor,
         transition: "background-color 0.6s ease-out",
       }}
-      className="fixed h-screen w-full z-[998]"
+      className="fixed h-dvh w-full z-[998]"
     >
       <div className="flex flex-col items-center">
         {/* Navigation Links */}
