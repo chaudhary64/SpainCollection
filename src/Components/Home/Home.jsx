@@ -49,8 +49,35 @@ const Home = () => {
     offset: ["start end", "end start"],
   });
 
-  const LeftAndRightImgY = useTransform(imageHolderScrolled, [0, 1], [0, -75]);
-  const MidImgY = useTransform(imageHolderScrolled, [0, 1], [0, 150]);
+  const getTransforms = () => {
+    // For Mobile
+    if (screenWidth < 768) {
+      return {
+        LeftAndRightImgY: useTransform(imageHolderScrolled, [0, 1], [0, 0]),
+        MidImgY: useTransform(imageHolderScrolled, [0, 1], [0, 0]),
+      };
+    } else if (screenWidth >= 768 && screenWidth < 1024) {
+      // For Tablet
+      return {
+        LeftAndRightImgY: useTransform(imageHolderScrolled, [0, 1], [0, 0]),
+        MidImgY: useTransform(imageHolderScrolled, [0, 1], [0, 0]),
+      };
+    } else if (screenWidth >= 1024 && screenWidth < 2000) {
+      // For any other large screen size screenWidth >= 1024
+      return {
+        LeftAndRightImgY: useTransform(imageHolderScrolled, [0, 1], [0, -75]),
+        MidImgY: useTransform(imageHolderScrolled, [0, 1], [0, 150]),
+      };
+    } else {
+      // For any other large screen size screenWidth >= 2000
+      return {
+        LeftAndRightImgY: useTransform(imageHolderScrolled, [0, 1], [0, -75]),
+        MidImgY: useTransform(imageHolderScrolled, [0, 1], [0, 150]),
+      };
+    }
+  };
+
+  const { LeftAndRightImgY, MidImgY } = getTransforms();
 
   // For Dragging Cards
   const DragConstraintRef = useRef(null);
@@ -131,59 +158,78 @@ const Home = () => {
         </div>
       </motion.div>
       {/* Why Choose Us */}
-      <div id="whyChooseUs" className="pt-[68vh] relative">
+      <div
+        id="whyChooseUs"
+        // pt-[68vh]
+        className="relative "
+      >
         {/* Text */}
         <div
           style={{
             lineHeight: "0.9",
           }}
-          className="text-center text-[170px] w-full absolute top-0 z-[2]"
         >
-          <p className="text-red-600 italic">Why</p>
-          <p>CHOOSE</p>
-          <p>SPAIN</p>
-          <p>COLLEC-</p>
-          <p>TION?</p>
+          {/* For smaller screen */}
+          <div className="w-full flex lg:hidden gap-1.5 justify-center text-lg">
+            <span className="text-red-600 italic">Why</span>
+            <span>CHOOSE</span>
+            <span>SPAIN</span>
+            <span>COLLEC-</span>
+            <span>TION?</span>
+          </div>
+          {/* For bigger screen */}
+          <div
+            style={{
+              lineHeight: "0.85",
+            }}
+            className="w-full hidden lg:block text-center text-[14vw] relative z-[2]"
+          >
+            <p className="text-red-600 italic">Why</p>
+            <p>CHOOSE</p>
+            <p>SPAIN</p>
+            <p>COLLEC-</p>
+            <p>TION?</p>
+          </div>
         </div>
         {/* ImagesHolder */}
-        <div ref={imageHolder} className="flex justify-evenly">
+        <div
+          ref={imageHolder}
+          className="lg:-mt-[25%] pt-6 flex flex-wrap lg:flex-nowrap justify-evenly gap-5"
+        >
           <motion.div
             style={{
               y: LeftAndRightImgY,
             }}
+            className="shrink-0 h-fit w-[80%] lg:w-[21%] xl:w-[20%] 2xl:w-[19%]"
           >
             <FixedImages
               key={fixedImages[0].id}
               {...fixedImages[0]}
               imageHolderScrolled={imageHolderScrolled}
-              height={510}
-              width={310}
             />
           </motion.div>
           <motion.div
             style={{
               y: MidImgY,
             }}
+            className="shrink-0 h-fit w-[80%] lg:w-[21%] xl:w-[20%] 2xl:w-[19%]"
           >
             <FixedImages
               key={fixedImages[1].id}
               {...fixedImages[1]}
               imageHolderScrolled={imageHolderScrolled}
-              height={510}
-              width={310}
             />
           </motion.div>
           <motion.div
             style={{
               y: LeftAndRightImgY,
             }}
+            className="shrink-0 h-fit w-[80%] lg:w-[21%] xl:w-[20%] 2xl:w-[19%]"
           >
             <FixedImages
               key={fixedImages[2].id}
               {...fixedImages[2]}
               imageHolderScrolled={imageHolderScrolled}
-              height={510}
-              width={310}
             />
           </motion.div>
         </div>

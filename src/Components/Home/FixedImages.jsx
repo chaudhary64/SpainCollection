@@ -1,50 +1,76 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { Info } from "../Context/Context";
 
 const FixedImages = ({
   src,
   number,
   text,
   imageHolderScrolled: scrollYProgress,
-  width,
-  height,
   theme = "black",
 }) => {
+  const { screenWidth } = useContext(Info);
   const imageRef = useRef(null);
-  const positionY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  const positionYBottom = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+
+  const getTransforms = () => {
+    // For Mobile
+    if (screenWidth < 768) {
+      return {
+        positionY: useTransform(scrollYProgress, [0, 1], ["0%", "0%"]),
+        positionYBottom: useTransform(scrollYProgress, [0, 1], ["0%", "0%"]),
+      };
+    } else if (screenWidth >= 768 && screenWidth < 1024) {
+      // For Tablet
+      return {
+        positionY: useTransform(scrollYProgress, [0, 1], ["0%", "0%"]),
+        positionYBottom: useTransform(scrollYProgress, [0, 1], ["0%", "0%"]),
+      };
+    } else if (screenWidth >= 1024 && screenWidth < 2000) {
+      // For any other large screen size screenWidth >= 1024
+      return {
+        positionY: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]),
+        positionYBottom: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]),
+      };
+    } else {
+      // For any other large screen size screenWidth >= 2000
+      return {
+        positionY: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]),
+        positionYBottom: useTransform(scrollYProgress, [0, 1], ["0%", "100%"]),
+      };
+    }
+  };
+
+  const { positionY, positionYBottom } = getTransforms();
+
   return (
-    <div
-      ref={imageRef}
-      style={{
-        width: width + "px",
-      }}
-      className="text-lg"
-    >
-      <div
-        style={{
-          height: height + "px",
-        }}
-        className="w-full overflow-clip relative bg-red-500"
-      >
+    <div ref={imageRef} className="text-lg mx-auto">
+      {/* Image Conatiner */}
+      <div className="hidden lg:block h-[58.5vh] xl:h-[66vh] w-full relative overflow-clip">
         <motion.img
           style={{
             position: "absolute",
             bottom: positionYBottom,
             y: positionY,
+            scale: 1.12,
           }}
-          className="absolute"
+          className="object-cover w-full absolute"
           src={src}
           alt=""
         />
       </div>
-      <div className="mt-5">
+      {/* Text Container */}
+      <div className="lg:mt-0 border-2 lg:border-0 border-black/65 py-2 lg:py-[1.25vw] px-3.5 lg:px-0 rounded-2xl">
         {theme == "black" ? (
           <>
-            <p className="text-2xl text-[#0E0E0D]/95">{number}</p>
-            <p className="mt-0.5 text-xl text-[#0E0E0D]/90 tracking-wider">
-              {text}
-            </p>
+            <div
+              style={{
+                lineHeight: "1.5",
+              }}
+              className="text-[1.25vw]"
+            >
+              <p className="text-[#0E0E0D]/100">{number}</p>
+              <p className="text-[#0E0E0D]/95 tracking-wider">{text}</p>
+            </div>
           </>
         ) : (
           <>
