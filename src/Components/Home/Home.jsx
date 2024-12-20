@@ -87,8 +87,8 @@ const Home = () => {
         <Expander />
       </motion.div>
       {/* About US */}
-      <div id="AboutUs" className="pt-14 xl:pt-52 pb-14 xl:pb-32">
-        <p className="text-[#BF1826] text-center text-xs sm:text-sm xl:text-lg 3xl:text-2xl font-[400] font-['Inter'] tracking-widest">
+      <div id="AboutUs" className="pt-14 xl:pt-52 pb-14 xl:pb-32 3xl:pb-40">
+        <p className="text-[#BF1826] text-center text-xs sm:text-sm xl:text-lg 3xl:text-3xl font-[400] font-['Inter'] tracking-widest">
           ABOUT US
         </p>
         <div className="w-[75%] sm:w-[65%] md:w-[60%] lg:w-[55%] xl:w-[50%] mx-auto mt-10 xl:mt-20 relative bg-black">
@@ -111,15 +111,19 @@ const Home = () => {
         </div>
       </div>
       {/* Ambassadors */}
-      <motion.div id="Ambassadors" ref={AmbassadorsRef} className="pb-44">
-        <p className="text-[#BF1826] text-center text-base font-[400] font-['Inter'] tracking-widest uppercase">
+      <motion.div
+        id="Ambassadors"
+        ref={AmbassadorsRef}
+        className="pb-16 xs:pb-20 sm:pb-24 md:pb-28 lg:pb-32 xl:pb-36 3xl:pb-40"
+      >
+        <p className="text-[#BF1826] text-center text-xs sm:text-sm xl:text-lg 3xl:text-3xl font-[400] font-['Inter'] tracking-widest uppercase">
           Ambassadors
         </p>
         <div
           style={{
             transition: "color 0.6s linear",
           }}
-          className="mt-20 flex justify-evenly"
+          className="mt-12 xl:mt-32 3xl:mt-40 flex flex-wrap justify-center sm:justify-evenly gap-8 sm:gap-0"
         >
           {AmbassadorsData.map((item) => (
             <Ambassadords key={item.id} {...item} />
