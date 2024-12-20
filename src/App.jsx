@@ -182,8 +182,10 @@ const App = () => {
       root
       options={{
         // Making the scroll smoother
-        wheelMultiplier: 0.15,
-        touchMultiplier: 0.15,
+        wheelMultiplier: 0.3,
+        touchMultiplier: 0.3,
+        syncTouches: true,
+        smoothWheel: true,
       }}
     >
       <AssetLoader assets={assets}>
