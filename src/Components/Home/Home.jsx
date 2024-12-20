@@ -200,7 +200,7 @@ const Home = () => {
             style={{
               y: LeftAndRightImgY,
             }}
-            className="shrink-0 h-fit w-[80%] lg:w-[21%] xl:w-[20%] 2xl:w-[19%]"
+            className="shrink-0 h-fit w-[85%] lg:w-[21%] xl:w-[20%] 2xl:w-[19%]"
           >
             <FixedImages
               key={fixedImages[0].id}
@@ -212,7 +212,7 @@ const Home = () => {
             style={{
               y: MidImgY,
             }}
-            className="shrink-0 h-fit w-[80%] lg:w-[21%] xl:w-[20%] 2xl:w-[19%]"
+            className="shrink-0 h-fit w-[85%] lg:w-[21%] xl:w-[20%] 2xl:w-[19%]"
           >
             <FixedImages
               key={fixedImages[1].id}
@@ -224,7 +224,7 @@ const Home = () => {
             style={{
               y: LeftAndRightImgY,
             }}
-            className="shrink-0 h-fit w-[80%] lg:w-[21%] xl:w-[20%] 2xl:w-[19%]"
+            className="shrink-0 h-fit w-[85%] lg:w-[21%] xl:w-[20%] 2xl:w-[19%]"
           >
             <FixedImages
               key={fixedImages[2].id}
