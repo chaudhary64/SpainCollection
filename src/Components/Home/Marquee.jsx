@@ -62,6 +62,32 @@ const Marquee = ({ data, reverse = false }) => {
               </div>
             ))}
           </motion.div>
+          <motion.div
+            initial={{
+              x: "-200%",
+            }}
+            className="w-fit flex justify-around"
+          >
+            {data.map((item, index) => (
+              <div key={index} className="flex justify-center items-center">
+                <span className="shrink-0">{item.text}</span>
+                <div className="shrink-0 h-[1px] xl:h-0.5 w-6 xl:w-14 mx-2 xl:mx-5 bg-black"></div>
+              </div>
+            ))}
+          </motion.div>
+          <motion.div
+            initial={{
+              x: "-200%",
+            }}
+            className="w-fit flex justify-around"
+          >
+            {data.map((item, index) => (
+              <div key={index} className="flex justify-center items-center">
+                <span className="shrink-0">{item.text}</span>
+                <div className="shrink-0 h-[1px] xl:h-0.5 w-6 xl:w-14 mx-2 xl:mx-5 bg-black"></div>
+              </div>
+            ))}
+          </motion.div>
         </MotionConfig>
       ) : (
         // For reverse = false prop
@@ -75,6 +101,22 @@ const Marquee = ({ data, reverse = false }) => {
             },
           }}
         >
+          <motion.div className="w-fit flex justify-around">
+            {data.map((item, index) => (
+              <div key={index} className="flex justify-center items-center">
+                <span className="shrink-0">{item.text}</span>
+                <div className="shrink-0 h-[1px] xl:h-0.5 w-6 xl:w-14 mx-2 xl:mx-5 bg-black"></div>
+              </div>
+            ))}
+          </motion.div>
+          <motion.div className="w-fit flex justify-around">
+            {data.map((item, index) => (
+              <div key={index} className="flex justify-center items-center">
+                <span className="shrink-0">{item.text}</span>
+                <div className="shrink-0 h-[1px] xl:h-0.5 w-6 xl:w-14 mx-2 xl:mx-5 bg-black"></div>
+              </div>
+            ))}
+          </motion.div>
           <motion.div className="w-fit flex justify-around">
             {data.map((item, index) => (
               <div key={index} className="flex justify-center items-center">
