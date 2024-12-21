@@ -9,7 +9,8 @@ const Marquee = ({ data, reverse = false }) => {
         lineHeight: "1",
       }}
       key="reverse"
-      className="w-fit flex text-[85px] text-[#242422f3]"
+      // text-[85px]
+      className="w-fit flex text-lg sm:text-xl md:text-[22px] lg:text-[1.7vw] xl:text-[2.25vw] text-[#242422f3]"
     >
       {reverse ? (
         <MotionConfig
@@ -31,7 +32,7 @@ const Marquee = ({ data, reverse = false }) => {
             {data.map((item, index) => (
               <div key={index} className="flex justify-center items-center">
                 <span className="shrink-0">{item.text}</span>
-                <div className="shrink-0 h-0.5 w-14 mx-5 bg-black"></div>
+                <div className="shrink-0 h-[1px] xl:h-0.5 w-6 xl:w-14 mx-2 xl:mx-5 bg-black"></div>
               </div>
             ))}
           </motion.div>
@@ -44,7 +45,7 @@ const Marquee = ({ data, reverse = false }) => {
             {data.map((item, index) => (
               <div key={index} className="flex justify-center items-center">
                 <span className="shrink-0">{item.text}</span>
-                <div className="shrink-0 h-0.5 w-14 mx-5 bg-black"></div>
+                <div className="shrink-0 h-[1px] xl:h-0.5 w-6 xl:w-14 mx-2 xl:mx-5 bg-black"></div>
               </div>
             ))}
           </motion.div>
@@ -57,7 +58,7 @@ const Marquee = ({ data, reverse = false }) => {
             {data.map((item, index) => (
               <div key={index} className="flex justify-center items-center">
                 <span className="shrink-0">{item.text}</span>
-                <div className="shrink-0 h-0.5 w-14 mx-5 bg-black"></div>
+                <div className="shrink-0 h-[1px] xl:h-0.5 w-6 xl:w-14 mx-2 xl:mx-5 bg-black"></div>
               </div>
             ))}
           </motion.div>
@@ -78,7 +79,7 @@ const Marquee = ({ data, reverse = false }) => {
             {data.map((item, index) => (
               <div key={index} className="flex justify-center items-center">
                 <span className="shrink-0">{item.text}</span>
-                <div className="shrink-0 h-0.5 w-14 mx-5 bg-black"></div>
+                <div className="shrink-0 h-[1px] xl:h-0.5 w-6 xl:w-14 mx-2 xl:mx-5 bg-black"></div>
               </div>
             ))}
           </motion.div>
@@ -86,7 +87,7 @@ const Marquee = ({ data, reverse = false }) => {
             {data.map((item, index) => (
               <div key={index} className="flex justify-center items-center">
                 <span className="shrink-0">{item.text}</span>
-                <div className="shrink-0 h-0.5 w-14 mx-5 bg-black"></div>
+                <div className="shrink-0 h-[1px] xl:h-0.5 w-6 xl:w-14 mx-2 xl:mx-5 bg-black"></div>
               </div>
             ))}
           </motion.div>
@@ -94,7 +95,7 @@ const Marquee = ({ data, reverse = false }) => {
             {data.map((item, index) => (
               <div key={index} className="flex justify-center items-center">
                 <span className="shrink-0">{item.text}</span>
-                <div className="shrink-0 h-0.5 w-14 mx-5 bg-black"></div>
+                <div className="shrink-0 h-[1px] xl:h-0.5 w-6 xl:w-14 mx-2 xl:mx-5 bg-black"></div>
               </div>
             ))}
           </motion.div>
