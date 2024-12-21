@@ -456,6 +456,9 @@ const Context = (props) => {
   // Screen Width for responsive animations
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
 
+  // Middle FixedImage height
+  const [middleFixedImageHeight, setMiddleFixedImageHeight] = useState(0);
+
   return (
     <>
       <Info.Provider
@@ -482,6 +485,8 @@ const Context = (props) => {
           setClicked,
           screenWidth,
           setScreenWidth,
+          middleFixedImageHeight,
+          setMiddleFixedImageHeight,
         }}
       >
         {props.children}

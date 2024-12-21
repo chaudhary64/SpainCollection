@@ -15,8 +15,14 @@ import Cards from "./Cards";
 import { Info } from "../Context/Context";
 
 const Home = () => {
-  const { AmbassadorsData, fixedImages, marqueesData, cardsData, screenWidth } =
-    useContext(Info);
+  const {
+    AmbassadorsData,
+    fixedImages,
+    marqueesData,
+    cardsData,
+    screenWidth,
+    middleFixedImageHeight,
+  } = useContext(Info);
 
   const AmbassadorsRef = useRef(null);
   const ExpanderRef = useRef(null);
@@ -53,31 +59,27 @@ const Home = () => {
     // For Mobile
     if (screenWidth < 768) {
       return {
-        LeftAndRightImgY: useTransform(imageHolderScrolled, [0, 1], [0, 0]),
         MidImgY: useTransform(imageHolderScrolled, [0, 1], [0, 0]),
       };
     } else if (screenWidth >= 768 && screenWidth < 1024) {
       // For Tablet
       return {
-        LeftAndRightImgY: useTransform(imageHolderScrolled, [0, 1], [0, 0]),
         MidImgY: useTransform(imageHolderScrolled, [0, 1], [0, 0]),
       };
     } else if (screenWidth >= 1024 && screenWidth < 2000) {
       // For any other large screen size screenWidth >= 1024
       return {
-        LeftAndRightImgY: useTransform(imageHolderScrolled, [0, 1], [0, -75]),
-        MidImgY: useTransform(imageHolderScrolled, [0, 1], [0, 150]),
+        MidImgY: useTransform(imageHolderScrolled, [0, 1], ["0%", "35%"]),
       };
     } else {
       // For any other large screen size screenWidth >= 2000
       return {
-        LeftAndRightImgY: useTransform(imageHolderScrolled, [0, 1], [0, -75]),
-        MidImgY: useTransform(imageHolderScrolled, [0, 1], [0, 150]),
+        MidImgY: useTransform(imageHolderScrolled, [0, 1], ["0%", "35%"]),
       };
     }
   };
 
-  const { LeftAndRightImgY, MidImgY } = getTransforms();
+  const { MidImgY } = getTransforms();
 
   // For Dragging Cards
   const DragConstraintRef = useRef(null);
@@ -194,25 +196,23 @@ const Home = () => {
         {/* ImagesHolder */}
         <div
           ref={imageHolder}
+          style={{
+            paddingBottom: middleFixedImageHeight + "px",
+          }}
           className="lg:-mt-[25%] pt-6 flex flex-wrap lg:flex-nowrap justify-evenly gap-5"
         >
-          <motion.div
-            style={{
-              y: LeftAndRightImgY,
-            }}
-            className="shrink-0 h-fit w-[85%] lg:w-[21%] xl:w-[20%] 2xl:w-[19%]"
-          >
+          <div className="shrink-0 h-fit w-[85%] lg:w-[21%] xl:w-[21.5%] 2xl:w-[23%]">
             <FixedImages
               key={fixedImages[0].id}
               {...fixedImages[0]}
               imageHolderScrolled={imageHolderScrolled}
             />
-          </motion.div>
+          </div>
           <motion.div
             style={{
               y: MidImgY,
             }}
-            className="shrink-0 h-fit w-[85%] lg:w-[21%] xl:w-[20%] 2xl:w-[19%]"
+            className="shrink-0 h-fit w-[85%] lg:w-[21%] xl:w-[21.5%] 2xl:w-[23%]"
           >
             <FixedImages
               key={fixedImages[1].id}
@@ -220,18 +220,13 @@ const Home = () => {
               imageHolderScrolled={imageHolderScrolled}
             />
           </motion.div>
-          <motion.div
-            style={{
-              y: LeftAndRightImgY,
-            }}
-            className="shrink-0 h-fit w-[85%] lg:w-[21%] xl:w-[20%] 2xl:w-[19%]"
-          >
+          <div className="shrink-0 h-fit w-[85%] lg:w-[21%] xl:w-[21.5%] 2xl:w-[23%]">
             <FixedImages
               key={fixedImages[2].id}
               {...fixedImages[2]}
               imageHolderScrolled={imageHolderScrolled}
             />
-          </motion.div>
+          </div>
         </div>
       </div>
       {/* Marquee Animation */}
