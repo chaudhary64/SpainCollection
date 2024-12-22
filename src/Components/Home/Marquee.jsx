@@ -5,12 +5,12 @@ const Marquee = ({ data, reverse = false }) => {
     // For reverse = true prop
     <motion.section
       style={{
-        fontFamily: "IbarraRealNova_Italic",
+        fontFamily: "SaolDisplay-Regular",
+        fontWeight: "300",
         lineHeight: "1",
       }}
       key="reverse"
-      // text-[85px]
-      className="w-fit flex text-lg sm:text-xl md:text-[22px] lg:text-[1.7vw] xl:text-[2.25vw] text-[#242422f3]"
+      className="w-fit flex text-[2.5pc] lg:text-[6.5vw] uppercase text-[#242422f3]"
     >
       {reverse ? (
         <MotionConfig
@@ -32,7 +32,7 @@ const Marquee = ({ data, reverse = false }) => {
             {data.map((item, index) => (
               <div key={index} className="flex justify-center items-center">
                 <span className="shrink-0">{item.text}</span>
-                <div className="shrink-0 h-[1px] xl:h-0.5 w-6 xl:w-14 mx-2 xl:mx-5 bg-black"></div>
+                <div className="shrink-0 h-[1px] lg:h-0.5 3xl:h-1.5 w-10 xs:w-12 lg:w-16 xl:w-24 3xl:w-40 mx-2 sm:mx-3 lg:mx-4 xl:mx-6 3xl:mx-10 bg-black"></div>
               </div>
             ))}
           </motion.div>
@@ -45,7 +45,7 @@ const Marquee = ({ data, reverse = false }) => {
             {data.map((item, index) => (
               <div key={index} className="flex justify-center items-center">
                 <span className="shrink-0">{item.text}</span>
-                <div className="shrink-0 h-[1px] xl:h-0.5 w-6 xl:w-14 mx-2 xl:mx-5 bg-black"></div>
+                <div className="shrink-0 h-[1px] lg:h-0.5 3xl:h-1.5 w-10 xs:w-12 lg:w-16 xl:w-24 3xl:w-40 mx-2 sm:mx-3 lg:mx-4 xl:mx-6 3xl:mx-10 bg-black"></div>
               </div>
             ))}
           </motion.div>
@@ -58,7 +58,7 @@ const Marquee = ({ data, reverse = false }) => {
             {data.map((item, index) => (
               <div key={index} className="flex justify-center items-center">
                 <span className="shrink-0">{item.text}</span>
-                <div className="shrink-0 h-[1px] xl:h-0.5 w-6 xl:w-14 mx-2 xl:mx-5 bg-black"></div>
+                <div className="shrink-0 h-[1px] lg:h-0.5 3xl:h-1.5 w-10 xs:w-12 lg:w-16 xl:w-24 3xl:w-40 mx-2 sm:mx-3 lg:mx-4 xl:mx-6 3xl:mx-10 bg-black"></div>
               </div>
             ))}
           </motion.div>
@@ -71,7 +71,7 @@ const Marquee = ({ data, reverse = false }) => {
             {data.map((item, index) => (
               <div key={index} className="flex justify-center items-center">
                 <span className="shrink-0">{item.text}</span>
-                <div className="shrink-0 h-[1px] xl:h-0.5 w-6 xl:w-14 mx-2 xl:mx-5 bg-black"></div>
+                <div className="shrink-0 h-[1px] lg:h-0.5 3xl:h-1.5 w-10 xs:w-12 lg:w-16 xl:w-24 3xl:w-40 mx-2 sm:mx-3 lg:mx-4 xl:mx-6 3xl:mx-10 bg-black"></div>
               </div>
             ))}
           </motion.div>
@@ -84,7 +84,7 @@ const Marquee = ({ data, reverse = false }) => {
             {data.map((item, index) => (
               <div key={index} className="flex justify-center items-center">
                 <span className="shrink-0">{item.text}</span>
-                <div className="shrink-0 h-[1px] xl:h-0.5 w-6 xl:w-14 mx-2 xl:mx-5 bg-black"></div>
+                <div className="shrink-0 h-[1px] lg:h-0.5 3xl:h-1.5 w-10 xs:w-12 lg:w-16 xl:w-24 3xl:w-40 mx-2 sm:mx-3 lg:mx-4 xl:mx-6 3xl:mx-10 bg-black"></div>
               </div>
             ))}
           </motion.div>
@@ -105,7 +105,7 @@ const Marquee = ({ data, reverse = false }) => {
             {data.map((item, index) => (
               <div key={index} className="flex justify-center items-center">
                 <span className="shrink-0">{item.text}</span>
-                <div className="shrink-0 h-[1px] xl:h-0.5 w-6 xl:w-14 mx-2 xl:mx-5 bg-black"></div>
+                <div className="shrink-0 h-[1px] lg:h-0.5 3xl:h-1.5 w-10 xs:w-12 lg:w-16 xl:w-24 3xl:w-40 mx-2 sm:mx-3 lg:mx-4 xl:mx-6 3xl:mx-10 bg-black"></div>
               </div>
             ))}
           </motion.div>
@@ -113,7 +113,7 @@ const Marquee = ({ data, reverse = false }) => {
             {data.map((item, index) => (
               <div key={index} className="flex justify-center items-center">
                 <span className="shrink-0">{item.text}</span>
-                <div className="shrink-0 h-[1px] xl:h-0.5 w-6 xl:w-14 mx-2 xl:mx-5 bg-black"></div>
+                <div className="shrink-0 h-[1px] lg:h-0.5 3xl:h-1.5 w-10 xs:w-12 lg:w-16 xl:w-24 3xl:w-40 mx-2 sm:mx-3 lg:mx-4 xl:mx-6 3xl:mx-10 bg-black"></div>
               </div>
             ))}
           </motion.div>
@@ -121,7 +121,7 @@ const Marquee = ({ data, reverse = false }) => {
             {data.map((item, index) => (
               <div key={index} className="flex justify-center items-center">
                 <span className="shrink-0">{item.text}</span>
-                <div className="shrink-0 h-[1px] xl:h-0.5 w-6 xl:w-14 mx-2 xl:mx-5 bg-black"></div>
+                <div className="shrink-0 h-[1px] lg:h-0.5 3xl:h-1.5 w-10 xs:w-12 lg:w-16 xl:w-24 3xl:w-40 mx-2 sm:mx-3 lg:mx-4 xl:mx-6 3xl:mx-10 bg-black"></div>
               </div>
             ))}
           </motion.div>
@@ -129,7 +129,7 @@ const Marquee = ({ data, reverse = false }) => {
             {data.map((item, index) => (
               <div key={index} className="flex justify-center items-center">
                 <span className="shrink-0">{item.text}</span>
-                <div className="shrink-0 h-[1px] xl:h-0.5 w-6 xl:w-14 mx-2 xl:mx-5 bg-black"></div>
+                <div className="shrink-0 h-[1px] lg:h-0.5 3xl:h-1.5 w-10 xs:w-12 lg:w-16 xl:w-24 3xl:w-40 mx-2 sm:mx-3 lg:mx-4 xl:mx-6 3xl:mx-10 bg-black"></div>
               </div>
             ))}
           </motion.div>
@@ -137,7 +137,7 @@ const Marquee = ({ data, reverse = false }) => {
             {data.map((item, index) => (
               <div key={index} className="flex justify-center items-center">
                 <span className="shrink-0">{item.text}</span>
-                <div className="shrink-0 h-[1px] xl:h-0.5 w-6 xl:w-14 mx-2 xl:mx-5 bg-black"></div>
+                <div className="shrink-0 h-[1px] lg:h-0.5 3xl:h-1.5 w-10 xs:w-12 lg:w-16 xl:w-24 3xl:w-40 mx-2 sm:mx-3 lg:mx-4 xl:mx-6 3xl:mx-10 bg-black"></div>
               </div>
             ))}
           </motion.div>
