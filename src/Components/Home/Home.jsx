@@ -168,7 +168,7 @@ const Home = () => {
           }}
         >
           {/* For smaller screen */}
-          <div className="w-full flex lg:hidden gap-1.5 justify-center text-[19px] xs:text-2xl">
+          <div className="w-full flex flex-wrap lg:hidden gap-[6px_12px] justify-center text-[1.8pc] xs:text-[2.2pc]">
             <span className="text-red-600 italic">Why</span>
             <span className="text-white mix-blend-difference">CHOOSE</span>
             <span className="text-white mix-blend-difference">SPAIN</span>
