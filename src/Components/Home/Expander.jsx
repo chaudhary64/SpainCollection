@@ -128,7 +128,7 @@ const Expander = () => {
           <motion.div
             ref={textToDisaapearRef}
             initial={{
-              y: 0,
+              y: screenWidth < 768 ? 0 : "-50%",
               x: "-50%",
             }}
             style={{
