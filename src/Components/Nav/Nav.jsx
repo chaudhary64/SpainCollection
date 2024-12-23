@@ -78,7 +78,7 @@ const Nav = () => {
     >
       <div className="h-fit w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] mx-auto px-1 flex justify-between items-center text-base lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl tracking-widest overflow-clip">
         {/* Left Part */}
-        <div className="hidden md:flex gap-12 xl:gap-16 2xl:gap-24">
+        <div className="hidden lg:flex gap-12 xl:gap-16 2xl:gap-24">
           <NavigatorLink
             to="/"
             defaultAsthetics={defaultAsthetics}
@@ -93,7 +93,7 @@ const Nav = () => {
         {/* Logo */}
         <div>
           {/* Logo for smaller screen */}
-          <div className="md:hidden border border-white rounded-full mix-blend-difference">
+          <div className="lg:hidden border border-white rounded-full mix-blend-difference">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -134,7 +134,7 @@ const Nav = () => {
             </svg>
           </div>
           {/* Logo for bigger screen */}
-          <div className="hidden md:inline-block">
+          <div className="hidden lg:inline-block">
             <svg
               version="1.1"
               id="Layer_1"
@@ -297,7 +297,7 @@ const Nav = () => {
           </div>
         </div>
         {/* Right Part */}
-        <div className="hidden md:flex gap-12 xl:gap-16 2xl:gap-24">
+        <div className="hidden lg:flex gap-12 xl:gap-16 2xl:gap-24">
           <NavigatorLink
             to="/journal"
             defaultAsthetics={defaultAsthetics}
@@ -310,7 +310,7 @@ const Nav = () => {
           />
         </div>
         {/* Lines for smaller screen */}
-        <div className="md:hidden border border-white mix-blend-difference rounded-full relative z-[999]">
+        <div className="lg:hidden border border-white mix-blend-difference rounded-full relative z-[999]">
           <SideCircle />
         </div>
       </div>

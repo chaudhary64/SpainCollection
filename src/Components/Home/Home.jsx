@@ -41,12 +41,12 @@ const Home = () => {
   }, []);
 
   useMotionValueEvent(scrollYProgressAmbassador, "change", (l) => {
-    if (screenWidth >= 768) {
+    if (screenWidth >= 1024) {
       setTheme(l >= 0.1 ? "white" : "black");
     }
   });
   useMotionValueEvent(scrollYProgressExpander, "change", (l) => {
-    if (screenWidth >= 768) {
+    if (screenWidth >= 1024) {
       setTheme(l >= 0.9 ? "black" : "white");
     }
   });
