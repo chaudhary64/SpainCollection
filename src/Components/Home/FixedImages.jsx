@@ -79,17 +79,19 @@ const FixedImages = ({
         />
       </div>
       {/* Text Container */}
-      <div className="lg:mt-0 border lg:border-0 border-black/65 py-3.5 lg:py-0 lg:pt-[1.25vw] px-3.5 lg:px-0 rounded-2xl">
+      <div className="lg:mt-0 border lg:border-0 border-black/65 py-3.5 md:py-4 lg:py-0 lg:pt-[1.25vw] px-3.5 lg:px-0 rounded-2xl">
         {theme == "black" ? (
           <>
             <div
               style={{
                 lineHeight: "1.2",
               }}
-              className="text-[1pc] lg:text-[1.5vw]"
+              className="text-[1pc] md:text-[1.1pc] lg:text-[1.5vw]"
             >
               <p className="text-[#0E0E0D]/100">{number}</p>
-              <p className="text-[#0E0E0D]/95 tracking-wider">{text}</p>
+              <p className="md:mt-1.5 text-[#0E0E0D]/95 tracking-wider">
+                {text}
+              </p>
             </div>
           </>
         ) : (
