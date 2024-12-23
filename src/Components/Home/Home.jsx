@@ -150,7 +150,7 @@ const Home = () => {
       <motion.div
         id="Ambassadors"
         ref={AmbassadorsRef}
-        className="pb-16 xs:pb-20 sm:pb-24 md:pb-28 lg:pb-32 xl:pb-36 3xl:pb-40"
+        className="pb-16 xs:pb-20 sm:pb-24 md:pb-24 lg:pb-32 xl:pb-36 3xl:pb-40"
       >
         {/* Heading */}
         <p className="text-[#BF1826] text-center text-xs xs:text-[0.9pc] lg:text-[0.9vw] xl:text-[1vw] 3xl:text-3xl font-[400] font-['Inter'] tracking-widest uppercase">
@@ -203,7 +203,7 @@ const Home = () => {
           style={{
             paddingBottom: middleFixedImageHeight + "px",
           }}
-          className="lg:-mt-[25%] pt-6 flex flex-wrap lg:flex-nowrap justify-evenly gap-5"
+          className="md:mt-5 lg:-mt-[25%] pt-6 flex flex-wrap lg:flex-nowrap justify-evenly gap-5"
         >
           <div className="shrink-0 h-fit w-[85%] lg:w-[21%] xl:w-[21.5%] 2xl:w-[23%]">
             <FixedImages
