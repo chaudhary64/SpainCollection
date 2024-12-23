@@ -1,12 +1,13 @@
-import { useContext, useRef } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { IoPlay } from "react-icons/io5";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Info } from "../Context/Context";
 
 const Expander = () => {
-  const { screenWidth } = useContext(Info);
+  const { screenWidth, settextToDisaapear, textToDisaapear } = useContext(Info);
   const ColumnsHolder = useRef(null);
   const thirdColumn = useRef(null);
+  const textToDisaapearRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ColumnsHolder,
     offset: screenWidth < 768 ? [`start 30%`, "start"] : [`start`, "end"],
@@ -66,10 +67,25 @@ const Expander = () => {
 
   const { top, textTop, width, textThirdColumn } = getTransforms();
 
+  useEffect(() => {
+    if (screenWidth < 768) {
+      settextToDisaapear(
+        textToDisaapearRef.current.getBoundingClientRect().height * 0.75
+      );
+    } else {
+      settextToDisaapear(
+        textToDisaapearRef.current.getBoundingClientRect().height * 0.15
+      );
+    }
+  }, [screenWidth]);
+
   return (
     <section
       ref={ColumnsHolder}
-      className="md:h-[300vh] relative mt-32 md:mt-0 lg:mt-10 xl:mt-20 2xl:mt-10"
+      style={{
+        marginTop: textToDisaapear + "px",
+      }}
+      className="md:h-[300vh] relative"
     >
       <motion.div className="md:h-screen flex justify-center items-center flex-nowrap gap-6 xl:gap-10 sticky top-0 overflow-x-clip">
         {/*  1st Column */}
@@ -112,6 +128,7 @@ const Expander = () => {
         >
           {/* Text to disappear */}
           <motion.div
+            ref={textToDisaapearRef}
             style={{
               y: textTop,
               x: "-50%",

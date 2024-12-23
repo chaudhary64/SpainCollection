@@ -459,6 +459,10 @@ const Context = (props) => {
   // Middle FixedImage height
   const [middleFixedImageHeight, setMiddleFixedImageHeight] = useState(0);
 
+  // Expander
+
+  const [textToDisaapear, settextToDisaapear] = useState(0);
+
   return (
     <>
       <Info.Provider
@@ -487,6 +491,8 @@ const Context = (props) => {
           setScreenWidth,
           middleFixedImageHeight,
           setMiddleFixedImageHeight,
+          textToDisaapear,
+          settextToDisaapear,
         }}
       >
         {props.children}

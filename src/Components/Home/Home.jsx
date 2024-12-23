@@ -112,7 +112,10 @@ const Home = () => {
         className="fixed h-lvh w-full top-0 left-0 z-[-99]"
       ></div>
       {/* Expander */}
-      <motion.div id="Expander" ref={ExpanderRef}>
+      <motion.div
+        id="Expander"
+        ref={ExpanderRef}
+      >
         <Expander />
       </motion.div>
       {/* About US */}
