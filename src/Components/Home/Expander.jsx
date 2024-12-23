@@ -2,7 +2,6 @@ import { useContext, useEffect, useRef } from "react";
 import { IoPlay } from "react-icons/io5";
 import {
   motion,
-  useMotionValueEvent,
   useScroll,
   useTransform,
 } from "framer-motion";
@@ -17,8 +16,6 @@ const Expander = () => {
     target: ColumnsHolder,
     offset: screenWidth < 768 ? [`start`, "end start"] : [`start`, "end"],
   });
-
-  useMotionValueEvent(scrollYProgress, "change", (l) => console.log(l));
 
   const getTransforms = () => {
     // For Mobile
