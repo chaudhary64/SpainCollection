@@ -31,7 +31,7 @@ const Expander = () => {
       return {
         width: useTransform(scrollYProgress, [0.2, 1], ["92%", "100%"]),
         top: useTransform(scrollYProgress, [0, 0.3], ["0%", "0%"]),
-        textTop: useTransform(scrollYProgress, [0, 0.3], ["-50%", "-110%"]),
+        textTop: useTransform(scrollYProgress, [0, 0.5], ["-50%", "-110%"]),
         textThirdColumn: useTransform(
           scrollYProgress,
           [0, 0.8, 1],
