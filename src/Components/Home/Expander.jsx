@@ -83,7 +83,7 @@ const Expander = () => {
       style={{
         paddingTop: textToDisaapear + "px",
       }}
-      className="lg:h-[300vh] relative mt-[1.5pc] xs:mt-[2pc] sm:mt-[2.5pc] lg:mt-[2pc] xl:mt-[5pc] border-4 border-teal-500"
+      className="lg:h-[300vh] relative mt-[1.5pc] xs:mt-[2pc] sm:mt-[2.5pc] md:mt-[3pc] lg:mt-[2pc] xl:mt-[5pc]"
     >
       <motion.div className="lg:h-screen flex justify-center items-center flex-nowrap gap-6 xl:gap-10 sticky top-0 overflow-x-clip">
         {/*  1st Column */}
@@ -122,7 +122,7 @@ const Expander = () => {
           ref={thirdColumn}
           style={{ width, y: top, willChange: "width, transform" }}
           initial={{ width: screenWidth < 768 ? "95%" : "30%" }}
-          className="shrink-0 max-md:w-full lg:h-full relative border-4 border-blue-600"
+          className="shrink-0 max-md:w-full lg:h-full relative"
         >
           {/* Text to disappear */}
           <motion.div
