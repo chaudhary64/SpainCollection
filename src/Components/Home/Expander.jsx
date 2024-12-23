@@ -10,14 +10,14 @@ const Expander = () => {
   const textToDisaapearRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ColumnsHolder,
-    offset: screenWidth < 768 ? [`start`, "end start"] : [`start`, "end"],
+    offset: screenWidth < 768 ? [`start 6%`, "end start"] : [`start`, "end"],
   });
 
   const getTransforms = () => {
     // For Mobile
     if (screenWidth < 768) {
       return {
-        width: useTransform(scrollYProgress, [0.2, 1], ["95%", "100%"]),
+        width: useTransform(scrollYProgress, [0.2, 1], ["92%", "100%"]),
         top: useTransform(scrollYProgress, [0, 0.3], ["0%", "0%"]),
         textTop: useTransform(scrollYProgress, [0, 0.8], ["-50%", "-110%"]),
         textThirdColumn: useTransform(

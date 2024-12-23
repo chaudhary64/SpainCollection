@@ -41,10 +41,14 @@ const Home = () => {
   }, []);
 
   useMotionValueEvent(scrollYProgressAmbassador, "change", (l) => {
-    setTheme(l >= 0.1 ? "white" : "black");
+    if (screenWidth >= 768) {
+      setTheme(l >= 0.1 ? "white" : "black");
+    }
   });
   useMotionValueEvent(scrollYProgressExpander, "change", (l) => {
-    setTheme(l >= 0.9 ? "black" : "white");
+    if (screenWidth >= 768) {
+      setTheme(l >= 0.9 ? "black" : "white");
+    }
   });
 
   // For Image Holder
@@ -112,10 +116,7 @@ const Home = () => {
         className="fixed h-lvh w-full top-0 left-0 z-[-99]"
       ></div>
       {/* Expander */}
-      <motion.div
-        id="Expander"
-        ref={ExpanderRef}
-      >
+      <motion.div id="Expander" ref={ExpanderRef}>
         <Expander />
       </motion.div>
       {/* About US */}
