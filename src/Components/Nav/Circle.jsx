@@ -113,7 +113,7 @@ const Circle = () => {
         visibility: "hidden",
       }}
       onClick={() => setIsAppearing((prev) => !prev)}
-      className="h-14 md:h-16 xl:h-[70px] 2xl:h-20 w-14 md:w-16 xl:w-[70px] 2xl:w-20 fixed z-[999] bg-[#FAFAFA] rounded-full cursor-pointer"
+      className="h-14 md:h-16 xl:h-[70px] 2xl:h-20 3xl:h-28 w-14 md:w-16 xl:w-[70px] 2xl:w-20 3xl:w-28 fixed z-[999] bg-[#FAFAFA] rounded-full cursor-pointer"
     >
       <motion.div
         initial={{

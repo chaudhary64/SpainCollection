@@ -92,7 +92,7 @@ const Cover = () => {
           style={{
             lineHeight: 1,
           }}
-          className="flex flex-col gap-6 items-center text-4xl md:text-5xl xl:text-6xl 3xl:text-7xl font-[SaolDisplay-Light] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          className="flex flex-col gap-6 items-center text-4xl md:text-5xl xl:text-6xl 3xl:text-8xl font-[SaolDisplay-Light] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         >
           <NavLink
             to="/"
@@ -208,32 +208,32 @@ const Cover = () => {
           </NavLink>
         </div>
         {/* Social Media Handles */}
-        <div className="w-full absolute bottom-20 flex justify-center text-xs lg:text-sm 2xl:text-lg 3xl:text-2xl font-thin font-[Inter]">
+        <div className="w-full absolute bottom-20 flex justify-center text-xs lg:text-sm 2xl:text-lg 3xl:text-3xl font-thin font-[Inter]">
           <div
             style={{
               color: asthetics[4].defaultTheme,
             }}
-            className="flex gap-5 md:gap-6 xl:gap-7 3xl:gap-8 underline decoration-1 underline-offset-2"
+            className="flex gap-4 md:gap-6 xl:gap-7 3xl:gap-9 underline decoration-1 underline-offset-2 3xl:underline-offset-[6px]"
           >
             <div>Instagram</div>
             <div className="flex items-center gap-2">
               <div
                 style={{ backgroundColor: asthetics[4].defaultTheme }}
-                className="h-1 w-1 rounded-full"
+                className="h-1 3xl:h-1.5 w-1 3xl:w-1.5 rounded-full"
               ></div>{" "}
               Facebook
             </div>
             <div className="flex items-center gap-2">
               <div
                 style={{ backgroundColor: asthetics[4].defaultTheme }}
-                className="h-1 w-1 rounded-full"
+                className="h-1 3xl:h-1.5 w-1 3xl:w-1.5 rounded-full"
               ></div>{" "}
               Youtube
             </div>
             <div className="flex items-center gap-2">
               <div
                 style={{ backgroundColor: asthetics[4].defaultTheme }}
-                className="h-1 w-1 rounded-full"
+                className="h-1 3xl:h-1.5 w-1 3xl:w-1.5 rounded-full"
               ></div>{" "}
               Linkedin
             </div>
