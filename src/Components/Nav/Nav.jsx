@@ -102,7 +102,7 @@ const Nav = () => {
               x="0px"
               y="0px"
               viewBox="0 0 512 512"
-              className="h-12 w-12"
+              className="h-12 md:h-14 w-12 md:w-14"
               xmlSpace="preserve"
             >
               <g>

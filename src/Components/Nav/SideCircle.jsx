@@ -52,7 +52,7 @@ const SideCircle = () => {
       style={{
         transition: "gap 0.35s ease-in-out",
       }}
-      className="h-12 w-12 rounded-full cursor-pointer relative"
+      className="h-12 md:h-14 w-12 md:w-14 rounded-full cursor-pointer relative"
     >
       {/* Lines */}
       <motion.div
