@@ -1,6 +1,11 @@
 import { useContext, useEffect, useRef } from "react";
 import { IoPlay } from "react-icons/io5";
-import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  motion,
+  useMotionValueEvent,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import { Info } from "../Context/Context";
 
 const Expander = () => {
@@ -10,8 +15,10 @@ const Expander = () => {
   const textToDisaapearRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ColumnsHolder,
-    offset: screenWidth < 768 ? [`start 30%`, "start"] : [`start`, "end"],
+    offset: screenWidth < 768 ? [`start`, "end start"] : [`start`, "end"],
   });
+
+  useMotionValueEvent(scrollYProgress, "change", (l) => console.log(l));
 
   const getTransforms = () => {
     // For Mobile
@@ -70,12 +77,10 @@ const Expander = () => {
   useEffect(() => {
     if (screenWidth < 768) {
       settextToDisaapear(
-        textToDisaapearRef.current.getBoundingClientRect().height * 0.75
+        textToDisaapearRef.current.getBoundingClientRect().height * 0.5
       );
     } else {
-      settextToDisaapear(
-        textToDisaapearRef.current.getBoundingClientRect().height * 0.15
-      );
+      settextToDisaapear(0);
     }
   }, [screenWidth]);
 
@@ -83,9 +88,9 @@ const Expander = () => {
     <section
       ref={ColumnsHolder}
       style={{
-        marginTop: textToDisaapear + "px",
+        paddingTop: textToDisaapear + "px",
       }}
-      className="md:h-[300vh] relative"
+      className="md:h-[300vh] relative mt-[1.5pc] xs:mt-[2pc] sm:mt-[2.5pc] md:-mt-[1.5pc] lg:mt-[2pc] xl:mt-[5pc]"
     >
       <motion.div className="md:h-screen flex justify-center items-center flex-nowrap gap-6 xl:gap-10 sticky top-0 overflow-x-clip">
         {/*  1st Column */}
@@ -99,7 +104,7 @@ const Expander = () => {
           ></video>
         </div>
         {/* 2nd Column */}
-        <div className="shrink-0 w-[22%] hidden md:flex flex-col justify-center gap-10">
+        <div className="shrink-0 w-[22%] 3xl:w-[22.5%] hidden md:flex flex-col justify-center gap-10">
           <div className="w-full">
             <video
               className="object-cover h-full"
@@ -129,11 +134,16 @@ const Expander = () => {
           {/* Text to disappear */}
           <motion.div
             ref={textToDisaapearRef}
+            initial={{
+              y: 0,
+              x: "-50%",
+            }}
             style={{
               y: textTop,
               x: "-50%",
+              lineHeight: "1",
             }}
-            className="w-screen text-sm xxs:text-base xs:text-lg sm:text-xl md:text-2xl xl:text-4xl 2xl:text-5xl 3xl:text-7xl font-light flex flex-col items-center absolute top-0 left-1/2 z-[1]"
+            className="w-screen text-[4.1vw] xs:text-[3.9vw] sm:text-[3.7vw] md:text-[3.5vw] lg:text-[3vw] xl:text-[2.7vw] 3xl:text-[2.9vw] font-light flex flex-col items-center absolute top-0 left-1/2 z-[1]"
           >
             <div className="text-center text-black/75">
               <p>Spain Collection is your expert partner for deluxe</p>
@@ -142,9 +152,9 @@ const Expander = () => {
             <div
               style={{
                 fontFamily: "SaolDisplay-Italic",
-                lineHeight: "1",
+                lineHeight: "0.9",
               }}
-              className="mt-1 md:mt-8 text-[55px] xxs:text-6xl sm:text-7xl md:text-8xl xl:text-9xl 2xl:text-[160px] 3xl:text-[200px] text-center text-black/90 uppercase"
+              className="mt-1 md:mt-8 lg:mt-10 xl:mt-10 3xl:mt-16 text-[55px] xxs:text-6xl sm:text-7xl md:text-8xl xl:text-[140px] 2xl:text-[160px] 3xl:text-[200px] text-center text-black/90 uppercase"
             >
               <p>Spain &</p>
               <p>Portugal</p>
@@ -178,7 +188,7 @@ const Expander = () => {
           ></video>
         </motion.div>
         {/* 4th Column */}
-        <div className="shrink-0 w-[22%] hidden md:flex flex-col justify-center gap-10">
+        <div className="shrink-0 w-[22%] 3xl:w-[22.5%] hidden md:flex flex-col justify-center gap-10">
           <div className="w-full">
             <video
               className="object-cover h-full"
