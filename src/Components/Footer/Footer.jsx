@@ -4,7 +4,11 @@ import { motion, useAnimation } from "framer-motion";
 const Footer = ({ dark = false }) => {
   const controls = useAnimation();
   return (
-    <footer className={`pb-20 ${!dark && "bg-white"} w-[82%] mx-auto`}>
+    <footer
+      className={`pb-20 ${
+        !dark && "bg-white"
+      } w-[82%] mx-auto`}
+    >
       {/* Contact with */}
       <div
         style={{

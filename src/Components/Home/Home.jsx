@@ -265,7 +265,7 @@ const Home = () => {
         style={{
           lineHeight: "1",
         }}
-        className="h-[52vh] xs:h-[60vh] sm:h-[65vh] md:h-[32pc] xl:h-[50pc] 3xl:h-[80pc] w-full mt-16 mb-96p pt-[9%] xs:pt-[6%] sm:pt-[5%] md:pt-[6%] bg-black relative overflow-x-clip text-white"
+        className="h-[52vh] xs:h-[60vh] sm:h-[65vh] md:h-[32pc] xl:h-[50pc] 3xl:h-[80pc] w-full mt-16 mb-[20vh] xs:mb-[26vh] sm:mb-[32vh] md:mb-[18pc] xl:mb-[25pc] 3xl:mb-[40pc] pt-[9%] xs:pt-[6%] sm:pt-[5%] md:pt-[6%] bg-black relative overflow-x-clip text-white"
       >
         {/* Text */}
         <div className="mx-auto w-[82%] xs:w-[88%] sm:w-[90%] md:w-[85%] text-[1.6pc] xs:text-[1.8pc] sm:text-[2pc] md:text-[2.5pc] xl:text-[3.4pc] 3xl:text-[5.5pc]">
