@@ -93,7 +93,7 @@ const Home = () => {
     target: cardsRef,
     offset: ["start end", "end start"],
   });
-  const cardsRefXValue = useTransform(cardsRefX, [0, 1], [0, -200]);
+  const cardsRefXValue = useTransform(cardsRefX, [0, 1], ["-20%", "0%"]);
 
   // For Moving Marquee with scroll
   const MarqueeContainer = useRef(null);
