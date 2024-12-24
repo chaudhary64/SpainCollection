@@ -3,60 +3,71 @@
 @tailwind utilities;
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    height: 100%;
-    width: 100%;
-    font-family: 'SaolDisplay-Regular', 'serif';
+  height: 100%;
+  width: 100%;
+  font-family: "SaolDisplay-Regular", "serif";
 }
 
 body::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 /* Inter Font */
 @font-face {
-    font-family: 'Inter';
-    src: url(/Fonts/Inter.ttf) format('truetype');
+  font-family: "Inter";
+  src: url(/Fonts/Inter.ttf) format("truetype");
 }
 
 /* Inter_Italic Font */
 @font-face {
-    font-family: 'Inter_Italic';
-    src: url(/Fonts/Inter_Italic.ttf) format('truetype');
+  font-family: "Inter_Italic";
+  src: url(/Fonts/Inter_Italic.ttf) format("truetype");
 }
 
 /* IbarraRealNova Font */
 @font-face {
-    font-family: 'IbarraRealNova';
-    src: url(/Fonts/IbarraRealNova.ttf) format('truetype');
+  font-family: "IbarraRealNova";
+  src: url(/Fonts/IbarraRealNova.ttf) format("truetype");
 }
 
 /* IbarraRealNova_Italic Font */
 @font-face {
-    font-family: 'IbarraRealNova_Italic';
-    src: url(/Fonts/IbarraRealNova_Italic.ttf) format('truetype');
+  font-family: "IbarraRealNova_Italic";
+  src: url(/Fonts/IbarraRealNova_Italic.ttf) format("truetype");
 }
 
 /* SaolDisplay-Light Font */
 @font-face {
-    font-family: 'SaolDisplay-Light';
-    src: url(/Fonts/SaolDisplay-Light.woff2) format('woff2');
+  font-family: "SaolDisplay-Light";
+  src: url(/Fonts/SaolDisplay-Light.woff2) format("woff2");
 }
 
 /* SaolDisplay-LightItalic Font */
 @font-face {
-    font-family: 'SaolDisplay-Italic';
-    src: url(/Fonts/SaolDisplay-LightItalic.woff2) format('woff2');
+  font-family: "SaolDisplay-Italic";
+  src: url(/Fonts/SaolDisplay-LightItalic.woff2) format("woff2");
 }
 
 /* SaolDisplay-Regular Font */
 @font-face {
-    font-family: 'SaolDisplay-Regular';
-    src: url(/Fonts/SaolDisplay-Regular.woff2) format('woff2');
+  font-family: "SaolDisplay-Regular";
+  src: url(/Fonts/SaolDisplay-Regular.woff2) format("woff2");
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  /* Making the background color of the scrollbar as same as that of the .no-scrollbar */
+  background-color: transparent;
+  display: none;
+}
+
+.no-scrollbar::-webkit-scrollbar-thumb {
+  /* Changing the background-color of the thumb of the scrollbar */
+  background-color: transparent;
 }

@@ -13,6 +13,7 @@ import {
 } from "framer-motion";
 import Cards from "./Cards";
 import { Info } from "../Context/Context";
+import { s } from "framer-motion/client";
 
 const Home = () => {
   const {
@@ -51,9 +52,17 @@ const Home = () => {
     }
   });
 
+  // For Dragging Cards
+  const DragConstraintRef = useRef(null);
+  const cardsRef = useRef(null);
+  const [isDragging, setDragging] = useState(false);
+  const { scrollYProgress: cardsRefX } = useScroll({
+    target: cardsRef,
+    offset: ["start end", "end start"],
+  });
+
   // For Image Holder
   const imageHolder = useRef(null);
-
   const { scrollYProgress: imageHolderScrolled } = useScroll({
     target: imageHolder,
     offset: ["start end", "end start"],
@@ -64,36 +73,30 @@ const Home = () => {
     if (screenWidth < 768) {
       return {
         MidImgY: useTransform(imageHolderScrolled, [0, 1], [0, 0]),
+        cardsRefXValue: useTransform(cardsRefX, [0, 1], ["0%", "0%"]),
       };
     } else if (screenWidth >= 768 && screenWidth < 1024) {
       // For Tablet
       return {
         MidImgY: useTransform(imageHolderScrolled, [0, 1], [0, 0]),
+        cardsRefXValue: useTransform(cardsRefX, [0, 1], ["0%", "0%"]),
       };
     } else if (screenWidth >= 1024 && screenWidth < 2000) {
       // For any other large screen size screenWidth >= 1024
       return {
         MidImgY: useTransform(imageHolderScrolled, [0, 1], ["0%", "35%"]),
+        cardsRefXValue: useTransform(cardsRefX, [0, 1], ["-20%", "0%"]),
       };
     } else {
       // For any other large screen size screenWidth >= 2000
       return {
         MidImgY: useTransform(imageHolderScrolled, [0, 1], ["0%", "35%"]),
+        cardsRefXValue: useTransform(cardsRefX, [0, 1], ["-20%", "0%"]),
       };
     }
   };
 
-  const { MidImgY } = getTransforms();
-
-  // For Dragging Cards
-  const DragConstraintRef = useRef(null);
-  const cardsRef = useRef(null);
-  const [isDragging, setDragging] = useState(false);
-  const { scrollYProgress: cardsRefX } = useScroll({
-    target: cardsRef,
-    offset: ["start end", "end start"],
-  });
-  const cardsRefXValue = useTransform(cardsRefX, [0, 1], ["-20%", "0%"]);
+  const { MidImgY, cardsRefXValue } = getTransforms();
 
   // For Moving Marquee with scroll
   const MarqueeContainer = useRef(null);
@@ -265,7 +268,7 @@ const Home = () => {
         style={{
           lineHeight: "1",
         }}
-        className="h-[52vh] xs:h-[60vh] sm:h-[65vh] md:h-[32pc] xl:h-[50pc] 3xl:h-[80pc] w-full mt-16 mb-[20vh] xs:mb-[26vh] sm:mb-[32vh] md:mb-[18pc] xl:mb-[25pc] 3xl:mb-[40pc] pt-[9%] xs:pt-[6%] sm:pt-[5%] md:pt-[6%] bg-black relative overflow-x-clip text-white"
+        className="w-full mt-16 mb-[20vh] xs:mb-[26vh] sm:mb-[32vh] md:mb-[18pc] xl:mb-[25pc] 3xl:mb-[40pc] pt-[9%] xs:pt-[6%] sm:pt-[5%] md:pt-[6%] bg-black relative overflow-x-clip text-white"
       >
         {/* Text */}
         <div className="mx-auto w-[82%] xs:w-[88%] sm:w-[90%] md:w-[85%] text-[1.6pc] xs:text-[1.8pc] sm:text-[2pc] md:text-[2.5pc] xl:text-[3.4pc] 3xl:text-[5.5pc]">
@@ -286,18 +289,27 @@ const Home = () => {
         </div>
         {/* Cards */}
         <motion.div
-          drag="x"
-          dragConstraints={DragConstraintRef}
-          dragMomentum={false}
-          dragTransition={{ bounceStiffness: 150, bounceDamping: 10 }}
-          onDragStart={() => setDragging(true)}
-          onDragEnd={() => setDragging(false)}
+          // Conditionally apply drag attributes
+          drag={screenWidth >= 1024 ? "x" : false}
+          dragConstraints={screenWidth >= 1024 ? DragConstraintRef : undefined}
+          dragMomentum={screenWidth >= 1024 ? false : undefined}
+          dragTransition={
+            screenWidth >= 1024
+              ? { bounceStiffness: 150, bounceDamping: 10 }
+              : undefined
+          }
+          onDragStart={
+            screenWidth >= 1024 ? () => setDragging(true) : undefined
+          }
+          onDragEnd={screenWidth >= 1024 ? () => setDragging(false) : undefined}
           ref={cardsRef}
           style={{
-            top: "50%",
+            y: "25%",
             left: cardsRefXValue,
+            overflowX: screenWidth >= 1024 ? "visible" : "scroll",
+            width: screenWidth >= 1024 ? "fit-content" : "auto",
           }}
-          className="flex flex-nowrap gap-2 xs:gap-3 md:gap-5 xl:gap-7 pl-16 md:pl-[6.5pc] xl:pl-[10pc] 3xl:pl-[15pc] pr-36 md:pr-[20pc] absolute"
+          className="no-scrollbar flex flex-nowrap gap-2 xs:gap-3 md:gap-5 xl:gap-7 pl-16 md:pl-[6.5pc] xl:pl-[10pc] 3xl:pl-[15pc] pr-2 xs:pr-3 md:pr-5 lg:pr-[20pc] relative"
         >
           {cardsData.map((item) => (
             <Cards key={item.id} {...item} isDragging={isDragging} />
