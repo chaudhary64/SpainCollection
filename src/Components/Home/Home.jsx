@@ -262,22 +262,29 @@ const Home = () => {
       <div
         id="DiscoverTheLuxury"
         ref={DragConstraintRef}
-        className="h-[120vh] w-full px-[10%] py-40 mt-16 mb-96 mx-auto bg-black text-white text-5xl relative overflow-x-clip"
+        style={{
+          lineHeight: "1",
+        }}
+        className="h-[52vh] xs:h-[60vh] sm:h-[65vh] md:h-[32pc] xl:h-[50pc] 3xl:h-[80pc] w-full mt-16 mb-96p pt-[9%] xs:pt-[6%] sm:pt-[5%] md:pt-[6%] bg-black relative overflow-x-clip text-white"
       >
-        <p>Discover the</p>
-        <p>
-          <span
-            style={{
-              fontFamily: "SaolDisplay-Italic",
-            }}
-            className="text-red-700"
-          >
-            luxury
-          </span>{" "}
-          of
-        </p>
-        <p>traveling with</p>
-        <p>us</p>
+        {/* Text */}
+        <div className="mx-auto w-[82%] xs:w-[88%] sm:w-[90%] md:w-[85%] text-[1.6pc] xs:text-[1.8pc] sm:text-[2pc] md:text-[2.5pc] xl:text-[3.4pc] 3xl:text-[5.5pc]">
+          <p>Discover the</p>
+          <p>
+            <span
+              style={{
+                fontFamily: "SaolDisplay-Italic",
+              }}
+              className="text-red-700"
+            >
+              luxury
+            </span>{" "}
+            of
+          </p>
+          <p>traveling with</p>
+          <p>us</p>
+        </div>
+        {/* Cards */}
         <motion.div
           drag="x"
           dragConstraints={DragConstraintRef}
@@ -290,7 +297,7 @@ const Home = () => {
             top: "50%",
             left: cardsRefXValue,
           }}
-          className="h-[550px] flex flex-nowrap gap-7 pl-52 pr-36 absolute"
+          className="flex flex-nowrap gap-2 xs:gap-3 md:gap-5 xl:gap-7 pl-16 md:pl-[6.5pc] xl:pl-[10pc] 3xl:pl-[15pc] pr-36 md:pr-[20pc] absolute"
         >
           {cardsData.map((item) => (
             <Cards key={item.id} {...item} isDragging={isDragging} />
