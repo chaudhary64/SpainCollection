@@ -309,7 +309,7 @@ const Home = () => {
             overflowX: screenWidth >= 1024 ? "visible" : "scroll",
             width: screenWidth >= 1024 ? "fit-content" : "auto",
           }}
-          className="no-scrollbar flex flex-nowrap gap-2 xs:gap-3 md:gap-5 xl:gap-7 pl-16 md:pl-[6.5pc] xl:pl-[10pc] 3xl:pl-[15pc] pr-2 xs:pr-3 md:pr-5 lg:pr-[20pc] relative"
+          className="no-scrollbar flex flex-nowrap gap-2 xs:gap-3 md:gap-5 xl:gap-7 pl-[9vw] xs:pl-[6vw] sm:pl-[5vw] md:pl-[7.5vw] xl:pl-[10pc] 3xl:pl-[15pc] pr-2 xs:pr-3 md:pr-5 lg:pr-[20pc] relative"
         >
           {cardsData.map((item) => (
             <Cards key={item.id} {...item} isDragging={isDragging} />
