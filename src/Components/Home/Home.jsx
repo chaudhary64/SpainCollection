@@ -13,7 +13,6 @@ import {
 } from "framer-motion";
 import Cards from "./Cards";
 import { Info } from "../Context/Context";
-import { s } from "framer-motion/client";
 
 const Home = () => {
   const {
