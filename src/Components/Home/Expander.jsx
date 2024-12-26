@@ -136,7 +136,7 @@ const Expander = () => {
               x: "-50%",
               lineHeight: "1",
             }}
-            className="w-screen text-[4.1vw] xs:text-[3.9vw] sm:text-[3.7vw] md:text-[3.5vw] lg:text-[3vw] xl:text-[2.7vw] 3xl:text-[2.9vw] font-light flex flex-col items-center absolute top-0 left-1/2 z-[1]"
+            className="w-screen text-[4.1vw] xs:text-[3.9vw] sm:text-[3.7vw] md:text-[1.9pc] lg:text-[3vw] xl:text-[2.7vw] 3xl:text-[2.9vw] font-light flex flex-col items-center absolute top-0 left-1/2 z-[1]"
           >
             <div className="text-center text-black/75">
               <p>Spain Collection is your expert partner for deluxe</p>
@@ -147,7 +147,7 @@ const Expander = () => {
                 fontFamily: "SaolDisplay-Italic",
                 lineHeight: "0.9",
               }}
-              className="mt-1 md:mt-2 lg:mt-10 xl:mt-10 3xl:mt-16 text-[55px] xxs:text-6xl sm:text-7xl md:text-8xl xl:text-[140px] 2xl:text-[160px] 3xl:text-[200px] text-center text-black/90 uppercase"
+              className="mt-[0.5pc] md:mt-2 lg:mt-10 xl:mt-10 3xl:mt-16 text-[58px] xxs:text-6xl sm:text-7xl md:text-[8pc] xl:text-[140px] 2xl:text-[160px] 3xl:text-[200px] text-center text-black/90 uppercase"
             >
               <p>Spain &</p>
               <p>Portugal</p>

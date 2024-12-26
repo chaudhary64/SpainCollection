@@ -179,7 +179,7 @@ const Home = () => {
           }}
         >
           {/* For smaller screen */}
-          <div className="w-full flex flex-wrap lg:hidden gap-[6px_12px] justify-center text-[1.8pc] xs:text-[2.2pc]">
+          <div className="w-full flex flex-wrap lg:hidden gap-[6px_12px] justify-center text-[2pc] xs:text-[2.2pc]">
             <span className="text-red-600 italic">Why</span>
             <span className="text-white mix-blend-difference">CHOOSE</span>
             <span className="text-white mix-blend-difference">SPAIN</span>
@@ -270,7 +270,7 @@ const Home = () => {
         className="w-full mt-16 mb-[20vh] xs:mb-[26vh] sm:mb-[32vh] md:mb-[18pc] xl:mb-[25pc] 3xl:mb-[40pc] pt-[9%] xs:pt-[6%] sm:pt-[5%] md:pt-[6%] bg-black relative overflow-x-clip text-white"
       >
         {/* Text */}
-        <div className="mx-auto w-[82%] xs:w-[88%] sm:w-[90%] md:w-[85%] text-[1.6pc] xs:text-[1.8pc] sm:text-[2pc] md:text-[2.5pc] xl:text-[3.4pc] 3xl:text-[5.5pc]">
+        <div className="mx-auto w-[82%] xs:w-[88%] sm:w-[90%] md:w-[85%] text-[1.8pc] xs:text-[2pc] sm:text-[2.3pc] md:text-[2.8pc] lg:text-[3pc] xl:text-[3.4pc] 3xl:text-[6pc]">
           <p>Discover the</p>
           <p>
             <span

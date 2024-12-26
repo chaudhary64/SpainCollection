@@ -19,7 +19,7 @@ const Cards = ({
         transition: "all .8s cubic-bezier(0.050,0.760,0.380,1.015)",
       }}
     >
-      <div className="h-full w-full bg-[#0000008c] relative">
+      <div className="h-full w-full bg-[#000000]/50 relative">
         <div className="p-4 xl:p-8 w-full absolute bottom-0 flex flex-col gap-1 md:gap-2 3xl:gap-3">
           <p
             style={{

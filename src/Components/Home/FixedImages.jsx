@@ -86,7 +86,7 @@ const FixedImages = ({
               style={{
                 lineHeight: "1.2",
               }}
-              className="text-[1pc] md:text-[1.1pc] lg:text-[1.5vw]"
+              className="text-[0.9pc] md:text-[1.1pc] lg:text-[1.5vw]"
             >
               <p className="text-[#0E0E0D]/100">{number}</p>
               <p className="md:mt-1.5 text-[#0E0E0D]/95 tracking-wider">
