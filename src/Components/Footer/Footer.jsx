@@ -5,20 +5,22 @@ const Footer = ({ dark = false }) => {
   const controls = useAnimation();
   return (
     <footer
-      className={`pb-20 ${
+      className={`pb-[2pc] sm:pb-[3pc] md:pb-[4pc] xl:pb-[5pc] 3xl:pb-[7pc] ${
         !dark && "bg-white"
-      } w-[82%] mx-auto`}
+      } w-[90%] md:w-[85%] mx-auto border-4 border-black`}
     >
       {/* Contact with */}
       <div
         style={{
-          lineHeight: "0.95",
+          lineHeight: 1,
         }}
-        className="w-full mx-auto text-center uppercase text-[107px] flex justify-between items-center"
+        className="w-full mx-auto text-center uppercase text-[2.45pc] xs:text-[3pc] sm:text-[3.5pc] md:text-[4.5pc] xl:text-[5.9pc] 3xl:text-[9.5pc] flex items-center"
       >
         {/* Left Line */}
-        <div className="h-[1px] w-20 bg-[#D24B4B]"></div>
-        <div className={`${dark ? "text-white" : ""}`}>
+        <div className="h-[1px] w-full bg-[#D24B4B]"></div>
+        <div
+          className={`${dark ? "text-white" : ""} xs:px-[0.1pc] sm:px-[0.8pc]`}
+        >
           {/* Upper Para */}
           <div className="overflow-clip">
             <motion.p
@@ -34,9 +36,12 @@ const Footer = ({ dark = false }) => {
               viewport={{ once: true }}
             >
               Contact{" "}
-              <span className="text-[#D24B4B] font-['SaolDisplay-Italic']">
-                With
-              </span>
+              <div>
+                <span className="text-[#D24B4B] font-['SaolDisplay-Italic']">
+                  With{" "}
+                </span>
+                <span>Spain</span>
+              </div>
             </motion.p>
           </div>
           {/* Lower Para */}
@@ -53,13 +58,14 @@ const Footer = ({ dark = false }) => {
               }}
               viewport={{ once: true }}
             >
-              Spain Collection
+              Collection
             </motion.p>
           </div>
         </div>
         {/* Right Line */}
-        <div className="h-[1px] w-20 bg-[#D24B4B]"></div>
+        <div className="h-[1px] w-full bg-[#D24B4B]"></div>
       </div>
+      {/* Email */}
       <div
         onMouseEnter={() =>
           controls.start({
@@ -75,9 +81,9 @@ const Footer = ({ dark = false }) => {
             transition: { duration: 0.8 },
           })
         }
-        className="mt-16 py-1.5 w-fit mx-auto relative cursor-pointer"
+        className="mt-[1.5pc] py-1.5 w-fit mx-auto relative cursor-pointer"
       >
-        <p className="text-center text-[#BF1826] text-3xl tracking-wider">
+        <p className="text-center text-[#BF1826] text-[1pc] xs:text-[1.1pc] sm:text-[1.25pc] md:text-[1.7pc] xl:text-[2.1pc] 3xl:text-[3.2pc] tracking-wider">
           travel@spaincollection.com
         </p>
         <motion.div
@@ -90,9 +96,9 @@ const Footer = ({ dark = false }) => {
       </div>
       {/* Icons */}
       <div
-        className={`w-fit mt-3.5 mx-auto text-sm ${
+        className={`w-fit mx-auto text-[0.7pc] xs:text-[0.8pc] sm:text-[0.9pc] md:text-[1.1pc] 3xl:text-[2pc] ${
           dark ? "text-white" : "text-[#292929]"
-        } underline tracking-wider flex items-center gap-3.5 font-['Inter']`}
+        } underline 3xl:underline-offset-4 tracking-wider flex items-center gap-2.5 xl:gap-3.5 font-['Inter']`}
       >
         <span>Instagram</span>
         <div className="h-0.5 w-0.5 rounded-full bg-black"></div>
@@ -100,40 +106,63 @@ const Footer = ({ dark = false }) => {
         <div className="h-0.5 w-0.5 rounded-full bg-black"></div>
         <span>LinkedIn</span>
       </div>
+      {/* Offices */}
       <p
-        className={`mt-10 text-center text-4xl tracking-wider ${
+        style={{
+          lineHeight: 1,
+        }}
+        className={`mt-[1.5pc] text-center text-[1pc] xs:text-[1.1pc] sm:text-[1.25pc] md:text-[1.7pc] xl:text-[2.1pc] 3xl:text-[3.2pc] tracking-wider ${
           dark ? "text-white" : "text-zinc-900"
         }`}
       >
         Offices in Bilbao, Madrid and Seville
       </p>
-      <p className="mt-10 text-center font-['Inter'] font-[300] uppercase text-base tracking-[0.15em] text-[#BF1826]">
+      <p className="mt-[1.5pc] text-center font-['Inter'] font-[300] uppercase text-[0.7pc] xs:text-[0.8pc] sm:text-[0.9pc] md:text-[1.1pc] 3xl:text-[2pc] tracking-[0.15em] text-[#BF1826]">
         Headquarter office
       </p>
-      <p className="mt-0.5 text-center text-xl tracking-wider">
+      <p
+        style={{
+          lineHeight: 1.2,
+        }}
+        className="text-center text-[1pc] xs:text-[1.1pc] sm:text-[1.25pc] md:text-[1.7pc] xl:text-[2.1pc] 3xl:text-[3.2pc] tracking-wider"
+      >
         Txorrokopunta Ibilbidea 2, Bj F. 48360 Mundaka (Vizcaya) Phone: +34
         944.424.689
       </p>
-      <div className="mt-8 mx-auto flex items-center gap-10">
+      {/* Proud member of */}
+      <div className="mt-[1.5pc] mx-auto flex items-center">
         <div
-          className={`h-0.5 w-full ${dark ? "bg-[#696969]" : "bg-[#DEDEDE]"}`}
+          className={`h-[1px] w-full ${dark ? "bg-[#696969]" : "bg-[#DEDEDE]"}`}
         ></div>
-        <span className="whitespace-nowrap text-base font-['Inter'] font-[400] tracking-widest uppercase text-[#BF1826]">
+        <span className="whitespace-nowrap px-[0.8pc] text-[0.7pc] xs:text-[0.8pc] sm:text-[0.9pc] md:text-[1.1pc] 3xl:text-[2pc] font-['Inter'] font-[400] tracking-widest uppercase text-[#BF1826]">
           Proud member of
         </span>
         <div
-          className={`h-0.5 w-full ${dark ? "bg-[#696969]" : "bg-[#DEDEDE]"}`}
+          className={`h-[1px] w-full ${dark ? "bg-[#696969]" : "bg-[#DEDEDE]"}`}
         ></div>
       </div>
-      <div className="h-16 mt-5 mix-blend-difference flex justify-center gap-10">
-        <img src="/images/Home/gobierno_vasco__white.webp" alt="" />
-        <img src="/images/Home/luxury_spain_white.webp" alt="" />
-        <img src="/images/Home/Captura-de-pantalla.webp" alt="" />
+      {/* Logos */}
+      <div className="mt-[1.5pc] mix-blend-difference flex flex-wrap justify-center gap-[1pc_0.8pc]">
+        <img
+          className="h-10 sm:h-12 md:h-16 xl:h-[5pc] 3xl:h-[9pc]"
+          src="/images/Home/gobierno_vasco__white.webp"
+          alt=""
+        />
+        <img
+          className="h-10 sm:h-12 md:h-16 xl:h-[5pc] 3xl:h-[9pc]"
+          src="/images/Home/luxury_spain_white.webp"
+          alt=""
+        />
+        <img
+          className="h-10 sm:h-12 md:h-16 xl:h-[5pc] 3xl:h-[9pc]"
+          src="/images/Home/Captura-de-pantalla.webp"
+          alt=""
+        />
       </div>
       <div
-        className={`w-fit mt-16 mx-auto text-sm font-['Inter'] ${
+        className={`w-fit mt-[1.5pc] mx-auto text-[0.65pc] xs:text-[0.75pc] md:text-[0.9pc] xl:text-[1pc] 3xl:text-[1.5pc] font-['Inter'] ${
           dark ? "text-white" : "text-[#292929]"
-        } underline tracking-wide flex items-center gap-3.5`}
+        } underline underline-offset-[1.5px] 3xl:underline-offset-4 tracking-wide flex items-center gap-[0.3pc] xs:gap-[0.6pc] sm:gap-[0.7pc]`}
       >
         <span>Privacy Policy</span>
         <div className="h-0.5 w-0.5 rounded-full bg-black"></div>
