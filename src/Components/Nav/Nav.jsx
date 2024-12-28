@@ -15,7 +15,7 @@ const Nav = () => {
     bgColor: "#FFFFFF",
   }); // Initial asthetics
 
-  const { setState, setScreenWidth } = useContext(Info); // Using the context
+  const { setState, screenWidth, setScreenWidth } = useContext(Info); // Using the context
 
   const ref = useRef(null); // Ref for the nav
 
@@ -52,7 +52,7 @@ const Nav = () => {
       setDefaultAsthetics({
         color: "#EBECEC",
         fill: "#FDFDFD",
-        bgColor: "#00000000", // Transparent color
+        bgColor: screenWidth > 1024 ? "#00000000" : "#FFFFFF", // Transparent color when screen width is greater than 1024px else white
       });
     } else {
       setDefaultAsthetics({
@@ -61,7 +61,7 @@ const Nav = () => {
         bgColor: "#FFFFFF",
       });
     }
-  }, [loc]);
+  }, [loc, screenWidth]);
 
   useEffect(() => {
     navControls.start({
