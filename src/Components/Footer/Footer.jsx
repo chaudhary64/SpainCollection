@@ -7,7 +7,7 @@ const Footer = ({ dark = false }) => {
     <footer
       className={`pb-[2pc] sm:pb-[3pc] md:pb-[4pc] xl:pb-[5pc] 3xl:pb-[7pc] ${
         !dark && "bg-white"
-      } w-[90%] md:w-[85%] mx-auto border-4 border-black`}
+      } w-[90%] md:w-[85%] mx-auto`}
     >
       {/* Contact with */}
       <div
@@ -81,7 +81,7 @@ const Footer = ({ dark = false }) => {
             transition: { duration: 0.8 },
           })
         }
-        className="mt-[1.5pc] py-1.5 w-fit mx-auto relative cursor-pointer"
+        className="mt-[1.5pc] w-fit mx-auto relative cursor-pointer"
       >
         <p className="text-center text-[#BF1826] text-[1pc] xs:text-[1.1pc] sm:text-[1.25pc] md:text-[1.7pc] xl:text-[2.1pc] 3xl:text-[3.2pc] tracking-wider">
           travel@spaincollection.com
@@ -91,12 +91,12 @@ const Footer = ({ dark = false }) => {
           initial={{
             scaleX: 0,
           }}
-          className="absolute top-full h-[1.5px] w-full bg-[#BF1826]"
+          className="absolute top-full h-[1px] w-full bg-[#BF1826]"
         ></motion.div>
       </div>
       {/* Icons */}
       <div
-        className={`w-fit mx-auto text-[0.7pc] xs:text-[0.8pc] sm:text-[0.9pc] md:text-[1.1pc] 3xl:text-[2pc] ${
+        className={`w-fit mt-[0.5pc] mx-auto text-[0.7pc] xs:text-[0.8pc] sm:text-[0.9pc] md:text-[1.1pc] 3xl:text-[2pc] ${
           dark ? "text-white" : "text-[#292929]"
         } underline 3xl:underline-offset-4 tracking-wider flex items-center gap-2.5 xl:gap-3.5 font-['Inter']`}
       >
