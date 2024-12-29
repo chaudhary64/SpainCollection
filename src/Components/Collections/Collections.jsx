@@ -2,10 +2,42 @@ import React from "react";
 import HoverCover from "./HoverCover";
 import { useContext } from "react";
 import { Info } from "../Context/Context";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+import SwipeCards from "./SwipeCards";
 
 const Collections = () => {
   const { state, yourDestinationData, yourExperienceData, screenWidth } =
     useContext(Info);
+  const chooseYourDestinationCardsData = [
+    {
+      src: "/public/images/Collections/collections_tax-2.webp",
+      text: "Barcelona",
+    },
+    {
+      src: "/public/images/Collections/Portadas_madrid_17.webp",
+      text: "Madrid",
+    },
+    {
+      src: "/public/images/Collections/Portada_Andalucia_01.webp",
+      text: "Andalucia",
+    },
+    {
+      src: "/public/images/Collections/Portadas_portugal_14.webp",
+      text: "Portugal",
+    },
+    {
+      src: "/public/images/Collections/Portadas_north_18.webp",
+      text: "Euskadi & Northen Spain",
+    },
+    {
+      src: "/public/images/Collections/Portada_baleares_11.webp",
+      text: "Balearic & Canary Islands",
+    },
+  ];
 
   return (
     <>
@@ -82,6 +114,22 @@ const Collections = () => {
               choose your destination
             </p>
           </div>
+          {/* Swipper */}
+          <Swiper
+            spaceBetween={25}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+            className="mySwiper w-[75%] mt-[1.5pc] overflow-visible"
+          >
+            {chooseYourDestinationCardsData.map((item) => (
+              <SwiperSlide key={item.text}>
+                <SwipeCards {...item} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+          <div id="demo" className="h-screen w-full"></div>
         </div>
       )}
     </>

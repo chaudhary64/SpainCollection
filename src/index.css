@@ -71,3 +71,11 @@ body::-webkit-scrollbar {
   /* Changing the background-color of the thumb of the scrollbar */
   background-color: transparent;
 }
+
+.swiper-horizontal > .swiper-pagination-bullets {
+  top: 100%;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #000;
+}
