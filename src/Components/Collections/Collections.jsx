@@ -1,6 +1,7 @@
 import React from "react";
 import HoverCover from "./HoverCover";
 import { useContext } from "react";
+import Footer from "../Footer/Footer";
 import { Info } from "../Context/Context";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -36,6 +37,40 @@ const Collections = () => {
     {
       src: "/images/Collections/Portada_baleares_11.webp",
       text: "Balearic & Canary Islands",
+    },
+  ];
+  const chooseyourExperienceCardsData = [
+    {
+      src: "/public/images/Collections/05-6.webp",
+      text: "Food & Wine",
+    },
+    {
+      src: "/public/images/Collections/culture.webp",
+      text: "Culture",
+    },
+    {
+      src: "/public/images/Collections/01-25.webp",
+      text: "Traditions",
+    },
+    {
+      src: "/public/images/Collections/traditions_10.webp",
+      text: "Religious Heritage",
+    },
+    {
+      src: "/public/images/Collections/01-91.webp",
+      text: "Fashion & Shopping",
+    },
+    {
+      src: "/public/images/Collections/01-70.webp",
+      text: "Sports",
+    },
+    {
+      src: "/public/images/Collections/02-68.webp",
+      text: "Body & Soul",
+    },
+    {
+      src: "/public/images/Collections/01-80.webp",
+      text: "Nature & Adventure",
     },
   ];
 
@@ -109,27 +144,55 @@ const Collections = () => {
             Spain Collection has selected outstanding destinations, and
             hand-picked experiences to make your trip unforgettable.
           </p>
-          <div className="mt-[3pc] xs:mt-[3.5pc]">
-            <p className="text-[#BF1826] text-center text-[0.7pc] xs:text-[0.9pc] font-[400] font-['Inter'] tracking-widest uppercase">
-              choose your destination
-            </p>
+          {/* Choose Your Destination */}
+          <div>
+            <div className="mt-[3pc] xs:mt-[3.5pc]">
+              <p className="text-[#BF1826] text-center text-[0.7pc] xs:text-[0.9pc] font-[400] font-['Inter'] tracking-widest uppercase">
+                choose your destination
+              </p>
+            </div>
+            {/* Swipper */}
+            <Swiper
+              spaceBetween={25}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[Pagination]}
+              className="mySwiper w-[75%] sm:w-[50%] md:w-[55%] mt-[1.5pc] xs:mt-[1.75pc] overflow-visible"
+            >
+              {chooseYourDestinationCardsData.map((item) => (
+                <SwiperSlide key={item.text}>
+                  <SwipeCards {...item} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
-          {/* Swipper */}
-          <Swiper
-            spaceBetween={25}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Pagination]}
-            className="mySwiper w-[75%] sm:w-[50%] md:w-[55%] mt-[1.5pc] xs:mt-[1.75pc] overflow-visible"
-          >
-            {chooseYourDestinationCardsData.map((item) => (
-              <SwiperSlide key={item.text}>
-                <SwipeCards {...item} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          <div id="demo" className="h-screen w-full"></div>
+          {/* Choose Your Experience */}
+          <div className="bg-black">
+            <div className="mt-[3pc] pt-[3pc] xs:mt-[3.5pc] xs:pt-[3.5pc]">
+              <p className="text-[#BF1826] text-center text-[0.7pc] xs:text-[0.9pc] font-[400] font-['Inter'] tracking-widest uppercase">
+                choose your experience
+              </p>
+            </div>
+            {/* Swipper */}
+            <Swiper
+              spaceBetween={25}
+              pagination={{
+                clickable: true,
+              }}
+              modules={[Pagination]}
+              className="mySwiper w-[75%] sm:w-[50%] md:w-[55%] mt-[1.5pc] xs:mt-[1.75pc] overflow-visible"
+            >
+              {chooseyourExperienceCardsData.map((item) => (
+                <SwiperSlide key={item.text}>
+                  <SwipeCards {...item} dark={true} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+          {/* This aside tag will juts act as a seprator bw footer and the upper div */}
+          <aside className="pt-[15vh] xs:pt-[20vh] md:pt-[10pc] h-[1px] w-full bg-black"></aside>
+          <Footer dark={true} />
         </div>
       )}
     </>

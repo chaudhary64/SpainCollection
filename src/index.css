@@ -76,6 +76,12 @@ body::-webkit-scrollbar {
   top: 100%;
 }
 
+.swiper-pagination-bullet {
+  background-color: #454543;
+  opacity: 1;
+}
+
 .swiper-pagination-bullet-active {
-  background-color: #000;
+  background-color: #1f4fd8;
+  mix-blend-mode: difference;
 }

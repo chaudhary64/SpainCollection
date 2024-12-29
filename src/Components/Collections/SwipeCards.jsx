@@ -1,6 +1,6 @@
 import React from "react";
 
-const SwipeCards = ({ src, text }) => {
+const SwipeCards = ({ src, text, dark = false }) => {
   return (
     <div className="h-full">
       <img
@@ -11,6 +11,7 @@ const SwipeCards = ({ src, text }) => {
       <p
         style={{
           lineHeight: 1,
+          color: dark ? "#fff" : "#000",
         }}
         className="font-[SaolDisplay-Light] text-center text-[1.9pc] xs:text-[2.1pc] md:text-[2.5pc] mt-[1.8pc]"
       >
