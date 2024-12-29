@@ -104,12 +104,12 @@ const Collections = () => {
             style={{
               lineHeight: 1.35,
             }}
-            className="mt-[3pc] w-[80%] mx-auto text-[1.9pc] text-center font-[SaolDisplay-Light]"
+            className="mt-[3pc] w-[80%] xs:w-[65%] mx-auto text-[1.9pc] xs:text-[2.3pc] sm:text-[2.7pc] md:text-[3.5pc] text-center font-[SaolDisplay-Light]"
           >
             Spain Collection has selected outstanding destinations, and
             hand-picked experiences to make your trip unforgettable.
           </p>
-          <div className="mt-[3pc]">
+          <div className="mt-[3pc] xs:mt-[3.5pc]">
             <p className="text-[#BF1826] text-center text-[0.7pc] xs:text-[0.9pc] font-[400] font-['Inter'] tracking-widest uppercase">
               choose your destination
             </p>
@@ -121,7 +121,7 @@ const Collections = () => {
               clickable: true,
             }}
             modules={[Pagination]}
-            className="mySwiper w-[75%] mt-[1.5pc] overflow-visible"
+            className="mySwiper w-[75%] sm:w-[50%] md:w-[55%] mt-[1.5pc] xs:mt-[1.75pc] overflow-visible"
           >
             {chooseYourDestinationCardsData.map((item) => (
               <SwiperSlide key={item.text}>
