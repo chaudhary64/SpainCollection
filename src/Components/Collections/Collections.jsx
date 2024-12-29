@@ -14,27 +14,27 @@ const Collections = () => {
     useContext(Info);
   const chooseYourDestinationCardsData = [
     {
-      src: "/public/images/Collections/collections_tax-2.webp",
+      src: "/images/Collections/collections_tax-2.webp",
       text: "Barcelona",
     },
     {
-      src: "/public/images/Collections/Portadas_madrid_17.webp",
+      src: "/images/Collections/Portadas_madrid_17.webp",
       text: "Madrid",
     },
     {
-      src: "/public/images/Collections/Portada_Andalucia_01.webp",
+      src: "/images/Collections/Portada_Andalucia_01.webp",
       text: "Andalucia",
     },
     {
-      src: "/public/images/Collections/Portadas_portugal_14.webp",
+      src: "/images/Collections/Portadas_portugal_14.webp",
       text: "Portugal",
     },
     {
-      src: "/public/images/Collections/Portadas_north_18.webp",
+      src: "/images/Collections/Portadas_north_18.webp",
       text: "Euskadi & Northen Spain",
     },
     {
-      src: "/public/images/Collections/Portada_baleares_11.webp",
+      src: "/images/Collections/Portada_baleares_11.webp",
       text: "Balearic & Canary Islands",
     },
   ];
