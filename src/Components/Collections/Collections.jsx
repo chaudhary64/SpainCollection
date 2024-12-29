@@ -41,35 +41,35 @@ const Collections = () => {
   ];
   const chooseyourExperienceCardsData = [
     {
-      src: "/public/images/Collections/05-6.webp",
+      src: "/images/Collections/05-6.webp",
       text: "Food & Wine",
     },
     {
-      src: "/public/images/Collections/culture.webp",
+      src: "/images/Collections/culture.webp",
       text: "Culture",
     },
     {
-      src: "/public/images/Collections/01-25.webp",
+      src: "/images/Collections/01-25.webp",
       text: "Traditions",
     },
     {
-      src: "/public/images/Collections/traditions_10.webp",
+      src: "/images/Collections/traditions_10.webp",
       text: "Religious Heritage",
     },
     {
-      src: "/public/images/Collections/01-91.webp",
+      src: "/images/Collections/01-91.webp",
       text: "Fashion & Shopping",
     },
     {
-      src: "/public/images/Collections/01-70.webp",
+      src: "/images/Collections/01-70.webp",
       text: "Sports",
     },
     {
-      src: "/public/images/Collections/02-68.webp",
+      src: "/images/Collections/02-68.webp",
       text: "Body & Soul",
     },
     {
-      src: "/public/images/Collections/01-80.webp",
+      src: "/images/Collections/01-80.webp",
       text: "Nature & Adventure",
     },
   ];
