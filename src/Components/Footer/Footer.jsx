@@ -26,7 +26,7 @@ const Footer = ({ dark = false }) => {
           >
             {/* Upper Para */}
             <div className="overflow-clip">
-              <motion.p
+              <motion.div
                 initial={{
                   transform: "translateY(100%)",
                 }}
@@ -45,11 +45,11 @@ const Footer = ({ dark = false }) => {
                   </span>
                   <span>Spain</span>
                 </div>
-              </motion.p>
+              </motion.div>
             </div>
             {/* Lower Para */}
             <div className="overflow-clip">
-              <motion.p
+              <motion.div
                 initial={{
                   transform: "translateY(100%)",
                 }}
@@ -62,7 +62,7 @@ const Footer = ({ dark = false }) => {
                 viewport={{ once: true }}
               >
                 Collection
-              </motion.p>
+              </motion.div>
             </div>
           </div>
           {/* Right Line */}
