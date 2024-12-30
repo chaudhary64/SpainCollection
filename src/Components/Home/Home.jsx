@@ -80,8 +80,8 @@ const Home = () => {
       return {
         MidImgY: useTransform(imageHolderScrolled, [0, 1], [0, 0]),
         cardsRefXValue: useTransform(cardsRefX, [0, 1], ["0%", "0%"]),
-        forwardMarqueeX: useTransform(scrollMarquee, [0, 1], ["0%", "-120%"]),
-        reverseMarqueeX: useTransform(scrollMarquee, [0, 1], ["0%", "120%"]),
+        forwardMarqueeX: useTransform(scrollMarquee, [0, 1], ["0%", "-100%"]),
+        reverseMarqueeX: useTransform(scrollMarquee, [0, 1], ["0%", "100%"]),
       };
     } else if (screenWidth >= 768 && screenWidth < 1024) {
       // For Tablet
