@@ -11,6 +11,10 @@ const FixedImages = ({
 }) => {
   const { screenWidth, setMiddleFixedImageHeight } = useContext(Info);
   const imageRef = useRef(null);
+  const { scrollYProgress: scrollYProgressSmallerDevices } = useScroll({
+    target: imageRef,
+    offset: ["start end", "end start"],
+  });
 
   useEffect(() => {
     if (number == "02/") {
@@ -36,14 +40,30 @@ const FixedImages = ({
     // For Mobile
     if (screenWidth < 768) {
       return {
-        positionY: useTransform(scrollYProgress, [0, 1], ["0%", "0%"]),
-        positionYBottom: useTransform(scrollYProgress, [0, 1], ["0%", "0%"]),
+        positionY: useTransform(
+          scrollYProgressSmallerDevices,
+          [0, 1],
+          ["0%", "100%"]
+        ),
+        positionYBottom: useTransform(
+          scrollYProgressSmallerDevices,
+          [0, 1],
+          ["0%", "100%"]
+        ),
       };
     } else if (screenWidth >= 768 && screenWidth < 1024) {
       // For Tablet
       return {
-        positionY: useTransform(scrollYProgress, [0, 1], ["0%", "0%"]),
-        positionYBottom: useTransform(scrollYProgress, [0, 1], ["0%", "0%"]),
+        positionY: useTransform(
+          scrollYProgressSmallerDevices,
+          [0, 1],
+          ["0%", "100%"]
+        ),
+        positionYBottom: useTransform(
+          scrollYProgressSmallerDevices,
+          [0, 1],
+          ["0%", "100%"]
+        ),
       };
     } else if (screenWidth >= 1024 && screenWidth < 2000) {
       // For any other large screen size screenWidth >= 1024
@@ -65,13 +85,13 @@ const FixedImages = ({
   return (
     <div ref={imageRef} className="text-lg mx-auto">
       {/* Image Conatiner */}
-      <div className="hidden lg:block h-[51vh] xl:h-[66vh] w-full relative overflow-clip">
+      <div className="h-[57vh] xxs:h-[63vh] sm:h-[65vh] md:h-[30pc] lg:h-[51vh] xl:h-[66vh] w-full relative overflow-clip">
         <motion.img
           style={{
             position: "absolute",
             bottom: positionYBottom,
             y: positionY,
-            scale: 1.12,
+            scale: 1.15,
           }}
           className="object-cover w-full absolute"
           src={src}
@@ -79,17 +99,18 @@ const FixedImages = ({
         />
       </div>
       {/* Text Container */}
-      <div className="lg:mt-0 border lg:border-0 border-black/65 py-3.5 md:py-4 lg:py-0 lg:pt-[1.25vw] px-3.5 lg:px-0 rounded-2xl">
+      <div className="pt-3.5 md:pt-4 lg:pt-[1.25vw] rounded-2xl">
         {theme == "black" ? (
           <>
             <div
               style={{
                 lineHeight: "1.2",
               }}
-              className="text-[0.9pc] md:text-[1.1pc] lg:text-[1.5vw]"
             >
-              <p className="text-[#0E0E0D]/100">{number}</p>
-              <p className="md:mt-1.5 text-[#0E0E0D]/95 tracking-wider">
+              <p className="text-[#0E0E0D]/100 text-[1.1pc] md:text-[1.2pc] lg:text-[1.6vw]">
+                {number}
+              </p>
+              <p className="md:mt-1.5 text-[#0E0E0D]/95 tracking-wider text-[1pc] md:text-[1.1pc] lg:text-[1.5vw]">
                 {text}
               </p>
             </div>

@@ -135,7 +135,7 @@ const Home = () => {
           ABOUT US
         </p>
         {/* Image */}
-        <div className="w-[75%] sm:w-[65%] md:w-[70%] lg:w-[55%] xl:w-[50%] mx-auto mt-10 xl:mt-20 relative bg-black">
+        <div className="w-[80%] sm:w-[65%] md:w-[70%] lg:w-[55%] xl:w-[50%] mx-auto mt-10 xl:mt-20 relative bg-black">
           <img
             className="object-cover opacity-40"
             src="/images/Home/caratula_video_abene_new.webp"
@@ -178,43 +178,30 @@ const Home = () => {
         </div>
       </motion.div>
       {/* Why Choose Us */}
-      <div id="whyChooseUs" className="relative ">
+      <div id="whyChooseUs" className="relative">
         {/* Text */}
         <div
           style={{
-            lineHeight: "0.9",
+            lineHeight: 1,
           }}
+          className="w-full text-center text-[21vw] lg:text-[14vw] relative z-[2]"
         >
-          {/* For smaller screen */}
-          <div className="w-full flex flex-wrap lg:hidden gap-[6px_12px] justify-center text-[2pc] xs:text-[2.2pc]">
-            <span className="text-red-600 italic">Why</span>
-            <span className="text-white mix-blend-difference">CHOOSE</span>
-            <span className="text-white mix-blend-difference">SPAIN</span>
-            <span className="text-white mix-blend-difference">COLLECTION?</span>
-          </div>
-          {/* For bigger screen */}
-          <div
-            style={{
-              lineHeight: "0.85",
-            }}
-            className="w-full hidden lg:block text-center text-[14vw] relative z-[2]"
-          >
-            <p className="text-red-600 italic">Why</p>
-            <p>CHOOSE</p>
-            <p>SPAIN</p>
-            <p>COLLEC-</p>
-            <p>TION?</p>
-          </div>
+          <p className="text-red-600 italic">Why</p>
+          <p>CHOOSE</p>
+          <p>SPAIN</p>
+          <p>COLLEC-</p>
+          <p>TION?</p>
         </div>
         {/* ImagesHolder */}
         <div
           ref={imageHolder}
           style={{
-            paddingBottom: middleFixedImageHeight + "px",
+            paddingBottom:
+              screenWidth >= 1024 ? middleFixedImageHeight + "px" : 0,
           }}
-          className="md:mt-5 lg:-mt-[25%] pt-6 flex flex-wrap lg:flex-nowrap justify-evenly gap-5"
+          className="lg:-mt-[25%] w-[85%] mx-auto pt-[4pc] flex flex-wrap lg:flex-nowrap justify-evenly gap-[4pc]"
         >
-          <div className="shrink-0 h-fit w-[85%] lg:w-[21%] xl:w-[21.5%] 2xl:w-[23%]">
+          <div className="shrink-0 h-fit w-[85%] xxs:w-[80%] xs:w-[65%] sm:w-[45%] md:w-[45%] lg:w-[21%] xl:w-[21.5%] 2xl:w-[23%] mr-auto lg:mr-0">
             <FixedImages
               key={fixedImages[0].id}
               {...fixedImages[0]}
@@ -225,7 +212,7 @@ const Home = () => {
             style={{
               y: MidImgY,
             }}
-            className="shrink-0 h-fit w-[85%] lg:w-[21%] xl:w-[21.5%] 2xl:w-[23%]"
+            className="shrink-0 h-fit w-[85%] xxs:w-[80%] xs:w-[65%] sm:w-[45%] md:w-[45%] lg:w-[21%] xl:w-[21.5%] 2xl:w-[23%] ml-auto lg:ml-0"
           >
             <FixedImages
               key={fixedImages[1].id}
@@ -233,7 +220,7 @@ const Home = () => {
               imageHolderScrolled={imageHolderScrolled}
             />
           </motion.div>
-          <div className="shrink-0 h-fit w-[85%] lg:w-[21%] xl:w-[21.5%] 2xl:w-[23%]">
+          <div className="shrink-0 h-fit w-[85%] xxs:w-[80%] xs:w-[65%] sm:w-[45%] md:w-[45%] lg:w-[21%] xl:w-[21.5%] 2xl:w-[23%] mr-auto md:mx-auto lg:mr-0">
             <FixedImages
               key={fixedImages[2].id}
               {...fixedImages[2]}
