@@ -220,7 +220,7 @@ const Home = () => {
               imageHolderScrolled={imageHolderScrolled}
             />
           </motion.div>
-          <div className="shrink-0 h-fit w-[85%] xxs:w-[80%] xs:w-[65%] sm:w-[45%] md:w-[45%] lg:w-[21%] xl:w-[21.5%] 2xl:w-[23%] mr-auto md:mx-auto lg:mr-0">
+          <div className="shrink-0 h-fit w-[85%] xxs:w-[80%] xs:w-[65%] sm:w-[45%] md:w-[45%] lg:w-[21%] xl:w-[21.5%] 2xl:w-[23%] mr-auto md:mr-auto lg:mr-0">
             <FixedImages
               key={fixedImages[2].id}
               {...fixedImages[2]}
