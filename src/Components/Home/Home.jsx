@@ -233,7 +233,7 @@ const Home = () => {
       <div
         id="MarqueeContainer"
         ref={MarqueeContainer}
-        className="pt-4 sm:pt-6 md:pt-8 lg:pt-12 xl:pt-14 3xl:pt-20 flex flex-col gap-3 md:gap-4 xl:gap-6 overflow-x-clip"
+        className="mt-16 lg:mt-0 pt-4 sm:pt-6 md:pt-8 lg:pt-12 xl:pt-14 3xl:pt-20 flex flex-col gap-3 md:gap-4 xl:gap-6 overflow-x-clip"
       >
         <motion.div
           style={{
