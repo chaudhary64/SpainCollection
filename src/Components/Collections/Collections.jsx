@@ -11,68 +11,14 @@ import { Pagination } from "swiper/modules";
 import SwipeCards from "./SwipeCards";
 
 const Collections = () => {
-  const { state, yourDestinationData, yourExperienceData, screenWidth } =
-    useContext(Info);
-  const chooseYourDestinationCardsData = [
-    {
-      src: "/images/Collections/collections_tax-2.webp",
-      text: "Barcelona",
-    },
-    {
-      src: "/images/Collections/Portadas_madrid_17.webp",
-      text: "Madrid",
-    },
-    {
-      src: "/images/Collections/Portada_Andalucia_01.webp",
-      text: "Andalucia",
-    },
-    {
-      src: "/images/Collections/Portadas_portugal_14.webp",
-      text: "Portugal",
-    },
-    {
-      src: "/images/Collections/Portadas_north_18.webp",
-      text: "Euskadi & Northen Spain",
-    },
-    {
-      src: "/images/Collections/Portada_baleares_11.webp",
-      text: "Balearic & Canary Islands",
-    },
-  ];
-  const chooseyourExperienceCardsData = [
-    {
-      src: "/images/Collections/05-6.webp",
-      text: "Food & Wine",
-    },
-    {
-      src: "/images/Collections/culture.webp",
-      text: "Culture",
-    },
-    {
-      src: "/images/Collections/01-25.webp",
-      text: "Traditions",
-    },
-    {
-      src: "/images/Collections/traditions_10.webp",
-      text: "Religious Heritage",
-    },
-    {
-      src: "/images/Collections/01-91.webp",
-      text: "Fashion & Shopping",
-    },
-    {
-      src: "/images/Collections/01-70.webp",
-      text: "Sports",
-    },
-    {
-      src: "/images/Collections/02-68.webp",
-      text: "Body & Soul",
-    },
-    {
-      src: "/images/Collections/01-80.webp",
-      text: "Nature & Adventure",
-    },
-  ];
+  const {
+    state,
+    yourDestinationData,
+    yourExperienceData,
+    screenWidth,
+    chooseYourDestinationCardsData,
+    chooseyourExperienceCardsData,
+  } = useContext(Info);
 
   return (
     <>
