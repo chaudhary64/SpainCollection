@@ -199,9 +199,9 @@ const Home = () => {
             paddingBottom:
               screenWidth >= 1024 ? middleFixedImageHeight + "px" : 0,
           }}
-          className="lg:-mt-[25%] w-[85%] mx-auto pt-[4pc] flex flex-wrap lg:flex-nowrap justify-evenly gap-[4pc]"
+          className="lg:-mt-[25%] w-[85%] lg:w-full mx-auto pt-[4pc] flex flex-wrap lg:flex-nowrap justify-evenly gap-[4pc]"
         >
-          <div className="shrink-0 h-fit w-[85%] xxs:w-[80%] xs:w-[65%] sm:w-[45%] md:w-[45%] lg:w-[21%] xl:w-[21.5%] 2xl:w-[23%] mr-auto lg:mr-0">
+          <div className="shrink-0 h-fit w-[85%] xxs:w-[80%] xs:w-[65%] sm:w-[45%] md:w-[45%] lg:w-[21%] xl:w-[22%] 2xl:w-[23%] 3xl:w-[27%] mr-auto lg:mr-0">
             <FixedImages
               key={fixedImages[0].id}
               {...fixedImages[0]}
@@ -212,7 +212,7 @@ const Home = () => {
             style={{
               y: MidImgY,
             }}
-            className="shrink-0 h-fit w-[85%] xxs:w-[80%] xs:w-[65%] sm:w-[45%] md:w-[45%] lg:w-[21%] xl:w-[21.5%] 2xl:w-[23%] ml-auto lg:ml-0"
+            className="shrink-0 h-fit w-[85%] xxs:w-[80%] xs:w-[65%] sm:w-[45%] md:w-[45%] lg:w-[21%] xl:w-[22%] 2xl:w-[23%] 3xl:w-[27%] ml-auto lg:ml-0"
           >
             <FixedImages
               key={fixedImages[1].id}
@@ -220,7 +220,7 @@ const Home = () => {
               imageHolderScrolled={imageHolderScrolled}
             />
           </motion.div>
-          <div className="shrink-0 h-fit w-[85%] xxs:w-[80%] xs:w-[65%] sm:w-[45%] md:w-[45%] lg:w-[21%] xl:w-[21.5%] 2xl:w-[23%] mr-auto md:mr-auto lg:mr-0">
+          <div className="shrink-0 h-fit w-[85%] xxs:w-[80%] xs:w-[65%] sm:w-[45%] md:w-[45%] lg:w-[21%] xl:w-[22%] 2xl:w-[23%] 3xl:w-[27%] mr-auto md:mr-auto lg:mr-0">
             <FixedImages
               key={fixedImages[2].id}
               {...fixedImages[2]}
