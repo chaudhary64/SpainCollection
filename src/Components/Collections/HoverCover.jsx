@@ -30,7 +30,7 @@ const HoverCover = ({ src, text }) => {
       <span
         onMouseEnter={AnimationStart}
         onMouseLeave={AnimationEnd}
-        className="text-2xl tracking-wider hover:cursor-pointer"
+        className="text-[1pc] xl:text-[1.5pc] 3xl:text-[2.5pc] tracking-wider hover:cursor-pointer"
       >
         {text}
       </span>

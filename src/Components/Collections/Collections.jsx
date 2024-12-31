@@ -27,8 +27,9 @@ const Collections = () => {
         <div
           style={{
             marginTop: `-${state.height}px`,
+            paddingTop: `${state.height}px`,
           }}
-          className="h-screen w-full py-[1px] relative -z-[10]"
+          className="h-screen w-full py-[1px] flex flex-col justify-evenly relative"
         >
           {/* Default Background Image */}
           <div className="inset-0 absolute -z-50">
@@ -44,20 +45,20 @@ const Collections = () => {
             style={{
               lineHeight: "1.15",
             }}
-            className="w-fit mx-auto mt-[16.5%] text-[40px] text-center font-[SaolDisplay-Light] text-white tracking-wide"
+            className="w-fit mx-auto text-[1.8pc] xl:text-[2.5pc] 3xl:text-[5pc] text-center font-[SaolDisplay-Light] text-white tracking-wide"
           >
             <p>Spain Collection has selected outstanding destinations, and</p>
             <p>hand-picked experiences to make your trip unforgettable.</p>
           </div>
           {/* Choose Your Experience */}
           <div>
-            <div className="w-fit mx-auto mt-14">
-              <span className="font-[Inter] font-[300] uppercase text-[#BF1826] tracking-widest">
+            <div className="w-fit mx-auto">
+              <span className="font-[Inter] font-[300] uppercase text-[#BF1826] tracking-widest text-[0.7pc] xl:text-[1pc] 3xl:text-[2pc]">
                 Choose your experience
               </span>
             </div>
             {/* Hover Cover */}
-            <div className="w-[60%] mx-auto mt-4 flex flex-wrap justify-center items-center gap-[5px_30px] text-white">
+            <div className="w-[70%] 3xl:w-[60%] mx-auto flex flex-wrap justify-center items-center gap-[5px_30px] text-white">
               {yourExperienceData.map((item) => (
                 <HoverCover key={item.id} {...item} />
               ))}
@@ -65,13 +66,13 @@ const Collections = () => {
           </div>
           {/* Choose Your Destination */}
           <div>
-            <div className="w-fit mx-auto mt-10">
-              <span className="font-[Inter] font-[300] uppercase text-[#BF1826] tracking-widest">
+            <div className="w-fit mx-auto">
+              <span className="font-[Inter] font-[300] uppercase text-[#BF1826] tracking-widest text-[0.7pc] xl:text-[1pc] 3xl:text-[2pc]">
                 Choose your destination
               </span>
             </div>
             {/* Hover Cover */}
-            <div className="w-[70%] mx-auto mt-4 flex flex-wrap justify-center items-center gap-[5px_30px] text-white">
+            <div className="w-[70%] 3xl:w-[60%] mx-auto flex flex-wrap justify-center items-center gap-[5px_30px] text-white">
               {yourDestinationData.map((item) => (
                 <HoverCover key={item.id} {...item} />
               ))}
