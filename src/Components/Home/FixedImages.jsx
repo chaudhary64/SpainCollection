@@ -85,7 +85,7 @@ const FixedImages = ({
   return (
     <div ref={imageRef} className="text-lg mx-auto">
       {/* Image Conatiner */}
-      <div className="h-[57vh] xxs:h-[63vh] sm:h-[65vh] md:h-[30pc] lg:h-[51vh] xl:h-[66vh] w-full relative overflow-clip">
+      <div className="aspect-[9/16] w-full relative overflow-clip">
         <motion.img
           style={{
             position: "absolute",
