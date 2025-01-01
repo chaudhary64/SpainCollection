@@ -38,15 +38,9 @@ const Curators = () => {
     offset: ["start end", "end start"],
   });
   const cardsRefXValue = useTransform(cardsRefX, [0, 1], [0, -200]);
-  const { state } = useContext(Info); // Using the context
+  
   return (
-    <div
-      style={{
-        marginTop: `-${state.height}px`,
-        paddingTop: `${state.height}px`,
-      }}
-      className="bg-black"
-    >
+    <div className="bg-black">
       <div
         style={{
           lineHeight: "0.95",
