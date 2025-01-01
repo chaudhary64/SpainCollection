@@ -444,19 +444,19 @@ const Context = (props) => {
     {
       id: 1,
       src: "/images/Curators/Mission.webp",
-      number: "Mission",
+      heading: "Mission",
       text: "Deliver outstanding travel experiences in Spain and Portugal that are authentic, supportive of local businesses and a source of inspiration to our own staff.",
     },
     {
       id: 2,
       src: "/images/Curators/vision.webp",
-      number: "Vision",
+      heading: "Vision",
       text: "To become the global ambassador for Spain and Portugal for discerning travelers who journey to connect and engage with cultures, traditions, and destinations in a sustainable, inclusive and mindful way with a touch of luxury.",
     },
     {
       id: 3,
       src: "/images/Curators/values.webp",
-      number: "Values",
+      heading: "Values",
       text: "As a company we believe in a life-affirming, sense of purpose. We look for engagement, innovation, diversity and inclusion. We are mindful of others and sensitive to the environment. Communication is real, open and transparent, and our working relationships are mutually beneficial and respectful It is not what we do but the way we do it",
     },
   ];
@@ -504,6 +504,8 @@ const Context = (props) => {
       src: "/images/Curators/caratula_german.webp",
     },
   ];
+  const [middleParallaxImage_Dark_Height, setMiddleParallaxImage_Dark_Height] =
+    useState(0);
 
   // Nav Bar Info
   const [isVisible, setIsVisible] = useState(false);
@@ -543,6 +545,8 @@ const Context = (props) => {
           fixedImagesDataCurators,
           overlappingCardsData,
           cardsDataCurators,
+          middleParallaxImage_Dark_Height,
+          setMiddleParallaxImage_Dark_Height,
           isVisible,
           setIsVisible,
           isAppearing,

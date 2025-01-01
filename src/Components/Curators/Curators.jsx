@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import FixedImages from "../Home/FixedImages";
+import ParallaxImages_Dark from "./ParallaxImages_Dark";
 import OverlapingCards from "./OverlapingCards";
 import InfoCards from "./InfoCards";
 import Footer from "../Footer/Footer";
@@ -8,8 +8,13 @@ import { useContext } from "react";
 import { Info } from "../Context/Context";
 
 const Curators = () => {
-  const { fixedImagesDataCurators, overlappingCardsData, cardsDataCurators } =
-    useContext(Info);
+  const {
+    fixedImagesDataCurators,
+    overlappingCardsData,
+    cardsDataCurators,
+    middleParallaxImage_Dark_Height,
+    screenWidth,
+  } = useContext(Info);
 
   const imageHolder = useRef(null);
 
@@ -18,16 +23,12 @@ const Curators = () => {
     offset: ["start end", "end start"],
   });
 
-  const LeftAndRightImgY = useTransform(imageHolderScrolled, [0, 1], [0, -75]);
-  const MidImgY = useTransform(imageHolderScrolled, [0, 1], [130, 250]);
-
   // For Image inside Our Outstanding Team
   const imageRef = useRef(null);
   const { scrollYProgress: ImgYScroll } = useScroll({
     target: imageRef,
     offset: ["start end", "end start"],
   });
-  const ImgY = useTransform(ImgYScroll, [0, 1], [0, 50]);
 
   // For Dragging Cards
   const DragConstraintRef = useRef(null);
@@ -37,15 +38,49 @@ const Curators = () => {
     target: cardsRef,
     offset: ["start end", "end start"],
   });
-  const cardsRefXValue = useTransform(cardsRefX, [0, 1], [0, -200]);
-  
+
+  const getTransforms = () => {
+    // For Mobile
+    if (screenWidth < 768) {
+      return {
+        MidImgY: useTransform(imageHolderScrolled, [0, 1], [0, 0]),
+        ImgY: useTransform(ImgYScroll, [0, 1], [0, 50]),
+        cardsRefXValue: useTransform(cardsRefX, [0, 1], [0, -200]),
+      };
+    } else if (screenWidth >= 768 && screenWidth < 1024) {
+      // For Tablet
+      return {
+        MidImgY: useTransform(imageHolderScrolled, [0, 1], [0, 0]),
+        ImgY: useTransform(ImgYScroll, [0, 1], [0, 50]),
+        cardsRefXValue: useTransform(cardsRefX, [0, 1], [0, -200]),
+      };
+    } else if (screenWidth >= 1024 && screenWidth < 2000) {
+      // For any other large screen size screenWidth >= 1024
+      return {
+        MidImgY: useTransform(imageHolderScrolled, [0, 1], ["0%", "35%"]),
+        ImgY: useTransform(ImgYScroll, [0, 1], [0, 50]),
+        cardsRefXValue: useTransform(cardsRefX, [0, 1], [0, -200]),
+      };
+    } else {
+      // For any other large screen size screenWidth >= 2000
+      return {
+        MidImgY: useTransform(imageHolderScrolled, [0, 1], ["0%", "35%"]),
+        ImgY: useTransform(ImgYScroll, [0, 1], [0, 50]),
+        cardsRefXValue: useTransform(cardsRefX, [0, 1], [0, -200]),
+      };
+    }
+  };
+
+  const { MidImgY, ImgY, cardsRefXValue } = getTransforms();
+
   return (
     <div className="bg-black">
+      {/* Text */}
       <div
         style={{
-          lineHeight: "0.95",
+          lineHeight: 1,
         }}
-        className='pt-14 text-center uppercase text-white text-[107px] font-["SaolDisplay-Regular"] font-[300]'
+        className='pt-[3pc] text-center uppercase text-white text-[2.4pc] xs:text-[3.2pc] sm:text-[4.5pc] lg:text-[5pc] xl:text-[7pc] 3xl:text-[12pc] font-["SaolDisplay-Regular"] font-[300]'
       >
         <p>We work</p>
         <p>tirelessly to</p>
@@ -56,59 +91,56 @@ const Curators = () => {
         <p>experience</p>
       </div>
       {/* ImagesHolder */}
-      {/* // The pb-60 class is applied to ensure that the extra space created by the downward shift of MidImgY is effectively covered.
-       */}
-      <div
-        ref={imageHolder}
-        className="mt-20 pt-32 pb-60 flex justify-evenly relative"
-      >
+      <div ref={imageHolder} className="mt-[3pc] relative">
         {/* Vertical Line */}
-        <div className="h-36 w-[1px] bg-white absolute top-0 left-1/2 -translate-x-1/2"></div>
-        <motion.div
+        <div
+          id="vertical_line"
+          className="h-[6pc] sm:h-[9pc] xl:h-[10pc] 3xl:h-[15pc] w-[1px] bg-white mx-auto mb-[3pc]"
+        ></div>
+        {/* ImagesHolder */}
+        <div
+          ref={imageHolder}
+          id="images_holder"
           style={{
-            y: LeftAndRightImgY,
+            paddingBottom:
+              screenWidth >= 1024 ? middleParallaxImage_Dark_Height + "px" : 0,
           }}
+          className="w-[85%] lg:w-full mx-auto flex flex-wrap lg:flex-nowrap justify-evenly gap-[4pc]"
         >
-          <FixedImages
-            key={fixedImagesDataCurators[0].id}
-            {...fixedImagesDataCurators[0]}
-            imageHolderScrolled={imageHolderScrolled}
-            height={450}
-            width={360}
-            theme="white"
-            numberIsHeading={true}
-          />
-        </motion.div>
-        <motion.div
-          style={{
-            y: MidImgY,
-          }}
-        >
-          <FixedImages
-            key={fixedImagesDataCurators[1].id}
-            {...fixedImagesDataCurators[1]}
-            imageHolderScrolled={imageHolderScrolled}
-            height={610}
-            width={300}
-            theme="white"
-            numberIsHeading={true}
-          />
-        </motion.div>
-        <motion.div
-          style={{
-            y: LeftAndRightImgY,
-          }}
-        >
-          <FixedImages
-            key={fixedImagesDataCurators[2].id}
-            {...fixedImagesDataCurators[2]}
-            imageHolderScrolled={imageHolderScrolled}
-            height={367}
-            width={365}
-            theme="white"
-            numberIsHeading={true}
-          />
-        </motion.div>
+          <div
+            id={fixedImagesDataCurators[0].heading + "_container"}
+            className="shrink-0 h-fit w-[85%] xxs:w-[80%] xs:w-[65%] sm:w-[45%] md:w-[45%] lg:w-[21%] xl:w-[22%] 2xl:w-[23%] 3xl:w-[27%] mr-auto lg:mr-0"
+          >
+            <ParallaxImages_Dark
+              key={fixedImagesDataCurators[0].id}
+              {...fixedImagesDataCurators[0]}
+              imageHolderScrolled={imageHolderScrolled}
+            />
+          </div>
+          <motion.div
+            id={fixedImagesDataCurators[1].heading + "_container"}
+            style={{
+              y: MidImgY,
+            }}
+            className="shrink-0 h-fit w-[85%] xxs:w-[80%] xs:w-[65%] sm:w-[45%] md:w-[45%] lg:w-[21%] xl:w-[22%] 2xl:w-[23%] 3xl:w-[27%] ml-auto lg:ml-0"
+          >
+            <ParallaxImages_Dark
+              key={fixedImagesDataCurators[1].id}
+              {...fixedImagesDataCurators[1]}
+              imageHolderScrolled={imageHolderScrolled}
+            />
+          </motion.div>
+          <div
+            id={fixedImagesDataCurators[2].heading + "_container"}
+            className="shrink-0 h-fit w-[85%] xxs:w-[80%] xs:w-[65%] sm:w-[45%] md:w-[45%] lg:w-[21%] xl:w-[22%] 2xl:w-[23%] 3xl:w-[27%] mr-auto md:mx-auto lg:mx-0"
+          >
+            <ParallaxImages_Dark
+              key={fixedImagesDataCurators[2].id}
+              {...fixedImagesDataCurators[2]}
+              imageHolderScrolled={imageHolderScrolled}
+            />
+          </div>
+        </div>
       </div>
       {/* Our outstanding team */}
       <div
