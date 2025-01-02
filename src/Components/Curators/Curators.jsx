@@ -83,9 +83,11 @@ const Curators = () => {
     heightAdjuster();
 
     window.addEventListener("resize", heightAdjuster);
+    imageRef.current.addEventListener("load", heightAdjuster);
 
     return () => {
       window.removeEventListener("resize", heightAdjuster);
+      imageRef.current.removeEventListener("load", heightAdjuster);
     };
   }, [screenWidth]);
 
