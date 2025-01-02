@@ -80,7 +80,7 @@ const ParallaxImages_Dark = ({
   const { positionY, positionYBottom } = getTransforms();
 
   return (
-    <div ref={imageRef} id={heading + "_wrapper"} className="text-lg">
+    <div ref={imageRef} id={heading + "_wrapper"}>
       {/* Image Conatiner */}
       <div
         className={`${
@@ -110,7 +110,7 @@ const ParallaxImages_Dark = ({
           style={{
             lineHeight: 1.3,
           }}
-          className="text-lg text-white/90 tracking-wider text-[0.8pc] sm:text-[1pc] lg:text-[1.3vw]"
+          className="text-lg text-white/90 tracking-wider text-[0.9pc] sm:text-[1pc] lg:text-[1.2vw]"
         >
           {text}
         </p>

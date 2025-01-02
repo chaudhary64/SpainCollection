@@ -80,7 +80,7 @@ const Curators = () => {
         style={{
           lineHeight: 1,
         }}
-        className='pt-[3pc] text-center uppercase text-white text-[2.4pc] xs:text-[3.2pc] sm:text-[4.5pc] lg:text-[5pc] xl:text-[7pc] 3xl:text-[12pc] font-["SaolDisplay-Regular"] font-[300]'
+        className='pt-[3pc] w-[90%] mx-auto text-center uppercase text-white text-[2.4pc] xs:text-[3.2pc] sm:text-[4.5pc] lg:text-[5pc] xl:text-[7pc] 3xl:text-[12pc] font-["SaolDisplay-Regular"] font-[300]'
       >
         <p>We work</p>
         <p>tirelessly to</p>
