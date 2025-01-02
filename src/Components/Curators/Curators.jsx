@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import ParallaxImages_Dark from "./ParallaxImages_Dark";
 import OverlapingCards from "./OverlapingCards";
@@ -13,6 +13,8 @@ const Curators = () => {
     overlappingCardsData,
     cardsDataCurators,
     middleParallaxImage_Dark_Height,
+    InfoImageHeight,
+    setInfoImageHeight,
     screenWidth,
   } = useContext(Info);
 
@@ -72,6 +74,20 @@ const Curators = () => {
   };
 
   const { MidImgY, ImgY, cardsRefXValue } = getTransforms();
+
+  useEffect(() => {
+    const heightAdjuster = () => {
+      setInfoImageHeight(imageRef.current.getBoundingClientRect().height * 0.5);
+    };
+
+    heightAdjuster();
+
+    window.addEventListener("resize", heightAdjuster);
+
+    return () => {
+      window.removeEventListener("resize", heightAdjuster);
+    };
+  }, [screenWidth]);
 
   return (
     <div className="bg-black">
@@ -143,103 +159,133 @@ const Curators = () => {
         </div>
       </div>
       {/* Our outstanding team */}
-      <div
-        style={{
-          lineHeight: "1",
-        }}
-        // The pb-14 class is applied to ensure that the extra space created by the downward shift of ImgY is effectively covered.
-        className="mt-32 pb-14 flex flex-col justify-center items-center text-[107px] text-white uppercase"
-      >
-        <div className="overflow-clip">
-          <motion.p
-            initial={{
-              transform: "translateY(100%)",
-            }}
-            whileInView={{
-              transform: "translateY(0%)",
-            }}
-            transition={{
-              duration: 0.75,
-              ease: [0.16, 1, 0.3, 1],
-            }}
-            viewport={{ once: true }}
-          >
-            Our
-          </motion.p>
-        </div>
-        <div className="overflow-clip">
-          <motion.p
-            initial={{
-              transform: "translateY(100%)",
-            }}
-            whileInView={{
-              transform: "translateY(0%)",
-            }}
-            transition={{
-              duration: 0.75,
-              delay: 0.15,
-              ease: [0.16, 1, 0.3, 1],
-            }}
-            viewport={{ once: true }}
-            className="text-[#BF1826] font-[SaolDisplay-Italic]"
-          >
-            Outstanding
-          </motion.p>
-        </div>
-        <div className="overflow-clip">
-          <motion.p
-            initial={{
-              transform: "translateY(100%)",
-            }}
-            whileInView={{
-              transform: "translateY(0%)",
-            }}
-            transition={{
-              duration: 0.75,
-              delay: 0.3,
-              ease: [0.16, 1, 0.3, 1],
-            }}
-            viewport={{ once: true }}
-          >
-            Team
-          </motion.p>
-        </div>
-        <div className="mt-10 h-40 w-[1px] bg-[#7A121A] relative z-10"></div>
-        <motion.img
-          ref={imageRef}
+      <div>
+        {/* Text */}
+        <div
           style={{
-            y: ImgY,
+            lineHeight: 1,
           }}
-          src="/images/Curators/gurus_abene.webp"
-          // The -mt-20 is applied so that the center of the line is aligned with the center of the image
-          className="w-96 -mt-20"
-          alt=""
-        />
-      </div>
-      {/* Info */}
-      {/* The -mt-60 margin is applied to ensure that, as the image scrolls downward, it partially overlaps the red background div. This approach creates a layered effect, adding depth and visual cohesion to the design */}
-      <div className="-mt-60 pt-72 pb-16 bg-[#BF1826] text-white text-4xl text-center font-[300] tracking-wider">
-        <div>
-          <p>One of the things I learned about being leader is that some</p>
-          <p>people are only motivated by money, or they are only</p>
-          <p>motivated by power or some kind of incentive. But people</p>
-          <p>also get inspired by stories. Here I share just a few thoughts</p>
-          <p>from my team about Spain & Portugal Collection…</p>
+          className="mt-[5pc] pb-[5pc] sm:pb-[7pc] xl:pb-[9pc] 3xl:pb-[11pc] flex flex-col justify-center items-center text-[2.4pc] xs:text-[3.2pc] sm:text-[4.5pc] lg:text-[5pc] xl:text-[7pc] 3xl:text-[12pc] text-white uppercase"
+        >
+          <div className="overflow-clip">
+            <motion.p
+              initial={{
+                transform: "translateY(100%)",
+              }}
+              whileInView={{
+                transform: "translateY(0%)",
+              }}
+              transition={{
+                duration: 0.75,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              viewport={{ once: true }}
+            >
+              Our
+            </motion.p>
+          </div>
+          <div className="overflow-clip">
+            <motion.p
+              initial={{
+                transform: "translateY(100%)",
+              }}
+              whileInView={{
+                transform: "translateY(0%)",
+              }}
+              transition={{
+                duration: 0.75,
+                delay: 0.15,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              viewport={{ once: true }}
+              className="text-[#BF1826] font-[SaolDisplay-Italic]"
+            >
+              Outstanding
+            </motion.p>
+          </div>
+          <div className="overflow-clip">
+            <motion.p
+              initial={{
+                transform: "translateY(100%)",
+              }}
+              whileInView={{
+                transform: "translateY(0%)",
+              }}
+              transition={{
+                duration: 0.75,
+                delay: 0.3,
+                ease: [0.16, 1, 0.3, 1],
+              }}
+              viewport={{ once: true }}
+            >
+              Team
+            </motion.p>
+          </div>
         </div>
-        <p className="mt-10">
-          We really appreciate your considering us as partners!
-        </p>
-        <div className="mt-16 flex flex-col font-[Inter]">
-          <span className="text-xl font-[400]">Abene Mendizabal</span>
-          <span className="text-sm tracking-wider">
-            Founder and CEO Spain Collection
-          </span>
+        {/* Info */}
+        <div
+          style={{
+            marginTop: InfoImageHeight + "px",
+            paddingTop: InfoImageHeight + 50 + "px",
+          }}
+          className="bg-[#BF1826] relative"
+        >
+          {/* Image Container */}
+          <div
+            id="image_container"
+            className="w-full absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          >
+            {/* Vertical Line */}
+            <div
+              id="vertical_line"
+              className="h-[6pc] sm:h-[9pc] xl:h-[10pc] 3xl:h-[15pc] w-[1px] bg-[#7A121A] absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
+            ></div>
+            {/* Image */}
+            <motion.img
+              ref={imageRef}
+              style={{
+                y: ImgY,
+              }}
+              src="/images/Curators/gurus_abene.webp"
+              className="w-[95%] xs:w-[90%] sm:w-1/2 xl:w-[30%] mx-auto"
+              alt=""
+            />
+          </div>
+          {/* Text */}
+          <div className="text-white text-xl xs:text-2xl lg:text-3xl xl:text-5xl 3xl:text-8xl text-center font-[300] tracking-wider">
+            <p>&nbsp;</p>
+            <div>
+              <p>One of the things I learned about being leader is that some</p>
+              <p>people are only motivated by money, or they are only</p>
+              <p>motivated by power or some kind of incentive. But people</p>
+              <p>
+                also get inspired by stories. Here I share just a few thoughts
+              </p>
+              <p>from my team about Spain & Portugal Collection…</p>
+            </div>
+            <p>&nbsp;</p>
+            <p>We really appreciate your considering us as partners!</p>
+            <p>&nbsp;</p>
+            <div className="flex flex-col font-[Inter]">
+              <span className="text-base xs:text-lg lg:text-base xl:text-2xl 3xl:text-5xl font-[400]">
+                Abene Mendizabal
+              </span>
+              <span className="text-xs xs:text-sm lg:text-base xl:text-xl 3xl:text-4xl tracking-wider">
+                Founder and CEO Spain Collection
+              </span>
+            </div>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <img
+              src="/images/Curators/gurus_sign.webp"
+              className="mx-auto w-[60%] xs:w-1/2 lg:w-[40%] xl:w-[20%] 3xl:w-[25%]"
+              alt=""
+            />
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+          </div>
         </div>
-        <img
-          src="/images/Curators/gurus_sign.webp"
-          className="mx-auto mt-16 w-72"
-          alt=""
-        />
       </div>
       {/* Team */}
       <div className="bg-white p-28">

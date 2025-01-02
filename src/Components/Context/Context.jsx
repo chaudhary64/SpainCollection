@@ -506,6 +506,7 @@ const Context = (props) => {
   ];
   const [middleParallaxImage_Dark_Height, setMiddleParallaxImage_Dark_Height] =
     useState(0);
+  const [InfoImageHeight, setInfoImageHeight] = useState(0);
 
   // Nav Bar Info
   const [isVisible, setIsVisible] = useState(false);
@@ -547,6 +548,8 @@ const Context = (props) => {
           cardsDataCurators,
           middleParallaxImage_Dark_Height,
           setMiddleParallaxImage_Dark_Height,
+          InfoImageHeight,
+          setInfoImageHeight,
           isVisible,
           setIsVisible,
           isAppearing,
