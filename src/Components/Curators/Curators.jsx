@@ -47,28 +47,28 @@ const Curators = () => {
       return {
         MidImgY: useTransform(imageHolderScrolled, [0, 1], [0, 0]),
         ImgY: useTransform(ImgYScroll, [0, 1], [0, 50]),
-        cardsRefXValue: useTransform(cardsRefX, [0, 1], [0, -200]),
+        cardsRefXValue: useTransform(cardsRefX, [0, 1], ["0%", "0%"]),
       };
     } else if (screenWidth >= 768 && screenWidth < 1024) {
       // For Tablet
       return {
         MidImgY: useTransform(imageHolderScrolled, [0, 1], [0, 0]),
         ImgY: useTransform(ImgYScroll, [0, 1], [0, 50]),
-        cardsRefXValue: useTransform(cardsRefX, [0, 1], [0, -200]),
+        cardsRefXValue: useTransform(cardsRefX, [0, 1], ["0%", "0%"]),
       };
     } else if (screenWidth >= 1024 && screenWidth < 2000) {
       // For any other large screen size screenWidth >= 1024
       return {
         MidImgY: useTransform(imageHolderScrolled, [0, 1], ["0%", "35%"]),
         ImgY: useTransform(ImgYScroll, [0, 1], [0, 50]),
-        cardsRefXValue: useTransform(cardsRefX, [0, 1], [0, -200]),
+        cardsRefXValue: useTransform(cardsRefX, [0, 1], ["-20%", "0%"]),
       };
     } else {
       // For any other large screen size screenWidth >= 2000
       return {
         MidImgY: useTransform(imageHolderScrolled, [0, 1], ["0%", "35%"]),
         ImgY: useTransform(ImgYScroll, [0, 1], [0, 50]),
-        cardsRefXValue: useTransform(cardsRefX, [0, 1], [0, -200]),
+        cardsRefXValue: useTransform(cardsRefX, [0, 1], ["-20%", "0%"]),
       };
     }
   };
@@ -303,23 +303,32 @@ const Curators = () => {
       {/* Ambassadors */}
       <div
         ref={DragConstraintRef}
-        className="w-full px-[10%] py-28 mx-auto mb-40 bg-black text-white text-xl overflow-x-clip"
+        className="w-full mx-auto pt-[5pc] md:pt-[6pc] mb-[20vh] xs:mb-[25vh] sm:mb-[32vh] md:mb-[15pc] xl:mb-[22pc] 3xl:mb-[35pc] bg-black text-white text-xl overflow-x-clip"
       >
-        <p className="text-center text-[#BF1826] tracking-widest">
+        <p className="text-center text-[#BF1826] tracking-widest text-xs xs:text-[0.9pc] md:text-[1.1pc] lg:text-[1vw] xl:text-[1.2vw] 3xl:text-3xl">
           Ambassadors
         </p>
         <motion.div
-          drag="x"
-          dragConstraints={DragConstraintRef}
-          dragMomentum={false}
-          dragTransition={{ bounceStiffness: 150, bounceDamping: 10 }}
-          onDragStart={() => setDragging(true)}
-          onDragEnd={() => setDragging(false)}
+          // Conditionally apply drag attributes
+          drag={screenWidth >= 1024 ? "x" : false}
+          dragConstraints={screenWidth >= 1024 ? DragConstraintRef : undefined}
+          dragMomentum={screenWidth >= 1024 ? false : undefined}
+          dragTransition={
+            screenWidth >= 1024
+              ? { bounceStiffness: 150, bounceDamping: 10 }
+              : undefined
+          }
+          onDragStart={
+            screenWidth >= 1024 ? () => setDragging(true) : undefined
+          }
+          onDragEnd={screenWidth >= 1024 ? () => setDragging(false) : undefined}
           ref={cardsRef}
           style={{
             left: cardsRefXValue,
+            overflowX: screenWidth >= 1024 ? "visible" : "scroll",
+            width: screenWidth >= 1024 ? "fit-content" : "auto",
           }}
-          className="w-fit mt-16 pl-52 pr-44 flex flex-nowrap gap-32 relative"
+          className="no-scrollbar flex flex-nowrap gap-4 md:gap-5 xl:gap-7 mt-[4pc] md:mt-[5pc] pl-[9vw] xs:pl-[6vw] sm:pl-[5vw] md:pl-[7.5vw] xl:pl-[10pc] 3xl:pl-[15pc] pr-2 xs:pr-3 md:pr-5 lg:pr-[20pc] relative"
         >
           {cardsDataCurators.map((item) => (
             <InfoCards key={item.id} {...item} isDragging={isDragging} />
