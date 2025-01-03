@@ -290,11 +290,11 @@ const Curators = () => {
         </div>
       </div>
       {/* Team */}
-      <div className="bg-white p-28">
-        <p className="text-center font-[Inter] uppercase tracking-widest text-[#C42C39]">
+      <div className="py-[5pc] md:py-[6pc] bg-white">
+        <p className="text-center font-[Inter] uppercase tracking-widest text-[#C42C39] text-xs xs:text-[0.9pc] md:text-[1.1pc] lg:text-[1vw] xl:text-[1.2vw] 3xl:text-3xl">
           Team
         </p>
-        <div className="w-[90%] mx-auto mt-20 flex gap-40">
+        <div className="w-[90%] mx-auto mt-[4pc] md:mt-[5pc] flex flex-wrap sm:justify-between lg:justify-start gap-[3pc] xl:gap-[5pc]">
           {overlappingCardsData.map((data) => (
             <OverlapingCards key={data.id} {...data} />
           ))}
