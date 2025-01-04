@@ -2,7 +2,7 @@ import { useContext, useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Info } from "../Context/Context";
 
-const FixedImages = ({
+const ParallaxImages_Light = ({
   src,
   number,
   text,
@@ -126,4 +126,4 @@ const FixedImages = ({
   );
 };
 
-export default FixedImages;
+export default ParallaxImages_Light;

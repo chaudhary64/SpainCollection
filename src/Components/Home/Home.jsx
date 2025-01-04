@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, useContext } from "react";
 import { IoPlay } from "react-icons/io5";
 import Expander from "./Expander";
 import Ambassadords from "./Ambassadors";
-import FixedImages from "./FixedImages";
+import ParallaxImages_Light from "./ParallaxImages_Light";
 import Marquee from "./Marquee";
 import Footer from "../Footer/Footer";
 import {
@@ -202,7 +202,7 @@ const Home = () => {
           className="lg:-mt-[25%] w-[85%] lg:w-full mx-auto pt-[4pc] flex flex-wrap lg:flex-nowrap justify-evenly gap-[4pc]"
         >
           <div className="shrink-0 h-fit w-[85%] xxs:w-[80%] xs:w-[65%] sm:w-[45%] md:w-[45%] lg:w-[21%] xl:w-[22%] 2xl:w-[23%] 3xl:w-[27%] mr-auto lg:mr-0">
-            <FixedImages
+            <ParallaxImages_Light
               key={fixedImages[0].id}
               {...fixedImages[0]}
               imageHolderScrolled={imageHolderScrolled}
@@ -214,14 +214,14 @@ const Home = () => {
             }}
             className="shrink-0 h-fit w-[85%] xxs:w-[80%] xs:w-[65%] sm:w-[45%] md:w-[45%] lg:w-[21%] xl:w-[22%] 2xl:w-[23%] 3xl:w-[27%] ml-auto lg:ml-0"
           >
-            <FixedImages
+            <ParallaxImages_Light
               key={fixedImages[1].id}
               {...fixedImages[1]}
               imageHolderScrolled={imageHolderScrolled}
             />
           </motion.div>
           <div className="shrink-0 h-fit w-[85%] xxs:w-[80%] xs:w-[65%] sm:w-[45%] md:w-[45%] lg:w-[21%] xl:w-[22%] 2xl:w-[23%] 3xl:w-[27%] mr-auto md:mx-auto lg:mx-0">
-            <FixedImages
+            <ParallaxImages_Light
               key={fixedImages[2].id}
               {...fixedImages[2]}
               imageHolderScrolled={imageHolderScrolled}
