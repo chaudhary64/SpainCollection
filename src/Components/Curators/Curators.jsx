@@ -94,7 +94,7 @@ const Curators = () => {
   return (
     <div className="bg-black">
       {/* Text */}
-      <div
+      <section
         style={{
           lineHeight: 1,
         }}
@@ -107,9 +107,9 @@ const Curators = () => {
           unforgettable
         </p>
         <p>experience</p>
-      </div>
+      </section>
       {/* ImagesHolder */}
-      <div ref={imageHolder} className="mt-[3pc] relative">
+      <section ref={imageHolder} className="mt-[3pc] relative">
         {/* Vertical Line */}
         <div
           id="vertical_line"
@@ -159,9 +159,9 @@ const Curators = () => {
             />
           </div>
         </div>
-      </div>
+      </section>
       {/* Our outstanding team */}
-      <div>
+      <section>
         {/* Text */}
         <div
           style={{
@@ -288,9 +288,9 @@ const Curators = () => {
             <p>&nbsp;</p>
           </div>
         </div>
-      </div>
+      </section>
       {/* Team */}
-      <div className="py-[5pc] md:py-[6pc] bg-white">
+      <section className="py-[5pc] md:py-[6pc] bg-white">
         <p className="text-center font-[Inter] uppercase tracking-widest text-[#C42C39] text-xs xs:text-[0.9pc] md:text-[1.1pc] lg:text-[1vw] xl:text-[1.2vw] 3xl:text-3xl">
           Team
         </p>
@@ -299,9 +299,9 @@ const Curators = () => {
             <OverlapingCards key={data.id} {...data} />
           ))}
         </div>
-      </div>
+      </section>
       {/* Ambassadors */}
-      <div
+      <section
         ref={DragConstraintRef}
         className="w-full mx-auto pt-[5pc] md:pt-[6pc] mb-[20vh] xs:mb-[25vh] sm:mb-[32vh] md:mb-[15pc] xl:mb-[22pc] 3xl:mb-[35pc] bg-black text-white text-xl overflow-x-clip"
       >
@@ -334,7 +334,7 @@ const Curators = () => {
             <InfoCards key={item.id} {...item} isDragging={isDragging} />
           ))}
         </motion.div>
-      </div>
+      </section>
       {/* Footer */}
       <Footer dark="true" />
     </div>

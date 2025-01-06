@@ -114,22 +114,22 @@ const Home = () => {
     getTransforms();
 
   return (
-    <section id="HomePage">
+    <>
       {/* This below div will act as a background */}
-      <div
+      <aside
         id="mask"
         style={{
           backgroundColor: theme,
           transition: "background-color 0.6s cubic-bezier(0.11, 0, 0.5, 0)",
         }}
         className="fixed h-lvh w-full top-0 left-0 z-[-99]"
-      ></div>
+      ></aside>
       {/* Expander */}
-      <motion.div id="Expander" ref={ExpanderRef}>
+      <motion.section id="Expander" ref={ExpanderRef}>
         <Expander />
-      </motion.div>
+      </motion.section>
       {/* About US */}
-      <div id="AboutUs" className="pt-14 xl:pt-52 pb-14 xl:pb-32 3xl:pb-40">
+      <section id="AboutUs" className="pt-14 xl:pt-52 pb-14 xl:pb-32 3xl:pb-40">
         {/* Heading */}
         <p className="text-[#BF1826] text-center text-xs xs:text-[0.9pc] lg:text-[0.9vw] xl:text-[1vw] 3xl:text-3xl font-[400] font-['Inter'] tracking-widest">
           ABOUT US
@@ -154,9 +154,9 @@ const Home = () => {
             Founder & CEO Spain Collection
           </p>
         </div>
-      </div>
+      </section>
       {/* Ambassadors */}
-      <motion.div
+      <motion.section
         id="Ambassadors"
         ref={AmbassadorsRef}
         className="pb-16 xs:pb-20 sm:pb-24 md:pb-24 lg:pb-32 xl:pb-36 3xl:pb-40"
@@ -176,9 +176,9 @@ const Home = () => {
             <Ambassadords key={item.id} {...item} />
           ))}
         </div>
-      </motion.div>
+      </motion.section>
       {/* Why Choose Us */}
-      <div id="whyChooseUs" className="relative">
+      <section id="whyChooseUs" className="relative">
         {/* Text */}
         <div
           style={{
@@ -228,9 +228,9 @@ const Home = () => {
             />
           </div>
         </div>
-      </div>
+      </section>
       {/* Marquee Animation */}
-      <div
+      <section
         id="MarqueeContainer"
         ref={MarqueeContainer}
         className="mt-16 lg:mt-0 pt-4 sm:pt-6 md:pt-8 lg:pt-12 xl:pt-14 3xl:pt-20 flex flex-col gap-3 md:gap-4 xl:gap-6 overflow-x-clip"
@@ -253,9 +253,9 @@ const Home = () => {
             reverse={true}
           />
         </motion.div>
-      </div>
+      </section>
       {/* Discover the Luxury */}
-      <div
+      <section
         id="DiscoverTheLuxury"
         ref={DragConstraintRef}
         style={{
@@ -308,9 +308,9 @@ const Home = () => {
             <Cards key={item.id} {...item} isDragging={isDragging} />
           ))}
         </motion.div>
-      </div>
+      </section>
       <Footer />
-    </section>
+    </>
   );
 };
 

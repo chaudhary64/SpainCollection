@@ -24,7 +24,7 @@ const Collections = () => {
     <>
       {screenWidth > 1024 ? (
         // Layout for screens larger than 1024px
-        <div
+        <section
           style={{
             marginTop: `-${state.height}px`,
             paddingTop: `${state.height}px`,
@@ -78,10 +78,10 @@ const Collections = () => {
               ))}
             </div>
           </div>
-        </div>
+        </section>
       ) : (
         // Layout for screens smaller than 1024px
-        <div>
+        <>
           <p
             style={{
               lineHeight: 1.35,
@@ -92,7 +92,7 @@ const Collections = () => {
             hand-picked experiences to make your trip unforgettable.
           </p>
           {/* Choose Your Destination */}
-          <div>
+          <section>
             <div className="mt-[3pc] xs:mt-[3.5pc]">
               <p className="text-[#BF1826] text-center text-[0.7pc] xs:text-[0.9pc] font-[400] font-['Inter'] tracking-widest uppercase">
                 choose your destination
@@ -113,9 +113,9 @@ const Collections = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
+          </section>
           {/* Choose Your Experience */}
-          <div className="bg-black">
+          <section className="bg-black">
             <div className="mt-[3pc] pt-[3pc] xs:mt-[3.5pc] xs:pt-[3.5pc]">
               <p className="text-[#BF1826] text-center text-[0.7pc] xs:text-[0.9pc] font-[400] font-['Inter'] tracking-widest uppercase">
                 choose your experience
@@ -136,11 +136,11 @@ const Collections = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
+          </section>
           {/* This aside tag will juts act as a seprator bw footer and the upper div */}
           <aside className="pt-[15vh] xs:pt-[20vh] md:pt-[10pc] h-[1px] w-full bg-black"></aside>
           <Footer dark={true} />
-        </div>
+        </>
       )}
     </>
   );

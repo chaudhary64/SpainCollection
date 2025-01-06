@@ -71,15 +71,15 @@ const Journal = () => {
   const { leftStripY, middleStripY, rightStripY } = getTransforms();
 
   return (
-    <div>
+    <>
       {/* Text */}
-      <div className="mt-[3pc] text-center text-[2.4pc] xl:text-[40px] font-[SaolDisplay-Light] leading-none">
+      <section className="mt-[3pc] text-center text-[2.4pc] xl:text-[40px] font-[SaolDisplay-Light] leading-none">
         <p>Spain Collection has selected the best places and traditions</p>
         <p>to turn your luxury trip into an unforgettable memory</p>
-      </div>
+      </section>
       {/* Grid Layout */}
       {/* A padding of 200px has been applied to ensure that as the strips move downward, any whitespace is fully covered, maintaining a seamless visual flow */}
-      <div className="w-[92%] mx-auto mt-[3pc] mb-[16vh] xs:mb-[21vh] md:mb-[11pc] lg:mb-[6pc] xl:mb-[16pc] 3xl:mb-[26pc] 3xl:pb-[200px] lg:grid lg:grid-cols-[35%_25%_35%] lg:justify-between">
+      <section className="w-[92%] mx-auto mt-[3pc] mb-[16vh] xs:mb-[21vh] md:mb-[11pc] lg:mb-[6pc] xl:mb-[16pc] 3xl:mb-[26pc] 3xl:pb-[200px] lg:grid lg:grid-cols-[35%_25%_35%] lg:justify-between">
         {/* Left Strip */}
         <motion.div
           ref={leftStrip}
@@ -134,9 +134,9 @@ const Journal = () => {
             <DateCard key={item.id} {...item} />
           ))}
         </motion.div>
-      </div>
+      </section>
       <Footer />
-    </div>
+    </>
   );
 };
 
