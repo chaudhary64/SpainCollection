@@ -69,6 +69,7 @@ const Journal = () => {
   };
 
   const { leftStripY, middleStripY, rightStripY } = getTransforms();
+
   return (
     <div>
       {/* Text */}
