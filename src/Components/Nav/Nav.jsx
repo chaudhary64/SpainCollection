@@ -299,14 +299,14 @@ const Nav = () => {
         {/* Right Part */}
         <div className="hidden lg:flex gap-12 xl:gap-16 2xl:gap-24">
           <NavigatorLink
-            to="/journal"
-            defaultAsthetics={defaultAsthetics}
-            routeName="Journal"
-          />
-          <NavigatorLink
             to="/curators"
             defaultAsthetics={defaultAsthetics}
             routeName="Curators"
+          />
+          <NavigatorLink
+            to="/journal"
+            defaultAsthetics={defaultAsthetics}
+            routeName="Journal"
           />
         </div>
         {/* Lines for smaller screen */}
