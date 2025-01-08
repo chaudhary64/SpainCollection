@@ -29,7 +29,7 @@ const OverlapingCards = ({ name, text, mainImg, maskImg, left = true }) => {
         <p className="mt-2.5 text-[1.55pc] sm:text-[1.75pc] lg:text-[2.25vw] tracking-wide font-[400]">
           {name}
         </p>
-        <p className="text-[0.8pc] sm:text-[0.9pc] lg:text-[1.1vw] font-[250]">
+        <p className="text-[0.85pc] sm:text-[0.9pc] lg:text-[1.1vw] font-[250]">
           {text}
         </p>
       </div>

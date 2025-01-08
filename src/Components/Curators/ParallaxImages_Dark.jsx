@@ -110,7 +110,7 @@ const ParallaxImages_Dark = ({
           style={{
             lineHeight: 1.3,
           }}
-          className="text-lg text-white/90 tracking-wider text-[0.8pc] sm:text-[0.9pc] lg:text-[1.1vw]"
+          className="text-white/90 tracking-wider text-[0.85pc] sm:text-[0.9pc] lg:text-[1.1vw]"
         >
           {text}
         </p>

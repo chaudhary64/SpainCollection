@@ -77,7 +77,6 @@ const Curators = () => {
 
   useEffect(() => {
     const heightAdjuster = () => {
-      console.log("Event Listener");
       setInfoImageHeight(imageRef.current.getBoundingClientRect().height * 0.5);
     };
 
