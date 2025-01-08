@@ -77,17 +77,24 @@ const Curators = () => {
 
   useEffect(() => {
     const heightAdjuster = () => {
+      console.log("Event Listener");
       setInfoImageHeight(imageRef.current.getBoundingClientRect().height * 0.5);
     };
 
     heightAdjuster();
 
     window.addEventListener("resize", heightAdjuster);
-    imageRef.current.addEventListener("load", heightAdjuster);
+
+    // Check if the `imageRef.current` is an <img> element and attach the "load" event conditionally
+    if (imageRef.current?.tagName === "IMG" && !imageRef.current.complete) {
+      imageRef.current.addEventListener("load", heightAdjuster);
+    }
 
     return () => {
+      if (imageRef.current?.tagName === "IMG") {
+        imageRef.current.removeEventListener("load", heightAdjuster);
+      }
       window.removeEventListener("resize", heightAdjuster);
-      imageRef.current.removeEventListener("load", heightAdjuster);
     };
   }, [screenWidth]);
 
