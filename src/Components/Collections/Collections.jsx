@@ -86,7 +86,7 @@ const Collections = () => {
             style={{
               lineHeight: 1.35,
             }}
-            className="mt-[3pc] w-[80%] xs:w-[65%] mx-auto text-[1.9pc] xs:text-[2.3pc] sm:text-[2.7pc] md:text-[3.5pc] text-center font-[SaolDisplay-Light]"
+            className="mt-[4pc] w-[80%] xs:w-[65%] mx-auto text-[1.9pc] xs:text-[2.3pc] sm:text-[2.7pc] md:text-[3.5pc] text-center font-[SaolDisplay-Light]"
           >
             Spain Collection has selected outstanding destinations, and
             hand-picked experiences to make your trip unforgettable.

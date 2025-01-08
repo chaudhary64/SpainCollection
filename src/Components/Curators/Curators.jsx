@@ -98,7 +98,7 @@ const Curators = () => {
         style={{
           lineHeight: 1,
         }}
-        className='pt-[3pc] w-[90%] mx-auto text-center uppercase text-white text-[2.4pc] xs:text-[3.2pc] sm:text-[4.5pc] lg:text-[5pc] xl:text-[7pc] 3xl:text-[12pc] font-["SaolDisplay-Regular"] font-[300]'
+        className='pt-[4pc] w-[90%] mx-auto text-center uppercase text-white text-[2.45pc] xs:text-[3.3pc] sm:text-[4.6pc] lg:text-[6pc] xl:text-[8pc] 3xl:text-[12pc] font-["SaolDisplay-Regular"] font-[300]'
       >
         <p>We work</p>
         <p>tirelessly to</p>
@@ -167,7 +167,7 @@ const Curators = () => {
           style={{
             lineHeight: 1,
           }}
-          className="mt-[5pc] pb-[5pc] sm:pb-[7pc] xl:pb-[9pc] 3xl:pb-[11pc] flex flex-col justify-center items-center text-[2.4pc] xs:text-[3.2pc] sm:text-[4.5pc] lg:text-[5pc] xl:text-[7pc] 3xl:text-[12pc] text-white uppercase"
+          className="mt-[5pc] pb-[5pc] sm:pb-[7pc] xl:pb-[9pc] 3xl:pb-[11pc] flex flex-col justify-center items-center text-[2.7pc] xs:text-[3.5pc] sm:text-[4.5pc] lg:text-[5pc] xl:text-[7pc] 3xl:text-[12pc] text-white uppercase"
         >
           <div className="overflow-clip">
             <motion.p
@@ -249,7 +249,7 @@ const Curators = () => {
                 y: ImgY,
               }}
               src="/images/Curators/gurus_abene.webp"
-              className="w-[95%] xs:w-[90%] sm:w-1/2 xl:w-[30%] mx-auto"
+              className="w-[70%] xs:w-[60%] sm:w-1/2 xl:w-[30%] mx-auto"
               alt=""
             />
           </div>

@@ -103,14 +103,14 @@ const ParallaxImages_Dark = ({
       </div>
       {/* Text Container */}
       <div>
-        <p className="my-[0.4pc] xl:my-[0.8pc] 3xl:my-[2pc] text-white/95 text-[1.5pc] sm:text-[1.7pc] lg:text-[2.2vw]">
+        <p className="mt-[0.6pc] xl:my-[0.8pc] 3xl:my-[2pc] text-white/95 text-[1.55pc] sm:text-[1.75pc] lg:text-[2.25vw]">
           {heading}
         </p>
         <p
           style={{
             lineHeight: 1.3,
           }}
-          className="text-lg text-white/90 tracking-wider text-[0.9pc] sm:text-[1pc] lg:text-[1.2vw]"
+          className="text-lg text-white/90 tracking-wider text-[0.8pc] sm:text-[0.9pc] lg:text-[1.1vw]"
         >
           {text}
         </p>
