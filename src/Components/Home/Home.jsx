@@ -80,16 +80,16 @@ const Home = () => {
       return {
         MidImgY: useTransform(imageHolderScrolled, [0, 1], [0, 0]),
         cardsRefXValue: useTransform(cardsRefX, [0, 1], ["0%", "0%"]),
-        forwardMarqueeX: useTransform(scrollMarquee, [0, 1], ["0%", "-60%"]),
-        reverseMarqueeX: useTransform(scrollMarquee, [0, 1], ["0%", "60%"]),
+        forwardMarqueeX: useTransform(scrollMarquee, [0, 1], ["0%", "-55%"]),
+        reverseMarqueeX: useTransform(scrollMarquee, [0, 1], ["0%", "55%"]),
       };
     } else if (screenWidth >= 768 && screenWidth < 1024) {
       // For Tablet
       return {
         MidImgY: useTransform(imageHolderScrolled, [0, 1], [0, 0]),
         cardsRefXValue: useTransform(cardsRefX, [0, 1], ["0%", "0%"]),
-        forwardMarqueeX: useTransform(scrollMarquee, [0, 1], ["0%", "-60%"]),
-        reverseMarqueeX: useTransform(scrollMarquee, [0, 1], ["0%", "60%"]),
+        forwardMarqueeX: useTransform(scrollMarquee, [0, 1], ["0%", "-55%"]),
+        reverseMarqueeX: useTransform(scrollMarquee, [0, 1], ["0%", "55%"]),
       };
     } else if (screenWidth >= 1024 && screenWidth < 2000) {
       // For any other large screen size screenWidth >= 1024
@@ -146,7 +146,7 @@ const Home = () => {
           </div>
         </div>
         {/* Text */}
-        <div className="mt-8 xl:mt-10 3xl:mt-14 text-white mix-blend-difference">
+        <div className="mt-6 xl:mt-10 3xl:mt-14 text-white mix-blend-difference">
           <p className="text-center text-sm xs:text-base md:text-[2.5vw] xl:text-2xl 3xl:text-4xl">
             Abene Mendizabal
           </p>
