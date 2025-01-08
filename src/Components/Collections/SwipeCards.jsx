@@ -2,7 +2,7 @@ import React from "react";
 
 const SwipeCards = ({ src, text, dark = false }) => {
   return (
-    <div className="h-full">
+    <div className="h-full pb-[1.5pc] borde-4">
       <img
         className="min-h-[20pc] xs:min-h-[27pc] sm:min-h-[30pc] md:min-h-[37pc] w-full object-cover"
         src={src}

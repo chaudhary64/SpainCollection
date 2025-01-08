@@ -105,7 +105,7 @@ const Collections = () => {
                 clickable: true,
               }}
               modules={[Pagination]}
-              className="mySwiper w-[75%] sm:w-[50%] md:w-[55%] mt-[1.5pc] xs:mt-[1.75pc] overflow-visible"
+              className="mySwiper w-[75%] sm:w-[50%] md:w-[55%] mt-[2pc] xs:mt-[2.5pc] overflow-visible"
             >
               {chooseYourDestinationCardsData.map((item) => (
                 <SwiperSlide key={item.text}>
@@ -115,8 +115,8 @@ const Collections = () => {
             </Swiper>
           </section>
           {/* Choose Your Experience */}
-          <section className="bg-black">
-            <div className="mt-[3pc] pt-[3pc] xs:mt-[3.5pc] xs:pt-[3.5pc]">
+          <section className="mt-[4pc] pt-[3pc] xs:mt-[3.5pc] xs:pt-[3.5pc] bg-black">
+            <div>
               <p className="text-[#BF1826] text-center text-[0.7pc] xs:text-[0.9pc] font-[400] font-['Inter'] tracking-widest uppercase">
                 choose your experience
               </p>
@@ -128,7 +128,7 @@ const Collections = () => {
                 clickable: true,
               }}
               modules={[Pagination]}
-              className="mySwiper w-[75%] sm:w-[50%] md:w-[55%] mt-[1.5pc] xs:mt-[1.75pc] overflow-visible"
+              className="mySwiper w-[75%] sm:w-[50%] md:w-[55%] mt-[2pc] xs:mt-[2.5pc] overflow-visible"
             >
               {chooseyourExperienceCardsData.map((item) => (
                 <SwiperSlide key={item.text}>
@@ -138,7 +138,7 @@ const Collections = () => {
             </Swiper>
           </section>
           {/* This aside tag will juts act as a seprator bw footer and the upper div */}
-          <aside className="pt-[15vh] xs:pt-[20vh] md:pt-[10pc] h-[1px] w-full bg-black"></aside>
+          <aside className="pt-[20vh] xs:pt-[25vh] md:pt-[12pc] h-[1px] w-full bg-black"></aside>
           <Footer dark={true} />
         </>
       )}
