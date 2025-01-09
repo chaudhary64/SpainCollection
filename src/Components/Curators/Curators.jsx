@@ -252,7 +252,7 @@ const Curators = () => {
         ref={DragConstraintRef}
         className="w-full mx-auto pt-[5pc] md:pt-[6pc] mb-[20vh] xs:mb-[25vh] sm:mb-[32vh] md:mb-[15pc] xl:mb-[22pc] 3xl:mb-[35pc] bg-black text-white text-xl overflow-x-clip"
       >
-        <p className="text-center text-[#BF1826] tracking-widest text-xs xs:text-[0.9pc] md:text-[1.1pc] lg:text-[1vw] xl:text-[1.2vw] 3xl:text-3xl">
+        <p className="text-center font-[Inter] uppercase text-[#BF1826] tracking-widest text-xs xs:text-[0.9pc] md:text-[1.1pc] lg:text-[1vw] xl:text-[1.2vw] 3xl:text-3xl">
           Ambassadors
         </p>
         <motion.div
