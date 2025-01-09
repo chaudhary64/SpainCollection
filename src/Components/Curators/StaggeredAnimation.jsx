@@ -27,7 +27,7 @@ const StaggeredAnimation = ({ textArray }) => {
   return (
     <motion.div
       style={{ lineHeight: 1 }}
-      className="mt-[5pc] pb-[5pc] sm:pb-[7pc] xl:pb-[9pc] 3xl:pb-[11pc] flex flex-col justify-center items-center text-[2.7pc] xs:text-[3.5pc] sm:text-[4.5pc] lg:text-[5pc] xl:text-[7pc] 3xl:text-[12pc] text-white uppercase"
+      className="mt-[10pc] pb-[5pc] sm:pb-[7pc] xl:pb-[9pc] 3xl:pb-[11pc] flex flex-col justify-center items-center text-[2.7pc] xs:text-[3.5pc] sm:text-[4.5pc] lg:text-[5pc] xl:text-[7pc] 3xl:text-[12pc] text-white uppercase"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.5 }} // Trigger animation when 50% of the parent is visible

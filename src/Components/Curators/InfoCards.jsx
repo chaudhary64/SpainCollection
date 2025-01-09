@@ -22,11 +22,14 @@ const InfoCards = ({ name, text, src, isDragging }) => {
         </div>
       </div>
       {/* Text */}
-      <div className="mt-4 font-[Inter] tracking-wide">
-        <p className="text-base xs:text-lg lg:text-base xl:text-2xl 3xl:text-5xl">
+      <div
+        style={{ lineHeight: 1.25 }}
+        className="mt-[1pc] 3xl:mt-[1.2pc] font-[Inter] tracking-wide"
+      >
+        <p className="text-[15px] xs:text-lg lg:text-lg xl:text-2xl 3xl:text-4xl">
           {name}
         </p>
-        <p className="text-white/90 text-xs xs:text-sm lg:text-base xl:text-xl 3xl:text-4xl">
+        <p className="text-white/90 text-[10px] xs:text-xs xl:text-base 3xl:text-2xl">
           {text}
         </p>
       </div>
