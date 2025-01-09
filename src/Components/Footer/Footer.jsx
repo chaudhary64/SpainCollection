@@ -10,7 +10,7 @@ const Footer = ({ dark = false }) => {
         dark ? "bg-black" : "bg-white"
       }`}
     >
-      <div className="w-[90%] md:w-[85%] mx-auto">
+      <div className="w-[90%] md:w-[85%] mx-auto font-[SaolDisplay-Light]">
         {/* Contact with */}
         <div
           style={{
