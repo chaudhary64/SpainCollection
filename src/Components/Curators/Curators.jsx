@@ -6,6 +6,7 @@ import InfoCards from "./InfoCards";
 import Footer from "../Footer/Footer";
 import { useContext } from "react";
 import { Info } from "../Context/Context";
+import StaggeredAnimation from "./StaggeredAnimation";
 
 const Curators = () => {
   const {
@@ -169,67 +170,7 @@ const Curators = () => {
       {/* Our outstanding team */}
       <section>
         {/* Text */}
-        <div
-          style={{
-            lineHeight: 1,
-          }}
-          className="mt-[5pc] pb-[5pc] sm:pb-[7pc] xl:pb-[9pc] 3xl:pb-[11pc] flex flex-col justify-center items-center text-[2.7pc] xs:text-[3.5pc] sm:text-[4.5pc] lg:text-[5pc] xl:text-[7pc] 3xl:text-[12pc] text-white uppercase"
-        >
-          <div className="overflow-clip">
-            <motion.p
-              initial={{
-                transform: "translateY(100%)",
-              }}
-              whileInView={{
-                transform: "translateY(0%)",
-              }}
-              transition={{
-                duration: 0.75,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              viewport={{ once: true }}
-            >
-              Our
-            </motion.p>
-          </div>
-          <div className="overflow-clip">
-            <motion.p
-              initial={{
-                transform: "translateY(100%)",
-              }}
-              whileInView={{
-                transform: "translateY(0%)",
-              }}
-              transition={{
-                duration: 0.75,
-                delay: 0.15,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              viewport={{ once: true }}
-              className="text-[#BF1826] font-[SaolDisplay-Italic]"
-            >
-              Outstanding
-            </motion.p>
-          </div>
-          <div className="overflow-clip">
-            <motion.p
-              initial={{
-                transform: "translateY(100%)",
-              }}
-              whileInView={{
-                transform: "translateY(0%)",
-              }}
-              transition={{
-                duration: 0.75,
-                delay: 0.3,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              viewport={{ once: true }}
-            >
-              Team
-            </motion.p>
-          </div>
-        </div>
+        <StaggeredAnimation textArray={["Our", "Outstanding", "Team"]} />
         {/* Info */}
         <div
           style={{

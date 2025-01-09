@@ -1,5 +1,6 @@
 import React from "react";
 import { motion, useAnimation } from "framer-motion";
+import StaggeredAnimation from "./StaggeredAnimation";
 
 const Footer = ({ dark = false }) => {
   const controls = useAnimation();
@@ -24,46 +25,7 @@ const Footer = ({ dark = false }) => {
               dark ? "text-white" : ""
             } xs:px-[0.1pc] sm:px-[0.8pc]`}
           >
-            {/* Upper Para */}
-            <div className="overflow-clip">
-              <motion.div
-                initial={{
-                  transform: "translateY(100%)",
-                }}
-                whileInView={{
-                  transform: "translateY(0%)",
-                }}
-                transition={{
-                  duration: 0.4,
-                }}
-                viewport={{ once: true }}
-              >
-                Contact{" "}
-                <div>
-                  <span className="text-[#D24B4B] font-['SaolDisplay-Italic']">
-                    With{" "}
-                  </span>
-                  <span>Spain</span>
-                </div>
-              </motion.div>
-            </div>
-            {/* Lower Para */}
-            <div className="overflow-clip">
-              <motion.div
-                initial={{
-                  transform: "translateY(100%)",
-                }}
-                whileInView={{
-                  transform: "translateY(0%)",
-                }}
-                transition={{
-                  duration: 0.4,
-                }}
-                viewport={{ once: true }}
-              >
-                Collection
-              </motion.div>
-            </div>
+            <StaggeredAnimation />
           </div>
           {/* Right Line */}
           <div className="h-[1px] w-full bg-[#D24B4B]"></div>
