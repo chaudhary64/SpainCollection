@@ -3,6 +3,7 @@ import Nav from "./Components/Nav/Nav";
 import RoutesForNav from "./Components/Routes/RoutesForNav";
 import AssetLoader from "./Components/Loader/AssetLoader";
 import AppearingNavigation from "./Components/Nav/AppearingNavigation";
+import Player from "./Components/Player/Player";
 
 const App = () => {
   const assets = [
@@ -192,6 +193,7 @@ const App = () => {
         <main className="overflow-x-clip">
           <Nav />
           <AppearingNavigation />
+          <Player />
           <RoutesForNav />
         </main>
       </AssetLoader>

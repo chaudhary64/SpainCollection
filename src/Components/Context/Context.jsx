@@ -523,8 +523,13 @@ const Context = (props) => {
   const [middleFixedImageHeight, setMiddleFixedImageHeight] = useState(0);
 
   // Expander
-
   const [textToDisaapear, settextToDisaapear] = useState(0);
+
+  // Player
+  const [playerInfo, setPlayerInfo] = useState({
+    src: "",
+    isPlaying: false,
+  });
 
   return (
     <>
@@ -562,6 +567,8 @@ const Context = (props) => {
           setMiddleFixedImageHeight,
           textToDisaapear,
           settextToDisaapear,
+          playerInfo,
+          setPlayerInfo,
         }}
       >
         {props.children}
