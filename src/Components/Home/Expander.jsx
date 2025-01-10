@@ -2,9 +2,11 @@ import { useContext, useEffect, useRef } from "react";
 import { IoPlay } from "react-icons/io5";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Info } from "../Context/Context";
+import Magnet from "../Magnetic/Magnet";
 
 const Expander = () => {
-  const { screenWidth, settextToDisaapear, textToDisaapear } = useContext(Info);
+  const { screenWidth, settextToDisaapear, textToDisaapear, setPlayerInfo } =
+    useContext(Info);
   const ColumnsHolder = useRef(null);
   const thirdColumn = useRef(null);
   const textToDisaapearRef = useRef(null);
@@ -161,15 +163,23 @@ const Expander = () => {
               left: "50%",
               transform: "translateX(-50%) translateY(-25%)",
             }}
-            className="w-fit hidden lg:block absolute text-6xl xl:text-8xl 3xl:text-[180px] text-white uppercase text-center"
+            className="w-fit hidden lg:block absolute text-6xl xl:text-8xl 3xl:text-[180px] text-white uppercase text-center z-10"
           >
             <p>Live Your</p>
             <p className="text-nowrap">
               own <span className="italic text-red-700">UNIQUE</span>
             </p>
             <p>Adventure</p>
-            <div className="mx-auto mt-8 h-[72px] w-[72px] border-2 border-white rounded-full flex justify-center items-center">
-              <IoPlay className="text-white h-5 " />
+            <div
+              onClick={() =>
+                setPlayerInfo({
+                  src: "/videoes/Home/Bg_Home.mp4",
+                  isPlaying: true,
+                })
+              }
+              className="mx-auto mt-8 3xl:mt-14 flex justify-center"
+            >
+              <Magnet />
             </div>
           </motion.div>
           <video

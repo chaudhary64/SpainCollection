@@ -1,13 +1,24 @@
-import { IoPlay } from "react-icons/io5";
+import { useContext } from "react";
+import Magnet from "../Magnetic/Magnet";
+import { Info } from "../Context/Context";
 
-const Ambassadors = ({ src, name, text }) => {
+const Ambassadors = ({ imageSrc, videoSrc, name, text }) => {
+  const { setPlayerInfo } = useContext(Info);
   return (
     <div className="w-32 xs:w-[140px] sm:w-40 md:w-52 lg:w-60 xl:w-[24%]">
       <div className="relative">
-        <img className="w-full object-cover" src={src} alt="" />
+        <img className="w-full object-cover" src={imageSrc} alt="" />
         <div className="absolute inset-0 bg-black/55"></div>
-        <div className="h-[72px] w-[72px] border-2 border-[#D6D6D6] rounded-full absolute top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center">
-          <IoPlay className="text-white h-5 " />
+        <div
+          onClick={() =>
+            setPlayerInfo({
+              src: videoSrc,
+              isPlaying: true,
+            })
+          }
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        >
+          <Magnet />
         </div>
       </div>
       <div

@@ -13,6 +13,7 @@ import {
 } from "framer-motion";
 import Cards from "./Cards";
 import { Info } from "../Context/Context";
+import Magnet from "../Magnetic/Magnet";
 
 const Home = () => {
   const {
@@ -22,6 +23,7 @@ const Home = () => {
     cardsData,
     screenWidth,
     middleFixedImageHeight,
+    setPlayerInfo,
   } = useContext(Info);
 
   const AmbassadorsRef = useRef(null);
@@ -141,8 +143,16 @@ const Home = () => {
             src="/images/Home/caratula_video_abene_new.webp"
             alt=""
           />
-          <div className="h-[72px] w-[72px] border-2 border-[#D6D6D6] rounded-full absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center">
-            <IoPlay className="h-5 text-white" />
+          <div
+            onClick={() =>
+              setPlayerInfo({
+                src: "/public/videoes/Home/Abene_Home.mp4",
+                isPlaying: true,
+              })
+            }
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          >
+            <Magnet />
           </div>
         </div>
         {/* Text */}

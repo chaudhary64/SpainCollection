@@ -43,7 +43,7 @@ const Player = () => {
       animate={coverControls}
       className="fixed h-dvh w-full z-[700] flex items-center justify-center bg-black/95"
     >
-      <div id="custom_player_wrapper" className="w-1/2">
+      <div id="custom_player_wrapper" className="lg:w-1/2">
         <MediaPlayer src={playerInfo.src}>
           <MediaProvider />
           <PlyrLayout icons={plyrLayoutIcons} />

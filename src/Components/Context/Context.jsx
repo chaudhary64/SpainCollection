@@ -7,19 +7,22 @@ const Context = (props) => {
   const AmbassadorsData = [
     {
       id: 1,
-      src: "/images/Home/caratula_eneko.webp",
+      imageSrc: "/images/Home/caratula_eneko.webp",
+      videoSrc: "/videoes/Home/eneko_atxa.mp4",
       name: "Eneko Atxa",
       text: "3 Michelin Stars Chef",
     },
     {
       id: 2,
-      src: "/images/Home/caratula_pedro.webp",
+      imageSrc: "/images/Home/caratula_pedro.webp",
+      videoSrc: "/videoes/Home/Akelarre-1.mp4",
       name: "Pedro Subijana",
       text: "3 Michelin Stars Chef",
     },
     {
       id: 3,
-      src: "/images/Home/caratula_german.webp",
+      imageSrc: "/images/Home/caratula_german.webp",
+      videoSrc: "/videoes/Home/German-gimenez.mp4",
       name: "Germán Jiménez",
       text: "Journalist specialized in Fashion & Lifestyle",
     },
