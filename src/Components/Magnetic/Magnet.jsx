@@ -29,7 +29,7 @@ export default function Magnet() {
       transition={{ type: "spring", stiffness: 150, damping: 10, mass: 0.1 }}
       className="p-4"
     >
-      <div className="h-10 xxs:h-12 lg:h-16 xl:h-20 3xl:h-28 w-10 xxs:w-12 lg:w-16 xl:w-20 3xl:w-28 border lg:border-2 border-white rounded-full flex justify-center items-center">
+      <div className="h-10 xxs:h-12 lg:h-16 xl:h-20 3xl:h-28 w-10 xxs:w-12 lg:w-16 xl:w-20 3xl:w-28 border lg:border-2 border-white rounded-full flex justify-center items-center cursor-pointer">
         <IoPlay className="h-3 lg:h-4 xl:scale-125 3xl:scale-150 text-white" />
       </div>
     </motion.div>
