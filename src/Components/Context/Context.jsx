@@ -487,29 +487,28 @@ const Context = (props) => {
       name: "Eneko Atxa",
       text: "3 Michelin Stars",
       ImageSrc: "/images/Home/caratula_eneko.webp",
-      videoSrc: "/public/videoes/Home/eneko_atxa.mp4",
+      videoSrc: "/videoes/Home/eneko_atxa.mp4",
     },
     {
       id: 2,
       name: "Pedro Subijana",
       text: "3 Michelin Stars",
       ImageSrc: "/images/Home/caratula_pedro.webp",
-      videoSrc: "/public/videoes/Home/Akelarre-1.mp4",
+      videoSrc: "/videoes/Home/Akelarre-1.mp4",
     },
     {
       id: 3,
       name: "Ned Capeleris",
       text: "General Manager at Hotel Maria Cristina",
       ImageSrc: "/images/Curators/caratula_ned_new.webp",
-      videoSrc:
-        "/public/videoes/Curators/Ned-Capeleris-_-Abene-Maria-Cristina.mp4",
+      videoSrc: "/videoes/Curators/Ned-Capeleris-_-Abene-Maria-Cristina.mp4",
     },
     {
       id: 4,
       name: "Germán Jiménez",
       text: "Journalist specialized in Fashion & Lifestyle",
       ImageSrc: "/images/Curators/caratula_german.webp",
-      videoSrc: "/public/videoes/Home/German-gimenez.mp4",
+      videoSrc: "/videoes/Home/German-gimenez.mp4",
     },
   ];
   const [middleParallaxImage_Dark_Height, setMiddleParallaxImage_Dark_Height] =

@@ -146,7 +146,7 @@ const Home = () => {
           <div
             onClick={() =>
               setPlayerInfo({
-                src: "/public/videoes/Home/Abene_Home.mp4",
+                src: "/videoes/Home/Abene_Home.mp4",
                 isPlaying: true,
               })
             }
