@@ -85,7 +85,7 @@ const Expander = () => {
       style={{
         paddingTop: textToDisaapear + "px",
       }}
-      className="lg:h-[300vh] relative mt-[1.5pc] xs:mt-[2pc] sm:mt-[2.5pc] md:mt-[3pc] lg:mt-[2pc] xl:mt-[5pc]"
+      className="lg:h-[300vh] relative mt-[2.5pc] md:mt-[3pc] lg:mt-[2pc] xl:mt-[5pc]"
     >
       <motion.div className="lg:h-screen flex justify-center items-center flex-nowrap gap-6 xl:gap-10 sticky top-0 overflow-x-clip">
         {/*  1st Column */}
