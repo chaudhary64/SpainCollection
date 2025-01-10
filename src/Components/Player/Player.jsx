@@ -41,7 +41,7 @@ const Player = () => {
         visibility: "hidden",
       }}
       animate={coverControls}
-      className="fixed h-dvh w-full z-[700] flex items-center justify-center bg-black/95"
+      className="fixed h-dvh w-full z-[700] flex items-center justify-center bg-[#080808]"
     >
       <div id="custom_player_wrapper" className="lg:w-1/2">
         <MediaPlayer src={playerInfo.src}>
