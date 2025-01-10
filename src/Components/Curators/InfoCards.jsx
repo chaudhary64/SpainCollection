@@ -1,13 +1,16 @@
 import React from "react";
-import { IoPlay } from "react-icons/io5";
+import { useContext } from "react";
+import Magnet from "../Magnetic/Magnet";
+import { Info } from "../Context/Context";
 
-const InfoCards = ({ name, text, src, isDragging }) => {
+const InfoCards = ({ name, text, ImageSrc, videoSrc, isDragging }) => {
+  const { setPlayerInfo } = useContext(Info);
   return (
     <div>
       <div
         className="shrink-0 h-[35vh] xs:h-[40vh] sm:h-[45vh] md:h-[24pc] xl:h-[35pc] 3xl:h-[57pc] w-[24vh] xs:w-[28vh] sm:w-[32vh] md:w-[16pc] xl:w-[22pc] 3xl:w-[36pc]"
         style={{
-          backgroundImage: `url(${src})`,
+          backgroundImage: `url(${ImageSrc})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           transform: `${isDragging ? "scale(0.95)" : "scale(1)"}`,
@@ -16,8 +19,16 @@ const InfoCards = ({ name, text, src, isDragging }) => {
       >
         <div className="absolute inset-0 flex justify-center items-center bg-black/60">
           {/* Icon */}
-          <div className="h-[72px] w-[72px] border-2 border-[#D6D6D6] rounded-full flex justify-center items-center">
-            <IoPlay className="text-white h-5 " />
+          <div
+            onClick={() =>
+              setPlayerInfo({
+                src: videoSrc,
+                isPlaying: true,
+              })
+            }
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          >
+            <Magnet />
           </div>
         </div>
       </div>
