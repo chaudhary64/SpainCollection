@@ -1,1 +1,1 @@
-A clone of the spainCollection website using React.js, React Router DOM, framer motion and Tailwind CSS
+A responsive clone of the SpainCollection website built using modern web technologies like React.js, React Router DOM, Framer Motion, and Tailwind CSS. This project aims to replicate the original website's functionality and design while showcasing seamless animations, efficient routing, and modern styling practices.
