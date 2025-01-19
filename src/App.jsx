@@ -5,7 +5,7 @@ import AssetLoader from "./Components/Loader/AssetLoader";
 import AppearingNavigation from "./Components/Nav/AppearingNavigation";
 import Player from "./Components/Player/Player";
 import Cursor from "./Components/Cursor/Cursor";
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 const App = () => {
   const assets = [
@@ -180,12 +180,6 @@ const App = () => {
     { type: "image", src: "/images/Curators/values.webp" },
     { type: "image", src: "/images/Curators/vision.webp" },
   ];
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-
-  const handleMouse = (e) => {
-    const { clientX, clientY } = e;
-    setPosition({ x: clientX, y: clientY });
-  };
 
   return (
     <ReactLenis
@@ -199,10 +193,10 @@ const App = () => {
       }}
     >
       <AssetLoader assets={assets}>
-        <main onMouseMove={handleMouse} className="overflow-x-clip">
+        <main className="overflow-x-clip">
+          <Cursor />
           <Nav />
           <AppearingNavigation />
-          <Cursor position={position} />
           <Player />
           <RoutesForNav />
         </main>
