@@ -10,12 +10,10 @@ const Cursor = () => {
     };
 
     const mouseEnter = () => {
-      console.log("enter");
       setProperties((prev) => ({ ...prev, scale: 1 }));
     };
 
     const mouseLeave = () => {
-      console.log("leave");
       setProperties((prev) => ({ ...prev, scale: 0 }));
     };
 

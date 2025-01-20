@@ -5,9 +5,11 @@ import AssetLoader from "./Components/Loader/AssetLoader";
 import AppearingNavigation from "./Components/Nav/AppearingNavigation";
 import Player from "./Components/Player/Player";
 import Cursor from "./Components/Cursor/Cursor";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useContext, useEffect, useRef, useState } from "react";
+import { Info } from "./Components/Context/Context";
 
 const App = () => {
+  const { screenWidth } = useContext(Info);
   const assets = [
     { type: "font", family: "Inter", src: "/Fonts/Inter.ttf" },
     {
@@ -194,7 +196,7 @@ const App = () => {
     >
       <AssetLoader assets={assets}>
         <main className="overflow-x-clip">
-          <Cursor />
+          {screenWidth > 1024 && <Cursor />}
           <Nav />
           <AppearingNavigation />
           <Player />
