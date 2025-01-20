@@ -2,29 +2,29 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const Cursor = () => {
-  const [properties, setProperties] = useState({ x: 0, y: 0, scale: 1 });
+  const [properties, setProperties] = useState({ x: 0, y: 0, scale: 0 });
 
   useEffect(() => {
     const handleMouseMove = (e) => {
       setProperties((prev) => ({ ...prev, x: e.clientX, y: e.clientY }));
     };
 
-    const mouseEnter = () => {
+    const windowMouseEnterHandler = () => {
       setProperties((prev) => ({ ...prev, scale: 1 }));
     };
 
-    const mouseLeave = () => {
+    const windowMouseLeaveHandler = () => {
       setProperties((prev) => ({ ...prev, scale: 0 }));
     };
 
     document.addEventListener("mousemove", handleMouseMove);
-    document.addEventListener("mouseenter", mouseEnter);
-    document.addEventListener("mouseleave", mouseLeave);
+    document.addEventListener("mouseenter", windowMouseEnterHandler);
+    document.addEventListener("mouseleave", windowMouseLeaveHandler);
 
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("mouseenter", mouseEnter);
-      document.removeEventListener("mouseleave", mouseLeave);
+      document.removeEventListener("mouseenter", windowMouseEnterHandler);
+      document.removeEventListener("mouseleave", windowMouseLeaveHandler);
     };
   }, []);
 
