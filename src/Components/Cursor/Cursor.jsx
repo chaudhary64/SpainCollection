@@ -67,7 +67,7 @@ const Cursor = () => {
         stiffness: 500, // Controls speed
         damping: 30, // Controls bounce effect
       }}
-      className="h-3.5 w-3.5 flex justify-center items-center fixed z-[999] rounded-full bg-[#BF1826] pointer-events-none"
+      className="h-2.5 w-2.5 flex justify-center items-center fixed z-[999] rounded-full bg-[#BF1826] pointer-events-none"
     ></motion.div>
   );
 };
