@@ -41,7 +41,7 @@ const Player = () => {
         visibility: "hidden",
       }}
       animate={coverControls}
-      className="fixed h-dvh w-full z-[700] flex items-center justify-center bg-[#080808]"
+      className="fixed h-lvh w-full z-[700] flex items-center justify-center bg-[#080808]"
     >
       <div id="custom_player_wrapper" className="lg:w-1/2">
         <MediaPlayer src={playerInfo.src}>
@@ -56,7 +56,7 @@ const Player = () => {
             return { ...prev, isPlaying: false };
           })
         }
-        className="text-white text-xl absolute top-10 right-10 cursor-pointer"
+        className="text-white text-lg lg:text-xl absolute top-6 lg:top-10 right-6 lg:right-10 cursor-pointer"
       />
     </motion.div>
   );
