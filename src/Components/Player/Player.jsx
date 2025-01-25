@@ -9,9 +9,11 @@ import {
   plyrLayoutIcons,
 } from "@vidstack/react/player/layouts/plyr";
 import { Info } from "../Context/Context";
+import { useLenis } from "lenis/react";
 
 const Player = () => {
   const { playerInfo, setPlayerInfo } = useContext(Info);
+  const lenis = useLenis();
   const coverControls = useAnimation();
 
   useEffect(() => {
@@ -22,6 +24,7 @@ const Player = () => {
         visibility: "visible",
         transition: { duration: 1, ease: [0.83, 0, 0.17, 1] },
       });
+      lenis.stop();
     } else {
       coverControls.start({
         top: "100%",
@@ -29,6 +32,7 @@ const Player = () => {
         visibility: "hidden",
         transition: { duration: 1, ease: [0.83, 0, 0.17, 1] },
       });
+      lenis.start();
     }
   }, [playerInfo]);
 
@@ -41,7 +45,7 @@ const Player = () => {
         visibility: "hidden",
       }}
       animate={coverControls}
-      className="fixed h-lvh w-full z-[700] flex items-center justify-center bg-[#080808]"
+      className="fixed h-dvh w-full z-[700] flex items-center justify-center bg-[#080808]"
     >
       <div id="custom_player_wrapper" className="lg:w-1/2">
         <MediaPlayer src={playerInfo.src}>
