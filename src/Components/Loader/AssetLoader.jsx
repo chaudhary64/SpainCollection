@@ -15,7 +15,7 @@ const AssetLoader = ({ assets, children }) => {
         const newProgress = Math.round((++loadedAssets / totalAssets) * 100); // Increment and calculate percentage
         setProgress(newProgress); // Update progress state
         // Animate gradient with the updated progress
-        gradientController.set({
+        gradientController.start({
           background: `conic-gradient(from 0deg at 50% 50%, red 0% ${newProgress}%, #10182B ${newProgress}% 100%)`,
         });
       };
