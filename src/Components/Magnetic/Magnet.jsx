@@ -62,7 +62,7 @@ export default function Magnet() {
                 mass: 0.1,
               }}
               exit={{ scale: 0, transition: { duration: 0.3 } }}
-              className="h-[95%] w-[95%] bg-white rounded-full text-base text-black grid place-items-center absolute"
+              className="h-full w-full bg-white rounded-full text-base text-black grid place-items-center absolute"
             >
               Play
             </motion.div>
