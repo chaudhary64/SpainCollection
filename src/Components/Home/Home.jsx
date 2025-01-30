@@ -157,10 +157,20 @@ const Home = () => {
         </div>
         {/* Text */}
         <div className="mt-6 xl:mt-10 3xl:mt-14 text-white mix-blend-difference">
-          <p className="text-center text-sm xs:text-base md:text-[2.5vw] xl:text-2xl 3xl:text-4xl">
+          <p
+            style={{
+              lineHeight: 1.25,
+            }}
+            className="text-center text-sm xs:text-base md:text-[2.5vw] xl:text-2xl 3xl:text-4xl"
+          >
             Abene Mendizabal
           </p>
-          <p className="text-center text-xs xs:text-sm md:text-[2vw] xl:text-lg 3xl:text-2xl">
+          <p
+            style={{
+              lineHeight: 1.25,
+            }}
+            className="lg:mt-[1px] text-center text-xs xs:text-sm md:text-[2vw] xl:text-lg 3xl:text-2xl"
+          >
             Founder & CEO Spain Collection
           </p>
         </div>

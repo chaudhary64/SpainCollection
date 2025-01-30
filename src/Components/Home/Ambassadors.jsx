@@ -27,10 +27,20 @@ const Ambassadors = ({ imageSrc, videoSrc, name, text }) => {
         }}
         className="mt-3 text-white"
       >
-        <p className="text-center text-sm md:text-[2.5vw] lg:text-lg xl:text-2xl 3xl:text-4xl font-[360]">
+        <p
+          style={{
+            lineHeight: 1.25,
+          }}
+          className="text-center text-sm md:text-[2.5vw] lg:text-lg xl:text-2xl 3xl:text-4xl font-[360]"
+        >
           {name}
         </p>
-        <p className="md:mt-1 text-center text-xs md:text-[2vw] xl:text-base 3xl:text-3xl font-extralight">
+        <p
+          style={{
+            lineHeight: 1.25,
+          }}
+          className="md:mt-1 text-center text-xs md:text-[2vw] xl:text-base 3xl:text-3xl font-extralight"
+        >
           {text}
         </p>
       </div>
