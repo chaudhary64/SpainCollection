@@ -3,63 +3,64 @@ import { motion, AnimatePresence, useAnimation } from "framer-motion";
 
 const AssetLoader = ({ assets, children }) => {
   const [loading, setLoading] = useState(true);
-  const [progress, setProgress] = useState(0); // Track progress
+  const [progress, setProgress] = useState(0);
   const gradientController = useAnimation();
 
   useEffect(() => {
     const loadAssets = async () => {
-      const totalAssets = assets.length; // Total number of assets
-      let loadedAssets = 0; // Counter for loaded assets
+      const totalAssets = assets.length;
+      let loadedAssets = 0;
 
       const updateProgress = () => {
-        const newProgress = Math.round((++loadedAssets / totalAssets) * 100); // Increment and calculate percentage
-        setProgress(newProgress); // Update progress state
-        // Animate gradient with the updated progress
+        const newProgress = Math.round((++loadedAssets / totalAssets) * 100);
+        setProgress(newProgress);
         gradientController.start({
           background: `conic-gradient(from 0deg at 50% 50%, red 0% ${newProgress}%, #10182B ${newProgress}% 100%)`,
         });
       };
 
       const promises = assets.map(async (asset) => {
-        if (asset.type === "image") {
-          return new Promise((resolve) => {
+        try {
+          if (asset.type === "image") {
             const img = new Image();
             img.src = asset.src;
-            img.onload = () => {
-              updateProgress();
-              resolve();
-            };
-            img.onerror = () => {
-              updateProgress();
-              resolve();
-            };
-          });
-        } else if (asset.type === "video") {
-          return new Promise((resolve) => {
-            const video = document.createElement("video");
-            video.src = asset.src;
-            video.onloadeddata = () => {
-              updateProgress();
-              resolve();
-            };
-            video.onerror = () => {
-              updateProgress();
-              resolve();
-            };
-          });
-        } else if (asset.type === "font") {
-          return new FontFace(asset.family, `url(${asset.src})`)
-            .load()
-            .then((font) => {
-              document.fonts.add(font);
-              updateProgress();
+            await new Promise((resolve, reject) => {
+              img.onload = () => resolve(img.decode());
+              img.onerror = reject;
             });
+          } else if (asset.type === "video") {
+            return new Promise((resolve, reject) => {
+              const video = document.createElement("video");
+              video.src = asset.src;
+              video.onloadeddata = () => {
+                updateProgress();
+                resolve();
+              };
+              video.onerror = () => {
+                updateProgress();
+                resolve();
+              };
+            });
+          } else if (asset.type === "font") {
+            const font = new FontFace(asset.family, `url(${asset.src})`);
+            await font.load();
+            document.fonts.add(font);
+          }
+          updateProgress();
+        } catch (error) {
+          updateProgress();
+          console.error("Error loading asset:", error);
         }
-        updateProgress();
-        return Promise.resolve();
       });
 
       await Promise.all(promises);
+
+      // Wait for all fonts to be ready and layout to stabilize
+      await document.fonts.ready;
+
+      // Ensure final paint before hiding loader
+      await new Promise(requestAnimationFrame);
+
       setLoading(false);
     };
 
