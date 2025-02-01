@@ -47,6 +47,7 @@ const App = () => {
       family: "SaolDisplay-Regular",
       src: "/Fonts/SaolDisplay-Regular.woff2",
     },
+    // Home Images
     { type: "image", src: "/images/Home/009-scaled.webp" },
     { type: "image", src: "/images/Home/01-182.webp" },
     { type: "image", src: "/images/Home/01-213.webp" },
@@ -69,18 +70,25 @@ const App = () => {
       type: "image",
       src: "/images/Home/gobierno_vasco__white.webp",
     },
+    { type: "image", src: "/images/Home/luxury_spain_white.webp" },
     { type: "image", src: "/images/Home/M_1.webp" },
     { type: "image", src: "/images/Home/M_2.webp" },
     { type: "image", src: "/images/Home/modulo_Why_11.webp" },
     { type: "image", src: "/images/Home/S_1.webp" },
     { type: "image", src: "/images/Home/S_2.webp" },
+    // Home Video
+    { type: "video", src: "/videoes/Home/Abene_Home.mp4" },
+    { type: "video", src: "/videoes/Home/Akelarre-1.mp4" },
+    { type: "video", src: "/videoes/Home/eneko_atxa.mp4" },
     { type: "video", src: "/videoes/Home/Bg_Home.mp4" },
     { type: "video", src: "/videoes/Home/Flamenca-2.mp4" },
-    { type: "video", src: "/videoes/Home/Secuencia-01-1.mp4" },
+    { type: "video", src: "/videoes/Home/German-gimenez.mp4" },
     { type: "video", src: "/videoes/Home/Secuencia-01_2-1.mp4" },
     { type: "video", src: "/videoes/Home/Secuencia-01_6-1.mp4" },
     { type: "video", src: "/videoes/Home/Secuencia-01_7-1.mp4" },
     { type: "video", src: "/videoes/Home/Secuencia-01_8-1.mp4" },
+    { type: "video", src: "/videoes/Home/Secuencia-01-1.mp4" },
+    // Collections Images
     { type: "image", src: "/images/Collections/01-25.webp" },
     { type: "image", src: "/images/Collections/01-70.webp" },
     { type: "image", src: "/images/Collections/01-80.webp" },
@@ -114,6 +122,7 @@ const App = () => {
       src: "/images/Collections/Portadas_portugal_14.webp",
     },
     { type: "image", src: "/images/Collections/traditions_10.webp" },
+    // Journal Images
     { type: "image", src: "/images/Journal/01-354.webp" },
     { type: "image", src: "/images/Journal/02-334.webp" },
     { type: "image", src: "/images/Journal/03-107.webp" },
@@ -169,7 +178,7 @@ const App = () => {
       type: "image",
       src: "/images/Journal/sta_maria_oia_camino_costa-scaled.webp",
     },
-
+    // Curators Images
     { type: "image", src: "/images/Curators/01-381.webp" },
     { type: "image", src: "/images/Curators/02-99.webp" },
     { type: "image", src: "/images/Curators/caratula_german.webp" },
@@ -181,6 +190,20 @@ const App = () => {
     { type: "image", src: "/images/Curators/sonia.webp" },
     { type: "image", src: "/images/Curators/values.webp" },
     { type: "image", src: "/images/Curators/vision.webp" },
+    // Curators Video
+    {
+      type: "video",
+      src: "/videoes/Curators/Ned-Capeleris-_-Abene-Maria-Cristina.mp4",
+    },
+    // Nav Video
+    { type: "video", src: "/videoes/Nav/ezgif.com-gif-maker-1.mp4" },
+    { type: "video", src: "/videoes/Nav/ezgif.com-gif-maker-2.mp4" },
+    { type: "video", src: "/videoes/Nav/ezgif.com-gif-maker-3.mp4" },
+    { type: "video", src: "/videoes/Nav/ezgif.com-gif-maker-5.mp4" },
+    { type: "video", src: "/videoes/Nav/ezgif.com-gif-maker-6.mp4" },
+    { type: "video", src: "/videoes/Nav/ezgif.com-gif-maker-7.mp4" },
+    { type: "video", src: "/videoes/Nav/ezgif.com-gif-maker-8.mp4" },
+    { type: "video", src: "/videoes/Nav/ezgif.com-gif-maker.mp4" },
   ];
 
   return (
