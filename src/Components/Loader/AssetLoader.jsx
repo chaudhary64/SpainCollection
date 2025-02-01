@@ -1,66 +1,53 @@
 import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const AssetLoader = ({ assets, children }) => {
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState(0);
-  const gradientController = useAnimation();
 
   useEffect(() => {
-    const loadAssets = async () => {
-      const totalAssets = assets.length;
-      let loadedAssets = 0;
+    let loadedAssetsCount = 0;
+    const totalAssets = assets.length;
 
-      const updateProgress = () => {
-        const newProgress = Math.round((++loadedAssets / totalAssets) * 100);
-        setProgress(newProgress);
-        gradientController.start({
-          background: `conic-gradient(from 0deg at 50% 50%, red 0% ${newProgress}%, #10182B ${newProgress}% 100%)`,
-        });
-      };
+    const updateProgress = () => {
+      loadedAssetsCount++;
+      const newProgress = Math.round((loadedAssetsCount / totalAssets) * 100);
+      // Ensure progress never decreases.
+      setProgress((prev) => (newProgress < prev ? prev : newProgress));
+    };
 
-      const promises = assets.map(async (asset) => {
-        try {
-          if (asset.type === "image") {
-            const img = new Image();
-            img.src = asset.src;
-            await new Promise((resolve, reject) => {
-              img.onload = () => resolve(img.decode());
-              img.onerror = reject;
-            });
-          } else if (asset.type === "video") {
-            return new Promise((resolve, reject) => {
-              const video = document.createElement("video");
-              video.src = asset.src;
-              video.onloadeddata = () => {
-                updateProgress();
-                resolve();
-              };
-              video.onerror = () => {
-                updateProgress();
-                resolve();
-              };
-            });
-          } else if (asset.type === "font") {
-            const font = new FontFace(asset.family, `url(${asset.src})`);
-            await font.load();
-            document.fonts.add(font);
-          }
-          updateProgress();
-        } catch (error) {
-          updateProgress();
-          console.error("Error loading asset:", error);
+    const loadAsset = async (asset) => {
+      try {
+        if (asset.type === "image") {
+          const img = new Image();
+          img.src = asset.src;
+          await new Promise((resolve, reject) => {
+            img.onload = () => resolve(img.decode());
+            img.onerror = reject;
+          });
+        } else if (asset.type === "video") {
+          await new Promise((resolve) => {
+            const video = document.createElement("video");
+            video.src = asset.src;
+            video.onloadeddata = resolve;
+            video.onerror = resolve;
+          });
+        } else if (asset.type === "font") {
+          const font = new FontFace(asset.family, `url(${asset.src})`);
+          await font.load();
+          document.fonts.add(font);
         }
-      });
+      } catch (error) {
+        console.error("Error loading asset:", error);
+      } finally {
+        updateProgress();
+      }
+    };
 
-      await Promise.all(promises);
-
-      // Wait for all fonts to be ready and layout to stabilize
+    const loadAssets = async () => {
+      await Promise.all(assets.map((asset) => loadAsset(asset)));
       await document.fonts.ready;
-
-      // Ensure final paint before hiding loader
       await new Promise(requestAnimationFrame);
-
       setLoading(false);
     };
 
@@ -81,10 +68,12 @@ const AssetLoader = ({ assets, children }) => {
           >
             <div>
               <div className="h-16 sm:h-[70px] md:h-20 3xl:h-28 w-16 sm:w-[70px] md:w-20 3xl:w-28 relative rounded-full">
-                <motion.div
-                  animate={gradientController}
-                  className="absolute inset-0 z-[1] rounded-full"
-                ></motion.div>
+                <div
+                  style={{
+                    background: `conic-gradient(from 0deg at 50% 50%, red 0% ${progress}%, #10182B ${progress}% 100%)`,
+                  }}
+                  className="absolute inset-0 z-[1] rounded-full transition-all duration-300"
+                ></div>
                 <div className="absolute h-[95%] w-[95%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] rounded-full bg-black"></div>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
