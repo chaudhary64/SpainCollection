@@ -56,7 +56,7 @@ const Expander = () => {
       // For any other large screen size screenWidth >= 2000
       return {
         width: useTransform(scrollYProgress, [0.3, 1], ["30%", "100%"]),
-        top: useTransform(scrollYProgress, [0, 0.3], ["26%", "0%"]),
+        top: useTransform(scrollYProgress, [0, 0.3], ["34%", "0%"]),
         textTop: useTransform(scrollYProgress, [0, 0.3], ["-50%", "-110%"]),
         textThirdColumn: useTransform(
           scrollYProgress,
