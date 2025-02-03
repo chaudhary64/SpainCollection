@@ -124,7 +124,7 @@ const Expander = () => {
           ref={thirdColumn}
           style={{ width, y: top, willChange: "width, transform" }}
           initial={{ width: screenWidth < 768 ? "95%" : "30%" }}
-          className="shrink-0 max-md:w-full lg:h-full relative"
+          className="shrink-0 max-md:w-full lg:h-full relative select-none"
         >
           {/* Text to disappear */}
           <motion.div

@@ -204,7 +204,7 @@ const Home = () => {
           style={{
             lineHeight: 1,
           }}
-          className="w-full text-center text-[21vw] lg:text-[14vw] relative z-[2]"
+          className="w-full text-center text-[21vw] lg:text-[14vw] relative z-[2] select-none"
         >
           <p className="text-red-600 italic">Why</p>
           <p>CHOOSE</p>
