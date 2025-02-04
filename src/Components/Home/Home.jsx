@@ -82,16 +82,16 @@ const Home = () => {
       return {
         MidImgY: useTransform(imageHolderScrolled, [0, 1], [0, 0]),
         cardsRefXValue: useTransform(cardsRefX, [0, 1], ["0%", "0%"]),
-        forwardMarqueeX: useTransform(scrollMarquee, [0, 1], ["0%", "-55%"]),
-        reverseMarqueeX: useTransform(scrollMarquee, [0, 1], ["0%", "55%"]),
+        forwardMarqueeX: useTransform(scrollMarquee, [0, 1], ["0%", "-40%"]),
+        reverseMarqueeX: useTransform(scrollMarquee, [0, 1], ["0%", "40%"]),
       };
     } else if (screenWidth >= 768 && screenWidth < 1024) {
       // For Tablet
       return {
         MidImgY: useTransform(imageHolderScrolled, [0, 1], [0, 0]),
         cardsRefXValue: useTransform(cardsRefX, [0, 1], ["0%", "0%"]),
-        forwardMarqueeX: useTransform(scrollMarquee, [0, 1], ["0%", "-55%"]),
-        reverseMarqueeX: useTransform(scrollMarquee, [0, 1], ["0%", "55%"]),
+        forwardMarqueeX: useTransform(scrollMarquee, [0, 1], ["0%", "-45%"]),
+        reverseMarqueeX: useTransform(scrollMarquee, [0, 1], ["0%", "45%"]),
       };
     } else if (screenWidth >= 1024 && screenWidth < 2000) {
       // For any other large screen size screenWidth >= 1024
