@@ -74,9 +74,11 @@ const Nav = () => {
     <motion.nav
       ref={ref}
       animate={navControls}
-      className="pt-5 md:pt-10 lg:pt-14 relative z-10"
+      className={`pt-5 md:pt-10 lg:pt-14 relative ${
+        screenWidth > 1024 && "z-10"
+      }`}
     >
-      <div className="h-fit w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] mx-auto px-1 flex justify-between items-center text-base lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl tracking-widest overflow-clip">
+      <div className="h-fit w-[90%] md:w-[85%] lg:w-[80%] xl:w-[75%] mx-auto flex justify-between items-center text-base lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl tracking-widest overflow-clip">
         {/* Left Part */}
         <div className="hidden lg:flex gap-12 xl:gap-16 2xl:gap-24">
           <NavigatorLink
