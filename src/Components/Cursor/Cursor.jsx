@@ -60,14 +60,12 @@ const Cursor = () => {
         scale: properties.scale,
         transition: {
           scale: { duration: 0.3 },
+          type: "spring", // Smooth spring animation
+          stiffness: 700, // Controls speed
+          damping: 40, // Controls bounce effect
         },
       }}
-      transition={{
-        type: "spring", // Smooth spring animation
-        stiffness: 500, // Controls speed
-        damping: 30, // Controls bounce effect
-      }}
-      className="h-2.5 w-2.5 flex justify-center items-center fixed z-[999] rounded-full bg-[#BF1826] pointer-events-none"
+      className="h-[9px] w-[9px] flex justify-center items-center fixed z-[999] rounded-full bg-[#BF1826] pointer-events-none"
     ></motion.div>
   );
 };
