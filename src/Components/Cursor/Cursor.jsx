@@ -63,6 +63,7 @@ const Cursor = () => {
           type: "spring", // Smooth spring animation
           stiffness: 700, // Controls speed
           damping: 40, // Controls bounce effect
+          mass: 0.1, // Controls weight
         },
       }}
       className="h-[9px] w-[9px] flex justify-center items-center fixed z-[999] rounded-full bg-[#BF1826] pointer-events-none"
