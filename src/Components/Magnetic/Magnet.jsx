@@ -39,10 +39,12 @@ export default function Magnet() {
       ref={ref}
       onMouseMove={screenWidth > 1024 ? handleMouse : null}
       onMouseLeave={screenWidth > 1024 ? reset : null}
-      animate={{ x, y }}
-      transition={{ type: "spring", stiffness: 150, damping: 10, mass: 0.1 }}
     >
-      <div className="h-12 xxs:h-14 lg:h-16 xl:h-20 3xl:h-28 w-12 xxs:w-14 lg:w-16 xl:w-20 3xl:w-28 border lg:border-2 border-white rounded-full flex justify-center items-center cursor-pointer pointer-events-none relative">
+      <motion.div
+        animate={{ x, y }}
+        transition={{ type: "spring", stiffness: 150, damping: 10, mass: 0.1 }}
+        className="h-12 xxs:h-14 lg:h-16 xl:h-20 3xl:h-28 w-12 xxs:w-14 lg:w-16 xl:w-20 3xl:w-28 border lg:border-2 border-white rounded-full flex justify-center items-center cursor-pointer pointer-events-none"
+      >
         <IoPlay
           style={{
             opacity: svgOpacity,
@@ -50,25 +52,21 @@ export default function Magnet() {
           }}
           className="h-4 lg:scale-105 xl:scale-125 3xl:scale-150 text-white"
         />
-        <AnimatePresence>
-          {visibile && (
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ left: x, top: y, scale: 1 }}
-              transition={{
-                type: "spring",
-                stiffness: 150,
-                damping: 10,
-                mass: 0.1,
-              }}
-              exit={{ scale: 0, transition: { duration: 0.3 } }}
-              className="h-full w-full bg-white rounded-full text-base text-black grid place-items-center absolute"
-            >
-              Play
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
+      </motion.div>
+      {/* Top-Layer */}
+      <motion.div
+        initial={{ scale: 0 }}
+        animate={{ left: x, top: y, scale: visibile ? 1 : 0 }}
+        transition={{
+          type: "spring",
+          stiffness: 150,
+          damping: 10,
+          mass: 0.1,
+        }}
+        className="h-full w-full bg-black rounded-full text-base text-white grid place-items-center absolute pointer-events-none"
+      >
+        Play
+      </motion.div>
     </motion.div>
   );
 }

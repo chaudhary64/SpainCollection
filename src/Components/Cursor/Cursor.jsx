@@ -1,11 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Info } from "../Context/Context";
 
 const Cursor = () => {
+  const { screenWidth } = useContext(Info);
+
   const [properties, setProperties] = useState({
     x: 0,
     y: 0,
-    scale: 0,
+    height_width: 0,
+    blend: false,
   });
 
   useEffect(() => {
@@ -14,19 +18,25 @@ const Cursor = () => {
     };
 
     const windowMouseEnterHandler = () => {
-      setProperties((prev) => ({ ...prev, scale: 1 }));
+      setProperties((prev) => ({ ...prev, height_width: "9px" }));
     };
-
     const windowMouseLeaveHandler = () => {
-      setProperties((prev) => ({ ...prev, scale: 0 }));
+      setProperties((prev) => ({
+        ...prev,
+      }));
     };
 
     const magnetMouseEnterHandler = () => {
-      setProperties((prev) => ({ ...prev, scale: 0 }));
+      setProperties((prev) => ({
+        ...prev,
+        height_width:
+          screenWidth > 2000 ? "112px" : screenWidth > 1280 ? "80px" : "64px",
+        blend: true,
+      }));
     };
 
     const magnetMouseLeaveHandler = () => {
-      setProperties((prev) => ({ ...prev, scale: 1 }));
+      setProperties((prev) => ({ ...prev, height_width: "9px", blend: false }));
     };
 
     document.addEventListener("mousemove", handleMouseMove);
@@ -51,22 +61,27 @@ const Cursor = () => {
   return (
     <motion.div
       id="cursor"
-      initial={{ scale: 0, x: "-50%", y: "-50%" }}
+      initial={{ x: "-50%", y: "-50%", height: "9px", width: "9px" }}
+      style={{
+        mixBlendMode: properties.blend ? "difference" : "normal",
+      }}
       animate={{
         x: "-50%",
         y: "-50%",
         left: properties.x,
         top: properties.y,
-        scale: properties.scale,
+        height: properties.height_width,
+        width: properties.height_width,
+        backgroundColor: properties.blend ? "#FDF6F7" : "#BF1826",
         transition: {
           scale: { duration: 0.3 },
           type: "spring", // Smooth spring animation
-          stiffness: 700, // Controls speed
-          damping: 40, // Controls bounce effect
+          stiffness: properties.blend ? 150 : 700, // Controls speed
+          damping: properties.blend ? 10 : 40, // Controls bounce effect
           mass: 0.1, // Controls weight
         },
       }}
-      className="h-[9px] w-[9px] flex justify-center items-center fixed z-[999] rounded-full bg-[#BF1826] pointer-events-none"
+      className="justify-center items-center fixed z-[999] rounded-full bg-[#BF1826] pointer-events-none"
     ></motion.div>
   );
 };
