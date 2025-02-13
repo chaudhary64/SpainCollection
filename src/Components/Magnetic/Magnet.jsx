@@ -1,5 +1,5 @@
 import { useContext, useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { IoPlay } from "react-icons/io5";
 import { Info } from "../Context/Context";
 
@@ -52,20 +52,6 @@ export default function Magnet() {
           }}
           className="h-4 lg:scale-105 xl:scale-125 3xl:scale-150 text-white"
         />
-      </motion.div>
-      {/* Top-Layer */}
-      <motion.div
-        initial={{ scale: 0 }}
-        animate={{ left: x, top: y, scale: visibile ? 1 : 0 }}
-        transition={{
-          type: "spring",
-          stiffness: 150,
-          damping: 10,
-          mass: 0.1,
-        }}
-        className="h-full w-full bg-black rounded-full text-base text-white grid place-items-center absolute pointer-events-none"
-      >
-        Play
       </motion.div>
     </motion.div>
   );

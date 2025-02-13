@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Info } from "../Context/Context";
 
 const Cursor = () => {
@@ -62,9 +62,6 @@ const Cursor = () => {
     <motion.div
       id="cursor"
       initial={{ x: "-50%", y: "-50%", height: "9px", width: "9px" }}
-      style={{
-        mixBlendMode: properties.blend ? "difference" : "normal",
-      }}
       animate={{
         x: "-50%",
         y: "-50%",
@@ -81,8 +78,26 @@ const Cursor = () => {
           mass: 0.1, // Controls weight
         },
       }}
-      className="justify-center items-center fixed z-[999] rounded-full bg-[#BF1826] pointer-events-none"
-    ></motion.div>
+      className="justify-center items-center fixed z-[999] rounded-full bg-[#BF1826] grid place-items-center pointer-events-none overflow-clip"
+    >
+      <AnimatePresence>
+        {properties.blend && (
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              transition: {
+                delay: 0.05,
+              },
+            }}
+            exit={{ opacity: 0 }}
+            className="text-sm tracking-widest"
+          >
+            PLAY
+          </motion.p>
+        )}
+      </AnimatePresence>
+    </motion.div>
   );
 };
 
