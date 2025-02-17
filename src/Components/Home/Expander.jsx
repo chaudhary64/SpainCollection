@@ -87,9 +87,9 @@ const Expander = () => {
       }}
       className="lg:h-[300vh] relative mt-[2.5pc] md:mt-[3pc] lg:mt-[2pc] xl:mt-[5pc]"
     >
-      <motion.div className="lg:h-screen flex justify-center items-center flex-nowrap gap-6 xl:gap-10 sticky top-0 overflow-x-clip">
+      <motion.div className="lg:h-screen flex justify-center items-center flex-nowrap gap-6 xl:gap-7 3xl:gap-10 sticky top-0 overflow-x-clip">
         {/*  1st Column */}
-        <div className="shrink-0 hidden lg:block h-[60%] lg:h-[50%] w-[15%]">
+        <div className="shrink-0 hidden lg:block h-[60%] lg:h-[50%] xl:h-[60%] w-[15%]">
           <video
             className="object-cover h-full"
             autoPlay
@@ -99,8 +99,8 @@ const Expander = () => {
           ></video>
         </div>
         {/* 2nd Column */}
-        <div className="shrink-0 w-[22%] 3xl:w-[22.5%] hidden lg:flex flex-col justify-center gap-10">
-          <div className="w-full">
+        <div className="shrink-0 w-[22%] 3xl:w-[22.5%] hidden lg:flex flex-col justify-center gap-7 3xl:gap-10">
+          <div className="aspect-[1/1]">
             <video
               className="object-cover h-full"
               autoPlay
@@ -109,7 +109,7 @@ const Expander = () => {
               src="/videoes/Home/Secuencia-01_6-1.mp4"
             ></video>
           </div>
-          <div className="w-full">
+          <div className="aspect-[16/9]">
             <video
               className="object-cover h-full"
               autoPlay
@@ -191,8 +191,8 @@ const Expander = () => {
           ></video>
         </motion.div>
         {/* 4th Column */}
-        <div className="shrink-0 w-[22%] 3xl:w-[22.5%] hidden lg:flex flex-col justify-center gap-10">
-          <div className="w-full">
+        <div className="shrink-0 w-[22%] 3xl:w-[22.5%] hidden lg:flex flex-col justify-center gap-7 3xl:gap-10">
+          <div className="aspect-[16/9]">
             <video
               className="object-cover h-full"
               autoPlay
@@ -201,7 +201,7 @@ const Expander = () => {
               src="/videoes/Home/Secuencia-01_2-1.mp4"
             ></video>
           </div>
-          <div className="w-full">
+          <div className="aspect-[1/1]">
             <video
               className="object-cover h-full"
               autoPlay
@@ -212,7 +212,7 @@ const Expander = () => {
           </div>
         </div>
         {/* 5th Column */}
-        <div className="shrink-0 hidden lg:block h-[60%] lg:h-[50%] w-[15%]">
+        <div className="shrink-0 hidden lg:block h-[60%] lg:h-[50%] xl:h-[60%] w-[15%]">
           <video
             className="object-cover h-full"
             autoPlay
