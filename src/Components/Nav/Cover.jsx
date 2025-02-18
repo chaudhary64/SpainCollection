@@ -239,6 +239,59 @@ const Cover = () => {
             </div>
           </div>
         </div>
+        {/* Video Links */}
+        {/* Home */}
+        {/* <div className="h-36 apect-[3/2] bg-red-500 absolute right-[5vw] top-1/4">
+          <video
+            className="object-cover h-full w-full"
+            src="/public/videoes/Nav/ezgif.com-gif-maker-5.mp4"
+          ></video>
+        </div>
+        <div className="h-24 aspect-square bg-red-500 absolute left-[10vw] bottom-20">
+          <video
+            className="object-cover h-full w-full"
+            src="/public/videoes/Nav/ezgif.com-gif-maker.mp4"
+          ></video>
+        </div> */}
+        {/* Collections */}
+        {/* <div className="h-36 apect-[5/4] bg-red-500 absolute left-[5vw] top-1/4">
+          <video
+            className="object-cover h-full w-full"
+            src="/public/videoes/Nav/ezgif.com-gif-maker-6.mp4"
+          ></video>
+        </div>
+        <div className="h-28 aspect-square bg-red-500 absolute right-[15vw] bottom-1/4">
+          <video
+            className="object-cover h-full w-full"
+            src="/public/videoes/Nav/ezgif.com-gif-maker-1.mp4"
+          ></video>
+        </div> */}
+        {/* Curators */}
+        {/* <div className="h-28 aspect-square bg-red-500 absolute left-[15vw] top-1/4">
+          <video
+            className="object-cover h-full w-full"
+            src="/public/videoes/Nav/ezgif.com-gif-maker-2.mp4"
+          ></video>
+        </div>
+        <div className="h-36 apect-[5/4] bg-red-500 absolute right-[5vw] bottom-1/4">
+          <video
+            className="object-cover h-full w-full"
+            src="/public/videoes/Nav/ezgif.com-gif-maker-7.mp4"
+          ></video>
+        </div> */}
+        {/* Journal */}
+        {/* <div className="h-36 apect-[5/4] bg-red-500 absolute left-[5vw] bottom-20">
+          <video
+            className="object-cover h-full w-full"
+            src="/public/videoes/Nav/ezgif.com-gif-maker-8.mp4"
+          ></video>
+        </div>
+        <div className="h-28 aspect-square bg-red-500 absolute right-[15vw] top-1/4">
+          <video
+            className="object-cover h-full w-full"
+            src="/public/videoes/Nav/ezgif.com-gif-maker-3.mp4"
+          ></video>
+        </div> */}
       </div>
     </motion.div>
   );
