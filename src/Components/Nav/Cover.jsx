@@ -74,6 +74,51 @@ const Cover = () => {
     }
   }, [isAppearing]);
 
+  const homeVideo1 = useAnimation();
+  const homeVideo2 = useAnimation();
+  const collectionsVideo1 = useAnimation();
+  const collectionsVideo2 = useAnimation();
+  const curatorsVideo1 = useAnimation();
+  const curatorsVideo2 = useAnimation();
+  const journalVideo1 = useAnimation();
+  const journalVideo2 = useAnimation();
+
+  const triggerFadeInAnimation = (controller1, controller2) => {
+    controller1.start({
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    });
+
+    controller2.start({
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut",
+      },
+    });
+  };
+
+  const triggerFadeOutAnimation = (controller1, controller2) => {
+    controller1.start({
+      opacity: 0,
+      transition: {
+        duration: 0.25,
+        ease: "easeOut",
+      },
+    });
+
+    controller2.start({
+      opacity: 0,
+      transition: {
+        duration: 0.25,
+        ease: "easeOut",
+      },
+    });
+  };
+
   return (
     <motion.div
       initial={{
@@ -114,8 +159,13 @@ const Cover = () => {
                 { defaultTheme: "black" },
                 { bgColor: "white" },
               ]);
+
+              triggerFadeInAnimation(homeVideo1, homeVideo2);
             }}
-            onMouseLeave={mouseLeaveColorAdjuster}
+            onMouseLeave={() => {
+              mouseLeaveColorAdjuster();
+              triggerFadeOutAnimation(homeVideo1, homeVideo2);
+            }}
             onClick={onClickAnimationHandler}
             style={{
               color: asthetics[0].home,
@@ -142,8 +192,13 @@ const Cover = () => {
                 { defaultTheme: "white" },
                 { bgColor: "black" },
               ]);
+
+              triggerFadeInAnimation(collectionsVideo1, collectionsVideo2);
             }}
-            onMouseLeave={mouseLeaveColorAdjuster}
+            onMouseLeave={() => {
+              mouseLeaveColorAdjuster();
+              triggerFadeOutAnimation(collectionsVideo1, collectionsVideo2);
+            }}
             onClick={onClickAnimationHandler}
             style={{
               color: asthetics[1].collections,
@@ -169,8 +224,13 @@ const Cover = () => {
                 { defaultTheme: "white" },
                 { bgColor: "#C42A37" },
               ]);
+
+              triggerFadeInAnimation(curatorsVideo1, curatorsVideo2);
             }}
-            onMouseLeave={mouseLeaveColorAdjuster}
+            onMouseLeave={() => {
+              mouseLeaveColorAdjuster();
+              triggerFadeOutAnimation(curatorsVideo1, curatorsVideo2);
+            }}
             onClick={onClickAnimationHandler}
             style={{
               color: asthetics[2].curators,
@@ -197,8 +257,13 @@ const Cover = () => {
                 { defaultTheme: "black" },
                 { bgColor: "white" },
               ]);
+
+              triggerFadeInAnimation(journalVideo1, journalVideo2);
             }}
-            onMouseLeave={mouseLeaveColorAdjuster}
+            onMouseLeave={() => {
+              mouseLeaveColorAdjuster();
+              triggerFadeOutAnimation(journalVideo1, journalVideo2);
+            }}
             onClick={onClickAnimationHandler}
             style={{
               color: asthetics[3].journal,
@@ -241,57 +306,89 @@ const Cover = () => {
         </div>
         {/* Video Links */}
         {/* Home */}
-        {/* <div className="h-36 apect-[3/2] bg-red-500 absolute right-[5vw] top-1/4">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={homeVideo1}
+          className="h-36 apect-[3/2] bg-red-500 absolute right-[5vw] top-1/4"
+        >
           <video
             className="object-cover h-full w-full"
             src="/public/videoes/Nav/ezgif.com-gif-maker-5.mp4"
           ></video>
-        </div>
-        <div className="h-24 aspect-square bg-red-500 absolute left-[10vw] bottom-20">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={homeVideo2}
+          className="h-24 aspect-square bg-red-500 absolute left-[10vw] bottom-20"
+        >
           <video
             className="object-cover h-full w-full"
             src="/public/videoes/Nav/ezgif.com-gif-maker.mp4"
           ></video>
-        </div> */}
+        </motion.div>
         {/* Collections */}
-        {/* <div className="h-36 apect-[5/4] bg-red-500 absolute left-[5vw] top-1/4">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={collectionsVideo1}
+          className="h-36 apect-[5/4] bg-red-500 absolute left-[5vw] top-1/4"
+        >
           <video
             className="object-cover h-full w-full"
             src="/public/videoes/Nav/ezgif.com-gif-maker-6.mp4"
           ></video>
-        </div>
-        <div className="h-28 aspect-square bg-red-500 absolute right-[15vw] bottom-1/4">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={collectionsVideo2}
+          className="h-28 aspect-square bg-red-500 absolute right-[15vw] bottom-1/4"
+        >
           <video
             className="object-cover h-full w-full"
             src="/public/videoes/Nav/ezgif.com-gif-maker-1.mp4"
           ></video>
-        </div> */}
+        </motion.div>
         {/* Curators */}
-        {/* <div className="h-28 aspect-square bg-red-500 absolute left-[15vw] top-1/4">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={curatorsVideo1}
+          className="h-28 aspect-square bg-red-500 absolute left-[15vw] top-1/4"
+        >
           <video
             className="object-cover h-full w-full"
             src="/public/videoes/Nav/ezgif.com-gif-maker-2.mp4"
           ></video>
-        </div>
-        <div className="h-36 apect-[5/4] bg-red-500 absolute right-[5vw] bottom-1/4">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={curatorsVideo2}
+          className="h-36 apect-[5/4] bg-red-500 absolute right-[5vw] bottom-1/4"
+        >
           <video
             className="object-cover h-full w-full"
             src="/public/videoes/Nav/ezgif.com-gif-maker-7.mp4"
           ></video>
-        </div> */}
+        </motion.div>
         {/* Journal */}
-        {/* <div className="h-36 apect-[5/4] bg-red-500 absolute left-[5vw] bottom-20">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={journalVideo1}
+          className="h-36 apect-[5/4] bg-red-500 absolute left-[5vw] bottom-20"
+        >
           <video
             className="object-cover h-full w-full"
             src="/public/videoes/Nav/ezgif.com-gif-maker-8.mp4"
           ></video>
-        </div>
-        <div className="h-28 aspect-square bg-red-500 absolute right-[15vw] top-1/4">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={journalVideo2}
+          className="h-28 aspect-square bg-red-500 absolute right-[15vw] top-1/4"
+        >
           <video
             className="object-cover h-full w-full"
             src="/public/videoes/Nav/ezgif.com-gif-maker-3.mp4"
           ></video>
-        </div> */}
+        </motion.div>
       </div>
     </motion.div>
   );
