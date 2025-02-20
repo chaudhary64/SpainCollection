@@ -313,7 +313,7 @@ const Cover = () => {
         >
           <video
             className="object-cover h-full w-full"
-            src="/public/videoes/Nav/ezgif.com-gif-maker-5.mp4"
+            src="/videoes/Nav/ezgif.com-gif-maker-5.mp4"
           ></video>
         </motion.div>
         <motion.div
@@ -323,7 +323,7 @@ const Cover = () => {
         >
           <video
             className="object-cover h-full w-full"
-            src="/public/videoes/Nav/ezgif.com-gif-maker.mp4"
+            src="/videoes/Nav/ezgif.com-gif-maker.mp4"
           ></video>
         </motion.div>
         {/* Collections */}
@@ -334,7 +334,7 @@ const Cover = () => {
         >
           <video
             className="object-cover h-full w-full"
-            src="/public/videoes/Nav/ezgif.com-gif-maker-6.mp4"
+            src="/videoes/Nav/ezgif.com-gif-maker-6.mp4"
           ></video>
         </motion.div>
         <motion.div
@@ -344,7 +344,7 @@ const Cover = () => {
         >
           <video
             className="object-cover h-full w-full"
-            src="/public/videoes/Nav/ezgif.com-gif-maker-1.mp4"
+            src="/videoes/Nav/ezgif.com-gif-maker-1.mp4"
           ></video>
         </motion.div>
         {/* Curators */}
@@ -355,7 +355,7 @@ const Cover = () => {
         >
           <video
             className="object-cover h-full w-full"
-            src="/public/videoes/Nav/ezgif.com-gif-maker-2.mp4"
+            src="/videoes/Nav/ezgif.com-gif-maker-2.mp4"
           ></video>
         </motion.div>
         <motion.div
@@ -365,7 +365,7 @@ const Cover = () => {
         >
           <video
             className="object-cover h-full w-full"
-            src="/public/videoes/Nav/ezgif.com-gif-maker-7.mp4"
+            src="/videoes/Nav/ezgif.com-gif-maker-7.mp4"
           ></video>
         </motion.div>
         {/* Journal */}
@@ -376,7 +376,7 @@ const Cover = () => {
         >
           <video
             className="object-cover h-full w-full"
-            src="/public/videoes/Nav/ezgif.com-gif-maker-8.mp4"
+            src="/videoes/Nav/ezgif.com-gif-maker-8.mp4"
           ></video>
         </motion.div>
         <motion.div
@@ -386,7 +386,7 @@ const Cover = () => {
         >
           <video
             className="object-cover h-full w-full"
-            src="/public/videoes/Nav/ezgif.com-gif-maker-3.mp4"
+            src="/videoes/Nav/ezgif.com-gif-maker-3.mp4"
           ></video>
         </motion.div>
       </div>
