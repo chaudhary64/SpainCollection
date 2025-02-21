@@ -8,8 +8,14 @@ const Cover = () => {
   const location = useLocation();
   const coverControls = useAnimation();
   const lenis = useLenis();
-  const { isAppearing, clicked, setClicked, setIsVisible, setIsAppearing } =
-    useContext(Info);
+  const {
+    isAppearing,
+    clicked,
+    setClicked,
+    setIsVisible,
+    setIsAppearing,
+    screenWidth,
+  } = useContext(Info);
   const [asthetics, setAsthetics] = useState([
     { home: "#C42A37" },
     { collections: "black" },
@@ -84,39 +90,43 @@ const Cover = () => {
   const journalVideo2 = useAnimation();
 
   const triggerFadeInAnimation = (controller1, controller2) => {
-    controller1.start({
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    });
+    if (screenWidth >= 1024) {
+      controller1.start({
+        opacity: 1,
+        transition: {
+          duration: 0.8,
+          ease: "easeOut",
+        },
+      });
 
-    controller2.start({
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: "easeOut",
-      },
-    });
+      controller2.start({
+        opacity: 1,
+        transition: {
+          duration: 0.8,
+          ease: "easeOut",
+        },
+      });
+    }
   };
 
   const triggerFadeOutAnimation = (controller1, controller2) => {
-    controller1.start({
-      opacity: 0,
-      transition: {
-        duration: 0.25,
-        ease: "easeOut",
-      },
-    });
+    if (screenWidth >= 1024) {
+      controller1.start({
+        opacity: 0,
+        transition: {
+          duration: 0.25,
+          ease: "easeOut",
+        },
+      });
 
-    controller2.start({
-      opacity: 0,
-      transition: {
-        duration: 0.25,
-        ease: "easeOut",
-      },
-    });
+      controller2.start({
+        opacity: 0,
+        transition: {
+          duration: 0.25,
+          ease: "easeOut",
+        },
+      });
+    }
   };
 
   return (
@@ -309,7 +319,7 @@ const Cover = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={homeVideo1}
-          className="h-36 apect-[3/2] bg-red-500 absolute right-[5vw] top-1/4"
+          className="h-36 3xl:h-44 apect-[3/2] hidden lg:inline-block absolute right-[5vw] top-1/4"
         >
           <video
             className="object-cover h-full w-full"
@@ -319,7 +329,7 @@ const Cover = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={homeVideo2}
-          className="h-24 aspect-square bg-red-500 absolute left-[10vw] bottom-20"
+          className="h-28 3xl:h-32 aspect-square hidden lg:inline-block absolute left-[10vw] bottom-20"
         >
           <video
             className="object-cover h-full w-full"
@@ -330,7 +340,7 @@ const Cover = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={collectionsVideo1}
-          className="h-36 apect-[5/4] bg-red-500 absolute left-[5vw] top-1/4"
+          className="h-36 3xl:h-44 apect-[5/4] hidden lg:inline-block absolute left-[5vw] top-1/4"
         >
           <video
             className="object-cover h-full w-full"
@@ -340,7 +350,7 @@ const Cover = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={collectionsVideo2}
-          className="h-28 aspect-square bg-red-500 absolute right-[15vw] bottom-1/4"
+          className="h-28 3xl:h-32 aspect-square hidden lg:inline-block absolute right-[15vw] bottom-1/4"
         >
           <video
             className="object-cover h-full w-full"
@@ -351,7 +361,7 @@ const Cover = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={curatorsVideo1}
-          className="h-28 aspect-square bg-red-500 absolute left-[15vw] top-1/4"
+          className="h-28 3xl:h-32 aspect-square hidden lg:inline-block absolute left-[15vw] top-1/4"
         >
           <video
             className="object-cover h-full w-full"
@@ -361,7 +371,7 @@ const Cover = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={curatorsVideo2}
-          className="h-36 apect-[5/4] bg-red-500 absolute right-[5vw] bottom-1/4"
+          className="h-36 3xl:h-44 apect-[5/4] hidden lg:inline-block absolute right-[5vw] bottom-1/4"
         >
           <video
             className="object-cover h-full w-full"
@@ -372,7 +382,7 @@ const Cover = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={journalVideo1}
-          className="h-36 apect-[5/4] bg-red-500 absolute left-[5vw] bottom-20"
+          className="h-36 3xl:h-44 apect-[5/4] hidden lg:inline-block absolute left-[5vw] bottom-20"
         >
           <video
             className="object-cover h-full w-full"
@@ -382,7 +392,7 @@ const Cover = () => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={journalVideo2}
-          className="h-28 aspect-square bg-red-500 absolute right-[15vw] top-1/4"
+          className="h-28 3xl:h-32 aspect-square hidden lg:inline-block absolute right-[15vw] top-1/4"
         >
           <video
             className="object-cover h-full w-full"
