@@ -10,6 +10,7 @@ const Cursor = () => {
     y: 0,
     height_width: 0,
     blend: false,
+    text: "",
   });
 
   useEffect(() => {
@@ -32,10 +33,25 @@ const Cursor = () => {
         height_width:
           screenWidth > 2000 ? "112px" : screenWidth > 1280 ? "80px" : "64px",
         blend: true,
+        text: "PLAY",
       }));
     };
 
     const magnetMouseLeaveHandler = () => {
+      setProperties((prev) => ({ ...prev, height_width: "9px", blend: false }));
+    };
+
+    const dragContainerMouseEnterHandler = () => {
+      setProperties((prev) => ({
+        ...prev,
+        height_width:
+          screenWidth > 2000 ? "112px" : screenWidth > 1280 ? "80px" : "64px",
+        blend: true,
+        text: "DRAG",
+      }));
+    };
+
+    const dragContainerMouseLeaveHandler = () => {
       setProperties((prev) => ({ ...prev, height_width: "9px", blend: false }));
     };
 
@@ -46,6 +62,12 @@ const Cursor = () => {
       el.addEventListener("mouseenter", magnetMouseEnterHandler);
       el.addEventListener("mouseleave", magnetMouseLeaveHandler);
     });
+    document
+      .querySelector(`[data_target="drag-container"]`)
+      .addEventListener("mouseenter", dragContainerMouseEnterHandler);
+    document
+      .querySelector(`[data_target="drag-container"]`)
+      .addEventListener("mouseleave", dragContainerMouseLeaveHandler);
 
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
@@ -55,6 +77,12 @@ const Cursor = () => {
         el.removeEventListener("mouseenter", magnetMouseEnterHandler);
         el.removeEventListener("mouseleave", magnetMouseLeaveHandler);
       });
+      document
+        .querySelector(`[data_target="drag-container"]`)
+        .removeEventListener("mouseenter", dragContainerMouseEnterHandler);
+      document
+        .querySelector(`[data_target="drag-container"]`)
+        .removeEventListener("mouseleave", dragContainerMouseLeaveHandler);
     };
   }, []);
 
@@ -91,9 +119,12 @@ const Cursor = () => {
               },
             }}
             exit={{ opacity: 0 }}
+            style={{
+              color: properties.blend ? "#000000" : "#FFFFFF",
+            }}
             className="text-sm tracking-widest"
           >
-            PLAY
+            {properties.text}
           </motion.p>
         )}
       </AnimatePresence>
