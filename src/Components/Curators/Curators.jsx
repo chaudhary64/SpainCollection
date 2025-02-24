@@ -256,6 +256,7 @@ const Curators = () => {
           Ambassadors
         </p>
         <motion.div
+          data_target="drag-container"
           // Conditionally apply drag attributes
           drag={screenWidth >= 1024 ? "x" : false}
           dragConstraints={screenWidth >= 1024 ? DragConstraintRef : undefined}

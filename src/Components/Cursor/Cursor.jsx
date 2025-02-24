@@ -63,11 +63,11 @@ const Cursor = () => {
       el.addEventListener("mouseleave", magnetMouseLeaveHandler);
     });
     document
-      .querySelector(`[data_target="drag-container"]`)
-      .addEventListener("mouseenter", dragContainerMouseEnterHandler);
-    document
-      .querySelector(`[data_target="drag-container"]`)
-      .addEventListener("mouseleave", dragContainerMouseLeaveHandler);
+      .querySelectorAll(`[data_target="drag-container"]`)
+      .forEach((el) => {
+        el.addEventListener("mouseenter", dragContainerMouseEnterHandler);
+        el.addEventListener("mouseleave", dragContainerMouseLeaveHandler);
+      });
 
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
@@ -78,11 +78,11 @@ const Cursor = () => {
         el.removeEventListener("mouseleave", magnetMouseLeaveHandler);
       });
       document
-        .querySelector(`[data_target="drag-container"]`)
-        .removeEventListener("mouseenter", dragContainerMouseEnterHandler);
-      document
-        .querySelector(`[data_target="drag-container"]`)
-        .removeEventListener("mouseleave", dragContainerMouseLeaveHandler);
+        .querySelectorAll(`[data_target="drag-container"]`)
+        .forEach((el) => {
+          el.removeEventListener("mouseenter", dragContainerMouseEnterHandler);
+          el.removeEventListener("mouseleave", dragContainerMouseLeaveHandler);
+        });
     };
   }, []);
 
