@@ -323,6 +323,9 @@ const Cover = () => {
         >
           <video
             className="object-cover h-full w-full"
+            muted
+            autoPlay
+            loop
             src="/videoes/Nav/ezgif.com-gif-maker-5.mp4"
           ></video>
         </motion.div>
@@ -333,6 +336,9 @@ const Cover = () => {
         >
           <video
             className="object-cover h-full w-full"
+            muted
+            autoPlay
+            loop
             src="/videoes/Nav/ezgif.com-gif-maker.mp4"
           ></video>
         </motion.div>
@@ -344,6 +350,9 @@ const Cover = () => {
         >
           <video
             className="object-cover h-full w-full"
+            muted
+            autoPlay
+            loop
             src="/videoes/Nav/ezgif.com-gif-maker-6.mp4"
           ></video>
         </motion.div>
@@ -354,6 +363,9 @@ const Cover = () => {
         >
           <video
             className="object-cover h-full w-full"
+            muted
+            autoPlay
+            loop
             src="/videoes/Nav/ezgif.com-gif-maker-1.mp4"
           ></video>
         </motion.div>
@@ -365,6 +377,9 @@ const Cover = () => {
         >
           <video
             className="object-cover h-full w-full"
+            muted
+            autoPlay
+            loop
             src="/videoes/Nav/ezgif.com-gif-maker-2.mp4"
           ></video>
         </motion.div>
@@ -375,6 +390,9 @@ const Cover = () => {
         >
           <video
             className="object-cover h-full w-full"
+            muted
+            autoPlay
+            loop
             src="/videoes/Nav/ezgif.com-gif-maker-7.mp4"
           ></video>
         </motion.div>
@@ -386,6 +404,9 @@ const Cover = () => {
         >
           <video
             className="object-cover h-full w-full"
+            muted
+            autoPlay
+            loop
             src="/videoes/Nav/ezgif.com-gif-maker-8.mp4"
           ></video>
         </motion.div>
@@ -396,6 +417,9 @@ const Cover = () => {
         >
           <video
             className="object-cover h-full w-full"
+            muted
+            autoPlay
+            loop
             src="/videoes/Nav/ezgif.com-gif-maker-3.mp4"
           ></video>
         </motion.div>
