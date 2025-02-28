@@ -122,7 +122,7 @@ const Home = () => {
         id="mask"
         style={{
           backgroundColor: theme,
-          transition: "background-color 0.6s cubic-bezier(0.11, 0, 0.5, 0)",
+          transition: "background-color 0.85s cubic-bezier(0.11, 0, 0.5, 0)",
         }}
         className="fixed h-lvh w-full top-0 left-0 z-[-99]"
       ></aside>
