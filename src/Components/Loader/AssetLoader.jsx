@@ -72,7 +72,7 @@ const AssetLoader = ({ assets, children }) => {
                   animate={{
                     background: `conic-gradient(from 0deg at 50% 50%, red 0% ${progress}%, #10182B ${progress}% 100%)`,
                   }}
-                  className="absolute inset-0 z-[1] rounded-full transition-all duration-300"
+                  className="absolute inset-0 z-[1] rounded-full"
                 ></motion.div>
                 <div className="absolute h-[95%] w-[95%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[2] rounded-full bg-black"></div>
                 <svg
