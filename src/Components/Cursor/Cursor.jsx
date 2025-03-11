@@ -11,6 +11,8 @@ const Cursor = () => {
     height_width: 0,
     blend: false,
     text: "",
+    drag: false,
+    player: false,
   });
 
   useEffect(() => {
@@ -34,11 +36,17 @@ const Cursor = () => {
           screenWidth > 2000 ? "112px" : screenWidth > 1280 ? "80px" : "64px",
         blend: true,
         text: "PLAY",
+        player: true,
       }));
     };
 
     const magnetMouseLeaveHandler = () => {
-      setProperties((prev) => ({ ...prev, height_width: "9px", blend: false }));
+      setProperties((prev) => ({
+        ...prev,
+        height_width: "9px",
+        blend: false,
+        player: false,
+      }));
     };
 
     const dragContainerMouseEnterHandler = () => {
@@ -46,13 +54,17 @@ const Cursor = () => {
         ...prev,
         height_width:
           screenWidth > 2000 ? "112px" : screenWidth > 1280 ? "80px" : "64px",
-        blend: true,
         text: "DRAG",
+        drag: true,
       }));
     };
 
     const dragContainerMouseLeaveHandler = () => {
-      setProperties((prev) => ({ ...prev, height_width: "9px", blend: false }));
+      setProperties((prev) => ({
+        ...prev,
+        height_width: "9px",
+        drag: false,
+      }));
     };
 
     document.addEventListener("mousemove", handleMouseMove);
@@ -97,11 +109,12 @@ const Cursor = () => {
         top: properties.y,
         height: properties.height_width,
         width: properties.height_width,
-        backgroundColor: properties.blend ? "#FDF6F7" : "#BF1826",
+        backgroundColor:
+          properties.blend || properties.drag ? "#FDF6F7" : "#BF1826",
         transition: {
           scale: { duration: 0.3 },
           type: "spring", // Smooth spring animation
-          stiffness: properties.blend ? 150 : 700, // Controls speed
+          stiffness: properties.player ? 150 : properties.drag ? 1400 : 700, // Controls speed
           damping: properties.blend ? 10 : 40, // Controls bounce effect
           mass: 0.1, // Controls weight
         },
@@ -109,7 +122,7 @@ const Cursor = () => {
       className="justify-center items-center fixed z-[999] rounded-full bg-[#BF1826] grid place-items-center pointer-events-none overflow-clip"
     >
       <AnimatePresence>
-        {properties.blend && (
+        {(properties.blend || properties.drag) && (
           <motion.p
             initial={{ opacity: 0 }}
             animate={{
@@ -120,7 +133,8 @@ const Cursor = () => {
             }}
             exit={{ opacity: 0 }}
             style={{
-              color: properties.blend ? "#000000" : "#FFFFFF",
+              color:
+                properties.blend || properties.drag ? "#000000" : "#FFFFFF",
             }}
             className="text-sm tracking-widest"
           >
