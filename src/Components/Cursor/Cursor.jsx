@@ -8,7 +8,7 @@ const Cursor = () => {
   const [properties, setProperties] = useState({
     x: 0,
     y: 0,
-    height_width: 0,
+    height_width: "9px",
     blend: false,
     text: "",
     drag: false,
