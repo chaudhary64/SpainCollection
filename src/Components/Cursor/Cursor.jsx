@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Info } from "../Context/Context";
+import { useLocation } from "react-router-dom";
 
 const Cursor = () => {
   const { screenWidth } = useContext(Info);
+  const location = useLocation();
 
   const [properties, setProperties] = useState({
     x: 0,
@@ -96,7 +98,7 @@ const Cursor = () => {
           el.removeEventListener("mouseleave", dragContainerMouseLeaveHandler);
         });
     };
-  }, []);
+  }, [location, screenWidth]);
 
   return (
     <motion.div
