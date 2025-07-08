@@ -1,4 +1,3 @@
-import React from "react";
 import { motion, useAnimation } from "framer-motion";
 
 const HoverCover = ({ src, text }) => {

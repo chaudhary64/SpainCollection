@@ -1,10 +1,9 @@
-import React, { useContext, useRef } from "react";
+import { useContext, useRef } from "react";
 import DescriptionCard from "./DescriptionCard";
 import DateCard from "./DateCard";
 import Footer from "../Footer/Footer";
 import {
   motion,
-  // useMotionValueEvent,
   useScroll,
   useTransform,
 } from "framer-motion";

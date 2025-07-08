@@ -1,5 +1,3 @@
-import React from "react";
-
 const SwipeCards = ({ src, text, dark = false }) => {
   return (
     <div className="h-full pb-[1.5pc] borde-4">

@@ -1,4 +1,3 @@
-import React from "react";
 import { CiStopwatch } from "react-icons/ci";
 
 const DateCard = ({ img, time, date, Heading, text }) => {

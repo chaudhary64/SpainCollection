@@ -5,7 +5,7 @@ import AssetLoader from "./Components/Loader/AssetLoader";
 import AppearingNavigation from "./Components/Nav/AppearingNavigation";
 import Player from "./Components/Player/Player";
 import Cursor from "./Components/Cursor/Cursor";
-import { useCallback, useContext, useEffect, useRef, useState } from "react";
+import { useContext } from "react";
 import { Info } from "./Components/Context/Context";
 
 const App = () => {

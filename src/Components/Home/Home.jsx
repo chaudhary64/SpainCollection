@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect, useContext } from "react";
-import { IoPlay } from "react-icons/io5";
 import Expander from "./Expander";
 import Ambassadords from "./Ambassadors";
 import ParallaxImages_Light from "./ParallaxImages_Light";

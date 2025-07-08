@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import Cover from "./Cover";
 import Circle from "./Circle";
 

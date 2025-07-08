@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { NavLink, useLocation } from "react-router-dom";
 import { useLenis } from "lenis/react";

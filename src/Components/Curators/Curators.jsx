@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import ParallaxImages_Dark from "./ParallaxImages_Dark";
 import OverlapingCards from "./OverlapingCards";

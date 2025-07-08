@@ -1,4 +1,3 @@
-import React from "react";
 import { useContext } from "react";
 import Magnet from "../Magnetic/Magnet";
 import { Info } from "../Context/Context";

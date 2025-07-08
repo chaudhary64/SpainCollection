@@ -1,4 +1,3 @@
-import React from "react";
 import HoverCover from "./HoverCover";
 import { useContext } from "react";
 import Footer from "../Footer/Footer";

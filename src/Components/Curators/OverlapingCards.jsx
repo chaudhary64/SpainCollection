@@ -1,5 +1,3 @@
-import React from "react";
-
 const OverlapingCards = ({ name, text, mainImg, maskImg, left = true }) => {
   return (
     <div className="sm:w-[45%] lg:w-[30%] xl:w-[22.5%] 3xl:w-1/4">

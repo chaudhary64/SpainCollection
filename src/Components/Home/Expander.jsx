@@ -1,5 +1,4 @@
 import { useContext, useEffect, useRef } from "react";
-import { IoPlay } from "react-icons/io5";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Info } from "../Context/Context";
 import Magnet from "../Magnetic/Magnet";

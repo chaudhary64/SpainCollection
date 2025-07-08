@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { RxCross1 } from "react-icons/rx";
 import "@vidstack/react/player/styles/base.css";
