@@ -3,14 +3,26 @@
   to = "/index.html"
   status = 200
 
+# Long cache for static versioned assets (e.g. .js, .css, fonts, images, videos)
 [[headers]]
-  # Cache all static assets (images, CSS, JS, fonts, etc.) for 10 hour
-  for = "/*"
+  for = "/static/*"
   [headers.values]
-    Cache-Control = "public, max-age=36000" # 36000 seconds = 10 hour
+    Cache-Control = "public, max-age=31536000, immutable"
 
+# Fallback for common asset extensions (e.g. if not served from /static/)
 [[headers]]
-  # Cache index.html for 10 hour
+  for = "/*.@(js|css|ttf|woff2|webp|mp4|svg|jpg|jpeg|png)"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML should never be cached aggressively
+[[headers]]
   for = "/index.html"
   [headers.values]
-    Cache-Control = "no-cache, max-age=36000"
+    Cache-Control = "no-cache"
+
+# Optional: catch-all to prevent overly aggressive caching on dynamic HTML
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "no-cache"
