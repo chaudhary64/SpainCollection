@@ -182,7 +182,7 @@ const Expander = () => {
             </div>
           </motion.div>
           <video
-            className="object-cover h-full w-full"
+            className="object-cover h-full w-full bg-animated-gradient"
             autoPlay
             muted
             loop
