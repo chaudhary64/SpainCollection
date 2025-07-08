@@ -4,13 +4,13 @@
   status = 200
 
 [[headers]]
-  # Cache all static assets (images, CSS, JS, fonts, etc.) for 1 hour
+  # Cache all static assets (images, CSS, JS, fonts, etc.) for 10 hour
   for = "/*"
   [headers.values]
-    Cache-Control = "public, max-age=3600" # 3600 seconds = 1 hour
+    Cache-Control = "public, max-age=36000" # 36000 seconds = 10 hour
 
 [[headers]]
-  # Cache index.html for 1 hour
+  # Cache index.html for 10 hour
   for = "/index.html"
   [headers.values]
-    Cache-Control = "no-cache, max-age=3600"
+    Cache-Control = "no-cache, max-age=36000"
