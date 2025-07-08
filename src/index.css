@@ -15,11 +15,9 @@
     0% {
       background-position: 0% 50%;
     }
-
     50% {
       background-position: 100% 50%;
     }
-
     100% {
       background-position: 0% 50%;
     }
@@ -36,17 +34,19 @@ html,
 body {
   height: 100%;
   width: 100%;
-  font-family: "SaolDisplay", serif;
+  font-family: "SaolDisplay", system-ui, serif;
 }
 
 body::-webkit-scrollbar {
   display: none;
 }
 
+/* ---------------------- FONT FACES ---------------------- */
+
 /* Inter Regular */
 @font-face {
   font-family: "Inter";
-  src: url("/Fonts/Inter.ttf") format("ttf");
+  src: url("/Fonts/Inter.ttf") format("truetype");
   font-display: swap;
   font-style: normal;
   font-weight: 400;
@@ -58,7 +58,7 @@ body::-webkit-scrollbar {
 /* Inter Italic */
 @font-face {
   font-family: "Inter";
-  src: url("/Fonts/Inter_Italic.ttf") format("ttf");
+  src: url("/Fonts/Inter_Italic.ttf") format("truetype");
   font-display: swap;
   font-style: italic;
   font-weight: 400;
@@ -70,7 +70,7 @@ body::-webkit-scrollbar {
 /* IbarraRealNova Regular */
 @font-face {
   font-family: "IbarraRealNova";
-  src: url("/Fonts/IbarraRealNova.ttf") format("ttf");
+  src: url("/Fonts/IbarraRealNova.ttf") format("truetype");
   font-display: swap;
   font-style: normal;
   font-weight: 400;
@@ -82,7 +82,7 @@ body::-webkit-scrollbar {
 /* IbarraRealNova Italic */
 @font-face {
   font-family: "IbarraRealNova";
-  src: url("/Fonts/IbarraRealNova_Italic.ttf") format("ttf");
+  src: url("/Fonts/IbarraRealNova_Italic.ttf") format("truetype");
   font-display: swap;
   font-style: italic;
   font-weight: 400;
@@ -127,6 +127,8 @@ body::-webkit-scrollbar {
   line-gap-override: 0%;
 }
 
+/* ---------------------- OTHER STYLES ---------------------- */
+
 /* Hide scrollbar */
 .no-scrollbar::-webkit-scrollbar {
   background-color: transparent;
@@ -138,7 +140,7 @@ body::-webkit-scrollbar {
 }
 
 /* Swiper Pagination Styling */
-.swiper-horizontal>.swiper-pagination-bullets {
+.swiper-horizontal > .swiper-pagination-bullets {
   top: 100%;
 }
 
