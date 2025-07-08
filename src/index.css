@@ -12,95 +12,109 @@ html,
 body {
   height: 100%;
   width: 100%;
-  font-family: "SaolDisplay-Regular", "serif";
+  font-family: "SaolDisplay", serif;
 }
 
 body::-webkit-scrollbar {
   display: none;
 }
 
-/* Inter Font */
+/* Inter Regular */
 @font-face {
   font-family: "Inter";
-  src: url(/Fonts/Inter.ttf) format("truetype");
+  src: url("/Fonts/Inter.woff2") format("woff2");
   font-display: swap;
+  font-style: normal;
+  font-weight: 400;
   ascent-override: 90%;
   descent-override: 20%;
   line-gap-override: 0%;
 }
 
-/* Inter_Italic Font */
+/* Inter Italic */
 @font-face {
-  font-family: "Inter_Italic";
-  src: url(/Fonts/Inter_Italic.ttf) format("truetype");
+  font-family: "Inter";
+  src: url("/Fonts/Inter_Italic.woff2") format("woff2");
   font-display: swap;
+  font-style: italic;
+  font-weight: 400;
   ascent-override: 90%;
   descent-override: 20%;
   line-gap-override: 0%;
 }
 
-/* IbarraRealNova Font */
+/* IbarraRealNova Regular */
 @font-face {
   font-family: "IbarraRealNova";
-  src: url(/Fonts/IbarraRealNova.ttf) format("truetype");
+  src: url("/Fonts/IbarraRealNova.woff2") format("woff2");
   font-display: swap;
+  font-style: normal;
+  font-weight: 400;
   ascent-override: 92%;
   descent-override: 18%;
   line-gap-override: 0%;
 }
 
-/* IbarraRealNova_Italic Font */
+/* IbarraRealNova Italic */
 @font-face {
-  font-family: "IbarraRealNova_Italic";
-  src: url(/Fonts/IbarraRealNova_Italic.ttf) format("truetype");
+  font-family: "IbarraRealNova";
+  src: url("/Fonts/IbarraRealNova_Italic.woff2") format("woff2");
   font-display: swap;
+  font-style: italic;
+  font-weight: 400;
   ascent-override: 92%;
   descent-override: 18%;
   line-gap-override: 0%;
 }
 
-/* SaolDisplay-Light Font */
+/* SaolDisplay Regular */
 @font-face {
-  font-family: "SaolDisplay-Light";
-  src: url(/Fonts/SaolDisplay-Light.woff2) format("woff2");
+  font-family: "SaolDisplay";
+  src: url("/Fonts/SaolDisplay-Regular.woff2") format("woff2");
   font-display: swap;
+  font-style: normal;
+  font-weight: 400;
   ascent-override: 88%;
   descent-override: 22%;
   line-gap-override: 0%;
 }
 
-/* SaolDisplay-LightItalic Font */
+/* SaolDisplay Light */
 @font-face {
-  font-family: "SaolDisplay-Italic";
-  src: url(/Fonts/SaolDisplay-LightItalic.woff2) format("woff2");
+  font-family: "SaolDisplay";
+  src: url("/Fonts/SaolDisplay-Light.woff2") format("woff2");
   font-display: swap;
+  font-style: normal;
+  font-weight: 300;
   ascent-override: 88%;
   descent-override: 22%;
   line-gap-override: 0%;
 }
 
-/* SaolDisplay-Regular Font */
+/* SaolDisplay Italic */
 @font-face {
-  font-family: "SaolDisplay-Regular";
-  src: url(/Fonts/SaolDisplay-Regular.woff2) format("woff2");
+  font-family: "SaolDisplay";
+  src: url("/Fonts/SaolDisplay-LightItalic.woff2") format("woff2");
   font-display: swap;
+  font-style: italic;
+  font-weight: 300;
   ascent-override: 88%;
   descent-override: 22%;
   line-gap-override: 0%;
 }
 
+/* Hide scrollbar */
 .no-scrollbar::-webkit-scrollbar {
-  /* Making the background color of the scrollbar as same as that of the .no-scrollbar */
   background-color: transparent;
   display: none;
 }
 
 .no-scrollbar::-webkit-scrollbar-thumb {
-  /* Changing the background-color of the thumb of the scrollbar */
   background-color: transparent;
 }
 
-.swiper-horizontal > .swiper-pagination-bullets {
+/* Swiper Pagination Styling */
+.swiper-horizontal>.swiper-pagination-bullets {
   top: 100%;
 }
 
