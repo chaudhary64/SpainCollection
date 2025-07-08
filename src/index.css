@@ -22,7 +22,7 @@ body::-webkit-scrollbar {
 /* Inter Regular */
 @font-face {
   font-family: "Inter";
-  src: url("/Fonts/Inter.woff2") format("woff2");
+  src: url("/Fonts/Inter.ttf") format("ttf");
   font-display: swap;
   font-style: normal;
   font-weight: 400;
@@ -34,7 +34,7 @@ body::-webkit-scrollbar {
 /* Inter Italic */
 @font-face {
   font-family: "Inter";
-  src: url("/Fonts/Inter_Italic.woff2") format("woff2");
+  src: url("/Fonts/Inter_Italic.ttf") format("ttf");
   font-display: swap;
   font-style: italic;
   font-weight: 400;
@@ -46,7 +46,7 @@ body::-webkit-scrollbar {
 /* IbarraRealNova Regular */
 @font-face {
   font-family: "IbarraRealNova";
-  src: url("/Fonts/IbarraRealNova.woff2") format("woff2");
+  src: url("/Fonts/IbarraRealNova.ttf") format("ttf");
   font-display: swap;
   font-style: normal;
   font-weight: 400;
@@ -58,7 +58,7 @@ body::-webkit-scrollbar {
 /* IbarraRealNova Italic */
 @font-face {
   font-family: "IbarraRealNova";
-  src: url("/Fonts/IbarraRealNova_Italic.woff2") format("woff2");
+  src: url("/Fonts/IbarraRealNova_Italic.ttf") format("ttf");
   font-display: swap;
   font-style: italic;
   font-weight: 400;
