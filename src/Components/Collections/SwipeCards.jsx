@@ -24,7 +24,7 @@ const SwipeCards = memo(({ src, text, dark = false }) => {
   );
 
   return (
-    <div className="h-full pb-[1.5rem] borde-4">
+    <div className="h-full pb-[1.5rem]">
       <img
         className={imageClasses}
         src={src}
