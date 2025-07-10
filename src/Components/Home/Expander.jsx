@@ -90,7 +90,7 @@ const Expander = () => {
         {/*  1st Column */}
         <div className="shrink-0 hidden lg:block h-[60%] lg:h-[50%] xl:h-[60%] w-[15%]">
           <video
-            className="object-cover h-full"
+            className="object-cover h-full bg-animated-gradient"
             autoPlay
             muted
             loop
@@ -101,7 +101,7 @@ const Expander = () => {
         <div className="shrink-0 w-[22%] 3xl:w-[22.5%] hidden lg:flex flex-col justify-center gap-7 3xl:gap-10">
           <div className="aspect-[1/1]">
             <video
-              className="object-cover h-full"
+              className="object-cover h-full bg-animated-gradient"
               autoPlay
               muted
               loop
@@ -202,7 +202,7 @@ const Expander = () => {
           </div>
           <div className="aspect-[1/1]">
             <video
-              className="object-cover h-full"
+              className="object-cover h-full bg-animated-gradient"
               autoPlay
               muted
               loop
@@ -213,7 +213,7 @@ const Expander = () => {
         {/* 5th Column */}
         <div className="shrink-0 hidden lg:block h-[60%] lg:h-[50%] xl:h-[60%] w-[15%]">
           <video
-            className="object-cover h-full"
+            className="object-cover h-full bg-animated-gradient"
             autoPlay
             muted
             loop
