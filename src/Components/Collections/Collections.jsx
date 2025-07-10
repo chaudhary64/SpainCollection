@@ -66,12 +66,7 @@ const Collections = memo(() => {
   const experienceItems = useMemo(
     () =>
       yourExperienceData.map((item) => (
-        <Suspense
-          key={item.id}
-          fallback={
-            <div className="w-32 h-16 bg-gray-200 animate-pulse rounded" />
-          }
-        >
+        <Suspense key={item.id} fallback={null}>
           <HoverCover {...item} />
         </Suspense>
       )),
@@ -81,12 +76,7 @@ const Collections = memo(() => {
   const destinationItems = useMemo(
     () =>
       yourDestinationData.map((item) => (
-        <Suspense
-          key={item.id}
-          fallback={
-            <div className="w-32 h-16 bg-gray-200 animate-pulse rounded" />
-          }
-        >
+        <Suspense key={item.id} fallback={null}>
           <HoverCover {...item} />
         </Suspense>
       )),
@@ -97,11 +87,7 @@ const Collections = memo(() => {
     () =>
       chooseYourDestinationCardsData.map((item) => (
         <SwiperSlide key={item.text}>
-          <Suspense
-            fallback={
-              <div className="w-full h-64 bg-gray-200 animate-pulse rounded" />
-            }
-          >
+          <Suspense fallback={null}>
             <SwipeCards {...item} />
           </Suspense>
         </SwiperSlide>
@@ -113,11 +99,7 @@ const Collections = memo(() => {
     () =>
       chooseyourExperienceCardsData.map((item) => (
         <SwiperSlide key={item.text}>
-          <Suspense
-            fallback={
-              <div className="w-full h-64 bg-gray-800 animate-pulse rounded" />
-            }
-          >
+          <Suspense fallback={null}>
             <SwipeCards {...item} dark={true} />
           </Suspense>
         </SwiperSlide>
@@ -212,9 +194,7 @@ const Collections = memo(() => {
       {/* Separator */}
       <aside className="pt-[20vh] xs:pt-[25vh] md:pt-[12rem] h-[1px] w-full bg-black"></aside>
 
-      <Suspense
-        fallback={<div className="w-full h-64 bg-gray-900 animate-pulse" />}
-      >
+      <Suspense fallback={null}>
         <Footer dark={true} />
       </Suspense>
     </>
