@@ -50,8 +50,8 @@ const Nav = () => {
       });
     } else if (loc.pathname === "/collections") {
       setDefaultAsthetics({
-        color: "#EBECEC",
-        fill: "#FDFDFD",
+        color: "#3B5959",
+        fill: "#3B5959",
         bgColor: screenWidth > 1024 ? "#00000000" : "#FFFFFF", // Transparent color when screen width is greater than 1024px else white
       });
     } else {
